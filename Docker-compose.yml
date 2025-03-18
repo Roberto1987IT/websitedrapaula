@@ -18,7 +18,7 @@ services:
     container_name: react_frontend
     stdin_open: true
     ports:
-      - "3000:3000"
+      - "5173:5173"
     depends_on:
       - backend
     volumes:

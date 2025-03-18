@@ -7,6 +7,7 @@ from .serializers import RegisterSerializer, UserProfileSerializer
 from django.contrib.auth.models import User
 from .models import UserProfile, Document
 from .serializers import DocumentSerializer
+from django.http import HttpResponse
 from rest_framework import generics
 from .models import Document  # Assuming you have a Document model
 from . import serializers  # Import the serializers module
@@ -45,3 +46,6 @@ class UserProfileView(APIView):
                 {"error": "User profile not found"},
                 status=status.HTTP_404_NOT_FOUND
             )
+
+def home(request):
+    return HttpResponse("Welcome to the API!")
