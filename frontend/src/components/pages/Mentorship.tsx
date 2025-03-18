@@ -1,4 +1,4 @@
-import "../../styles/pages/Mentorship.css";
+import "../../styles/pages/mentorship.css";
 import mentorshipImage from "../../assets/courses/PaulaSerrano-102 1.png";
 
 const Mentorship = () => {
