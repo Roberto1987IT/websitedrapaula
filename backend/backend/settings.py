@@ -11,8 +11,6 @@ PSQL_DB = os.getenv("PSQL_DB")
 PSQL_USER = os.getenv("PSQL_USER")
 PSQL_USER_PASSWORD = os.getenv("PSQL_USER_PASSWORD")
 
-print('----', SECRET_KEY, DATABASE_URL)
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -22,9 +20,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG")
+print('\tdebug',DEBUG)
 
 # For development, allow localhost and 127.0.0.1
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+#ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', 'web']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 INSTALLED_APPS = [
@@ -147,7 +147,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # CORS settings for React frontend
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # React development server (Vite)
+    "http://127.0.0.1:5173",
 ]
+
+#CORS_ALLOW_ALL_ORIGINS = True
 
 # For production, you will need to make the following changes:
 # 1. Set DEBUG = False

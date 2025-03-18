@@ -7,7 +7,7 @@ from .serializers import RegisterSerializer, UserProfileSerializer
 from django.contrib.auth.models import User
 from .models import UserProfile, Document
 from .serializers import DocumentSerializer
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from rest_framework import generics
 from .models import Document  # Assuming you have a Document model
 from . import serializers  # Import the serializers module
@@ -48,4 +48,4 @@ class UserProfileView(APIView):
             )
 
 def home(request):
-    return HttpResponse("Welcome to the API!")
+    return JsonResponse({"message": "Hello, API!"})
