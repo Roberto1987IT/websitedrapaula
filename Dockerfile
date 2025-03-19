@@ -25,5 +25,9 @@ COPY --from=frontend /frontend/ /app/frontend
 # Открываем порт для Django
 EXPOSE 8000
 
+# Установить переменную окружения для Django
+ENV DJANGO_SETTINGS_MODULE=backend.backend.settings
+
+
 # Запускаем сервер Gunicorn для Django
-CMD ["gunicorn", "backend.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "backend.backend.wsgi:application", "--bind", "0.0.0.0:8000"]
