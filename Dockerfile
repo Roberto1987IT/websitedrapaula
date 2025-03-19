@@ -1,30 +1,29 @@
-# =========== Сборка FRONTEND (React) ===========
-FROM node:18 AS frontend
+# ========== СТАДИЯ 1: СОЗДАНИЕ FRONTEND (React) ===========
+FROM node:23 AS frontend
 WORKDIR /frontend
 COPY frontend/package.json frontend/package-lock.json ./
 RUN npm install
-COPY frontend ./
+COPY frontend/ .
 RUN npm run build
 
-# =========== Сборка BACKEND (Django) ===========
+# ========== СТАДИЯ 2: СОЗДАНИЕ BACKEND (Django) ===========
 FROM python:3.11 AS backend
 WORKDIR /app
+COPY .env /app/.env
 RUN apt-get update && apt-get upgrade -y
-
-# Копируем backend зависимости
 COPY backend/requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 RUN python -m pip install --upgrade pip
 RUN pip install gunicorn
 
-# Копируем backend код
-COPY backend/ /app/
+# Копируем код бэкенда в контейнер
+COPY backend/ /app/backend
 
-# Копируем frontend билд в backend
-COPY --from=frontend /frontend/dist /app/static/
+# Копируем собранный фронтенд из контейнера frontend в статическую директорию Django
+COPY --from=frontend /frontend/ /app/frontend
 
-# Открываем порт Django
+# Открываем порт для Django
 EXPOSE 8000
 
-# Запускаем сервер
+# Запускаем сервер Gunicorn для Django
 CMD ["gunicorn", "backend.wsgi:application", "--bind", "0.0.0.0:8000"]
