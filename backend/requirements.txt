@@ -10,12 +10,14 @@ django-phonenumber-field==8.0.0
 django-recaptcha==4.0.0
 djangorestframework==3.15.2
 djangorestframework_simplejwt==5.4.0
+dotenv==0.9.9
 google-api-core==2.24.1
 google-api-python-client==2.162.0
 google-auth==2.38.0
 google-auth-httplib2==0.2.0
 google-auth-oauthlib==1.2.1
 googleapis-common-protos==1.68.0
+gunicorn==23.0.0
 httplib2==0.22.0
 idna==3.10
 iniconfig==2.0.0

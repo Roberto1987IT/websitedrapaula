@@ -1,6 +1,10 @@
 #python version
 FROM python:3.11
 
+RUN apt-get update
+RUN apt-get upgrade
+
+
 #define work directory
 WORKDIR /app
 
