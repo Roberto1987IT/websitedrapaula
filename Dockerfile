@@ -9,7 +9,7 @@ RUN npm run build
 # ========== СТАДИЯ 2: СОЗДАНИЕ BACKEND (Django) ===========
 FROM python:3.11 AS backend
 WORKDIR /app
-COPY .env /app/.env
+#COPY .env /app/.env
 RUN apt-get update && apt-get upgrade -y
 COPY backend/requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
