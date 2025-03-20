@@ -54,3 +54,10 @@ def home(request):
             "boris": "isac"    
         }
     )
+
+def test_connection(request):
+    return JsonResponse(
+        {
+            'message_connection': 'success connection to boris isac'
+        }
+    )
