@@ -95,8 +95,8 @@ WSGI_APPLICATION = 'backend.wsgi.application'
     }
 }'''
 
-
-DATABASES = {
+#render deploy settings
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('PSQL_DB'),
@@ -105,8 +105,21 @@ DATABASES = {
         'HOST': os.getenv('PSQL_HOST'),
         'PORT': os.getenv('PSQL_HOST','5432'),
     }
-}
+}'''
 
+
+#local settings
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('PSQL_DB'),
+        'USER': os.getenv('PSQL_LOCAL_USER'),
+        'PASSWORD': os.getenv('PSQL_LOCAL_USER_PASSWORD'),
+        'HOST': '127.0.0.1',          
+        'PORT': '5432', 
+    }
+}
+print(DATABASES)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -145,11 +158,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS settings for React frontend
 CORS_ALLOWED_ORIGINS = [
-    "https://wdp-frontend.onrender.com"
+    "https://wdp-frontend.onrender.com",
+    "http://localhost:5173",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://wdp-frontend.onrender.com",
+    "https://wdp-frontend.onrender.com",  # домен фронтенда на Render
+    "http://localhost:5173",  # локальный фронтенд
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
