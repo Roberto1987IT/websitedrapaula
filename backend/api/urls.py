@@ -10,7 +10,7 @@ from .views import DocumentList, home, test_connection
 
 urlpatterns = [
     path('', home, name="home"),
-    path("api/test/", test_connection),
+    path("test/", test_connection),
     path('register/', RegisterView.as_view(), name='register'),  # Registration endpoint
     path('user/profile/', UserProfileView.as_view(), name='user-profile'),  # Profile endpoint
     path('api/documents/', DocumentList.as_view(), name='document-list'),

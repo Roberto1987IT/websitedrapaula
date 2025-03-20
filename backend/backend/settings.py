@@ -96,7 +96,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 }'''
 
 #render deploy settings
-'''DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('PSQL_DB'),
@@ -105,9 +105,9 @@ WSGI_APPLICATION = 'backend.wsgi.application'
         'HOST': os.getenv('PSQL_HOST'),
         'PORT': os.getenv('PSQL_HOST','5432'),
     }
-}'''
+}
 
-
+'''
 #local settings
 DATABASES = {
     'default': {
@@ -119,7 +119,7 @@ DATABASES = {
         'PORT': '5432', 
     }
 }
-print(DATABASES)
+print(DATABASES)'''
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -164,7 +164,7 @@ CORS_ALLOWED_ORIGINS = [
 
 CSRF_TRUSTED_ORIGINS = [
     "https://wdp-frontend.onrender.com",  # домен фронтенда на Render
-    "http://localhost:5173",  # локальный фронтенд
+    "http://localhost:5173",  # local fontend
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
