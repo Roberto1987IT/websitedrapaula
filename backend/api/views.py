@@ -9,8 +9,8 @@ from .models import UserProfile, Document
 from .serializers import DocumentSerializer
 from django.http import HttpResponse, JsonResponse
 from rest_framework import generics
-from .models import Document  # Assuming you have a Document model
-from . import serializers  # Import the serializers module
+from .models import Document  
+from . import serializers
 
 class DocumentList(generics.ListAPIView):
     queryset = Document.objects.all()
@@ -48,4 +48,9 @@ class UserProfileView(APIView):
             )
 
 def home(request):
-    return JsonResponse({"message": "Hello, API!"})
+    return JsonResponse(
+        {
+            "message": "Hello, API!",
+            "boris": "isac"    
+        }
+    )

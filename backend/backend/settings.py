@@ -20,7 +20,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG")
-print('\tdebug',DEBUG)
 
 # For development, allow localhost and 127.0.0.1
 #ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', 'web']
@@ -57,7 +56,7 @@ SIMPLE_JWT = {
 }
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',  # Must be before CommonMiddleware for CORS
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -100,11 +99,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': PSQL_DB,
-        'USER': PSQL_USER,
-        'PASSWORD': PSQL_USER_PASSWORD,
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': os.getenv('PSQL_DB'),
+        'USER': os.getenv('PSQL_USER'),
+        'PASSWORD': os.getenv('PSQL_USER_PASSWORD'),
+        'HOST': os.getenv('PSQL_HOST'),
+        'PORT': os.getenv('PSQL_HOST','5432'),
     }
 }
 
@@ -146,11 +145,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS settings for React frontend
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # React development server (Vite)
-    "http://127.0.0.1:5173",
+    "https://wdp-frontend.onrender.com"
 ]
 
-#CORS_ALLOW_ALL_ORIGINS = True
+CSRF_TRUSTED_ORIGINS = [
+    "https://wdp-frontend.onrender.com",
+]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 # For production, you will need to make the following changes:
 # 1. Set DEBUG = False

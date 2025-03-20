@@ -16,4 +16,4 @@ frontend/dist/
 
 # Environment files
 .env
-
+node_modules

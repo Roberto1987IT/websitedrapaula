@@ -150,3 +150,36 @@ function App() {
 }
 
 export default App;
+
+
+
+
+/* test api requests */
+
+const API_URL = process.env.REACT_APP_API_URL;
+
+console.log(API_URL)
+
+function Test_connection_Front_back() {
+  const [message, setMessage] = useState("Загрузка...");
+
+  useEffect(() => {
+    fetch(`${API_URL}/api/test/`)
+      .then((response) => response.json())
+      .then((data) => setMessage(data.message))
+      .catch((error) => setMessage("Ошибка подключения"));
+  }, []);
+
+  return (
+    <div>
+      <h1>Проверка связи</h1>
+      <p>{message}</p>
+    </div>
+  );
+}
+
+export default Test_connection_Front_back;
+
+function useState(arg0: string): [any, any] {
+  throw new Error("Function not implemented.");
+}

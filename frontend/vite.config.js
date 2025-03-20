@@ -7,10 +7,10 @@ export default defineConfig({
     host: "0.0.0.0",
     proxy: {
       "/api": {
-        target: "http://backend:8000",
-        changeOrigin: true,
-        secure: false,
-      },
+    target: "http://localhost:8000",
+    changeOrigin: true,
+    secure: true,
+  },
     },
     allowedHosts: ["wdp-frontend.onrender.com"],
   },
