@@ -1,6 +1,6 @@
 services:
   backend:
-    #image: spawnkid9xx/django_backend:latest
+    image: spawnkid9xx/django_backend:latest
     build: ./backend
     container_name: django_backend
     command: gunicorn backend.wsgi:application --bind 0.0.0.0:8000
@@ -15,7 +15,7 @@ services:
       - app_network
 
   frontend:
-    #image: spawnkid19xx/react_frontend
+    image: spawnkid19xx/react_frontend
     build: ./frontend
     container_name: react_frontend
     stdin_open: true
