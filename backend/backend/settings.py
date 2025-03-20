@@ -2,17 +2,21 @@ import os
 from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
+import stripe
+
+
 
 load_dotenv()
 
-DATABASE_URL = os.getenv("DATABASE_URL")
-SECRET_KEY = os.getenv("SECRET_KEY")
-PSQL_DB = os.getenv("PSQL_DB")
-PSQL_USER = os.getenv("PSQL_USER")
-PSQL_USER_PASSWORD = os.getenv("PSQL_USER_PASSWORD")
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+SECRET_KEY = os.getenv("SECRET_KEY")
+STRIPE_PUBLISHABLE_KEY = os.getenv("STRIPE_PUBLISHABLE_KEY")
+STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
+
+stripe.api_key = STRIPE_SECRET_KEY
+
+print('+++++++++++',stripe.api_key)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -94,7 +98,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }'''
-
+'''
 #render deploy settings
 DATABASES = {
     'default': {
@@ -105,9 +109,9 @@ DATABASES = {
         'HOST': os.getenv('PSQL_HOST'),
         'PORT': os.getenv('PSQL_HOST','5432'),
     }
-}
+}'''
 
-'''
+
 #local settings
 DATABASES = {
     'default': {
@@ -119,7 +123,7 @@ DATABASES = {
         'PORT': '5432', 
     }
 }
-print(DATABASES)'''
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
