@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'corsheaders',
     'api',
+    'product',
 ]
 
 # REST Framework configuration for JWT authentication

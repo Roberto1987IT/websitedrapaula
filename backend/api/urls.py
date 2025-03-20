@@ -1,5 +1,5 @@
 # api/urls.py
-from django.urls import path
+from django.urls import path, include
 from .views import RegisterView, UserProfileView
 from django.conf import settings
 from django.conf.urls.static import static
@@ -10,7 +10,7 @@ from .views import DocumentList, home, test_connection
 
 urlpatterns = [
     path('', home, name="home"),
-    path("test/", test_connection),
+    path("test/", test_connection),    
     path('register/', RegisterView.as_view(), name='register'),  # Registration endpoint
     path('user/profile/', UserProfileView.as_view(), name='user-profile'),  # Profile endpoint
     path('api/documents/', DocumentList.as_view(), name='document-list'),
