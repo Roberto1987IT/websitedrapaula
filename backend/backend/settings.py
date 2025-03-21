@@ -16,8 +16,6 @@ STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
 
 stripe.api_key = STRIPE_SECRET_KEY
 
-print('+++++++++++',stripe.api_key)
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 

@@ -24,10 +24,11 @@ import PrivacyPolicy from "./components/pages/PrivacyPolicy";
 import "./styles/global.css";
 import CookieConsent from "react-cookie-consent";
 import NossosValores from "./components/pages/NossosValores";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import ArtigosTeses from "./components/pages/ArtigosTeses";
 import MentorshipDetails from './components/pages/MentorshipDetails'; // Corrected path to the file
+import { log } from "console";
 
 // Placeholder for a protected Dashboard page (replace with your actual component if needed)
 const Dashboard = () => <div>Dashboard (Protected)</div>;
@@ -110,6 +111,9 @@ function App() {
         </Link>
       </CookieConsent>
       <Routes>
+        /*BORIS TEST API CONNECTION*/
+        <Route path="/api/test" element={<Test_connection_Front_back />} />
+        /*FINISH BORIS TEST API CONNECTION*/
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -149,16 +153,13 @@ function App() {
   );
 }
 
-/*export default App;
-
-
-
-
-/* test api requests */
-
+/* test api requests render
 const API_URL = process.env.REACT_APP_API_URL;
-
 console.log(API_URL)
+*/
+
+/* teste api local*/
+const API_URL = "http://localhost:5173/";
 
 function Test_connection_Front_back() {
   const [message, setMessage] = useState("Загрузка...");
@@ -178,8 +179,5 @@ function Test_connection_Front_back() {
   );
 }
 
-export default Test_connection_Front_back;
-
-function useState(arg0: string): [any, any] {
-  throw new Error("Function not implemented.");
-}
+/*export default App;*/
+export default App;
