@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'api',
     'product',
+    'payment',
 ]
 
 # REST Framework configuration for JWT authentication
