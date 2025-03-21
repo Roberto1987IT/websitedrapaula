@@ -33,11 +33,26 @@ def payment_test(request):
 
 def process(request):
     products = Product.objects.all()
+    items_to_pay = []
+    total = 0
 
     for product in products:
         if request.session.get(product.name):
-            print(request.session.get(product.name))
+            items_to_pay.append({
+                'price_data': {
+                    'currency': 'eur',
+                    'product_data': {
+                        'name': product.name,
+                    },
+                    'unit_amount': int(product.price * 100), #price in cents
+                },
+                'quantity': product.count,
+            })
+            total += product.price * product.count
     
+    
+    print('\tTotal price:', total)
+    print('\tItems to pay:', items_to_pay)
     success_url = request.build_absolute_uri(
                         reverse('payment:payment_completed')
     )
@@ -46,21 +61,12 @@ def process(request):
         reverse('payment:payment_canceled')
     )
 
+    
+
     session_data = {
         'payment_method_types': ['card'],
         'client_reference_id': '1',
-        'line_items': [
-                {
-                    'price_data': {
-                        'currency': 'eur',  # валюта
-                        'product_data': {
-                            'name': 'Sample Product',  # название товара
-                        },
-                        'unit_amount': 2000,  # сумма в центах (20.00 USD)
-                    },
-                    'quantity': 1,  # количество товара
-                },
-            ],
+        'line_items': items_to_pay,
         'mode': 'payment',
         'success_url': success_url,
         'cancel_url': cancel_url,
