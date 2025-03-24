@@ -11,8 +11,11 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
-STRIPE_PUBLISHABLE_KEY = os.getenv("STRIPE_PUBLISHABLE_KEY")
-STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
+STRIPE_PUBLISHABLE_KEY = os.getenv("STRIPE_LIVE_PUBLISHABLE_KEY")
+STRIPE_SECRET_KEY = os.getenv("STRIPE_LIVE_SECRET_KEY")
+
+STRIPE_TEST_SECRET_KEY = os.getenv("STRIPE_TEST_SECRET_KEY")
+STRIPE_TEST_PUBLISHABLE_KEY = os.getenv("STRIPE_TEST_PUBLISHABLE_KEY")
 
 stripe.api_key = STRIPE_SECRET_KEY
 
@@ -98,7 +101,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }'''
-'''
+
 #render deploy settings
 DATABASES = {
     'default': {
@@ -107,12 +110,12 @@ DATABASES = {
         'USER': os.getenv('PSQL_USER'),
         'PASSWORD': os.getenv('PSQL_USER_PASSWORD'),
         'HOST': os.getenv('PSQL_HOST'),
-        'PORT': os.getenv('PSQL_HOST','5432'),
+        'PORT': int(os.getenv('PSQL_PORT', 5432)),
     }
-}'''
+}
 
 
-#local settings
+'''#local settings
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -122,7 +125,7 @@ DATABASES = {
         'HOST': '127.0.0.1',          
         'PORT': '5432', 
     }
-}
+}'''
 
 
 MEDIA_URL = '/media/'
@@ -184,3 +187,9 @@ CORS_ALLOW_ALL_ORIGINS = True
 # 8. Consider adding logging and error reporting
 # 9. Use a production WSGI server like Gunicorn
 # Run `python manage.py check --deploy` to check for production readiness
+
+
+#TESTING STRIPE PAYMENT
+balance = stripe.Balance.retrieve()
+print('BALANCE STRIPE',balance)
+#TESTING STRIPE PAYMENT

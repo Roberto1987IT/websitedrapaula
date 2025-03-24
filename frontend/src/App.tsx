@@ -153,14 +153,14 @@ function App() {
   );
 }
 
-/* test api requests render
+/* test api requests render */
 const API_URL = process.env.REACT_APP_API_URL;
 console.log(API_URL)
-*/
 
-/* teste api local*/
+
+/* teste api local
 const API_URL = "http://localhost:5173/";
-
+*/
 function Test_connection_Front_back() {
   const [message, setMessage] = useState("Загрузка...");
 
