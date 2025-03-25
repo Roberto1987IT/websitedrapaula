@@ -13,11 +13,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 STRIPE_PUBLISHABLE_KEY = os.getenv("STRIPE_LIVE_PUBLISHABLE_KEY")
 STRIPE_SECRET_KEY = os.getenv("STRIPE_LIVE_SECRET_KEY")
-
 STRIPE_TEST_SECRET_KEY = os.getenv("STRIPE_TEST_SECRET_KEY")
 STRIPE_TEST_PUBLISHABLE_KEY = os.getenv("STRIPE_TEST_PUBLISHABLE_KEY")
 
-stripe.api_key = STRIPE_SECRET_KEY
+stripe.api_key = STRIPE_TEST_SECRET_KEY
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -100,7 +99,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}'''
+}
 
 #render deploy settings
 DATABASES = {
@@ -114,18 +113,19 @@ DATABASES = {
     }
 }
 
-
-'''#local settings
+'
+'''
+#local settings
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('PSQL_DB'),
+        'NAME': "psychology",
         'USER': os.getenv('PSQL_LOCAL_USER'),
         'PASSWORD': os.getenv('PSQL_LOCAL_USER_PASSWORD'),
         'HOST': '127.0.0.1',          
         'PORT': '5432', 
     }
-}'''
+}
 
 
 MEDIA_URL = '/media/'
@@ -176,6 +176,15 @@ CSRF_TRUSTED_ORIGINS = [
 
 CORS_ALLOW_ALL_ORIGINS = True
 
+#email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.getenv('EMAIL_SENDER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_SENDER_PASSWORD')
+STRIPE_ENDPOINT_SECRET = os.getenv('STRIPE_ENDPOINT_SECRET')
+
 # For production, you will need to make the following changes:
 # 1. Set DEBUG = False
 # 2. Set ALLOWED_HOSTS to your domain, e.g., ['yourdomain.com', 'www.yourdomain.com']
@@ -187,9 +196,3 @@ CORS_ALLOW_ALL_ORIGINS = True
 # 8. Consider adding logging and error reporting
 # 9. Use a production WSGI server like Gunicorn
 # Run `python manage.py check --deploy` to check for production readiness
-
-
-#TESTING STRIPE PAYMENT
-balance = stripe.Balance.retrieve()
-print('BALANCE STRIPE',balance)
-#TESTING STRIPE PAYMENT
