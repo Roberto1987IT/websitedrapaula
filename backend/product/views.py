@@ -32,8 +32,6 @@ def payment_cancel(request):
         return HttpResponse('Payment was canceled.') 
     return HttpResponse('Unexpected error occurred.')
 
-
-
 def create_subscription(request):
 
     # Assume customer and plan IDs are obtained from the request

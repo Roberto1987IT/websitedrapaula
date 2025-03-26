@@ -187,7 +187,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv('EMAIL_SENDER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_SENDER_PASSWORD')
-STRIPE_ENDPOINT_SECRET = os.getenv('STRIPE_ENDPOINT_SECRET')
+STRIPE_ENDPOINT_SECRET = os.getenv('STRIPE_ENDPOINT_SECRET_LIVE')
 
 # For production, you will need to make the following changes:
 # 1. Set DEBUG = False

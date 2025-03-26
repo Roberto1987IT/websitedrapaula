@@ -10,6 +10,7 @@ import json
 
 
 
+
 stripe.api_key = settings.STRIPE_LIVE_SECRET_KEY
 
 
@@ -18,26 +19,36 @@ def stripe_webhook(request):
     payload = request.body
     sig_header = request.headers.get("Stripe-Signature")
 
+    # Логирование входящего payload и подписи
+    print("++++Полученный payload:", payload)
+    print("----Полученная подпись:", sig_header)
+
     try:
         event = stripe.Webhook.construct_event(
             payload, sig_header, settings.STRIPE_ENDPOINT_SECRET
         )
-    except ValueError:
+    except ValueError as e:
+        print("Ошибка ValueError:", str(e))  # Логи о проблемах с парсингом
         return JsonResponse({"error": "Invalid payload"}, status=400)
-    except stripe.error.SignatureVerificationError:
+    except stripe.error.SignatureVerificationError as e:
+        print("Ошибка подписи Stripe:", str(e))  # Логи о неверной подписи
         return JsonResponse({"error": "Invalid signature"}, status=400)
 
     if event["type"] == "checkout.session.completed":
         session = event["data"]["object"]
-        customer_email = session.get("customer_email")
+        print('+++SESSION', session)
+        customer_details = session.get("customer_details")
+        customer_email = customer_details.get("email")
+        print('+++customer_email', customer_email)
         payment_intent_id = session.get("payment_intent")
+        print('+++payment_intent_id', payment_intent_id)
 
         if payment_intent_id:
             # Получаем список всех Charge, связанных с PaymentIntent
             charges = stripe.Charge.list(payment_intent=payment_intent_id).get("data", [])
-            print('4-------', charges[0])
+            print('Транзакции:', charges)  # Логируем транзакции
             if charges:
-                receipt_url = charges[0].get("receipt_url") 
+                receipt_url = charges[0].get("receipt_url")
                 if customer_email and receipt_url:
                     subject = "Your Receipt from Our Site"
                     message = (f"Thanks for using our site. You can get your receipt clicking on link: \n {receipt_url}")
@@ -46,7 +57,11 @@ def stripe_webhook(request):
                         message,
                         settings.EMAIL_HOST_USER,
                         [customer_email])
+    else:
+        print(f"Необработанный тип события: {event['type']}")  # Логируем события других типов
 
+
+    print("-------HELLO WORLD")
     return JsonResponse({"status": "success"}, status=200)
 
 def payment_test(request):
@@ -115,14 +130,14 @@ def process(request):
                     'product_data': {
                         'name': "product test payment",
                     },
-                    'unit_amount': 50,  # price in cents
+                    'unit_amount': 500,  # price in cents
                 },
                 'quantity': 1,
             },
         ],
         'mode': 'payment',
         'payment_intent_data': {
-            'setup_future_usage': 'off_session'  # Разрешает использование сохраненной карты
+            'setup_future_usage': 'off_session'
         },
         'success_url': success_url,
         'cancel_url': cancel_url,
