@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <form method="post"> <h2>{{ title_form }}</h2>
+
+        {% if error_msg %}
+            <h4 style="color: red;">{{ error_msg }}</h4>
+        {% endif %}
+    
+        {% csrf_token %}
+    
+        <!-- Display form errors -->
+        {% if form.errors %}
+            <div style="color: red;">
+                <ul>
+                    {% for field, errors in form.errors.items %}
+                        {% for error in errors %}
+                            <li>{{ field|title }}: {{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    
+        {{ form.as_p }}
+    
+        <!-- Submit Button -->
+        <div class="btn_search">
+            <button type="submit" class="btn btn-primary">{{ button_submit }}</button>
+        </div>
+    </form>
+    
+    <!-- Additional Links -->
+    {% if forget_password %}
+        <h3><a href="{% url 'users:password_reset' %}">Forgotten your password?</a></h3>
+    {% endif %}
+    
+    {% if change_password %}
+        <h3><a href="{% url 'users:password_change' %}">Change Password</a></h3>
+    {% endif %}
+    
+    {% if return_main %}
+        <h3><a href="{% url 'main:index' %}">Home</a></h3>
+    {% endif %}
+    
+
+    
+
+</body>
+</html>

@@ -12,11 +12,11 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 STRIPE_PUBLISHABLE_KEY = os.getenv("STRIPE_LIVE_PUBLISHABLE_KEY")
-STRIPE_SECRET_KEY = os.getenv("STRIPE_LIVE_SECRET_KEY")
+STRIPE_LIVE_SECRET_KEY = os.getenv("STRIPE_LIVE_SECRET_KEY")
 STRIPE_TEST_SECRET_KEY = os.getenv("STRIPE_TEST_SECRET_KEY")
 STRIPE_TEST_PUBLISHABLE_KEY = os.getenv("STRIPE_TEST_PUBLISHABLE_KEY")
 
-stripe.api_key = STRIPE_TEST_SECRET_KEY
+stripe.api_key = STRIPE_LIVE_SECRET_KEY
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
-    'api',
-    'product',
+    'users',
+    #'product',
     'payment',
 ]
 
@@ -100,7 +100,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+'''
 #render deploy settings
 DATABASES = {
     'default': {
@@ -113,8 +113,9 @@ DATABASES = {
     }
 }
 
-'
+
 '''
+
 #local settings
 DATABASES = {
     'default': {
@@ -126,6 +127,9 @@ DATABASES = {
         'PORT': '5432', 
     }
 }
+
+
+'''
 
 
 MEDIA_URL = '/media/'

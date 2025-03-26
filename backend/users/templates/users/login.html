@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+</head>
+<body>
+    
+    <form method="post">
+        {% csrf_token %}
+        <h2> {{ title_form }} </h2>
+        <div>
+            <label for="id_username">Email:</label>
+            <input type="text" name="email" id="id_email" required>
+        </div>
+        <div>
+            <label for="id_password">Password:</label>
+            <input type="password" name="password" id="id_password" required>
+        </div>
+        <button type="submit" href="{% url 'main:index' %}">{{ title }}</button>
+    </form>
+</body>
+</html>

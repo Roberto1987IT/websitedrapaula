@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.http import JsonResponse
 from django.urls import reverse
-from product.models import Product
+#from product.models import Product
 import stripe
 from django.conf import settings
 from django.core.mail import send_mail
@@ -10,7 +10,7 @@ import json
 
 
 
-stripe.api_key = settings.STRIPE_TEST_SECRET_KEY
+stripe.api_key = settings.STRIPE_LIVE_SECRET_KEY
 
 
 @csrf_exempt
@@ -27,8 +27,6 @@ def stripe_webhook(request):
     except stripe.error.SignatureVerificationError:
         return JsonResponse({"error": "Invalid signature"}, status=400)
 
-
-    # Обработка успешного платежа
     if event["type"] == "checkout.session.completed":
         session = event["data"]["object"]
         customer_email = session.get("customer_email")
@@ -37,23 +35,27 @@ def stripe_webhook(request):
         if payment_intent_id:
             # Получаем список всех Charge, связанных с PaymentIntent
             charges = stripe.Charge.list(payment_intent=payment_intent_id).get("data", [])
-
+            print('4-------', charges[0])
             if charges:
                 receipt_url = charges[0].get("receipt_url") 
                 if customer_email and receipt_url:
                     subject = "Your Receipt from Our Site"
-                    message = f"Thanks for using our site. You can get your receipt clicking on link: receipt_url"
-                    send_mail(subject, message, settings.EMAIL_HOST_USER, [customer_email])
+                    message = (f"Thanks for using our site. You can get your receipt clicking on link: \n {receipt_url}")
+                    send_mail(
+                        subject,
+                        message,
+                        settings.EMAIL_HOST_USER,
+                        [customer_email])
 
     return JsonResponse({"status": "success"}, status=200)
 
 def payment_test(request):
-    products = Product.objects.all()
+    #products = Product.objects.all()
     context = {
         #'products': products,
         "payment_text": 'Payment test page. Created by: <a href="https://www.linkedin.com/in/abhishek-kumar-7b2b3b1a4/">Boris</a>',
     }
-    
+    '''
     for product in products:
         print(product.id, product.name, product.price, product.description, product.count, 'Avaliable:' ,product.is_active)
         if not product.name in request.session:
@@ -65,13 +67,13 @@ def payment_test(request):
                 'product_count': product.count,
                 'product_is_active': product.is_active,
             }
-
+'''
     #return JsonResponse(dict(request.session))
     return redirect('payment:process')
 
 
 def process(request):
-    products = Product.objects.all()
+    #products = Product.objects.all()
     items_to_pay = []
 
     success_url = request.build_absolute_uri(reverse('payment:payment_completed'))
@@ -82,7 +84,9 @@ def process(request):
         name="Boris Isac",
     )
 
-    for product in products:
+    '''
+    
+        for product in products:
         if request.session.get(product.name):
             items_to_pay.append({
                 'price_data': {
@@ -96,7 +100,9 @@ def process(request):
             })
 
 
+    
     '''
+
     #teste real payment
     session_data = {
         'payment_method_types': ['card'],
@@ -121,8 +127,8 @@ def process(request):
         'success_url': success_url,
         'cancel_url': cancel_url,
     }
-    '''
 
+    '''
     session_data = {
         'payment_method_types': ['card'],
         'customer_email': customer.email,
@@ -131,7 +137,7 @@ def process(request):
         'success_url': success_url,
         'cancel_url': cancel_url,
     }
-
+'''
     session = stripe.checkout.Session.create(**session_data)
 
     new_invoice = stripe.Invoice.create(
@@ -141,7 +147,7 @@ def process(request):
         description='Invoice for payment',
     )
 
-    for product in products:
+    '''for product in products:
         price = stripe.Price.create(
             unit_amount=int(product.price * 100),
             currency='eur',
@@ -155,7 +161,7 @@ def process(request):
                 price=price,
                 quantity=product.count,
                 invoice=new_invoice.id,
-            )
+            )'''
 
     
     stripe.Invoice.finalize_invoice(new_invoice.id)

@@ -1,25 +1,20 @@
-import React from "react";
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import "../../styles/pages/mentorship.css";
+import "../../styles/pages/Mentorship.css";
 import mentorshipImage from "../../assets/courses/PaulaSerrano-102 1.png";
 
-const Mentorship = ({ id }: { id: string }) => {
-  const navigate = useNavigate(); // Initialize useNavigate
-
-  const handleSaibaMaisClick = () => {
-    navigate('/mentorship-details'); // Navigate to the MentorshipDetails page
-  };
-
+const Mentorship = () => {
   return (
-    <section id={id} className="mentorship">
+    <section className="mentorship">
       <div className="mentorship-container">
+        {/* Intro and Tag */}
         <div className="mentorship-intro-tag">
+          
           <span className="mentorship-tag">Mentoria</span>
           <p className="mentorship-intro">
             Descubra como a mentoria pode transformar sua carreira.
           </p>
         </div>
 
+        {/* Image */}
         <div className="mentorship-image">
           <img
             src={mentorshipImage}
@@ -30,6 +25,7 @@ const Mentorship = ({ id }: { id: string }) => {
           />
         </div>
 
+        {/* Remaining Content */}
         <div className="mentorship-main-content">
           <h2>Mentoria Profissional: O Que é e Quais São as Suas Vantagens?</h2>
           <p>
@@ -49,7 +45,7 @@ const Mentorship = ({ id }: { id: string }) => {
           <button
             className="mentorship-button"
             aria-label="Saiba mais sobre mentoria"
-            onClick={handleSaibaMaisClick} // Use the new function
+            onClick={() => alert("Saiba mais sobre mentoria!")}
           >
             Saiba mais
           </button>
