@@ -25,11 +25,10 @@ const Navigation = () => {
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const navigationLinks = [
-    { label: "Home", href: "/" },
+    { label: "Home", href: "/nossos-valores" },
     {
-      label: "Fundadora",
-      href: "#",
-      subItems: [{ label: "PSE", href: "/nossos-valores" }],
+      label: "Conheca a Paula Serrano",
+      href: "#about",
     },
     {
       label: "Formações",
@@ -40,7 +39,7 @@ const Navigation = () => {
         { label: "Imersoes", href: "#imersoes" },
       ],
     },
-    { label: "Mentorias", href: "#mentorias" },
+    
     {
       label: "Recursos",
       href: "#",
@@ -315,13 +314,7 @@ const Navigation = () => {
                     href={link.href}
                     onClick={(e) => {
                       e.preventDefault();
-                      if (link.label === "Home") {
-                        closeMobileMenu();
-                        window.location.href = "/";
-                        scrollToTop();
-                      } else {
-                        handleLinkClick(link.href);
-                      }
+                      handleLinkClick(link.href);
                     }}
                   >
                     {link.label}
