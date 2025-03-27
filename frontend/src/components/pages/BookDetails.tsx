@@ -155,6 +155,7 @@ const BookDetails = () => {
                 <div className="price-original">€{book.originalPrice.toFixed(2)}</div>
               )}
               {book.discount && (
+                
                 <div className="discount-text">
                   Poupa {book.discount}%
                 </div>
@@ -245,6 +246,10 @@ const BookDetails = () => {
               >
                 Comprar Agora
               </button>
+
+              
+
+
             </div>
           </div>
         </div>

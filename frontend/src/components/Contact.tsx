@@ -106,14 +106,14 @@ const Contact = () => {
 
             <div className="info-section">
               <h2>Telefone</h2>
-              <p className="phone-number">(+351) 965 430 026</p>
+              <p className="phone-number">(+351) 964 309 035</p>
               <p className="phone-note">Chamada para rede móvel nacional</p>
             </div>
 
             <div className="info-section">
-              <h2>Endereço</h2>
-              <p>Rua Arthur Águedo Miranda, Bloco 2, Loja A</p>
-              <p>Loja C - 000-000, Faro</p>
+              <h2>Email</h2>
+              <p>paulaserranoeducacao@gmail.com</p>
+              
             </div>
           </div>
         </div>

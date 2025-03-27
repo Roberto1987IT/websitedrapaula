@@ -54,7 +54,7 @@ const Mentorship = ({ id }: { id: string }) => {
             Saiba mais
           </button>
           <p className="mentorship-testimonial">
-            "A mentoria me ajudou a crescer rapidamente na minha carreira." - João Silva
+            
           </p>
         </div>
       </div>

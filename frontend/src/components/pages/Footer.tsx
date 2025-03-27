@@ -20,11 +20,11 @@ const Footer = () => {
                 <span className="footer-label">Horário:</span> Segunda - Sexta<br />9:00 - 18:00
               </p>
               <p className="footer-text">
-                <span className="footer-label">Telefone:</span> (+351) 965 430 026<br />
+                <span className="footer-label">Telefone:</span> (+351) 964309035<br />
                 <span className="small-text">(Chamada para rede móvel nacional)</span>
               </p>
               <p className="footer-text">
-                <span className="footer-label">Morada:</span> Rua Arthur Águedo Miranda, Bloco 2, Loja A,<br />Loja C - 000-000, Faro
+                <span className="footer-label">Morada:</span> Praceta Agostinho Ferreira Chaves, n: 5, quinto esquerdo<br /> - 8005-328, Faro
               </p>
             </div>
           </div>

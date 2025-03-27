@@ -137,6 +137,43 @@ body {
   pointer-events: none;
 }
 
+.description-structure {
+  white-space: normal;
+}
+
+.description-subtitle {
+  color: var(--green-dark);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  border-left: 4px solid var(--green-dark);
+  padding-left: 10px;
+}
+
+.content-list {
+  margin-left: 1rem;
+}
+
+.content-list ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.content-list ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.content-list ul li:before {
+  content: '•';
+  color: var(--green-color);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
 .expand-button {
   margin-top: 0.75rem;
   display: flex;
@@ -325,6 +362,32 @@ body {
   fill: var(--red-color);
 }
 
+.contact-info {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: rgba(30, 136, 229, 0.05);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  border-left: 3px solid var(--primary-color);
+  text-align: left;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.email-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.email-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+
 .detalhes-adicionais {
   background: #ffffff;
   border-radius: var(--border-radius);
@@ -365,13 +428,10 @@ body {
   font-size: 1rem;
 }
 
-/* Remove the ::before pseudo-element that creates the grey checkmark */
+
 .detalhes-adicionais li::before {
   content: none;
-  
 }
-
-
 
 .skeleton {
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
@@ -540,7 +600,6 @@ body {
 
   .purchase-card {
     padding: 1.5rem;
-   
   }
 
   .purchase-card .price::before {

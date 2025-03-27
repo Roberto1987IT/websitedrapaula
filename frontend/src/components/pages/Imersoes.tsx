@@ -38,8 +38,8 @@ const Imersoes = ({ id }: { id: string }) => {
           <span className="imersoes-tag">Imersões</span>
           <h2>Aprenda na Prática!</h2>
           <p>
-            Agende a sua imersão individual ou em grupo e aprimore as suas
-            habilidades com experiência clínica.
+            Agende a sua imersão individual ou em grupo e desenvolva as suas
+            competencias durante a experiência clínica.
           </p>
           <button className="imersoes-button" onClick={handleSaberMaisClick}>
             Saber Mais

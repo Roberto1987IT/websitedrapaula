@@ -44,7 +44,7 @@ const Books = ({ id }: { id: string }) => {
   const filters = [
     { id: "all", label: "Todos" },
     { id: "ebook", label: "eBooks" },
-    { id: "impresso", label: "Impressos" },
+    { id: "impresso", label: "Livros" },
   ];
 
   useEffect(() => {
@@ -69,7 +69,7 @@ const Books = ({ id }: { id: string }) => {
         <div className="books-header">
           <div className="title-container">
             <h2 className="section-title">Livros e eBooks</h2>
-            <p className="section-subtitle">Aproveite agora – descontos exclusivos por tempo limitado</p>
+            <p className="section-subtitle">Selecione os seus preferidos</p>
           </div>
           <div className="search-container">
             <div className="search-wrapper">
@@ -127,7 +127,7 @@ const Books = ({ id }: { id: string }) => {
                       </div>
                     )}
                   </div>
-                  {book.discount && (
+                  {book.discount && book.category !== "ebook" && (
                     <div className="book-discount">
                       <span>{book.discount}%</span>
                     </div>
@@ -155,16 +155,18 @@ const Books = ({ id }: { id: string }) => {
                         </span>
                       )}
                     </div>
-                    <div className="book-price-container">
-                      {book.discount && book.originalPrice && (
-                        <span className="book-original-price">
-                          €{book.originalPrice.toFixed(2).replace('.', ',')}
+                    {book.category !== "ebook" && (
+                      <div className="book-price-container">
+                        {book.discount && book.originalPrice && (
+                          <span className="book-original-price">
+                            €{book.originalPrice.toFixed(2).replace('.', ',')}
+                          </span>
+                        )}
+                        <span className="book-price">
+                          €{book.price.toFixed(2).replace('.', ',')}
                         </span>
-                      )}
-                      <span className="book-price">
-                        €{book.price.toFixed(2).replace('.', ',')}
-                      </span>
-                    </div>
+                      </div>
+                    )}
                   </div>
                   <div className={`book-overlay ${hoveredBook === book.id ? "active" : ""}`}>
                     {book.category === "ebook" ? (

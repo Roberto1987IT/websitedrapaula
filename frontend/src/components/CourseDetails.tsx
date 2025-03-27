@@ -4,7 +4,7 @@ import { Button } from "../components/ui/button";
 import { ChevronDown, ChevronUp, Check } from "lucide-react";
 import "../styles/pages/courseDetails.css";
 
-// Import directly from the same file path
+// Fixed import path
 import { courses } from "../courseData";
 
 const CourseDetails = () => {
@@ -70,10 +70,201 @@ const CourseDetails = () => {
             <h2>Descrição do Curso</h2>
             <div className="description-container">
               <div className={`description-text ${!isDescriptionExpanded ? 'collapsed' : ''}`}>
-                {course.description}
+                <div className="description-structure">
+                  {course.title?.includes("Brincar e TO") && (
+                    <>
+                      <h3 className="description-subtitle">Sobre o Curso</h3>
+                      <p>Formação 4 dias presenciais com a Terapeuta Ocupacional Paula Serrano.</p>
+                      
+                      <h3 className="description-subtitle">Enquadramento</h3>
+                      <p>Os terapeutas ocupacionais usam o brincar na prática tanto para avaliação quanto para intervenção, mas o uso específico do brincar na terapia ocupacional pediátrica varia. Na literatura da terapia ocupacional sobre o brincar são referidas preocupações relativamente à forma como os terapeutas ocupacionais abordam o papel do brincar na sua intervenção.</p>
+                      <p>Vários artigos sugerem restrições e falta de ênfase à abordagem dirigida ao brincar por terapeutas ocupacionais pediátricos. Essas restrições incluem atitudes de desvalorização em relação ao brincar, enquanto se dá maior ênfase no desenvolvimento de competências não relacionadas ao brincar (ex. competências motoras, sociais), falha na avaliação do brincar e dificuldade na definição de um plano de intervenção dirigido à ocupação do brincar.</p>
+                      <p>No entanto a avaliação do brincar e a intervenção dirigida à ocupação do brincar é vital para o desenvolvimento infantil, para a saúde e respeito pela infância.</p>
+                      
+                      <h3 className="description-subtitle">Conteúdos Programáticos</h3>
+                      <div className="content-list">
+                        <ul>
+                          <li>Definindo o brincar</li>
+                          <li>Revisão das diferentes teorias do brincar</li>
+                          <li>A evolução do brincar na terapia ocupacional</li>
+                          <li>Quadros de referência do brincar na terapia ocupacional</li>
+                          <li>A sequência de desenvolvimento do brincar ao longo da infância</li>
+                          <li>Desenvolvimento das competências do brincar com o corpo, com objetos e simbólico</li>
+                        </ul>
+                      </div>
+                      
+                      <h3 className="description-subtitle">Avaliação do brincar</h3>
+                      <div className="content-list">
+                        <ul>
+                          <li>Entrevista</li>
+                          <li>Questionários: The Play History (Takata)</li>
+                          <li>Organização da observação em contexto natural</li>
+                          <li>Instrumentos: Revised Knox Preschool Play scale (Knox); Test of Playfulness (TOP) (Bundy)</li>
+                          <li>Definição dos objetivos terapêuticos</li>
+                        </ul>
+                      </div>
+                      
+                      <h3 className="description-subtitle">Promover o brincar</h3>
+                      <div className="content-list">
+                        <ul>
+                          <li>O papel do Terapeuta Ocupacional</li>
+                          <li>A intervenção terapêutica</li>
+                          <li>Intervenção no contexto da criança</li>
+                        </ul>
+                      </div>
+                      
+                      <h3 className="description-subtitle">Metodologia</h3>
+                      <p>Exposição teórica discussão de grupos e exercícios práticos</p>
+                    </>
+                  )}
+                  
+                  {course.title?.includes("Raciocinio clinico e intervencao") && (
+                    <>
+                      <h3 className="description-subtitle">Sobre o Curso</h3>
+                      <p>Duração - 24 horas com a Terapeuta Ocupacional Paula Serrano.</p>
+                      
+                      <h3 className="description-subtitle">Área de Intervenção</h3>
+                      <p>Integração Sensorial</p>
+                      
+                      <h3 className="description-subtitle">Destinatários</h3>
+                      <p>Terapeutas ocupacionais com certificação em Integração Sensorial</p>
+                      
+                      <h3 className="description-subtitle">Objetivos Gerais</h3>
+                      <div className="content-list">
+                        <ul>
+                          <li>Refletir sobre o desenvolvimento nos primeiros anos de vida e os fatores que o condicionam</li>
+                          <li>Analisar o contributo das teorias de desenvolvimento e das neurociências para a nossa compreensão do desenvolvimento infantil</li>
+                          <li>Analisar a evidencia científica atual sobre os sistemas sensoriais que suportam a abordagem da integração sensorial de Ayres</li>
+                          <li>Explorar a importância da avaliação de integração sensorial, as metodologias e os diversos instrumentos disponíveis</li>
+                          <li>Praticar o raciocínio clínico interpretando os dados da avaliação</li>
+                          <li>Elaborar objetivos terapêuticos com base na avaliação</li>
+                          <li>Planear a intervenção</li>
+                          <li>Analisar a intervenção terapêutica usando a abordagem de integração sensorial de Ayres</li>
+                        </ul>
+                      </div>
+                      
+                      <h3 className="description-subtitle">Conteúdos Programáticos</h3>
+                      <div className="content-list">
+                        <ul>
+                          <li>O desenvolvimento infantil e os fatores de suporte</li>
+                          <li>A integração sensorial de Ayres e a evidencia científica do impacto dos sistemas sensoriais no desenvolvimento</li>
+                          <li>A autorregulação e a disfunção sensorial</li>
+                          <li>Praxis e o conceito de Affordance</li>
+                          <li>Desenvolvimento da praxis e os sinais precoces de dispraxia</li>
+                          <li>Classificação das perturbações de processamento sensorial na primeira infância</li>
+                          <li>Instrumentos de avaliação da disfunção de integração sensorial</li>
+                          <li>Analise de uma escala de desenvolvimento sob a perspetiva da integração sensorial</li>
+                          <li>A organização da observação não estruturada e estruturada do processamento sensorial</li>
+                          <li>Análise dos dados da avaliação e Raciocínio clínico</li>
+                          <li>Planeamento da intervenção: Objetivos, organização da sessão</li>
+                          <li>Fidelidade à integração sensorial de Ayres na prática clínica</li>
+                        </ul>
+                      </div>
+                      
+                      <h3 className="description-subtitle">Metodologia</h3>
+                      <p>As sessões de trabalho serão presenciais, teóricas e práticas com analise de vídeos de casos clínicos.</p>
+                    </>
+                  )}
+                  
+                  {course.title?.includes("Integracao Sensorial: Avaliacao") && (
+                    <>
+                      <h3 className="description-subtitle">Sobre o Curso</h3>
+                      <p>Formação de 24 horas com Paula Serrano – Mestre em Terapia Ocupacional- área de especialização Integração Sensorial.</p>
+                      
+                      <h3 className="description-subtitle">Área de Intervenção</h3>
+                      <p>Integração Sensorial</p>
+                      
+                      <h3 className="description-subtitle">Destinatários</h3>
+                      <p>Terapeutas ocupacionais com formação pós graduada em Integração Sensorial</p>
+                      
+                      <h3 className="description-subtitle">Objetivos Gerais</h3>
+                      <div className="content-list">
+                        <ul>
+                          <li>Analisar a disfunção de integração sensorial e a relação com os motivos de referenciação</li>
+                          <li>Explorar a importância da avaliação de integração sensorial, as metodologias e os diversos instrumentos disponíveis</li>
+                          <li>Praticar o raciocínio clínico interpretando os dados da avaliação</li>
+                          <li>Definir objetivos de desempenho ocupacional e objetivos de integração sensorial</li>
+                          <li>Analisar vários formatos de relatório que documentem as dificuldades de integração sensorial e a relação com o desempenho ocupacional</li>
+                        </ul>
+                      </div>
+                      
+                      <h3 className="description-subtitle">Conteúdos Programáticos</h3>
+                      <div className="content-list">
+                        <ul>
+                          <li>Disfunção da Integração Sensorial</li>
+                          <li>Motivos de referenciação que levam à avaliação em integração sensorial</li>
+                          <li>O processo de avaliação em integração sensorial</li>
+                          <li>Metodologias de avaliação</li>
+                          <li>Aplicação, e análise da História Sensorial</li>
+                          <li>As observações não estruturadas e as observações estruturadas</li>
+                          <li>Análise e interpretação de instrumentos de avaliação – SPM, SPMp, perfil sensorial Dunn</li>
+                          <li>Interpretação de uma escala de desenvolvimento à luz da integração sensorial</li>
+                          <li>Raciocínio clínico</li>
+                          <li>Definição de objetivos de desempenho ocupacional e objetivos de integração sensorial</li>
+                          <li>A elaboração do relatório</li>
+                        </ul>
+                      </div>
+                      
+                      <h3 className="description-subtitle">Metodologia</h3>
+                      <p>As sessões de trabalho serão teóricas e práticas com análise de vídeos.</p>
+                    </>
+                  )}
+                  
+                  {course.title?.includes("Avaliacao e Raciocinio clinico na primeira infancia") && (
+                    <>
+                      <h3 className="description-subtitle">Sobre o Curso</h3>
+                      <p>Duração – 21 horas com a Terapeuta Ocupacional Paula Serrano.</p>
+                      
+                      <h3 className="description-subtitle">Área de Intervenção</h3>
+                      <p>Integração Sensorial e Brincar</p>
+                      
+                      <h3 className="description-subtitle">Destinatários</h3>
+                      <p>Terapeutas ocupacionais com formação pós graduada em Integração Sensorial</p>
+                      
+                      <h3 className="description-subtitle">Objetivos Gerais</h3>
+                      <div className="content-list">
+                        <ul>
+                          <li>Analisar a investigação e as etapas do brincar com o corpo, com os objetos e social/emocional na primeira infância</li>
+                          <li>Analisar os elementos da ludicidade (playfulness) na primeira Infância</li>
+                          <li>Analisar a importância da integração sensorial e a classificação das perturbações regulatórias do processamento sensorial na primeira infância</li>
+                          <li>Explorar a importância da avaliação de integração sensorial, e do brincar, as metodologias e os diversos instrumentos disponíveis</li>
+                          <li>Praticar o raciocínio clínico interpretando os dados da avaliação</li>
+                          <li>Elaborar objetivos terapêuticos com base na avaliação</li>
+                        </ul>
+                      </div>
+                      
+                      <h3 className="description-subtitle">Conteúdos Programáticos</h3>
+                      <div className="content-list">
+                        <ul>
+                          <li>O Brincar na Terapia Ocupacional</li>
+                          <li>O desenvolvimento do brincar dos 0 aos 3 anos: as etapas e os sinais de alarme do brincar com o corpo, com os objetos e simbólico</li>
+                          <li>O desenvolvimento do comportamento lúdico</li>
+                          <li>A avaliação do Brincar</li>
+                          <li>Instrumentos de avaliação do brincar</li>
+                          <li>A Integração Sensorial na primeira infância e a disfunção de integração sensorial</li>
+                          <li>Classificação das perturbações de processamento sensorial na primeira infância</li>
+                          <li>As Neurociências, o brincar e a integração sensorial</li>
+                          <li>Instrumentos de avaliação de integração sensorial dos 0 aos 3 anos</li>
+                          <li>Raciocínio clínico</li>
+                          <li>Avaliação, raciocínio clínico e o planeamento da intervenção</li>
+                        </ul>
+                      </div>
+                      
+                      <h3 className="description-subtitle">Metodologia</h3>
+                      <p>As sessões de trabalho serão on line, teóricas e com analise de vídeos de casos clínicos.</p>
+                    </>
+                  )}
+                  
+                  {!course.title?.includes("Brincar e TO") && 
+                   !course.title?.includes("Raciocinio clinico e intervencao") && 
+                   !course.title?.includes("Integracao Sensorial: Avaliacao") && 
+                   !course.title?.includes("Avaliacao e Raciocinio clinico na primeira infancia") && (
+                    <p>{course.description}</p>
+                  )}
+                </div>
               </div>
               <Button 
-                variant="primary" 
+                variant="text" 
                 size="small" 
                 className="expand-button"
                 onClick={toggleDescription}
@@ -140,9 +331,10 @@ const CourseDetails = () => {
                 {isInWishlist ? "Adicionado aos Favoritos" : "Adicionar aos Favoritos"}
               </button>
             </div>
+            <div className="contact-info">
+            Para esclarecimento de qualquer duvida, contate a Paula serrano por email: <a href="mailto:paulaserranoeducacao@gmail.com" className="email-link">paulaserranoeducacao@gmail.com</a>
+            </div>
           </div>
-
-
           
           <div className="detalhes-adicionais">
             <h2>O que você vai aprender</h2>

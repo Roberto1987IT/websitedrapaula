@@ -83,9 +83,8 @@ const ContactForm = () => {
 
           <ul className="cf-contact-benefits">
             <li>Solicitar orçamentos personalizados</li>
-            <li>Obter informações técnicas sobre nossos produtos</li>
-            <li>Reportar qualquer questão sobre entregas</li>
-            <li>Dar sugestões para melhorarmos nossos serviços</li>
+            <li>Obter informações técnicas sobre os nossos produtos</li>
+            <li>Dar sugestões para melhorarmos os nossos serviços</li>
           </ul>
 
           <p>
@@ -143,7 +142,6 @@ const ContactForm = () => {
                 <option value="">Selecione um assunto</option>
                 <option value="duvida">Dúvida sobre produtos</option>
                 <option value="orcamento">Solicitar orçamento</option>
-                <option value="entrega">Informação sobre entrega</option>
                 <option value="feedback">Feedback</option>
                 <option value="outro">Outro assunto</option>
               </select>

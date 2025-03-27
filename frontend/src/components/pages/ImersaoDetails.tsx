@@ -38,7 +38,7 @@ const ImersaoDetails = () => {
         <div className="imersao-hero-content">
           <span className="badge">Programa de Imersão</span>
           <h1>Experiência Clínica Intensiva</h1>
-          <p>Eleve sua prática profissional com nosso programa de imersão especializado</p>
+          <p>Eleve sua prática profissional com o nosso programa de imersão especializado</p>
         </div>
       </section>
 
@@ -53,11 +53,11 @@ const ImersaoDetails = () => {
             <div className="overview-info">
               <h2>Visão Geral</h2>
               <p>
-                Nosso programa de imersão oferece uma experiência prática intensiva para 
-                profissionais e estudantes que desejam aprimorar suas habilidades clínicas 
+                O nosso programa de imersão oferece uma experiência prática intensiva para 
+                profissionais e estudantes que desejam melhorar as suas competencias clínicas 
                 em um ambiente real e supervisionado. Durante o período de imersão, você terá 
                 a oportunidade de aplicar conhecimentos teóricos em situações práticas, recebendo 
-                feedback direto de mentores experientes.
+                feedback direto de supervisores experientes.
               </p>
               
               <div className="highlights">
@@ -67,7 +67,7 @@ const ImersaoDetails = () => {
                   </div>
                   <div className="highlight-content">
                     <h4>Experiência Prática</h4>
-                    <p>Aprenda fazendo, com casos reais e situações clínicas autênticas</p>
+                    <p>Aprenda na pratica, com casos reais e situações clínicas autênticas</p>
                   </div>
                 </div>
                 
@@ -122,7 +122,7 @@ const ImersaoDetails = () => {
                 <li>Feedback individual detalhado</li>
                 <li>Horários flexíveis</li>
               </ul>
-              <button className="imersao-details-cta-button">Agendar Consulta</button>
+              <button className="imersao-details-cta-button">Saiba mais</button>
             </div>
             
             <div className="format-card">
@@ -130,7 +130,7 @@ const ImersaoDetails = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
               </div>
               <h3>Imersão em Grupo</h3>
-              <p>Experiência colaborativa com compartilhamento de conhecimentos</p>
+              <p>Experiência colaborativa com partilha de conhecimentos</p>
               <ul>
                 <li>Duração: 2 a 7 dias</li>
                 <li>Grupos de 3 a 8 pessoas</li>
@@ -173,14 +173,14 @@ const ImersaoDetails = () => {
               <div className="step-number">1</div>
               <div className="step-content">
                 <h3>Avaliação Inicial</h3>
-                <p>Realizamos uma entrevista para entender suas necessidades e objetivos específicos. Esta etapa nos permite personalizar a experiência de imersão para maximizar seu aprendizado.</p>
+                <p>Realizamos uma entrevista para entender as suas necessidades e objetivos específicos. Esta etapa permite-nos personalizar a sua experiência de imersão e maximizar a aprendizagem.</p>
               </div>
             </div>
             
             <div className="how-it-works-step">
               <div className="step-number">2</div>
               <div className="step-content">
-                <h3>Planejamento Personalizado</h3>
+                <h3>Planeamento Personalizado</h3>
                 <p>Desenvolvemos um plano de imersão detalhado, incluindo cronograma, tópicos a serem abordados e metodologias que serão aplicadas durante o programa.</p>
               </div>
             </div>
@@ -189,23 +189,23 @@ const ImersaoDetails = () => {
               <div className="step-number">3</div>
               <div className="step-content">
                 <h3>Experiência de Imersão</h3>
-                <p>Você participa das atividades programadas, alternando entre aprendizado teórico e aplicação prática, sempre com acompanhamento dos nossos especialistas.</p>
+                <p>Você participa das atividades programadas, alternando entre aprendizagem teórica e aplicação prática, sempre com o acompanhamento dos nossos supervisores.</p>
               </div>
             </div>
             
             <div className="how-it-works-step">
               <div className="step-number">4</div>
               <div className="step-content">
-                <h3>Feedback e Aprimoramento</h3>
-                <p>Durante toda a imersão, você recebe feedback contínuo sobre seu desempenho, permitindo ajustes e melhorias em tempo real.</p>
+                <h3>Feedback </h3>
+                <p>Durante toda a imersão, você recebe feedback contínuo sobre seu desempenho, permitindo o seu crescimento profissional em tempo real.</p>
               </div>
             </div>
             
             <div className="how-it-works-step">
               <div className="step-number">5</div>
               <div className="step-content">
-                <h3>Certificação e Acompanhamento</h3>
-                <p>Ao final do programa, você recebe sua certificação e um plano de desenvolvimento contínuo para aplicar os conhecimentos adquiridos.</p>
+                <h3>Certificação</h3>
+                <p>Ao final do programa, você recebe a sua certificação.</p>
               </div>
             </div>
           </div>
@@ -285,21 +285,21 @@ const ImersaoDetails = () => {
               
               <ol className="next-steps-list">
                 <li>
-                  <strong>Entre em contato</strong> - Agende uma consulta inicial com nossa equipe através do formulário de contato ou telefone.
+                  <strong>Entre em contato</strong> - Agende uma consulta inicial com a nossa equipa através do formulário de contato ou telefone.
                 </li>
                 <li>
-                  <strong>Avaliação de perfil</strong> - Realizamos uma breve entrevista para entender suas necessidades e objetivos.
+                  <strong>Avaliação de perfil</strong> - Realizamos uma breve entrevista para entender as suas necessidades e objetivos.
                 </li>
                 <li>
                   <strong>Proposta personalizada</strong> - Receba uma proposta detalhada com opções de programas, datas e investimento.
                 </li>
                 <li>
-                  <strong>Confirme sua participação</strong> - Efetue a reserva e prepare-se para uma experiência transformadora.
+                  <strong>Confirme a sua participação</strong> - Efetue a reserva e prepare-se para uma experiência transformadora.
                 </li>
               </ol>
               
               <div className="next-steps-cta">
-                <button className="imersao-details-primary-button">Agendar Consulta Inicial</button>
+                <button className="imersao-details-primary-button">Saber mais</button>
               </div>
             </div>
           </div>
@@ -314,10 +314,10 @@ const ImersaoDetails = () => {
       >
         <div className="container">
           <div className="cta-content">
-            <h2>Pronto para Elevar Sua Experiência Profissional?</h2>
+            <h2>Pronto para Elevar a Sua Experiência Profissional?</h2>
             <p>Entre em contato para mais informações sobre nossos programas de imersão e agende uma consulta com nossos especialistas.</p>
             <div className="cta-buttons">
-              <button className="imersao-details-primary-button">Agendar Consulta</button>
+              
               <button className="imersao-details-secondary-button">Solicitar Informações</button>
             </div>
           </div>

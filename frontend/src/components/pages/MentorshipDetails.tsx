@@ -23,11 +23,11 @@ const MentorshipDetails = () => {
     },
     {
       question: "Qual é a duração da mentoria?",
-      answer: "A mentoria tem duração de 3 meses, com encontros semanais de 1 hora. Este período foi estruturado para permitir um acompanhamento efetivo do seu progresso e ajustes conforme necessário."
+      answer: "A duração da mentoria sera definida apos a avaliacao das necessidades."
     },
     {
       question: "Quais são os pré-requisitos para participar?",
-      answer: "Não existem pré-requisitos formais, apenas o compromisso com seu desenvolvimento e disponibilidade para os encontros semanais e atividades sugeridas entre as sessões."
+      answer: "Não existem pré-requisitos formais, apenas o compromisso com seu desenvolvimento e disponibilidade para os encontros que forem agendados."
     },
     {
       question: "Como são realizados os encontros?",
@@ -70,8 +70,8 @@ const MentorshipDetails = () => {
               <li>Visão personalizada sobre seu desenvolvimento profissional</li>
               <li>Feedback sincero e construtivo sobre seus pontos fortes e áreas de melhoria</li>
               <li>Acesso a redes profissionais e oportunidades exclusivas</li>
-              <li>Desenvolvimento acelerado de competências técnicas e comportamentais</li>
-              <li>Acompanhamento de progresso com métricas claras</li>
+              <li>Desenvolvimento acelerado de competências técnicas</li>
+              
             </ul>
           </div>
 
@@ -90,8 +90,8 @@ const MentorshipDetails = () => {
       </div>
 
       <div className="mentorship-purchase">
-        <div className="mentorship-price">1.499,90</div>
-        <p className="mentorship-price-info">Investimento único para o programa completo de 3 meses</p>
+        <div className="mentorship-price">499,90</div>
+        <p className="mentorship-price-info">Investimento único para o programa completo</p>
         
         <div className="mentorship-purchase-buttons">
           <button className="mentorship-buy-button">
@@ -100,7 +100,7 @@ const MentorshipDetails = () => {
           </button>
           <button className="mentorship-contact-button">
             <Phone size={20} />
-            Falar com um consultor
+            Informacao
           </button>
         </div>
       </div>

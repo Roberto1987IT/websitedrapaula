@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/pages/lancamentos.css";
 import modulo1 from "../../assets/lancamentos/modulo1.jpg";
-import modulo2 from "../../assets/courses/curso2.jpg";
+import modulo2 from "../../assets/courses/Brincar e terapia ocupacional - da teoria à prática.jpg";
 import modulo3 from "../../assets/lancamentos/modulo3.jpg";
-import modulo4 from "../../assets/courses/curso5.jpg";
+import modulo4 from "../../assets/courses/Integração Sensorial - avaliação e raciocinio clinico.jpg";
 
 const lancamentos = [
   { image: modulo3, title: "Módulo 3: Brincar da teoria à prática em terapia ocupacional." },
-  { image: modulo2, title: "Conteudos Programaticos Brincar e TO Teoria e Pratica." },
+  { image: modulo2, title: " Brincar e TO Teoria e Pratica." },
   { image: modulo1, title: "Módulo 1: Brincar da teoria à prática em terapia ocupacional." },
   { image: modulo4, title: "Integracao Sensorial: Avaliacao e Raciocínio Clinico." },
 ];
