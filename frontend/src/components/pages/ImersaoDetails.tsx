@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import Footer from "./Footer";
@@ -26,6 +25,16 @@ const ImersaoDetails = () => {
     }
   };
 
+  // Gallery images
+  const galleryImages = [
+    "/src/assets/courses/a-linguagem-e-o-brincar-em-condicoes-neurodiverso.png",
+    "/src/assets/imersoes/space2.jpg",
+    "/src/assets/imersoes/space3.jpg",
+    "/src/assets/imersoes/space4.jpg",
+    "/src/assets/imersoes/space5.jpg",
+    "/src/assets/imersoes/space6.jpg",
+  ];
+
   return (
     <motion.div
       className="imersao-details-container"
@@ -49,52 +58,47 @@ const ImersaoDetails = () => {
         animate="animate"
       >
         <div className="container">
-          <div className="overview-grid">
-            <div className="overview-info">
-              <h2>Visão Geral</h2>
-              <p>
-                O nosso programa de imersão oferece uma experiência prática intensiva para 
-                profissionais e estudantes que desejam melhorar as suas competencias clínicas 
-                em um ambiente real e supervisionado. Durante o período de imersão, você terá 
-                a oportunidade de aplicar conhecimentos teóricos em situações práticas, recebendo 
-                feedback direto de supervisores experientes.
-              </p>
-              
-              <div className="highlights">
-                <div className="highlight-item">
-                  <div className="highlight-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                  </div>
-                  <div className="highlight-content">
-                    <h4>Experiência Prática</h4>
-                    <p>Aprenda na pratica, com casos reais e situações clínicas autênticas</p>
-                  </div>
-                </div>
-                
-                <div className="highlight-item">
-                  <div className="highlight-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                  </div>
-                  <div className="highlight-content">
-                    <h4>Mentoria Individualizada</h4>
-                    <p>Supervisão direta com profissionais experientes e feedback contínuo</p>
-                  </div>
-                </div>
-                
-                <div className="highlight-item">
-                  <div className="highlight-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                  </div>
-                  <div className="highlight-content">
-                    <h4>Certificação Diferenciada</h4>
-                    <p>Obtenha um certificado que comprova sua experiência prática intensiva</p>
-                  </div>
-                </div>
+          <h2 className="overview-title">Visão Geral</h2>
+          
+          <div className="overview-text">
+            <p>
+              O nosso programa de imersão oferece uma experiência prática intensiva para 
+              profissionais e estudantes que desejam melhorar as suas competencias clínicas 
+              em um ambiente real e supervisionado. Durante o período de imersão, você terá 
+              a oportunidade de aplicar conhecimentos teóricos em situações práticas, recebendo 
+              feedback direto de supervisores experientes.
+            </p>
+          </div>
+          
+          <div className="highlights-container">
+            <div className="highlight-item">
+              <div className="highlight-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </div>
+              <div className="highlight-content">
+                <h4>Experiência Prática</h4>
+                <p>Aprenda na pratica, com casos reais e situações clínicas autênticas</p>
               </div>
             </div>
             
-            <div className="overview-image">
-              
+            <div className="highlight-item">
+              <div className="highlight-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <div className="highlight-content">
+                <h4>Mentoria Individualizada</h4>
+                <p>Supervisão direta com profissionais experientes e feedback contínuo</p>
+              </div>
+            </div>
+            
+            <div className="highlight-item">
+              <div className="highlight-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              </div>
+              <div className="highlight-content">
+                <h4>Certificação Diferenciada</h4>
+                <p>Obtenha um certificado que comprova sua experiência prática intensiva</p>
+              </div>
             </div>
           </div>
         </div>
@@ -158,7 +162,7 @@ const ImersaoDetails = () => {
         </div>
       </motion.section>
       
-      {/* New section: Como Funciona (How It Works) */}
+      {/* How It Works section */}
       <motion.section 
         className="imersao-how-it-works"
         variants={contentVariants}
@@ -211,63 +215,39 @@ const ImersaoDetails = () => {
           </div>
         </div>
       </motion.section>
-
+      
+      {/* New Gallery Section */}
       <motion.section 
-        className="imersao-testimonials"
+        className="imersao-gallery"
         variants={contentVariants}
         initial="initial"
         animate="animate"
       >
         <div className="container">
-          <h2>O Que Dizem Nossos Participantes</h2>
+          <h2>Conheçam o nosso espaço</h2>
           
-          <div className="testimonials-grid">
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <p>"A imersão transformou minha visão sobre a prática clínica. A experiência hands-on e o feedback imediato dos mentores aceleraram meu desenvolvimento profissional."</p>
-              </div>
-              <div className="testimonial-author">
-                <div className="author-avatar"></div>
-                <div className="author-info">
-                  <h4>Ana Carolina Silva</h4>
-                  <p>Psicóloga Clínica</p>
+          <div className="gallery-grid">
+            {galleryImages.map((image, index) => (
+              <div className="gallery-item" key={index}>
+                <div className="gallery-image" style={{ backgroundImage: `url(${image})` }}>
+                  <div className="gallery-overlay">
+                    <div className="gallery-zoom">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        <line x1="11" y1="8" x2="11" y2="14"></line>
+                        <line x1="8" y1="11" x2="14" y2="11"></line>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <p>"Participar da imersão em grupo foi uma experiência enriquecedora. Além do aprendizado prático, o networking com outros profissionais expandiu minha rede de contatos."</p>
-              </div>
-              <div className="testimonial-author">
-                <div className="author-avatar"></div>
-                <div className="author-info">
-                  <h4>Ricardo Mendes</h4>
-                  <p>Terapeuta Ocupacional</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <p>"O programa intensivo superou todas as minhas expectativas. Em apenas duas semanas, adquiri habilidades que normalmente levariam meses para desenvolver."</p>
-              </div>
-              <div className="testimonial-author">
-                <div className="author-avatar"></div>
-                <div className="author-info">
-                  <h4>Juliana Ferreira</h4>
-                  <p>Estudante de Psicologia</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </motion.section>
       
-     
-                
-        
-      {/* New section: Próximos Passos (Next Steps) */}
+      {/* Next Steps Section */}
       <motion.section 
         className="imersao-next-steps"
         variants={contentVariants}
@@ -317,7 +297,6 @@ const ImersaoDetails = () => {
             <h2>Pronto para Elevar a Sua Experiência Profissional?</h2>
             <p>Entre em contato para mais informações sobre nossos programas de imersão e agende uma consulta com nossos especialistas.</p>
             <div className="cta-buttons">
-              
               <button className="imersao-details-secondary-button">Solicitar Informações</button>
             </div>
           </div>
