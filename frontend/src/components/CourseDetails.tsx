@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";  // Adjusted path
 import { ChevronDown, ChevronUp, Check } from "lucide-react";
 import { courses } from "../courseData";
-import "../styles/pages/CourseDetails.css";
+import "../styles/pages/courseDetails.css";
 
 const CourseDetails = () => {
   const { id } = useParams<{ id: string }>();
