@@ -27,12 +27,12 @@ const ImersaoDetails = () => {
 
   // Gallery images
   const galleryImages = [
-    "/src/assets/courses/a-linguagem-e-o-brincar-em-condicoes-neurodiverso.png",
-    "/src/assets/imersoes/space2.jpg",
-    "/src/assets/imersoes/space3.jpg",
-    "/src/assets/imersoes/space4.jpg",
-    "/src/assets/imersoes/space5.jpg",
-    "/src/assets/imersoes/space6.jpg",
+    "/src/assets/galleryPse/img7.jpeg",
+    "/src/assets/galleryPse/img2.jpeg",
+    "/src/assets/galleryPse/img3.jpeg",
+    "/src/assets/galleryPse/img4.jpeg",
+    "/src/assets/galleryPse/img5.jpeg",
+    "/src/assets/galleryPse/img6.jpeg",
   ];
 
   return (
@@ -43,7 +43,16 @@ const ImersaoDetails = () => {
       exit="exit"
       variants={pageVariants}
     >
-      <section className="imersao-hero">
+  <section 
+    className="imersao-hero"
+    style={{ 
+      backgroundImage: "url('/src/assets/galleryPse/img7.jpeg')",
+      backgroundSize: 'cover',
+      backgroundPosition: 'center'
+    }}
+  >
+
+
         <div className="imersao-hero-content">
           <span className="badge">Programa de Imersão</span>
           <h1>Experiência Clínica Intensiva</h1>
@@ -246,45 +255,57 @@ const ImersaoDetails = () => {
           </div>
         </div>
       </motion.section>
+
+
+
+
+
       
       {/* Next Steps Section */}
-      <motion.section 
-        className="imersao-next-steps"
-        variants={contentVariants}
-        initial="initial"
-        animate="animate"
-      >
-        <div className="container">
-          <h2>Próximos Passos</h2>
-          
-          <div className="next-steps-content">
-            <div className="next-steps-image"></div>
-            <div className="next-steps-text">
-              <h3>Pronto para começar sua jornada de transformação profissional?</h3>
-              <p>O processo para participar de nossas imersões é simples e direto:</p>
-              
-              <ol className="next-steps-list">
-                <li>
-                  <strong>Entre em contato</strong> - Agende uma consulta inicial com a nossa equipa através do formulário de contato ou telefone.
-                </li>
-                <li>
-                  <strong>Avaliação de perfil</strong> - Realizamos uma breve entrevista para entender as suas necessidades e objetivos.
-                </li>
-                <li>
-                  <strong>Proposta personalizada</strong> - Receba uma proposta detalhada com opções de programas, datas e investimento.
-                </li>
-                <li>
-                  <strong>Confirme a sua participação</strong> - Efetue a reserva e prepare-se para uma experiência transformadora.
-                </li>
-              </ol>
-              
-              <div className="next-steps-cta">
-                <button className="imersao-details-primary-button">Saber mais</button>
-              </div>
-            </div>
-          </div>
+<motion.section 
+  className="imersao-next-steps"
+  variants={contentVariants}
+  initial="initial"
+  animate="animate"
+>
+  <div className="container">
+    <h2>Próximos Passos</h2>
+    
+    <div className="next-steps-content">
+      {/* Replace this div with an actual image */}
+      <div className="next-steps-image">
+        <img 
+          src="/src/assets/galleryPse/img1.jpeg"  // Update this path to your actual image
+          alt="Próximos passos da imersão"
+          className="next-steps-visual"
+        />
+      </div>
+      <div className="next-steps-text">
+        <h3>Pronto para começar sua jornada de transformação profissional?</h3>
+        <p>O processo para participar de nossas imersões é simples e direto:</p>
+        
+        <ol className="next-steps-list">
+          <li>
+            <strong>Entre em contato</strong> - Agende uma consulta inicial com a nossa equipa através do formulário de contato ou telefone.
+          </li>
+          <li>
+            <strong>Avaliação de perfil</strong> - Realizamos uma breve entrevista para entender as suas necessidades e objetivos.
+          </li>
+          <li>
+            <strong>Proposta personalizada</strong> - Receba uma proposta detalhada com opções de programas, datas e investimento.
+          </li>
+          <li>
+            <strong>Confirme a sua participação</strong> - Efetue a reserva e prepare-se para uma experiência transformadora.
+          </li>
+        </ol>
+        
+        <div className="next-steps-cta">
+          <button className="imersao-details-primary-button">Saber mais</button>
         </div>
-      </motion.section>
+      </div>
+    </div>
+  </div>
+</motion.section>
 
       <motion.section 
         className="imersao-cta"

@@ -473,3 +473,38 @@
     padding: 20px;
   }
 }
+
+.next-steps-image {
+  flex: 1;
+  min-height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.next-steps-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.next-steps-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.next-steps-text {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .next-steps-content {
+    flex-direction: column;
+  }
+  
+  .next-steps-image {
+    width: 100%;
+    min-height: 300px;
+  }
+}
