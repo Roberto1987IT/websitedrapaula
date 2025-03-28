@@ -8,58 +8,60 @@ import "../../styles/pages/testemunhos.css";
 const testemunhos = [
   { 
     id: 1, 
-    comment: "A metodologia é muito prática e facilmente aplicável no dia a dia. Superou minhas expectativas!", 
+    comment: "O teu caminho evolutivo enche o meu coração. Gratidão pelo teu contributo para com o cuidado e desenvolvimento saudável da Vida, Paula 🤍🌱🌍✨",
     rating: 5, 
     name: "Rita Maria",
     role: "Empreendedora"
   },
   { 
     id: 2, 
-    comment: "Conteúdo excelente e bem estruturado. Consegui implementar os conhecimentos rapidamente.", 
+    comment: "Um projecto extremamente necessário e que vem colmatar a lacuna existente na nossa região 🎊👏🏼",
     rating: 4, 
     name: "João Pedro",
     role: "Empresário"
   },
   { 
     id: 3, 
-    comment: "Aprendi muito mais do que esperava. As técnicas ensinadas são valiosas para qualquer profissional.", 
+    comment: "💚 Que recomendação tão útil! 💚 Adoro como juntas conhecimento especializado com práticas do dia a dia. A autonomia é mesmo um dos pilares para um desenvolvimento saudável. 🌟 Vou espreitar a sugestão! 👏",
     rating: 5, 
     name: "Mariana Silva",
     role: "Consultora"
   },
   { 
     id: 4, 
-    comment: "Explicação clara e objetiva. Consegui entender conceitos complexos de forma simples.", 
+    comment: "Paula, seus livros são ótimos, tenho todos e fico sempre aguardando um outro. Você é uma profissional maravilhosa!!!! 👏👏👏👏👏👏👏👏OBRIGADA!",
     rating: 4, 
     name: "Carlos Lima",
     role: "Gestor"
   },
   { 
     id: 5, 
-    comment: "Excelente didática e atenção aos detalhes. Paula tem um dom para ensinar!", 
+    comment: "Dra Paula Serrano uma profissional incrível, tive o prazer de participar de uma formação em Portugal com ela.\n" +
+        "Uma pessoa de um conhecimento ímpar e de uma simplicidade que poucos profissionais são.\n" +
+        "Sou muito sua Fã 😍 sucesso em nossa terrinha",
     rating: 5, 
     name: "Ana Paula",
     role: "Professora"
   },
   { 
     id: 6, 
-    comment: "Recomendo a todos que querem evoluir na carreira! Curso transformador e prático.", 
+    comment: "Parabéns Paula, sempre possibilitando espaços que valorizam a reflexão do brincar no raciocínio clínico da terapia ocupacional 😍🙏",
     rating: 5, 
     name: "Fernanda Souza",
     role: "Analista"
   },
   { 
     id: 7, 
-    comment: "Ótimo curso com conteúdo relevante e atual. Aplicação imediata no mercado.", 
-    rating: 4, 
-    name: "João Vitor",
-    role: "Estudante"
+    comment: "Livro rico em teoria e chegou super rápido! Amei!",
+    rating: 5,
+    name: "Fernanda Fernandes",
+    role: "Psicóloga"
   },
   { 
     id: 8, 
-    comment: "O melhor curso que já fiz! A Paula tem uma capacidade incrível de transmitir conhecimento.", 
+    comment: "Muito detalhista na explicação do desenvolvimento infantil. Super indico.",
     rating: 5, 
-    name: "Clara Mendes",
+    name: "Valéria Santos",
     role: "Coordenadora"
   },
 ];

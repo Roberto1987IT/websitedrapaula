@@ -100,7 +100,6 @@ WSGI_APPLICATION = 'backend.wsgi.application'
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-'''
 #render deploy settings
 DATABASES = {
     'default': {
@@ -112,8 +111,6 @@ DATABASES = {
         'PORT': int(os.getenv('PSQL_PORT', 5432)),
     }
 }
-
-
 '''
 
 #local settings
@@ -129,7 +126,7 @@ DATABASES = {
 }
 
 
-'''
+
 
 
 MEDIA_URL = '/media/'
