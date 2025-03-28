@@ -151,6 +151,33 @@ body {
   padding-left: 10px;
 }
 
+.description-subtitle-secondary {
+  color: var(--green-dark);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+  border-left: 3px solid var(--green-light);
+  padding-left: 10px;
+  margin-left: 15px;
+}
+
+.content-subcategory {
+  margin-left: 15px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.content-subcategory::before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: rgba(46, 125, 50, 0.2);
+}
+
 .content-list {
   margin-left: 1rem;
 }
@@ -172,6 +199,35 @@ body {
   position: absolute;
   left: 0;
   font-weight: bold;
+}
+
+/* Special styling for the fourth course description */
+/* Adding decorative icon elements to highlight the Avaliação course */
+.description-structure [class*="Avaliacao"] h3.description-subtitle::before {
+  content: '★';
+  margin-right: 8px;
+  color: var(--green-light);
+}
+
+.description-structure [data-course="Avaliacao"] .content-list ul li {
+  background-color: rgba(139, 195, 74, 0.05);
+  padding: 8px 8px 8px 2rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.description-structure [data-course="Avaliacao"] .content-list ul li:hover {
+  background-color: rgba(139, 195, 74, 0.1);
+  padding-left: 2.5rem;
+}
+
+/* Enhanced styling for the fourth course's methodology section */
+.description-structure [data-course="Avaliacao"] p:last-of-type {
+  font-style: italic;
+  background-color: rgba(76, 175, 80, 0.08);
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 3px solid var(--green-color);
 }
 
 .expand-button {
@@ -480,6 +536,25 @@ body {
   100% {
     transform: translateY(0px);
   }
+}
+
+/* Special highlight animation for fourth course */
+@keyframes highlightBorder {
+  0% {
+    border-color: rgba(30, 136, 229, 0.08);
+  }
+  50% {
+    border-color: rgba(139, 195, 74, 0.5);
+  }
+  100% {
+    border-color: rgba(30, 136, 229, 0.08);
+  }
+}
+
+/* Apply special animation to the fourth course description section */
+.course-details[data-course-id="4"] .course-info section:first-child {
+  animation: highlightBorder 3s ease-in-out infinite;
+  border-width: 2px;
 }
 
 .purchase-card {

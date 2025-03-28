@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Button } from "../components/ui/button";
+import { Button } from "@/components/ui/button";  // Adjusted path
 import { ChevronDown, ChevronUp, Check } from "lucide-react";
-import "../styles/pages/courseDetails.css";
-
-// Fixed import path
 import { courses } from "../courseData";
+import "../styles/pages/CourseDetails.css";
 
 const CourseDetails = () => {
   const { id } = useParams<{ id: string }>();
@@ -51,7 +49,7 @@ const CourseDetails = () => {
   }
 
   return (
-    <div className="course-details">
+    <div className="course-details" data-course-id={id}>
       <h1>{course.title}</h1>
       
       <div className="course-image">
@@ -93,24 +91,28 @@ const CourseDetails = () => {
                         </ul>
                       </div>
                       
-                      <h3 className="description-subtitle">Avaliação do brincar</h3>
-                      <div className="content-list">
-                        <ul>
-                          <li>Entrevista</li>
-                          <li>Questionários: The Play History (Takata)</li>
-                          <li>Organização da observação em contexto natural</li>
-                          <li>Instrumentos: Revised Knox Preschool Play scale (Knox); Test of Playfulness (TOP) (Bundy)</li>
-                          <li>Definição dos objetivos terapêuticos</li>
-                        </ul>
+                      <div className="content-subcategory">
+                        <h4 className="description-subtitle-secondary">Avaliação do brincar</h4>
+                        <div className="content-list">
+                          <ul>
+                            <li>Entrevista</li>
+                            <li>Questionários: The Play History (Takata)</li>
+                            <li>Organização da observação em contexto natural</li>
+                            <li>Instrumentos: Revised Knox Preschool Play scale (Knox); Test of Playfulness (TOP) (Bundy)</li>
+                            <li>Definição dos objetivos terapêuticos</li>
+                          </ul>
+                        </div>
                       </div>
                       
-                      <h3 className="description-subtitle">Promover o brincar</h3>
-                      <div className="content-list">
-                        <ul>
-                          <li>O papel do Terapeuta Ocupacional</li>
-                          <li>A intervenção terapêutica</li>
-                          <li>Intervenção no contexto da criança</li>
-                        </ul>
+                      <div className="content-subcategory">
+                        <h4 className="description-subtitle-secondary">Promover o brincar</h4>
+                        <div className="content-list">
+                          <ul>
+                            <li>O papel do Terapeuta Ocupacional</li>
+                            <li>A intervenção terapêutica</li>
+                            <li>Intervenção no contexto da criança</li>
+                          </ul>
+                        </div>
                       </div>
                       
                       <h3 className="description-subtitle">Metodologia</h3>
@@ -210,8 +212,8 @@ const CourseDetails = () => {
                     </>
                   )}
                   
-                  {course.title?.includes("Avaliacao e Raciocinio clinico na primeira infancia") && (
-                    <>
+                  {course.title?.includes("Avaliação e Raciocínio clínico na primeira Infância") && (
+                    <div data-course="Avaliacao">
                       <h3 className="description-subtitle">Sobre o Curso</h3>
                       <p>Duração – 21 horas com a Terapeuta Ocupacional Paula Serrano.</p>
                       
@@ -251,14 +253,14 @@ const CourseDetails = () => {
                       </div>
                       
                       <h3 className="description-subtitle">Metodologia</h3>
-                      <p>As sessões de trabalho serão on line, teóricas e com analise de vídeos de casos clínicos.</p>
-                    </>
+                      <p>As sessões de trabalho serão teóricas e praticas, com analise de vídeos de casos clínicos.</p>
+                    </div>
                   )}
                   
                   {!course.title?.includes("Brincar e TO") && 
                    !course.title?.includes("Raciocinio clinico e intervencao") && 
                    !course.title?.includes("Integracao Sensorial: Avaliacao") && 
-                   !course.title?.includes("Avaliacao e Raciocinio clinico na primeira infancia") && (
+                   !course.title?.includes("Avaliação e Raciocínio clínico na primeira Infância") && (
                     <p>{course.description}</p>
                   )}
                 </div>
@@ -332,7 +334,7 @@ const CourseDetails = () => {
               </button>
             </div>
             <div className="contact-info">
-            Para esclarecimento de qualquer duvida, contate a Paula serrano por email: <a href="mailto:paulaserranoeducacao@gmail.com" className="email-link">paulaserranoeducacao@gmail.com</a>
+            Para esclarecimento de qualquer duvida, contate a Paula Serrano por email: <a href="mailto:paulaserranoeducacao@gmail.com" className="email-link">paulaserranoeducacao@gmail.com</a>
             </div>
           </div>
           

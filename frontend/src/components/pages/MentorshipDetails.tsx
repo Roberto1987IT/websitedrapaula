@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import { ChevronDown, ChevronUp, ShoppingCart, Phone } from "lucide-react";
+import { ChevronDown, ChevronUp, Mail } from "lucide-react";
 import "../../styles/pages/mentorshipDetail.css";
 import mentorshipImage from "../../assets/courses/PaulaSerrano-102 1.png";
 
@@ -8,12 +8,19 @@ const MentorshipDetails = () => {
   const navigate = useNavigate();
   const [activeFaqIndex, setActiveFaqIndex] = useState<number | null>(null);
 
+  // Scroll to top on component mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const toggleFaq = (index: number) => {
     setActiveFaqIndex(activeFaqIndex === index ? null : index);
   };
 
-  const handleBackClick = () => {
-    navigate('/');
+  const handleContactClick = () => {
+    navigate('/contact');
+    // Scroll to top after navigation
+    window.scrollTo(0, 0);
   };
 
   const faqs = [
@@ -71,7 +78,6 @@ const MentorshipDetails = () => {
               <li>Feedback sincero e construtivo sobre seus pontos fortes e áreas de melhoria</li>
               <li>Acesso a redes profissionais e oportunidades exclusivas</li>
               <li>Desenvolvimento acelerado de competências técnicas</li>
-              
             </ul>
           </div>
 
@@ -90,59 +96,50 @@ const MentorshipDetails = () => {
       </div>
 
       <div className="mentorship-purchase">
-        <div className="mentorship-price">499,90</div>
-        <p className="mentorship-price-info">Investimento único para o programa completo</p>
+        <p className="mentorship-price-info">Conheça nossos programas de mentoria</p>
         
         <div className="mentorship-purchase-buttons">
-          <button className="mentorship-buy-button">
-            <ShoppingCart size={20} />
-            Inscrever-se agora
-          </button>
-          <button className="mentorship-contact-button">
-            <Phone size={20} />
+          <button 
+            className="mentorship-contact-button"
+            onClick={handleContactClick}
+          >
+            <Mail size={20} />
             Informacao
           </button>
         </div>
       </div>
 
-      <div className="mentorship-testimonials">
-        <h2 className="mentorship-testimonials-title">O que dizem nossos mentorados</h2>
+      <div className="mentorship-types">
+        <h2 className="mentorship-types-title">Mentoria Individual e Mentoria em grupo</h2>
         
-        <div className="testimonial-cards">
-          <div className="testimonial-card">
-            <div className="testimonial-text">
-              A mentoria transformou minha visão sobre carreira. Em apenas 3 meses, consegui identificar oportunidades que nunca havia notado antes e desenvolver habilidades cruciais para meu crescimento profissional.
-            </div>
-            <div className="testimonial-author">
-              <div className="testimonial-author-info">
-                <div className="testimonial-author-name">Ana Paula Silva</div>
-                <div className="testimonial-author-role">Gerente de Marketing</div>
-              </div>
-            </div>
+        <div className="mentorship-types-cards">
+          <div className="mentorship-type-card">
+            <h3>Mentoria Individual</h3>
+            <p>
+              Atendimento personalizado para suas necessidades específicas de carreira. 
+              Sessões exclusivas com seu mentor dedicado, focadas nos seus objetivos 
+              e desafios particulares.
+            </p>
+            <ul>
+              <li>Plano de desenvolvimento 100% personalizado</li>
+              <li>Feedback contínuo e direcionado</li>
+              <li>Flexibilidade de horários e temas</li>
+              <li>Acompanhamento detalhado do seu progresso</li>
+            </ul>
           </div>
           
-          <div className="testimonial-card">
-            <div className="testimonial-text">
-              O programa superou todas as minhas expectativas. O acompanhamento personalizado me ajudou a traçar um plano claro de desenvolvimento e a conquistar uma promoção que estava buscando há anos.
-            </div>
-            <div className="testimonial-author">
-              <div className="testimonial-author-info">
-                <div className="testimonial-author-name">Carlos Eduardo</div>
-                <div className="testimonial-author-role">Analista de Sistemas</div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="testimonial-card">
-            <div className="testimonial-text">
-              Participar da mentoria foi um divisor de águas na minha carreira. Obtive insights valiosos sobre como me posicionar profissionalmente e desenvolver minhas competências de liderança.
-            </div>
-            <div className="testimonial-author">
-              <div className="testimonial-author-info">
-                <div className="testimonial-author-name">Juliana Mendes</div>
-                <div className="testimonial-author-role">Coordenadora de Projetos</div>
-              </div>
-            </div>
+          <div className="mentorship-type-card">
+            <h3>Mentoria em Grupo</h3>
+            <p>
+              Aprenda em um ambiente colaborativo com outros profissionais, 
+              compartilhando experiências e ampliando sua rede de contatos.
+            </p>
+            <ul>
+              <li>Troca de experiências entre os participantes</li>
+              <li>Custo mais acessível que a mentoria individual</li>
+              <li>Networking com profissionais de diferentes áreas</li>
+              <li>Dinâmicas e exercícios em grupo</li>
+            </ul>
           </div>
         </div>
       </div>

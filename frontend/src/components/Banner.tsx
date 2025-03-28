@@ -12,7 +12,7 @@ const Banner: React.FC = () => {
      
       
 <Link 
-  to={{ pathname: "/", hash: "#about" }} 
+  to={{ pathname: "/", hash: "#cursos" }} 
   className="cta-button"
 >
   Saber mais

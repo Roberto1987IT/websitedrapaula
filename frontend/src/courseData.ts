@@ -162,7 +162,7 @@ As sessões de trabalho serão teóricas e práticas com análise de vídeos.
     price: 350,
     instructor: "Paula Serrano",
     Localizacao: "A definir",
-    date: "A definir",
+    date: "Brevemente..",
     learningOutcomes: [
       "Identificar e analisar disfunções de integração sensorial",
       "Aplicar metodologias específicas de avaliação em integração sensorial",
@@ -217,7 +217,7 @@ As sessões de trabalho serão teóricas e praticas, com analise de vídeos de c
     price: 350,
     instructor: "Paula Serrano",
     Localizacao: "A definir",
-    date: "Brevemente",
+    date: "Brevemente...",
     learningOutcomes: [
       "Compreender as etapas do brincar dos 0 aos 3 anos",
       "Identificar os elementos da ludicidade na primeira infância",

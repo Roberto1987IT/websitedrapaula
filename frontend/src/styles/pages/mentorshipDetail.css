@@ -198,24 +198,10 @@
   background: linear-gradient(135deg, var(--red-light), var(--red-dark));
 }
 
-.mentorship-price {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--green-dark);
-  margin-bottom: 20px;
-}
-
-.mentorship-price::before {
-  content: 'R$';
-  font-size: 1.8rem;
-  position: relative;
-  top: -10px;
-  margin-right: 5px;
-}
-
 .mentorship-price-info {
-  font-size: 1.1rem;
-  color: var(--light-text);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-color);
   margin-bottom: 30px;
 }
 
@@ -226,7 +212,6 @@
   margin-bottom: 20px;
 }
 
-.mentorship-buy-button,
 .mentorship-contact-button {
   padding: 15px 30px;
   font-size: 1.1rem;
@@ -238,36 +223,27 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-}
-
-.mentorship-buy-button {
-  background: linear-gradient(135deg, var(--green-color), var(--green-dark));
-  color: white;
-  border: none;
-  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
-}
-
-.mentorship-buy-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.5);
-}
-
-.mentorship-contact-button {
   background: transparent;
   color: var(--primary-dark);
   border: 2px solid var(--primary-dark);
+  min-width: 180px;
 }
 
 .mentorship-contact-button:hover {
-  background-color: rgba(0, 123, 255, 0.05);
+  background-color: var(--primary-dark);
+  color: white;
   transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3);
+  background-color: #4CAF50;
+  
 }
 
-.mentorship-testimonials {
+/* New styles for mentorship types section */
+.mentorship-types {
   margin-top: 80px;
 }
 
-.mentorship-testimonials-title {
+.mentorship-types-title {
   text-align: center;
   font-size: 1.8rem;
   color: var(--primary-dark);
@@ -276,7 +252,7 @@
   padding-bottom: 15px;
 }
 
-.mentorship-testimonials-title::after {
+.mentorship-types-title::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -288,81 +264,61 @@
   border-radius: 2px;
 }
 
-.testimonial-cards {
+.mentorship-types-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
 }
 
-.testimonial-card {
+.mentorship-type-card {
   background: var(--card-background);
   border-radius: var(--border-radius);
-  padding: 25px;
+  padding: 30px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  border-top: 5px solid var(--primary-dark);
 }
 
-.testimonial-card:hover {
+.mentorship-type-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  color: #4CAF50;
 }
 
-.testimonial-text {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--text-color);
+.mentorship-type-card h3 {
+  font-size: 1.5rem;
+  color: var(--primary-dark);
   margin-bottom: 20px;
-  flex-grow: 1;
-  position: relative;
-  padding-top: 25px;
-}
-
-.testimonial-text::before {
-  content: '"';
-  font-size: 4rem;
-  color: var(--primary-light);
-  position: absolute;
-  top: -20px;
-  left: -10px;
-  opacity: 0.5;
-  font-family: serif;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.testimonial-author-image {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.testimonial-author-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.testimonial-author-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.testimonial-author-name {
+  text-align: center;
   font-weight: 600;
+}
+
+.mentorship-type-card p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
   color: var(--text-color);
 }
 
-.testimonial-author-role {
-  font-size: 0.9rem;
-  color: var(--light-text);
+.mentorship-type-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mentorship-type-card li {
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.mentorship-type-card li::before {
+  content: '✓';
+  color: var(--green-color);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
 }
 
 .mentorship-faq {
@@ -439,6 +395,10 @@
     height: 780px; /* Reduced height for tablets */
     margin-top: 6rem;
   }
+
+  .mentorship-types-cards {
+    gap: 30px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -450,7 +410,7 @@
     font-size: 2rem;
   }
   
-  .mentorship-testimonials-title,
+  .mentorship-types-title,
   .mentorship-faq-title {
     font-size: 1.6rem;
   }
@@ -459,11 +419,7 @@
     padding: 30px;
   }
   
-  .mentorship-purchase-buttons {
-    flex-direction: column;
-  }
-  
-  .testimonial-cards {
+  .mentorship-types-cards {
     grid-template-columns: 1fr;
   }
   
@@ -491,26 +447,29 @@
     font-size: 14px;
   }
   
-  .mentorship-price {
-    font-size: 2.5rem;
-  }
-  
-  .mentorship-buy-button,
   .mentorship-contact-button {
     padding: 12px 25px;
     font-size: 1rem;
+    width: 100%;
   }
   
-  .mentorship-details-section h3 {
+  .mentorship-details-section h3,
+  .mentorship-type-card h3 {
     font-size: 1.2rem;
   }
   
   .mentorship-details-section p,
-  .mentorship-details-section li {
+  .mentorship-details-section li,
+  .mentorship-type-card p,
+  .mentorship-type-card li {
     font-size: 0.95rem;
   }
   
   .mentorship-details-image {
-    height: 550px; /* Smaller height for mobile */
+    height: 450px; /* Smaller height for mobile */
+  }
+
+  .mentorship-type-card {
+    padding: 20px;
   }
 }
