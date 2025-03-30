@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, X, ZoomIn } from "lucide-react";
 import "../../styles/pages/imersaoDetails.css";
 
 const ImersaoDetails = () => {
+  // State for expanded image
+  const [expandedImage, setExpandedImage] = useState<string | null>(null);
+  const navigate = useNavigate();
+
   // Animation variants
   const pageVariants = {
     initial: { opacity: 0 },
@@ -35,6 +40,21 @@ const ImersaoDetails = () => {
     "/src/assets/galleryPse/img6.jpeg",
   ];
 
+  // Handle image click
+  const handleImageClick = (image: string) => {
+    setExpandedImage(image);
+  };
+
+  // Close expanded image
+  const closeExpandedImage = () => {
+    setExpandedImage(null);
+  };
+
+  // Handle button click to navigate to contact page
+  const handleButtonClick = () => {
+    navigate('/contact');
+  };
+
   return (
     <motion.div
       className="imersao-details-container"
@@ -43,16 +63,14 @@ const ImersaoDetails = () => {
       exit="exit"
       variants={pageVariants}
     >
-  <section 
-    className="imersao-hero"
-    style={{ 
-      backgroundImage: "url('/src/assets/galleryPse/img7.jpeg')",
-      backgroundSize: 'cover',
-      backgroundPosition: 'center'
-    }}
-  >
-
-
+      <section 
+        className="imersao-hero"
+        style={{ 
+          backgroundImage: "url('/src/assets/galleryPse/img7.jpeg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
         <div className="imersao-hero-content">
           <span className="badge">Programa de Imersão</span>
           <h1>Experiência Clínica Intensiva</h1>
@@ -135,7 +153,7 @@ const ImersaoDetails = () => {
                 <li>Feedback individual detalhado</li>
                 <li>Horários flexíveis</li>
               </ul>
-              <button className="imersao-details-cta-button">Saiba mais</button>
+              <button className="imersao-details-cta-button" onClick={handleButtonClick}>Saiba mais</button>
             </div>
             
             <div className="format-card">
@@ -150,7 +168,7 @@ const ImersaoDetails = () => {
                 <li>Dinâmicas e estudos de caso</li>
                 <li>Networking profissional</li>
               </ul>
-              <button className="imersao-details-cta-button">Solicitar Informações</button>
+              <button className="imersao-details-cta-button" onClick={handleButtonClick}>Solicitar Informações</button>
             </div>
             
             <div className="format-card">
@@ -165,7 +183,7 @@ const ImersaoDetails = () => {
                 <li>Material didático exclusivo</li>
                 <li>Certificação premium</li>
               </ul>
-              <button className="imersao-details-cta-button">Mais Detalhes</button>
+              <button className="imersao-details-cta-button" onClick={handleButtonClick}>Mais Detalhes</button>
             </div>
           </div>
         </div>
@@ -225,7 +243,7 @@ const ImersaoDetails = () => {
         </div>
       </motion.section>
       
-      {/* New Gallery Section */}
+      {/* Gallery Section with clickable images */}
       <motion.section 
         className="imersao-gallery"
         variants={contentVariants}
@@ -237,75 +255,77 @@ const ImersaoDetails = () => {
           
           <div className="gallery-grid">
             {galleryImages.map((image, index) => (
-              <div className="gallery-item" key={index}>
+              <div className="gallery-item" key={index} onClick={() => handleImageClick(image)}>
                 <div className="gallery-image" style={{ backgroundImage: `url(${image})` }}>
                   <div className="gallery-overlay">
                     <div className="gallery-zoom">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        <line x1="11" y1="8" x2="11" y2="14"></line>
-                        <line x1="8" y1="11" x2="14" y2="11"></line>
-                      </svg>
+                      <ZoomIn size={24} />
                     </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
+
+          {/* Expanded Image Modal */}
+          {expandedImage && (
+            <div className="expanded-image-modal" onClick={closeExpandedImage}>
+              <div className="expanded-image-container">
+                <img src={expandedImage} alt="Expanded view" />
+                <button className="close-expanded-image" onClick={closeExpandedImage}>
+                  <X size={24} />
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </motion.section>
 
-
-
-
-
-      
       {/* Next Steps Section */}
-<motion.section 
-  className="imersao-next-steps"
-  variants={contentVariants}
-  initial="initial"
-  animate="animate"
->
-  <div className="container">
-    <h2>Próximos Passos</h2>
-    
-    <div className="next-steps-content">
-      {/* Replace this div with an actual image */}
-      <div className="next-steps-image">
-        <img 
-          src="/src/assets/galleryPse/img1.jpeg"  // Update this path to your actual image
-          alt="Próximos passos da imersão"
-          className="next-steps-visual"
-        />
-      </div>
-      <div className="next-steps-text">
-        <h3>Pronto para começar sua jornada de transformação profissional?</h3>
-        <p>O processo para participar de nossas imersões é simples e direto:</p>
-        
-        <ol className="next-steps-list">
-          <li>
-            <strong>Entre em contato</strong> - Agende uma consulta inicial com a nossa equipa através do formulário de contato ou telefone.
-          </li>
-          <li>
-            <strong>Avaliação de perfil</strong> - Realizamos uma breve entrevista para entender as suas necessidades e objetivos.
-          </li>
-          <li>
-            <strong>Proposta personalizada</strong> - Receba uma proposta detalhada com opções de programas, datas e investimento.
-          </li>
-          <li>
-            <strong>Confirme a sua participação</strong> - Efetue a reserva e prepare-se para uma experiência transformadora.
-          </li>
-        </ol>
-        
-        <div className="next-steps-cta">
-          <button className="imersao-details-primary-button">Saber mais</button>
+      <motion.section 
+        className="imersao-next-steps"
+        variants={contentVariants}
+        initial="initial"
+        animate="animate"
+      >
+        <div className="container">
+          <h2>Próximos Passos</h2>
+          
+          <div className="next-steps-content">
+            {/* Replace this div with an actual image */}
+            <div className="next-steps-image">
+              <img 
+                src="/src/assets/galleryPse/img1.jpeg"  // Update this path to your actual image
+                alt="Próximos passos da imersão"
+                className="next-steps-visual"
+              />
+            </div>
+            <div className="next-steps-text">
+              <h3>Pronto para começar sua jornada de transformação profissional?</h3>
+              <p>O processo para participar de nossas imersões é simples e direto:</p>
+              
+              <ol className="next-steps-list">
+                <li>
+                  <strong>Entre em contato</strong> - Agende uma consulta inicial com a nossa equipa através do formulário de contato ou telefone.
+                </li>
+                <li>
+                  <strong>Avaliação de perfil</strong> - Realizamos uma breve entrevista para entender as suas necessidades e objetivos.
+                </li>
+                <li>
+                  <strong>Proposta personalizada</strong> - Receba uma proposta detalhada com opções de programas, datas e investimento.
+                </li>
+                <li>
+                  <strong>Confirme a sua participação</strong> - Efetue a reserva e prepare-se para uma experiência transformadora.
+                </li>
+              </ol>
+              
+              <div className="next-steps-cta">
+                <button className="imersao-details-primary-button" onClick={handleButtonClick}>Saber mais</button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</motion.section>
+      </motion.section>
 
       <motion.section 
         className="imersao-cta"
@@ -318,7 +338,7 @@ const ImersaoDetails = () => {
             <h2>Pronto para Elevar a Sua Experiência Profissional?</h2>
             <p>Entre em contato para mais informações sobre nossos programas de imersão e agende uma consulta com nossos especialistas.</p>
             <div className="cta-buttons">
-              <button className="imersao-details-secondary-button">Solicitar Informações</button>
+              <button className="imersao-details-secondary-button" onClick={handleButtonClick}>Solicitar Informações</button>
             </div>
           </div>
         </div>
