@@ -1,27 +1,25 @@
 import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 import "../../styles/pages/carousel.css";
-import modulo1 from "../../assets/lancamentos/modulo1.jpg";
-import modulo2 from "../../assets/courses/Brincar e terapia ocupacional - da teoria à prática.jpg";
-import modulo3 from "../../assets/lancamentos/modulo3.jpg";
-import modulo4 from "../../assets/courses/Integração Sensorial - avaliação e raciocinio clinico.jpg";
-import modulo5 from "../../assets/galleryPse/img1.jpeg";
+import modulo1 from "../../assets/galleryPse/img6.jpeg";
+import modulo2 from "../../assets/courses/curso4.jpg";
+import modulo3 from "../../assets/courses/curso2.jpg";
+import modulo4 from "../../assets/courses/curso3.jpg";
+import modulo5 from "../../assets/courses/curso1.jpg";
 import modulo6 from "../../assets/galleryPse/img2.jpeg";
-import modulo7 from "../../assets/galleryPse/img3.jpeg";
-import modulo8 from "../../assets/galleryPse/img4.jpeg";
-
-
+import modulo7 from "../../assets/courses/curso5.jpg";
+import modulo8 from "../../assets/courses/curso3.jpg";
+import ImageModal from "../../components/ImageModal";
 
 const lancamentos = [
-  { image: modulo3, title: "Módulo 3: Brincar da teoria à prática em terapia ocupacional." },
-  { image: modulo2, title: "Brincar e TO Teoria e Pratica." },
-  { image: modulo1, title: "Módulo 1: Brincar da teoria à prática em terapia ocupacional." },
-  { image: modulo4, title: "Integracao Sensorial: Avaliacao e Raciocínio Clinico." },
-  { image: modulo5, title: "Integracao Sensorial: Avaliacao e Raciocínio Clinico." },
-  { image: modulo6, title: "Integracao Sensorial: Avaliacao e Raciocínio Clinico." },
-  { image: modulo7, title: "Integracao Sensorial: Avaliacao e Raciocínio Clinico." },
-  { image: modulo8, title: "Integracao Sensorial: Avaliacao e Raciocínio Clinico." },
+  { image: modulo3, title: "Sala de Formacoes." },
+  { image: modulo2, title: "Aulas de Grupo" },
+  { image: modulo1, title: "Salas para teoria à prática em terapia ocupacional." },
+  { image: modulo4, title: "Formacoes exclusivas." },
+  { image: modulo5, title: "Aulas praticas." },
+  { image: modulo6, title: "Avaliacao e Raciocínio Clinico." },
+  { image: modulo7, title: "Ativadades Individuais e em grupo." },
+  { image: modulo8, title: "Salas para ensino" },
 ];
 
 const Lancamentos = () => {
@@ -33,6 +31,8 @@ const Lancamentos = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [animationDirection, setAnimationDirection] = useState("next");
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  // New state for modal image viewing
+  const [modalImage, setModalImage] = useState<null | { image: string; title: string }>(null);
   
   const carouselRef = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<number | null>(null);
@@ -95,7 +95,7 @@ const Lancamentos = () => {
     
     transitionTimeoutRef.current = window.setTimeout(() => {
       setIsTransitioning(false);
-    }, 600);
+    }, 300);
   };
 
   const goToPrevSlide = () => {
@@ -165,6 +165,18 @@ const Lancamentos = () => {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [isTransitioning]);
 
+  // Open image in modal
+  const openImageModal = (lancamento: typeof lancamentos[0]) => {
+    setModalImage(lancamento);
+    setIsPaused(true); // Pause the carousel when viewing an image
+  };
+
+  // Close the image modal
+  const closeImageModal = () => {
+    setModalImage(null);
+    setIsPaused(false); // Resume the carousel
+  };
+
   return (
     <section className="carousel-section" id="lancamentos" aria-label="Destaques de cursos">
       <div className="carousel-container">
@@ -174,7 +186,7 @@ const Lancamentos = () => {
           </h2>
           <div className="carousel-subtitle-container">
             <p className={`carousel-subtitle ${isTextVisible ? "fade-in" : ""}`}>
-              Conteúdo atualizado para transformar sua prática – descubra as novidades!
+            Cada imagem conta parte da nossa jornada!
             </p>
           </div>
         </div>
@@ -220,26 +232,38 @@ const Lancamentos = () => {
                   aria-roledescription="slide"
                   aria-label={`${index + 1} de ${lancamentos.length}: ${lancamento.title}`}
                 >
-                  <Link to={`/lancamento/${index}`} className="carousel-slide-link">
+                  <div className="carousel-slide-content">
                     <div className="carousel-image-wrapper">
                       <img
                         src={lancamento.image}
                         alt={lancamento.title}
                         className="carousel-image"
                         loading={index < activeIndex + visibleSlides * 2 ? "eager" : "lazy"}
+                        onClick={() => openImageModal(lancamento)}
                         onError={(e) => {
                           console.error(`Failed to load image for: ${lancamento.title}`);
                           e.currentTarget.src = "https://via.placeholder.com/300x300?text=Imagem+Indisponível";
                         }}
                       />
                       <div className="carousel-overlay">
-                        <span className="carousel-action">Ver detalhes</span>
+                        <button 
+                          className="carousel-expand-button"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            openImageModal(lancamento);
+                          }}
+                          aria-label={`Expandir imagem: ${lancamento.title}`}
+                        >
+                          <Maximize2 size={20} />
+                        </button>
+                        <span className="carousel-action" onClick={() => openImageModal(lancamento)}>Ampliar imagem</span>
                       </div>
                     </div>
                     <div className="carousel-content">
                       <h3 className="carousel-slide-title">{lancamento.title}</h3>
                     </div>
-                  </Link>
+                  </div>
                 </div>
               ))}
             </div>
@@ -282,6 +306,16 @@ const Lancamentos = () => {
           </div>
         </div>
       </div>
+
+      {/* Image Modal for expanded view */}
+      {modalImage && (
+        <ImageModal
+          image={modalImage.image}
+          title={modalImage.title}
+          isOpen={!!modalImage}
+          onClose={closeImageModal}
+        />
+      )}
     </section>
   );
 };
