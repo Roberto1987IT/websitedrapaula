@@ -30,7 +30,7 @@ def stripe_webhook(request):
         print("Ошибка подписи Stripe:", str(e))  # Логи о неверной подписи
         return JsonResponse({"error": "Invalid signature"}, status=400)
 
-    if event["type"] == "checkout.session.completed" or event["type"] == "charge.updated":
+    if event["type"] == "checkout.session.completed":
         session = event["data"]["object"]
         customer_details = session.get("customer_details")
         customer_email = customer_details.get("email")
@@ -73,9 +73,9 @@ def process(request):
                 'price_data': {
                     'currency': 'eur',
                     'product_data': {
-                        'name': "product test payment",
+                        'name': "Brincar e TO-Teoria Pratica(Curso)",
                     },
-                    'unit_amount': 50,  # price in cents
+                    'unit_amount': 45000,  # price in cents
                 },
                 'quantity': 1,
             },
