@@ -1,6 +1,6 @@
 import React from "react";
-import "../../styles/pages/footer.css"; // Adjust the path based on your project structure
-import logo from "../../assets/logo.svg"; // Ensure this path matches your logo file
+import { Instagram, Facebook, Mail } from "lucide-react";
+import "../../styles/pages/footer.css";
 
 const Footer = () => {
   return (
@@ -8,7 +8,38 @@ const Footer = () => {
       <div className="footer-container">
         {/* Left - Logo & Social Icons */}
         <div className="footer-logo-section">
-          <img src={logo} alt="Logo Paula Serrano" className="footer-logo" />
+          <img src="src/assets/logo.svg" alt="Logo Paula Serrano" className="footer-logo" />
+          
+          {/* Social Media Icons */}
+          <div className="social-icons">
+            <a 
+              href="https://www.instagram.com/paulamserrano/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="social-icon"
+              aria-label="Instagram"
+            >
+              <Instagram size={20} />
+            </a>
+            <a 
+              href="https://facebook.com/paulaserrano" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="social-icon"
+              aria-label="Facebook"
+            >
+              <Facebook size={20} />
+            </a>
+            <a 
+              href="mailto:info@paulaserrano.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="social-icon"
+              aria-label="Email"
+            >
+              <Mail size={20} />
+            </a>
+          </div>
         </div>
 
         <div className="footer-columns-container">
