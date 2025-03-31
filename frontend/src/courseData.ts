@@ -48,7 +48,7 @@ Metodologia
 Exposição teórica discussão de grupos e exercícios práticos
 
 `,
-    price: 450,
+    price: 515,
     instructor: "Paula Serrano",
     Localizacao: "Brasil / Rio de Janeiro",
     date: "17-20 de Maio, 2025",

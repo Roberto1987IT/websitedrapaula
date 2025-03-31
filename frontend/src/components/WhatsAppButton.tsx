@@ -1,98 +1,84 @@
-import React from 'react';
-import styled from 'styled-components';
-import { FaWhatsapp } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { MessageCircle } from 'lucide-react';
+import '../styles/WhatsAppButton.css';
 
 interface WhatsAppButtonProps {
-  phoneNumber: string;
+  phoneNumber?: string;
   message?: string;
+  className?: string;
 }
 
 const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ 
-  phoneNumber, 
-  message = "Hello, I have a question" 
+  phoneNumber = "351964309035", // Default Portugal number
+  message = "Olá, gostaria de mais informações", // Default Portuguese message
+  className
 }) => {
-  // Format the phone number and message for the WhatsApp URL
-  const formattedMessage = encodeURIComponent(message);
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${formattedMessage}`;
+  const [isHovered, setIsHovered] = useState(false);
+  
+  // Format phone number to international standard without spaces or special chars
+  const formatPhoneNumber = (num: string) => {
+    // Remove all non-digit characters
+    let digits = num.replace(/\D/g, '');
+    
+    // Remove leading zeros if present
+    digits = digits.replace(/^0+/, '');
+    
+    // Ensure country code is present (default to Portugal 351 if missing)
+    if (!digits.startsWith('351') && digits.length > 0) {
+      digits = `351${digits}`;
+    }
+    
+    // Validate phone number length (typical mobile number is 9 digits plus country code)
+    // If phone number is too long or too short, use default
+    if (digits.length < 9 || digits.length > 15) {
+      return '351964309035';
+    }
+    
+    return digits;
+  };
+
+  const formattedNumber = formatPhoneNumber(phoneNumber);
+  const encodedMessage = encodeURIComponent(message);
+  
+  // Create both web and direct app URLs
+  const webUrl = `https://wa.me/${formattedNumber}?text=${encodedMessage}`;
+  const appUrl = `whatsapp://send?phone=${formattedNumber}&text=${encodedMessage}`;
+
+  const handleClick = (e: React.MouseEvent) => {
+    // Try to open the app first
+    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      e.preventDefault();
+      window.location.href = appUrl;
+      
+      // Fallback to web URL after a delay if app doesn't open
+      setTimeout(() => {
+        window.location.href = webUrl;
+      }, 300);
+    }
+    // Desktop will use the regular web URL via the href
+  };
 
   return (
-    <ButtonContainer>
+    <div className={`whatsapp-container ${className || ''}`}>
       <a 
-        href={whatsappUrl} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        aria-label="Chat with us on WhatsApp"
+        href={webUrl}
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        aria-label="Fale conosco pelo WhatsApp"
+        onClick={handleClick}
+        className={`whatsapp-button ${isHovered ? 'hovered' : ''}`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
-        <WhatsAppIcon size={28} />
-        <Tooltip>Need help? Chat with us!</Tooltip>
+        <div className="pulse-ring"></div>
+        <MessageCircle className="whatsapp-icon" size={28} />
+        <div className={`tooltip ${isHovered ? 'visible' : ''}`}>
+          Precisa de ajuda? Fale conosco!
+          <span className="tooltip-arrow"></span>
+        </div>
       </a>
-    </ButtonContainer>
+    </div>
   );
 };
-
-// Styled components
-const Tooltip = styled.span`
-  visibility: hidden;
-  opacity: 0;
-  width: max-content;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 12px;
-  position: absolute;
-  z-index: 1;
-  right: 60px;
-  transition: all 0.3s ease;
-  font-size: 14px;
-  pointer-events: none;
-  
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    margin-top: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent transparent #333;
-  }
-`;
-
-const ButtonContainer = styled.div`
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 1000;
-  
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    background-color: #25D366;
-    border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-    transition: all 0.3s ease;
-    position: relative;
-    
-    &:hover {
-      background-color: #128C7E;
-      transform: scale(1.1);
-      box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
-      
-      ${Tooltip} {
-        visibility: visible;
-        opacity: 1;
-        right: 70px;
-      }
-    }
-  }
-`;
-
-const WhatsAppIcon = styled(FaWhatsapp)`
-  color: white;
-`;
 
 export default WhatsAppButton;
