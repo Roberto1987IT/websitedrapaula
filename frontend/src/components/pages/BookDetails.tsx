@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { books } from '../../bookData';
 import '../../styles/pages/bookDetails.css';
-import { Star, ChevronLeft, ShoppingCart, Heart, Tag, AlertCircle, BookOpen } from 'lucide-react';
+import { Star, ChevronLeft, ShoppingCart, Heart, AlertCircle, BookOpen } from 'lucide-react';
 
 const BookDetails = () => {
   const { id } = useParams<{ id: string }>();
@@ -104,7 +104,7 @@ const BookDetails = () => {
           </div>
           
           {book.featured && <div className="featured-badge">Featured</div>}
-          {book.discount && <div className="discount-badge"><Tag size={14} /> {book.discount}% OFF</div>}
+          {book.discount && <div className="discount-badge">{book.discount}% OFF</div>}
           <button 
             className={`wishlist-button ${isWishlisted ? 'wishlisted' : ''}`}
             onClick={handleWishlist}
@@ -210,26 +210,6 @@ const BookDetails = () => {
               </div>
             </div>
             
-            {book.tags.length > 0 && (
-              <div>
-                <h2 className="tags-title">Tags</h2>
-                <div className="tags">
-                  {book.tags.map((tag: string, index: number) => (
-                    <div key={index} className="tag">
-                      {tag}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-            
-            {book.recommendedAge && (
-              <div className="recommended-age">
-                <h2 className="recommended-title">Indicado para:</h2>
-                <p className="recommended-text">{book.recommendedAge}</p>
-              </div>
-            )}
-            
             <div className="book-actions">
               <button 
                 className={`cart-button ${isAddedToCart ? 'added' : ''}`} 
@@ -246,10 +226,6 @@ const BookDetails = () => {
               >
                 Comprar Agora
               </button>
-
-              
-
-
             </div>
           </div>
         </div>
