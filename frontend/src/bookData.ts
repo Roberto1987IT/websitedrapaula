@@ -230,7 +230,7 @@ export const books: Book[] = [
   {
     id: 8,
     image: book8,
-    title: "Autonomia na Primeira Infância: Guia para Pais e Educadores (eBook)",
+    title: "The Role of play in child assessment and intervention (eBook)",
     description: "Um manual completo com estratégias práticas para promover a autonomia das crianças nos primeiros anos de vida, seguindo princípios de abordagens baseadas em evidências.",
     price: 6.99,
     originalPrice: 9.99,
@@ -253,7 +253,7 @@ export const books: Book[] = [
     relatedBooks: [4, 7],
     bestSeller: true,
     newRelease: true,
-    downloadUrl: "/pdfs/Autonomia-Primeira-Infancia.pdf"
+    downloadUrl: "/pdfs/E-book The_Role_of_Play_in_Child_Assessement and.pdf"
   }
 ];
 

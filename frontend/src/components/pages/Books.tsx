@@ -140,21 +140,9 @@ const Books = ({ id }: { id: string }) => {
                   )}
                   <div className="book-info">
                     <h3 className="book-title">{book.title}</h3>
-                    <div className="book-rating">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={`star-${book.id}-${i}`}
-                          size={14}
-                          className={i < (book.rating || 0) ? "star filled" : "star"}
-                          aria-label={i < (book.rating || 0) ? "Estrela preenchida" : "Estrela vazia"}
-                        />
-                      ))}
-                      {book.rating && (
-                        <span className="rating-count">
-                          ({book.reviews?.toLocaleString() || 0})
-                        </span>
-                      )}
-                    </div>
+
+                    
+
                     {book.category !== "ebook" && (
                       <div className="book-price-container">
                         {book.discount && book.originalPrice && (
