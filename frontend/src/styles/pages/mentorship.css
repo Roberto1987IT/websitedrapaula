@@ -186,6 +186,7 @@ li {
   }
   .mentorship-image img {
     max-width: 280px;
+    margin-bottom: 50px;
   }
   .mentorship-intro,
   .mentorship-main-content h2,

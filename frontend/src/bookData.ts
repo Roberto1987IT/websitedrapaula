@@ -176,7 +176,7 @@ export const books: Book[] = [
   {
     id: 6,
     image: book6,
-    title: "Guia Prático: Brincadeiras Sensoriais para Crianças (eBook)",
+    title: "A Linguagem e o Brincar em Condicoes Neurodiversas (eBook)",
     description: "Uma coleção completa de atividades e brincadeiras sensoriais para estimular o desenvolvimento infantil de forma natural e divertida.",
     price: 7.99,
     originalPrice: 11.99,
@@ -203,7 +203,7 @@ export const books: Book[] = [
   {
     id: 7,
     image: book7,
-    title: "Desenvolvimento Infantil: Marcos e Sinais de Alerta (eBook)",
+    title: "Instrumentos de Avaliacao do Modelo Ludico (eBook)",
     description: "Um guia essencial sobre os marcos do desenvolvimento infantil e como identificar precocemente sinais que possam necessitar de atenção especializada.",
     price: 8.99,
     originalPrice: 12.99,

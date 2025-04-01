@@ -164,8 +164,8 @@ function App() {
       </Routes>
 
       <WhatsAppButton 
-        phoneNumber="5511999999999" // Replace with your actual WhatsApp number
-        message="Hello, I have a question about your courses" // Custom default message
+        phoneNumber="351964309035" // Replace with your actual WhatsApp number
+        message="Ola, eu gostatia de saber mais informacoes..." // Custom default message
       />
     </Router>
   );

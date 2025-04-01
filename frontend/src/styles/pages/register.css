@@ -14,7 +14,7 @@
   align-items: center;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url('src/assets/imersoes/register1.jpg'); /* Replace with your image path */
+  background-image: url('/src/assets/courses/PaulaSerrano-89.jpg'); /* Replace with your image path */
   background-size: cover; /* Cover the entire section */
   background-position: center; /* Center the image */
   padding: 140px 20px 20px; /* Pushes the form down to avoid navbar overlap */
