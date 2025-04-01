@@ -5,32 +5,42 @@ from datetime import timedelta
 # Build paths
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Security
-SECRET_KEY = 'django-insecure-$mt2*as%uu)_(hbol%zt7eh+=a9^j*7a8qvp441xarho1e81ju'
-DEBUG = True
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+# ======================
+# SECURITY CONFIGURATION
+# ======================
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-$mt2*as%uu)_(hbol%zt7eh+=a9^j*7a8qvp441xarho1e81ju')
+DEBUG = os.getenv('DJANGO_DEBUG', 'True') == 'True'
+ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 
-# Applications
+# ===================
+# APPLICATION CONFIG
+# ===================
 INSTALLED_APPS = [
-    'api',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # Third-party apps
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
     'django_extensions',
     'django_countries',
     'phonenumber_field',
+    
+    # Local apps
     'users',
+    'api',
 ]
 
-AUTH_USER_MODEL = 'users.CustomUser'  # Format: 'app_name.ModelName'
+AUTH_USER_MODEL = 'users.CustomUser'
 
-# Middleware
+# =================
+# MIDDLEWARE CONFIG
+# =================
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -42,26 +52,43 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# REST Framework
+# ========================
+# REST FRAMEWORK SETTINGS
+# ========================
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ),
+    'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler',
 }
 
-# JWT Configuration
+# ===================
+# JWT CONFIGURATION
+# ===================
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'UPDATE_LAST_LOGIN': True,
+    'ALGORITHM': 'HS256',
+    'SIGNING_KEY': SECRET_KEY,
+    'AUTH_HEADER_TYPES': ('Bearer',),
 }
 
-# CORS Configuration
-CORS_ALLOW_ALL_ORIGINS = True  # Para testes (recomenda-se desativar em produção)
+# ===================
+# CORS CONFIGURATION
+# ===================
+CORS_ALLOW_ALL_ORIGINS = DEBUG  # Only allow all in development
+CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # React padrão
+    "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "http://localhost:5173",  # Vite padrão
+    "http://localhost:5173",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -70,7 +97,9 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
 ]
 
-# Database
+# ===================
+# DATABASE CONFIG
+# ===================
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -78,39 +107,16 @@ DATABASES = {
     }
 }
 
-# URLs & Templates
+# ===================
+# URL & TEMPLATE CONFIG
+# ===================
 ROOT_URLCONF = 'backend.urls'
 WSGI_APPLICATION = 'backend.wsgi.application'
 
-# Password validation
-AUTH_PASSWORD_VALIDATORS = [
-    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
-    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
-    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
-    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
-]
-
-# Internationalization
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
-USE_I18N = True
-USE_TZ = True
-
-# Static files
-STATIC_URL = 'static/'
-
-# Media files
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-# Default primary key
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Templates Configuration
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates"],  # Certifique-se de criar essa pasta
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,3 +128,84 @@ TEMPLATES = [
         },
     },
 ]
+
+# ===================
+# PASSWORD VALIDATION
+# ===================
+AUTH_PASSWORD_VALIDATORS = [
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
+]
+
+# ===================
+# INTERNATIONALIZATION
+# ===================
+LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'UTC'
+USE_I18N = True
+USE_TZ = True
+
+# ===================
+# STATIC & MEDIA FILES
+# ===================
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+# ===================
+# DEFAULT AUTO FIELD
+# ===================
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# ===================
+# EMAIL CONFIGURATION
+# ===================
+EMAIL_BACKEND = os.getenv('EMAIL_BACKEND', 'django.core.mail.backends.console.EmailBackend')
+EMAIL_HOST = os.getenv('EMAIL_HOST', '')
+EMAIL_PORT = os.getenv('EMAIL_PORT', '587')
+EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'True') == 'True'
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', '')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'webmaster@localhost')
+
+# ===================
+# REGISTRATION SETTINGS
+# ===================
+# Email activation settings
+EMAIL_ACTIVATION_REQUIRED = os.getenv('EMAIL_ACTIVATION_REQUIRED', 'False') == 'True'
+AUTO_LOGIN_AFTER_REGISTRATION = os.getenv('AUTO_LOGIN_AFTER_REGISTRATION', 'True') == 'True'
+ACCOUNT_ACTIVATION_DAYS = 7  # Days for activation link to remain valid
+SITE_DOMAIN = os.getenv('SITE_DOMAIN', 'http://localhost:8000')
+
+# ===================
+# PHONENUMBER SETTINGS
+# ===================
+PHONENUMBER_DEFAULT_REGION = 'US'
+PHONENUMBER_DB_FORMAT = 'INTERNATIONAL'
+
+# ===================
+# LOGGING CONFIGURATION
+# ===================
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+            'propagate': False,
+        },
+    },
+}

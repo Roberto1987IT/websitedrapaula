@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Cookies from "js-cookie";
 import "../../styles/pages/register.css";
 
 interface FormData {
@@ -9,24 +8,23 @@ interface FormData {
   password: string;
   confirmPassword: string;
   fullName: string;
-  age: string;
-  gender: string;
   phone: string;
-  birthDate: string;
+  gender: string;
   country: string;
+  birthDate: string;
   acceptTerms: boolean;
 }
 
 interface BackendErrors {
   email?: string[];
   password?: string[];
-  confirm_password?: string[];
+  password2?: string[];
   full_name?: string[];
-  age?: string[];
-  gender?: string[];
   phone?: string[];
-  birth_date?: string[];
+  gender?: string[];
   country?: string[];
+  birthday?: string[];
+  accept_terms?: string[];
 }
 
 const Register = () => {
@@ -35,11 +33,10 @@ const Register = () => {
     password: "",
     confirmPassword: "",
     fullName: "",
-    age: "",
-    gender: "",
     phone: "",
-    birthDate: "",
+    gender: "",
     country: "",
+    birthDate: "",
     acceptTerms: false,
   });
 
@@ -64,24 +61,29 @@ const Register = () => {
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
 
-    if (!formData.email) newErrors.email = "Email é obrigatório";
-    else if (!/^\S+@\S+\.\S+$/.test(formData.email)) newErrors.email = "Email inválido";
+    if (!formData.email) newErrors.email = "Email is required";
+    else if (!/^\S+@\S+\.\S+$/.test(formData.email)) newErrors.email = "Invalid email format";
 
-    if (!formData.password) newErrors.password = "Senha é obrigatória";
-    else if (formData.password.length < 8) newErrors.password = "Senha deve ter pelo menos 8 caracteres";
+    if (!formData.password) newErrors.password = "Password is required";
+    else if (formData.password.length < 8) newErrors.password = "Password must be at least 8 characters";
 
     if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = "As senhas não coincidem";
+      newErrors.confirmPassword = "Passwords don't match";
     }
 
-    if (!formData.fullName) newErrors.fullName = "Nome completo é obrigatório";
+    if (!formData.fullName) newErrors.fullName = "Full name is required";
 
-    if (!formData.phone) newErrors.phone = "Telefone é obrigatório";
+    if (!formData.phone) newErrors.phone = "Phone number is required";
 
-    if (!formData.acceptTerms) newErrors.acceptTerms = "Você deve aceitar os termos";
+    if (!formData.acceptTerms) newErrors.acceptTerms = "You must accept the terms";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
+  };
+
+  const formatPhoneNumber = (phone: string) => {
+    // Ensure phone number starts with + and has only digits after
+    return phone.startsWith('+') ? phone : `+${phone.replace(/\D/g, '')}`;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -93,13 +95,13 @@ const Register = () => {
     const dataToSend = {
       email: formData.email,
       password: formData.password,
-      confirm_password: formData.confirmPassword,
+      password2: formData.confirmPassword,
       full_name: formData.fullName,
-      age: formData.age ? parseInt(formData.age) : undefined,
-      gender: formData.gender || undefined,
-      phone: formData.phone,
-      birth_date: formData.birthDate || undefined,
-      country: formData.country || undefined
+      phone: formData.phone ? formatPhoneNumber(formData.phone) : null,
+      gender: formData.gender || null,
+      country: formData.country || null,
+      birthday: formData.birthDate || null,
+      accept_terms: formData.acceptTerms
     };
 
     try {
@@ -109,30 +111,39 @@ const Register = () => {
         {
           headers: {
             "Content-Type": "application/json",
-            "X-CSRFToken": Cookies.get("csrftoken") || "",
           },
         }
       );
 
       if (response.status === 201) {
-        alert("Registro concluído com sucesso!");
+        alert("Registration successful!");
         navigate("/login");
       }
     } catch (error: any) {
       if (axios.isAxiosError(error) && error.response) {
+        console.log("Backend error:", error.response.data);
+        
         const backendErrors = error.response.data;
         const errorMessages: Record<string, string> = {};
 
-        // Map backend errors to form fields
+        // Map backend field names to frontend names
         Object.entries(backendErrors).forEach(([field, messages]) => {
           if (Array.isArray(messages)) {
-            errorMessages[field] = messages.join(", ");
+            const frontendField = field === 'password2' ? 'confirmPassword' : 
+                                 field === 'full_name' ? 'fullName' :
+                                 field === 'accept_terms' ? 'acceptTerms' : field;
+            errorMessages[frontendField] = messages.join(", ");
           }
         });
 
         setErrors(errorMessages);
+        
+        if (!errorMessages.email && !errorMessages.password) {
+          alert("Registration error: " + JSON.stringify(backendErrors));
+        }
       } else {
-        alert("Erro ao conectar ao servidor. Tente novamente.");
+        alert("Server connection error. Please try again.");
+        console.error("Registration error:", error);
       }
     } finally {
       setIsSubmitting(false);
@@ -142,7 +153,7 @@ const Register = () => {
   return (
     <section className="register-section">
       <div className="register-container">
-        <h2>Registar Conta</h2>
+        <h2>Register Account</h2>
         <form className="register-form" onSubmit={handleSubmit} noValidate>
           {/* Email Field */}
           <label htmlFor="email">Email*:</label>
@@ -159,7 +170,7 @@ const Register = () => {
           {errors.email && <span className="error">{errors.email}</span>}
 
           {/* Password Field */}
-          <label htmlFor="password">Senha* (mínimo 8 caracteres):</label>
+          <label htmlFor="password">Password* (min 8 characters):</label>
           <input
             type="password"
             id="password"
@@ -174,7 +185,7 @@ const Register = () => {
           {errors.password && <span className="error">{errors.password}</span>}
 
           {/* Confirm Password */}
-          <label htmlFor="confirmPassword">Confirmar Senha*:</label>
+          <label htmlFor="confirmPassword">Confirm Password*:</label>
           <input
             type="password"
             id="confirmPassword"
@@ -188,7 +199,7 @@ const Register = () => {
           {errors.confirmPassword && <span className="error">{errors.confirmPassword}</span>}
 
           {/* Full Name */}
-          <label htmlFor="fullName">Nome Completo*:</label>
+          <label htmlFor="fullName">Full Name*:</label>
           <input
             type="text"
             id="fullName"
@@ -202,7 +213,7 @@ const Register = () => {
           {errors.fullName && <span className="error">{errors.fullName}</span>}
 
           {/* Phone */}
-          <label htmlFor="phone">Telefone* (ex: +5511999999999):</label>
+          <label htmlFor="phone">Phone* (e.g., +351912345678):</label>
           <input
             type="tel"
             id="phone"
@@ -212,55 +223,57 @@ const Register = () => {
             required
             autoComplete="tel"
             className={errors.phone ? "error-input" : ""}
+            placeholder="+CountryCodeNumber"
           />
           {errors.phone && <span className="error">{errors.phone}</span>}
 
-          {/* Age (Optional) */}
-          <label htmlFor="age">Idade:</label>
-          <input
-            type="number"
-            id="age"
-            name="age"
-            value={formData.age}
-            onChange={handleChange}
-            min="1"
-            autoComplete="off"
-          />
-
-          {/* Gender (Optional) */}
-          <label htmlFor="gender">Gênero:</label>
+          {/* Gender */}
+          <label htmlFor="gender">Gender:</label>
           <select
             name="gender"
             id="gender"
             value={formData.gender}
             onChange={handleChange}
+            className={errors.gender ? "error-input" : ""}
           >
-            <option value="">Selecione</option>
-            <option value="male">Masculino</option>
-            <option value="female">Feminino</option>
-            <option value="other">Outro</option>
+            <option value="">Select</option>
+            <option value="MALE">Male</option>
+            <option value="FEMALE">Female</option>
+            <option value="OTHER">Other</option>
+            <option value="PREFER_NOT_TO_SAY">Prefer not to say</option>
           </select>
+          {errors.gender && <span className="error">{errors.gender}</span>}
 
-          {/* Birth Date (Optional) */}
-          <label htmlFor="birthDate">Data de Nascimento:</label>
+          {/* Country */}
+          <label htmlFor="country">Country:</label>
+          <select
+            name="country"
+            id="country"
+            value={formData.country}
+            onChange={handleChange}
+            className={errors.country ? "error-input" : ""}
+          >
+            <option value="">Select Country</option>
+            <option value="PT">Portugal</option>
+            <option value="BR">Brazil</option>
+            <option value="US">United States</option>
+            <option value="ES">Spain</option>
+            <option value="FR">France</option>
+            {/* Add more countries as needed */}
+          </select>
+          {errors.country && <span className="error">{errors.country}</span>}
+
+          {/* Birth Date */}
+          <label htmlFor="birthDate">Birth Date:</label>
           <input
             type="date"
             id="birthDate"
             name="birthDate"
             value={formData.birthDate}
             onChange={handleChange}
+            className={errors.birthday ? "error-input" : ""}
           />
-
-          {/* Country (Optional) */}
-          <label htmlFor="country">País:</label>
-          <input
-            type="text"
-            id="country"
-            name="country"
-            value={formData.country}
-            onChange={handleChange}
-            autoComplete="country"
-          />
+          {errors.birthday && <span className="error">{errors.birthday}</span>}
 
           {/* Terms Checkbox */}
           <div className="terms-checkbox">
@@ -273,10 +286,10 @@ const Register = () => {
               className={errors.acceptTerms ? "error-input" : ""}
             />
             <label htmlFor="acceptTerms">
-              Eu aceito os{" "}
-              <a href="/termos" target="_blank" rel="noopener noreferrer">Termos</a>{" "}
-              e{" "}
-              <a href="/privacidade" target="_blank" rel="noopener noreferrer">Políticas</a>.
+              I accept the{" "}
+              <a href="/terms" target="_blank" rel="noopener noreferrer">Terms</a>{" "}
+              and{" "}
+              <a href="/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
             </label>
             {errors.acceptTerms && <span className="error">{errors.acceptTerms}</span>}
           </div>
@@ -287,12 +300,12 @@ const Register = () => {
             disabled={isSubmitting}
             className={isSubmitting ? "submitting" : ""}
           >
-            {isSubmitting ? "Registrando..." : "Criar Conta"}
+            {isSubmitting ? "Registering..." : "Create Account"}
           </button>
 
           {/* Login Link */}
           <p className="login-link">
-            Já tem uma conta? <a href="/login">Iniciar Sessão</a>
+            Already have an account? <a href="/login">Login</a>
           </p>
         </form>
       </div>

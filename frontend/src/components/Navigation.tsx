@@ -27,7 +27,7 @@ const Navigation = () => {
   const navigationLinks = [
     { label: "Home", href: "/nossos-valores" },
     {
-      label: "Conheca a Paula Serrano",
+      label: "Conheça a Paula Serrano",
       href: "#about",
     },
     {
