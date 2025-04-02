@@ -73,9 +73,9 @@ def process(request):
                 'price_data': {
                     'currency': 'eur',
                     'product_data': {
-                        'name': "Brincar e TO-Teoria Pratica(Curso)",
+                        'name': "Brincar e TO - Teoria e Prática (1/3 do Curso - 1ª Parcela)",
                     },
-                    'unit_amount': 45000,  # price in cents
+                    'unit_amount': 18200,  # price in cents
                 },
                 'quantity': 1,
             },
