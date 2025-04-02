@@ -89,7 +89,7 @@ const Navigation = () => {
       setUserName("");
       setTokenExpired(true);
     }
-  }, [location]);
+  }, [location]); // Ensure this runs on location change
 
   const toggleDropdown = (label: string) => {
     setActiveDropdowns((prev) => ({

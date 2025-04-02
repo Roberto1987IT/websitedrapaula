@@ -17,6 +17,7 @@
     width: 100%;
     height: 100%;
     z-index: -1;
+    background-color: #f3f4f6; /* Light gray fallback */
 }
 
 .auth-bg img {
@@ -77,13 +78,15 @@
 
 .password-container input {
     width: 100%;
-    padding-right: 45px; /* ✅ More space for the icon */
+    padding-right: 50px; /* Adjusted padding for better alignment */
 }
 
 /* 🔹 Eye Icon */
 .toggle-password {
     position: absolute;
     right: 12px;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Center vertically */
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -93,9 +96,9 @@
 }
 
 .toggle-password svg {
-    width: 24px; /* ✅ Larger icon */
-    height: 24px;
-    color: #666;
+    width: 20px; /* ✅ Larger icon */
+    height: 15px;
+    color: black;
     transition: color 0.2s ease;
 }
 
@@ -106,11 +109,11 @@
 /* 🔹 Forgot Password Link */
 .forgot-password {
     text-align: right;
-    margin-top: 5px;
+    margin-top: 10px; /* Increased margin for better spacing */
 }
 
 .forgot-password a {
-    color: #2563eb;
+    color: #1e40af; /* Darker blue for better contrast */
     font-size: 14px;
     text-decoration: none;
     font-weight: bold;
@@ -137,6 +140,12 @@
     background: #1d4ed8;
 }
 
+/* 🔹 Accessibility: Focus Styles for Buttons */
+.auth-container button:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
 /* 🔹 Register Link */
 .auth-container p {
     font-size: 14px;
@@ -144,7 +153,7 @@
 }
 
 .auth-container a {
-    color: #2563eb;
+    color: #1e40af; /* Darker blue for better contrast */
     font-weight: bold;
     text-decoration: none;
 }
@@ -190,5 +199,21 @@
     .toggle-password svg {
         width: 18px;
         height: 18px;
+    }
+
+    .auth-container label {
+        font-size: 14px; /* Slightly smaller font for labels */
+    }
+
+    .auth-container input {
+        font-size: 15px; /* Adjust input font size */
+    }
+
+    .auth-container button {
+        font-size: 16px; /* Adjust button font size */
+    }
+
+    .auth-container p {
+        font-size: 13px; /* Adjust paragraph font size */
     }
 }

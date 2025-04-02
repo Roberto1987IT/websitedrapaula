@@ -1,4 +1,3 @@
-from .serializers import NoteTokenSerializer, UserSerializer
 from rest_framework import status, generics
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, AllowAny
@@ -8,205 +7,164 @@ from django.template.loader import render_to_string
 from django.conf import settings
 from django.shortcuts import render
 from django.urls import reverse
-from .models import NoteToken
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.http import urlsafe_base64_encode
 from django.utils.encoding import force_bytes
 from django.contrib.sites.shortcuts import get_current_site
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from django.contrib.auth import get_user_model
+from django.http import HttpResponse
+from rest_framework.views import APIView
+from rest_framework.authtoken.models import Token
+from .serializers import UserSerializer, LoginSerializer, CustomUserSerializer
+from .models import CustomUser
 import logging
 
 logger = logging.getLogger(__name__)
 User = get_user_model()
 
 def activation_sended(request):
-    return render(request, 'users/activation_sended.html')
+    """Render activation sent confirmation page"""
+    return render(request, 'users/activation/sent.html')  # Updated template path
 
 def send_activate_link_by_email(user, request):
     """
-    Sends an email with an activation link containing a secure token.
+    Send account activation email with secure token
     """
     current_site = get_current_site(request)
     uid = urlsafe_base64_encode(force_bytes(user.pk))
     token = default_token_generator.make_token(user)
-    activation_link = getattr(settings, 'SITE_DOMAIN', 'http://localhost:8000') + reverse('users:activate_account', kwargs={'uidb64': uid, 'token': token})
+    activation_link = f"{getattr(settings, 'SITE_DOMAIN', 'http://localhost:8000')}{reverse('users:confirm', kwargs={'uidb64': uid, 'token': token})}"
 
-    subject = "Activate Your Account"
-    html_message = render_to_string('users/account_activation_email.html', {
-        'user': user, 
+    context = {
+        'user': user,
         'domain': current_site.domain,
         'activation_link': activation_link
-    })
+    }
     
-    plain_message = f"Click the link to activate your account: {activation_link}"
-    from_email = getattr(settings, 'DEFAULT_FROM_EMAIL', 'noreply@example.com')
-    send_mail(subject, plain_message, from_email, [user.email], html_message=html_message)
+    send_mail(
+        subject="Activate Your Account",
+        message=f"Click the link to activate your account: {activation_link}",
+        from_email=getattr(settings, 'DEFAULT_FROM_EMAIL', 'noreply@example.com'),
+        recipient_list=[user.email],
+        html_message=render_to_string('users/activation/email.html', context)  # Updated template path
+    )
 
 class CustomTokenObtainPairView(TokenObtainPairView):
+    """Custom JWT token obtain view with cookie support"""
     def post(self, request, *args, **kwargs):
         try:
             response = super().post(request, *args, **kwargs)
             tokens = response.data
 
-            res = Response()
-            res.data = {'success': True}
-
+            res = Response({
+                'success': True,
+                'user': {
+                    'id': response.data.get('user_id', None),
+                    'email': request.user.email if request.user.is_authenticated else None
+                }
+            })
             res.set_cookie(
                 key="access_token",
                 value=tokens['access'],
                 httponly=True,
-                secure=True,
-                samesite="None",
-                path="/"
+                secure=not settings.DEBUG,
+                samesite="Lax",
+                path="/",
+                max_age=3600  # 1 hour
             )
-            
             res.set_cookie(
                 key="refresh_token",
                 value=tokens['refresh'],
                 httponly=True,
-                secure=True,
-                samesite="None",
-                path="/"
+                secure=not settings.DEBUG,
+                samesite="Lax",
+                path="/",
+                max_age=86400  # 1 day
             )
-            
             return res
         except Exception as e:
             logger.error(f"Token obtain error: {str(e)}")
-            return Response({'success': False, 'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {'success': False, 'error': str(e)}, 
+                status=status.HTTP_400_BAD_REQUEST
+            )
 
-class CustomRefreshTokenView(TokenRefreshView):
+class CustomTokenRefreshView(TokenRefreshView):
+    """Custom JWT token refresh view"""
     def post(self, request, *args, **kwargs):
         try:
-            refresh_token = request.COOKIES.get('refresh_token')
+            refresh_token = request.COOKIES.get('refresh_token') or request.data.get('refresh')
             if not refresh_token:
-                return Response({'refreshed': False, 'error': 'Refresh token missing'}, status=status.HTTP_400_BAD_REQUEST)
+                return Response(
+                    {'refreshed': False, 'error': 'Refresh token missing'},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
 
             request.data['refresh'] = refresh_token
             response = super().post(request, *args, **kwargs)
             
-            res = Response()
-            res.data = {'refreshed': True}
-
+            res = Response({'refreshed': True})
             res.set_cookie(
                 key="access_token",
                 value=response.data['access'],
                 httponly=True,
-                secure=True,
-                samesite="None",
-                path="/"
+                secure=not settings.DEBUG,
+                samesite="Lax",
+                path="/",
+                max_age=3600  # 1 hour
             )
             return res
         except Exception as e:
             logger.error(f"Token refresh error: {str(e)}")
-            return Response({'refreshed': False, 'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {'refreshed': False, 'error': str(e)},
+                status=status.HTTP_400_BAD_REQUEST
+            )
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def get_notes(request):
-    try:
-        notes = NoteToken.objects.filter(owner=request.user)
-        serializer = NoteTokenSerializer(notes, many=True)
-        return Response(serializer.data)
-    except Exception as e:
-        logger.error(f"Get notes error: {str(e)}")
-        return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
-
-@api_view(['POST'])
-@permission_classes([IsAuthenticated])
-def is_authenticated(request):
-    return Response({'authenticated': True})
+def current_user(request):
+    """Get current authenticated user data"""
+    serializer = UserSerializer(request.user)
+    return Response({
+        'success': True,
+        'user': serializer.data
+    })
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def logout(request):
-    try:
-        response = Response({'success': True})
-        response.delete_cookie('access_token', path='/', samesite='None')
-        response.delete_cookie('refresh_token', path='/', samesite='None')
-        return response
-    except Exception as e:
-        logger.error(f"Logout error: {str(e)}")
-        return Response({'success': False, 'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+    """Logout by clearing JWT cookies"""
+    response = Response({'success': True})
+    response.delete_cookie('access_token', path='/')
+    response.delete_cookie('refresh_token', path='/')
+    return response
 
-class RegisterView(generics.CreateAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-    permission_classes = [AllowAny]
+class RegisterView(APIView):
+    permission_classes = []  # Allow unauthenticated access
 
-    def create(self, request, *args, **kwargs):
-        try:
-            serializer = self.get_serializer(data=request.data)
-            serializer.is_valid(raise_exception=True)
-            
-            user = serializer.save()
-            
-            # Handle email activation with safe settings access
-            email_activation_required = getattr(settings, 'EMAIL_ACTIVATION_REQUIRED', False)
-            if email_activation_required:
-                try:
-                    send_activate_link_by_email(user, request)
-                    response_data = {
-                        'success': True,
-                        'message': 'Registration successful! Please check your email to activate your account.',
-                        'user': {
-                            'email': user.email,
-                            'full_name': user.full_name
-                        }
-                    }
-                except Exception as e:
-                    logger.error(f"Activation email error: {str(e)}")
-                    # Continue even if email fails
-                    response_data = {
-                        'success': True,
-                        'message': 'Registration successful but activation email failed to send.',
-                        'user': {
-                            'email': user.email,
-                            'full_name': user.full_name
-                        }
-                    }
-            else:
-                response_data = {
-                    'success': True,
-                    'user': {
-                        'email': user.email,
-                        'full_name': user.full_name
-                    }
-                }
-            
-            # Handle auto-login with safe settings access
-            auto_login = getattr(settings, 'AUTO_LOGIN_AFTER_REGISTRATION', True)
-            if auto_login and not email_activation_required:
-                try:
-                    token_view = CustomTokenObtainPairView()
-                    token_response = token_view.post(request)
-                    if token_response.status_code == 200:
-                        response_data.update({
-                            'access_token': token_response.data.get('access'),
-                            'refresh_token': token_response.data.get('refresh')
-                        })
-                except Exception as e:
-                    logger.error(f"Auto-login error: {str(e)}")
-            
-            return Response(response_data, status=status.HTTP_201_CREATED)
-            
-        except Exception as e:
-            logger.error(f"Registration error: {str(e)}")
-            error_response = {
-                'success': False,
-                'error': str(e),
-                'errors': getattr(e, 'detail', None)
-            }
-            if hasattr(e, 'get_full_details'):
-                error_response['errors'] = e.get_full_details()
-            elif hasattr(e, 'detail'):
-                error_response['errors'] = e.detail
-            elif hasattr(serializer, 'errors'):
-                error_response['errors'] = serializer.errors
-            
-            return Response(error_response, status=status.HTTP_400_BAD_REQUEST)
+    def post(self, request):
+        data = request.data
+        if not data.get('accept_terms'):
+            return Response({"error": "You must accept the terms and conditions."}, status=400)
+        serializer = UserSerializer(data=request.data)  # Use UserSerializer here
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class LoginView(APIView):
+    def post(self, request):
+        serializer = LoginSerializer(data=request.data)
+        if serializer.is_valid():
+            user = serializer.validated_data
+            token, _ = Token.objects.get_or_create(user=user)
+            return Response({"token": token.key}, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class UserProfileView(generics.RetrieveUpdateAPIView):
+    """User profile management endpoint"""
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated]
@@ -216,10 +174,30 @@ class UserProfileView(generics.RetrieveUpdateAPIView):
 
     def update(self, request, *args, **kwargs):
         try:
-            return super().update(request, *args, **kwargs)
+            response = super().update(request, *args, **kwargs)
+            return Response({
+                'success': True,
+                'user': response.data
+            })
         except Exception as e:
             logger.error(f"Profile update error: {str(e)}")
-            return Response({
-                'success': False,
-                'error': str(e)
-            }, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {'success': False, 'error': str(e)},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+class PasswordResetRequestView(generics.GenericAPIView):
+    """Custom password reset request view"""
+    permission_classes = [AllowAny]
+    
+    def post(self, request):
+        # Implement your password reset logic here
+        return Response({'success': True, 'message': 'Password reset email sent'})
+
+class PasswordResetConfirmView(generics.GenericAPIView):
+    """Custom password reset confirmation view"""
+    permission_classes = [AllowAny]
+    
+    def post(self, request, uidb64, token):
+        # Implement your password reset confirmation logic here
+        return Response({'success': True, 'message': 'Password reset successful'})

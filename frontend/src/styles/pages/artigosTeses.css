@@ -234,61 +234,50 @@
   color: var(--dark-gray);
   line-height: 1.6;
   font-size: 0.95rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
   margin: 0;
-  transition: max-height 0.5s ease, -webkit-line-clamp 0.5s ease;
-  max-height: 6.4em; /* 4 lines * 1.6 line-height */
-}
-
-.publication-description.expanded {
-  -webkit-line-clamp: initial;
-  line-clamp: initial;
-  max-height: 500px; /* Tall enough to fit any content */
+  padding-bottom: 1rem;
 }
 
 .publication-actions {
-  display: flex;
-  gap: 0.75rem;
   padding: 1.5rem;
   margin-top: auto;
 }
 
-.publication-read-button {
-  flex: 1;
+.publication-download-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
   background-color: var(--primary-blue);
   color: white;
+  border: none;
   border-radius: 6px;
-  padding: 0.6rem 1rem;
-  text-align: center;
-  text-decoration: none;
+  padding: 0.75rem 1.5rem;
   font-weight: 500;
-  font-size: 0.9rem;
-  transition: background-color var(--transition-speed) ease;
-}
-
-.publication-read-button:hover {
-  background-color: var(--dark-blue);
-}
-
-.publication-download-button {
-  background-color: white;
-  border: 1px solid var(--medium-gray);
-  color: var(--dark-gray);
-  border-radius: 6px;
-  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
-  font-size: 1rem;
   transition: all var(--transition-speed) ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .publication-download-button:hover {
-  background-color: var(--light-green);
-  border-color: var(--primary-green);
-  color: var(--primary-green);
+  background-color: #0f62db;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.publication-download-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.download-icon {
+  transition: transform 0.2s ease;
+}
+
+.publication-download-button:hover .download-icon {
+  transform: translateY(2px);
 }
 
 /* Skeleton loading state */
@@ -387,9 +376,14 @@
   border-color: var(--primary-blue);
 }
 
-.pagination-button:hover:not(.active) {
+.pagination-button:hover:not(.active):not(:disabled) {
   background-color: var(--light-blue);
   color: var(--primary-blue);
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .pagination-ellipsis {
@@ -455,14 +449,6 @@
   .artigos-teses-subtitle {
     font-size: 1rem;
   }
-  
-  .publication-actions {
-    flex-direction: column;
-  }
-  
-  .publication-download-button {
-    width: 100%;
-  }
 }
 
 /* Animations */
@@ -490,7 +476,6 @@
 }
 
 /* Accessibility improvements */
-.publication-read-button:focus,
 .publication-download-button:focus,
 .filter-button:focus,
 .search-input:focus,
