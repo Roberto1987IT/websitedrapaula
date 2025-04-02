@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { format } from "date-fns";
+import { format, differenceInYears } from "date-fns";
 import "../styles/Profile.css";
 
 interface ProfileData {
   full_name: string;
-  age: number;
+  age?: number; // Make optional since we'll calculate it
   gender: string;
   phone: string;
-  birth_date: string;
+  birth_date?: string; // Make optional
+  birthday?: string; // Alternative field name
   country: string;
   email: string;
-  user?: {
-    email: string;
-  };
 }
 
 const Profile = () => {
@@ -22,6 +20,15 @@ const Profile = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const [error, setError] = useState<string | null>(null);
+
+  const calculateAge = (birthDate: string | undefined): number | null => {
+    if (!birthDate) return null;
+    try {
+      return differenceInYears(new Date(), new Date(birthDate));
+    } catch {
+      return null;
+    }
+  };
 
   const fetchProfile = async () => {
     setLoading(true);
@@ -38,57 +45,44 @@ const Profile = () => {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json"
         },
-        timeout: 10000 // 10 second timeout
+        timeout: 10000
       });
 
-      // Handle both possible response structures:
-      // 1. { user: { ...profileData } } 
-      // 2. Direct profile data { ...profileData }
+      // Handle both response structures and field name variations
       const responseData = response.data.user || response.data;
 
       if (!responseData) {
         throw new Error("Empty profile data received");
       }
 
-      // Ensure required fields exist
+      // Check for alternative field names (birthday vs birth_date)
+      const birthDate = responseData.birth_date || responseData.birthday;
+      const age = calculateAge(birthDate) || responseData.age;
+
       const processedData: ProfileData = {
         full_name: responseData.full_name || "N/A",
-        age: responseData.age || 0,
+        age: age || undefined,
         gender: responseData.gender || "N/A",
         phone: responseData.phone || "N/A",
-        birth_date: responseData.birth_date || "",
+        birth_date: birthDate || undefined,
         country: responseData.country || "N/A",
-        email: responseData.user?.email || responseData.email || "N/A",
-        user: {
-          email: responseData.user?.email || responseData.email || "N/A"
-        }
+        email: responseData.email || "N/A"
       };
 
       setProfileData(processedData);
-      setError(null);
-
     } catch (error) {
       console.error("Profile fetch error:", error);
       
       if (axios.isAxiosError(error)) {
         if (error.response?.status === 401) {
-          // Unauthorized - redirect to login
           localStorage.removeItem("access");
           navigate("/login");
           return;
         }
-        
-        setError(
-          error.response?.data?.message || 
-          `Server error: ${error.response?.status || "Unknown"}`
-        );
-      } else if (error instanceof Error) {
-        setError(error.message);
+        setError(error.response?.data?.message || "Server error");
       } else {
-        setError("An unexpected error occurred");
+        setError("Failed to load profile");
       }
-      
-      setProfileData(null);
     } finally {
       setLoading(false);
     }
@@ -100,34 +94,29 @@ const Profile = () => {
       navigate("/login");
       return;
     }
-
     fetchProfile();
-  }, [navigate]); // Add other dependencies if needed
-  
-    // Loading and error states
-    if (loading) {
-      return (
-        <div className="loading">
-          <div className="spinner"></div>
-          <p>Loading your profile...</p>
-        </div>
-      );
-    }
-  
-    if (error || !profileData) {
-      return (
-        <div className="error-message">
-          <h3>Profile Loading Failed</h3>
-          <p>{error || "Unknown error occurred"}</p>
-          <button 
-            className="retry-button"
-            onClick={fetchProfile}
-          >
-            Try Again
-          </button>
-        </div>
-      );
-    }
+  }, [navigate]);
+
+  if (loading) {
+    return (
+      <div className="loading">
+        <div className="spinner"></div>
+        <p>Loading your profile...</p>
+      </div>
+    );
+  }
+
+  if (error || !profileData) {
+    return (
+      <div className="error-message">
+        <h3>Profile Loading Failed</h3>
+        <p>{error || "Unknown error occurred"}</p>
+        <button className="retry-button" onClick={fetchProfile}>
+          Try Again
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="profile-page">
@@ -139,45 +128,45 @@ const Profile = () => {
           <span className="profile-label">Nome</span>
           <div className="profile-value">{profileData.full_name || "N/A"}</div>
         </div>
-        <div className="profile-item">
-          <span className="profile-label">Idade</span>
-          <div className="profile-value">{profileData.age || "N/A"}</div>
-        </div>
+        
+        {profileData.age !== undefined && (
+          <div className="profile-item">
+            <span className="profile-label">Idade</span>
+            <div className="profile-value">{profileData.age}</div>
+          </div>
+        )}
+        
         <div className="profile-item">
           <span className="profile-label">Genero</span>
           <div className="profile-value">{profileData.gender || "N/A"}</div>
         </div>
+        
         <div className="profile-item">
           <span className="profile-label">Telefone</span>
           <div className="profile-value">{profileData.phone || "N/A"}</div>
         </div>
-        <div className="profile-item">
-          <span className="profile-label">Data de Nascimento</span>
-          <div className="profile-value">
-            {profileData.birth_date
-              ? format(new Date(profileData.birth_date), "MMMM d, yyyy")
-              : "N/A"}
+        
+        {(profileData.birth_date || profileData.birthday) && (
+          <div className="profile-item">
+            <span className="profile-label">Data de Nascimento</span>
+            <div className="profile-value">
+              {format(
+                new Date(profileData.birth_date || profileData.birthday!), 
+                "MMMM d, yyyy"
+              )}
+            </div>
           </div>
-        </div>
+        )}
+        
         <div className="profile-item">
           <span className="profile-label">País</span>
           <div className="profile-value">{profileData.country || "N/A"}</div>
         </div>
-
+        
         <div className="profile-item">
           <span className="profile-label">Email</span>
-          <div className="profile-value">
-            {profileData.user?.email || profileData.email || "N/A"}
-          </div>
+          <div className="profile-value">{profileData.email || "N/A"}</div>
         </div>
-
-        <div className="profile-item">
-          <span className="profile-label">Conta</span>
-          <div className="profile-value">
-            {profileData.user?.email || profileData.email || "Pessoal"}
-          </div>
-        </div>
-
       </div>
     </div>
   );
