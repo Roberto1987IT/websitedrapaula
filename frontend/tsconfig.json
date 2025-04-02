@@ -16,7 +16,7 @@
     "paths": {
       "@/*": ["./src/*"] // This is the important part!
     }
-  }
+  },
+  "include": ["src"], // Ensure the src folder is included
+  "exclude": ["node_modules"] // Exclude unnecessary files
 }
-
-

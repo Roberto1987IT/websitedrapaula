@@ -1,29 +1,62 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import '../../styles/pages/login.css'; // Updated relative path to CSS
+import { useNavigate } from 'react-router-dom';
+import config from '@/config';
+import '../../styles/pages/login.css';
 
 const Login = () => {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate(); // Initialize useNavigate
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const togglePasswordVisibility = () => {
         setPasswordVisible(!passwordVisible);
     };
 
-    const handleLogin = (event: React.FormEvent) => {
-        event.preventDefault(); // Prevent page refresh
-        console.log('Logging in with:', { email, password });
+    const handleLogin = async (event: React.FormEvent) => {
+        event.preventDefault();
+        setIsLoading(true);
+        setError('');
 
-        // Simulate login logic (replace with actual API call)
-        if (email === 'tesla@gmail.com' && password === '12345678') {
-            // Use a valid JWT token for testing
-            const mockToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IlRlc3QgVXNlciIsImV4cCI6MTk0NzYwMDAwMH0.4f9d4c9d4c9d4c9d4c9d4c9d4c9d4c9d4c9d4c9d4c9';
-            localStorage.setItem('access', mockToken);
-            navigate('/'); // Redirect to the home page
-        } else {
-            alert('Invalid email or password'); // Handle invalid login
+        try {
+            const response = await fetch(`${config.backendUrl}/api/auth/token/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    // Use 'username' if your Django backend expects it
+                    // username: email,
+                    email,
+                    password
+                }),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(
+                    data.detail || 
+                    data.message || 
+                    (data.email ? data.email[0] : null) || 
+                    (data.password ? data.password[0] : null) || 
+                    'Login failed. Please try again.'
+                );
+            }
+
+            // Store tokens
+            localStorage.setItem('access', data.access);
+            localStorage.setItem('refresh', data.refresh);
+            
+            // Redirect to home or previous protected page
+            navigate('/');
+        } catch (err) {
+            console.error('Login error:', err);
+            setError(err.message || 'An error occurred during login');
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -33,6 +66,11 @@ const Login = () => {
                 <img src="/path-to-your-background-image.jpg" alt="Background" />
             </div>
             <div className="auth-container">
+                {error && (
+                    <div className="error-message">
+                        {error}
+                    </div>
+                )}
                 <form onSubmit={handleLogin}>
                     <label htmlFor="email">Email</label>
                     <input
@@ -43,6 +81,7 @@ const Login = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
+                        disabled={isLoading}
                     />
 
                     <label htmlFor="password">Password</label>
@@ -55,11 +94,13 @@ const Login = () => {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
+                            disabled={isLoading}
                         />
                         <button
                             type="button"
                             className="toggle-password"
                             onClick={togglePasswordVisibility}
+                            disabled={isLoading}
                         >
                             {passwordVisible ? (
                                 <svg
@@ -102,7 +143,12 @@ const Login = () => {
                         <a href="/forgot-password">Forgot Password?</a>
                     </div>
 
-                    <button type="submit">Login</button>
+                    <button 
+                        type="submit" 
+                        disabled={isLoading}
+                    >
+                        {isLoading ? 'Logging in...' : 'Login'}
+                    </button>
                 </form>
                 <p>
                     Don't have an account? <a href="/register">Register</a>
