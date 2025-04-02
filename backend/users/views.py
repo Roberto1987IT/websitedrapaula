@@ -13,11 +13,13 @@ from django.utils.encoding import force_bytes
 from django.contrib.sites.shortcuts import get_current_site
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from django.contrib.auth import get_user_model
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
+from django.contrib.auth.decorators import login_required
 from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
 from .serializers import UserSerializer, LoginSerializer, CustomUserSerializer
 from .models import CustomUser
+from rest_framework import serializers  # Import serializers
 import logging
 
 logger = logging.getLogger(__name__)
@@ -170,15 +172,60 @@ class UserProfileView(generics.RetrieveUpdateAPIView):
     permission_classes = [IsAuthenticated]
 
     def get_object(self):
+        """Always return the currently authenticated user"""
         return self.request.user
 
+    def retrieve(self, request, *args, **kwargs):
+        """Custom retrieve to ensure consistent response format"""
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+        
+        return Response({
+            'success': True,
+            'user': {
+                'full_name': instance.full_name,  # Direct field access
+                'email': instance.email,
+                # Include other important fields
+                **serializer.data
+            }
+        })
+
     def update(self, request, *args, **kwargs):
+        """Handle profile updates with proper validation"""
         try:
-            response = super().update(request, *args, **kwargs)
+            # Partial update allowed for PATCH requests
+            partial = kwargs.pop('partial', False)
+            instance = self.get_object()
+            
+            # Remove read-only fields from request data
+            request_data = request.data.copy()
+            for field in ['email', 'id']:  # Add other read-only fields
+                if field in request_data:
+                    del request_data[field]
+            
+            serializer = self.get_serializer(
+                instance, 
+                data=request_data, 
+                partial=partial
+            )
+            serializer.is_valid(raise_exception=True)
+            self.perform_update(serializer)
+            
             return Response({
                 'success': True,
-                'user': response.data
+                'user': {
+                    'full_name': instance.full_name,
+                    'email': instance.email,
+                    **serializer.data
+                }
             })
+            
+        except serializers.ValidationError as e:
+            logger.error(f"Validation error: {str(e)}")
+            return Response(
+                {'success': False, 'error': e.detail},
+                status=status.HTTP_400_BAD_REQUEST
+            )
         except Exception as e:
             logger.error(f"Profile update error: {str(e)}")
             return Response(
@@ -201,3 +248,11 @@ class PasswordResetConfirmView(generics.GenericAPIView):
     def post(self, request, uidb64, token):
         # Implement your password reset confirmation logic here
         return Response({'success': True, 'message': 'Password reset successful'})
+
+@login_required
+def user_profile(request):
+    user = request.user
+    return JsonResponse({
+        "full_name": user.get_full_name(),
+        "email": user.email,
+    })

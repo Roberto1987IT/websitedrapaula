@@ -25,6 +25,7 @@ urlpatterns = [
     # User Profile Endpoints
     path('api/users/', include('users.urls')),
     path('api/v1/', include('users.urls')),
+    path('', include('users.urls')),
     
     # Home
     path('', home, name='home'),

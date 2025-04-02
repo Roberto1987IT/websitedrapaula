@@ -54,7 +54,11 @@ const Login = () => {
             navigate('/');
         } catch (err) {
             console.error('Login error:', err);
-            setError(err.message || 'An error occurred during login');
+            if (err instanceof Error) {
+                setError(err.message);
+            } else {
+                setError('An error occurred during login');
+            }
         } finally {
             setIsLoading(false);
         }

@@ -21,6 +21,78 @@ const Profile = () => {
   const [profileData, setProfileData] = useState<ProfileData | null>(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchProfile = async () => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const token = localStorage.getItem("access");
+      if (!token) {
+        throw new Error("No authentication token found");
+      }
+
+      const response = await axios.get("http://localhost:8000/api/users/profile/", {
+        headers: { 
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json"
+        },
+        timeout: 10000 // 10 second timeout
+      });
+
+      // Handle both possible response structures:
+      // 1. { user: { ...profileData } } 
+      // 2. Direct profile data { ...profileData }
+      const responseData = response.data.user || response.data;
+
+      if (!responseData) {
+        throw new Error("Empty profile data received");
+      }
+
+      // Ensure required fields exist
+      const processedData: ProfileData = {
+        full_name: responseData.full_name || "N/A",
+        age: responseData.age || 0,
+        gender: responseData.gender || "N/A",
+        phone: responseData.phone || "N/A",
+        birth_date: responseData.birth_date || "",
+        country: responseData.country || "N/A",
+        email: responseData.user?.email || responseData.email || "N/A",
+        user: {
+          email: responseData.user?.email || responseData.email || "N/A"
+        }
+      };
+
+      setProfileData(processedData);
+      setError(null);
+
+    } catch (error) {
+      console.error("Profile fetch error:", error);
+      
+      if (axios.isAxiosError(error)) {
+        if (error.response?.status === 401) {
+          // Unauthorized - redirect to login
+          localStorage.removeItem("access");
+          navigate("/login");
+          return;
+        }
+        
+        setError(
+          error.response?.data?.message || 
+          `Server error: ${error.response?.status || "Unknown"}`
+        );
+      } else if (error instanceof Error) {
+        setError(error.message);
+      } else {
+        setError("An unexpected error occurred");
+      }
+      
+      setProfileData(null);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
     const token = localStorage.getItem("access");
@@ -29,38 +101,33 @@ const Profile = () => {
       return;
     }
 
-    const fetchProfile = async () => {
-      try {
-        const response = await axios.get("http://localhost:8000/api/user/profile/", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        setProfileData(response.data);
-      } catch (error) {
-        if (axios.isAxiosError(error) && error.response?.status === 401) {
-          navigate("/login");
-        } else {
-          console.error("Error fetching profile:", error);
-          setProfileData(null);
-        }
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchProfile();
-  }, [navigate]);
-
-  if (loading) {
-    return <div className="loading">Loading your profile...</div>;
-  }
-
-  if (!profileData) {
-    return (
-      <div className="error-message">
-        Failed to load profile. Please try again later.
-      </div>
-    );
-  }
+  }, [navigate]); // Add other dependencies if needed
+  
+    // Loading and error states
+    if (loading) {
+      return (
+        <div className="loading">
+          <div className="spinner"></div>
+          <p>Loading your profile...</p>
+        </div>
+      );
+    }
+  
+    if (error || !profileData) {
+      return (
+        <div className="error-message">
+          <h3>Profile Loading Failed</h3>
+          <p>{error || "Unknown error occurred"}</p>
+          <button 
+            className="retry-button"
+            onClick={fetchProfile}
+          >
+            Try Again
+          </button>
+        </div>
+      );
+    }
 
   return (
     <div className="profile-page">

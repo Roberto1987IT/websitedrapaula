@@ -10,27 +10,25 @@ from .views import (
     RegisterView,
     UserProfileView,
     PasswordResetRequestView,
-    PasswordResetConfirmView
+    PasswordResetConfirmView,
+    user_profile
 )
 
 app_name = 'users'
 
-# Authentication URLs
-auth_patterns = [
-    path('token/', TokenObtainPairView.as_view(), name='token-obtain'),  # Correct endpoint for login
-    path('login/', TokenObtainPairView.as_view(), name='login'),  # Alias for login
-    path('token/refresh/', TokenRefreshView.as_view(), name='token-refresh'),
-    path('token/verify/', TokenVerifyView.as_view(), name='token-verify'),
-]
-
-# User Management URLs
-user_patterns = [
-    path('me/', current_user, name='current-user'),
-    path('register/', RegisterView.as_view(), name='register'),
-    path('profile/', UserProfileView.as_view(), name='profile'),
-]
-
 urlpatterns = [
-    path('auth/', include(auth_patterns)),  # Include authentication URLs
-    path('users/', include(user_patterns)),  # Include user management URLs
+    # Authentication endpoints
+    path('auth/token/', TokenObtainPairView.as_view(), name='token-obtain'),
+    path('auth/token/refresh/', TokenRefreshView.as_view(), name='token-refresh'),
+    path('auth/token/verify/', TokenVerifyView.as_view(), name='token-verify'),
+    
+    # User endpoints
+    path('api/users/me/', current_user, name='current-user'),
+    path('api/users/register/', RegisterView.as_view(), name='register'),
+    path('api/users/profile/', UserProfileView.as_view(), name='profile'),
+    path('api/auth/logout/', logout, name='logout'),
+    
+    # Password reset endpoints
+    path('api/password/reset/', PasswordResetRequestView.as_view(), name='password-reset'),
+    path('api/password/reset/confirm/<uidb64>/<token>/', PasswordResetConfirmView.as_view(), name='password-reset-confirm'),
 ]
