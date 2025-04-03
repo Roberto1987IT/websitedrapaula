@@ -33,6 +33,10 @@ import ImersaoDetails from "./components/pages/ImersaoDetails";
 import LancamentoDetail from './components/pages/LancamentoDetail'; // Ensure this file exists or correct the path
 import ScrollToTop from './components/ScrollToTop';
 import WhatsAppButton from './components/WhatsAppButton';
+import Politica from "./components/Politica";
+import PoliticaCookies from "./components/PoliticaCookies";
+import TermosCondicoes from "./components/TermosCondicoes";
+
 
 
 
@@ -142,8 +146,10 @@ function App() {
         <Route path="/lancamento/:id" element={<LancamentoDetail />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/wishlist" element={<Wishlist />} />
-       
-        
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/politica" element={<Politica />} />
+        <Route path="/politica-cookies" element={<PoliticaCookies />} />
+        <Route path="/termos-condicoes" element={<TermosCondicoes />} />
        
         <Route
           path="/wishlist"

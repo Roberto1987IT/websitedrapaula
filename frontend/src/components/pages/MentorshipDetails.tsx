@@ -1,17 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { ChevronDown, ChevronUp, Mail } from "lucide-react";
 import "../../styles/pages/mentorshipDetail.css";
 import mentorshipImage from "../../assets/courses/PaulaSerrano-102 1.png";
 
 const MentorshipDetails = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [activeFaqIndex, setActiveFaqIndex] = useState<number | null>(null);
 
-  // Scroll to top on component mount
+  // Scroll to top on component mount or scroll to specific section if hash is present
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (location.hash) {
+      const sectionId = location.hash.substring(1); // Remove the "#" from the hash
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
 
   const toggleFaq = (index: number) => {
     setActiveFaqIndex(activeFaqIndex === index ? null : index);
@@ -144,9 +153,8 @@ const MentorshipDetails = () => {
         </div>
       </div>
 
-      <div className="mentorship-faq">
-        <h2 className="mentorship-faq-title">Perguntas Frequentes</h2>
-        
+      <section id="faq">
+        <h2>Perguntas Frequentes</h2>
         {faqs.map((faq, index) => (
           <div 
             key={index} 
@@ -162,7 +170,7 @@ const MentorshipDetails = () => {
             </div>
           </div>
         ))}
-      </div>
+      </section>
     </div>
   );
 };

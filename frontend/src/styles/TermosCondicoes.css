@@ -1,0 +1,17 @@
+.termos-condicoes-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.termos-condicoes-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2196F3;
+}
+
+.termos-condicoes-container p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}

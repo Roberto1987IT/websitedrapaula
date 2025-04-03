@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom"; // Import useNavigate
 import { Button } from "@/components/ui/button";  // Adjusted path
 import { ChevronDown, ChevronUp, Check } from "lucide-react";
 import { courses } from "../courseData";
 import "../styles/pages/courseDetails.css";
 
 const CourseDetails = () => {
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams<{ id: string | undefined }>();
+  const navigate = useNavigate(); // Initialize navigate
   const course = courses.find((c) => c.id === Number(id));
   const [isInWishlist, setIsInWishlist] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -20,6 +21,10 @@ const CourseDetails = () => {
     // Scroll to top on page load
     window.scrollTo(0, 0);
   }, [id]);
+
+  useEffect(() => {
+    console.log("Current login state:", localStorage.getItem("isLoggedIn"));
+  }, []);
 
   const toggleWishlist = () => {
     const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
@@ -37,6 +42,32 @@ const CourseDetails = () => {
 
   const toggleDescription = () => {
     setIsDescriptionExpanded(!isDescriptionExpanded);
+  };
+
+  const handleAddToCart = () => {
+    // Check if the user is logged in
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+    console.log("Login state:", {
+      rawValue: localStorage.getItem("isLoggedIn"),
+      interpretedAs: isLoggedIn,
+    });
+
+    if (!isLoggedIn) {
+      // Redirect to login page with return URL
+      navigate("/login", { state: { from: window.location.pathname } });
+      return; // Exit the function to prevent further execution
+    }
+
+    // Add to cart logic (only if logged in)
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    if (!cart.includes(Number(id))) {
+      cart.push(Number(id));
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("Curso adicionado ao carrinho!");
+    } else {
+      alert("O curso já está no carrinho.");
+    }
   };
 
   if (!course) {
@@ -314,7 +345,7 @@ const CourseDetails = () => {
                 </svg>
                 Comprar Agora
               </button>
-              <button className="cart-button">
+              <button className="cart-button" onClick={handleAddToCart}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9 20C9 21.1 8.1 22 7 22C5.9 22 5 21.1 5 20C5 18.9 5.9 18 7 18C8.1 18 9 18.9 9 20Z" stroke="currentColor" strokeWidth="1.5"/>
                   <path d="M20 20C20 21.1 19.1 22 18 22C16.9 22 16 21.1 16 20C16 18.9 16.9 18 18 18C19.1 18 20 18.9 20 20Z" stroke="currentColor" strokeWidth="1.5"/>
@@ -361,5 +392,8 @@ const CourseDetails = () => {
     </div>
   );
 };
+
+// When login is successful:
+localStorage.setItem("isLoggedIn", "true"); // Use string "true"
 
 export default CourseDetails;

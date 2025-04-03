@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { toast } from "sonner";
 import { Download } from "lucide-react";
 import "../../styles/pages/artigosTeses.css";
+import { saveAs } from 'file-saver';
 
 interface Article {
   id: number;
@@ -13,7 +14,7 @@ interface Article {
   file: string;
 }
 
-// Sample articles data - using simplified filenames
+// Sample articles data - using corrected filenames
 const sampleArticles: Article[] = [
   {
     id: 1,
@@ -22,7 +23,7 @@ const sampleArticles: Article[] = [
     type: "artigo",
     date: "12/07/2024",
     description: "Brincar é a principal ocupação nos primeiros anos de vida da criança...",
-    file: "pdfs/o-brincar-e-o-processamento-sensorial.pdf", // Updated file path
+    file: "/pdfs/o-brincar-e-o-processamento-sensorial.pdf", // Corrected file path
   },
   {
     id: 2,
@@ -31,7 +32,7 @@ const sampleArticles: Article[] = [
     type: "artigo",
     date: "03/01/2013",
     description: "Desde o início do desenvolvimento da teoria de integração sensorial...",
-    file: "pdfs/adaptacao-cultural-linguistica.pdf", // Updated file path
+    file: "/pdfs/adaptacao-cultural-linguistica.pdf", // Corrected file path
   },
   {
     id: 3,
@@ -40,7 +41,7 @@ const sampleArticles: Article[] = [
     type: "artigo",
     date: "22/02/2023",
     description: "Introdução: Ao brincar a criança dá significado ao mundo que a rodeia...",
-    file: "pdfs/comportamentos-brincar-corpo.pdf", // Updated file path
+    file: "/pdfs/comportamentos-brincar-corpo.pdf", // Corrected file path
   },
 ];
 
@@ -75,45 +76,28 @@ const ArtigosTeses = () => {
   };
 
   const handleDownload = async (article: Article) => {
-    console.log("Download button clicked for:", article.title); // Debugging log
-
-    if (!article.file) {
-      toast.error(`Arquivo não disponível para "${article.title}"`);
-      return;
-    }
-
     try {
-      // Use a relative path for the file URL
-      const fileUrl = `/${article.file}`;
-      console.log("Generated file URL:", fileUrl); // Debugging log
-
-      // Fetch the file content
-      const response = await fetch(fileUrl);
-      console.log("Fetch response status:", response.status); // Debugging log
-      if (!response.ok) {
-        throw new Error("File not found");
-      }
-
-      // Convert the response to a Blob and explicitly set the MIME type
+      // 1. Construct the correct file path
+      const baseUrl = window.location.origin; // Gets current domain (http://localhost:3000)
+      const filePath = `${baseUrl}/pdfs/${article.file}`;
+      
+      // 2. Fetch the file
+      const response = await fetch(filePath);
+      
+      // 3. Check if successful
+      if (!response.ok) throw new Error('File not found (404)');
+      
+      // 4. Get file as blob
       const blob = await response.blob();
-      const pdfBlob = new Blob([blob], { type: "application/pdf" });
-      const blobUrl = window.URL.createObjectURL(pdfBlob);
-
-      // Create and trigger the download link
-      const link = document.createElement("a");
-      link.href = blobUrl;
-      link.download = `${article.title.replace(/[^\w]/g, "_")}.pdf`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
-      // Revoke the Blob URL after download
-      window.URL.revokeObjectURL(blobUrl);
-
+      
+      // 5. Trigger download
+      saveAs(blob, `${article.title.replace(/[^\w]/g, "_")}.pdf`);
+      
       toast.success(`Download de "${article.title}" iniciado`);
     } catch (error) {
-      console.error("Download error:", error); // Debugging log
-      toast.error(`Falha ao baixar "${article.title}"`);
+      console.error('Download error:', error);
+      const errorMessage = error instanceof Error ? error.message : "Erro desconhecido";
+      toast.error(`Falha ao baixar: ${errorMessage}`);
     }
   };
 
