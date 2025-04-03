@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../../styles/pages/contactform.css";
 
-
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -88,7 +87,8 @@ const ContactForm = () => {
           </ul>
 
           <p>
-            Para um atendimento imediato durante o horário comercial (Seg-Sex: 9h-18h), também pode contactar-nos diretamente pelo telefone <strong>(+351) 965 430 026</strong>. Garantimos uma resposta por e-mail em até 24 horas úteis para todas as mensagens recebidas.
+            Para um atendimento imediato durante o horário comercial (Seg-Sex: 9h-18h), também pode contactar-nos diretamente pelo telefone <a href="tel:+351965430026" className="cf-phone-link">(+351) 965 430 026</a>. 
+            Garantimos uma resposta por e-mail em até 24 horas úteis para todas as mensagens recebidas.
           </p>
         </div>
 

@@ -447,3 +447,14 @@ h2 {
     padding: 12px;
   }
 }
+
+/* Phone Link Styles */
+.cf-phone-link {
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.cf-phone-link:hover {
+  color: #0056b3;
+}
