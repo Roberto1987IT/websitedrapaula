@@ -724,119 +724,345 @@
   }
 }
 
+/* Enhanced Mobile Styles - Significantly improved for better UX/UI on small devices */
 @media (max-width: 640px) {
   .carousel-section {
-    padding: 3.5rem 1rem;
-  }
-  
-  .carousel-wrapper {
-    height: 400px;
+    padding: 3rem 0.75rem;
   }
   
   .carousel-header {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
   
   .carousel-title {
     font-size: 1.75rem;
   }
   
+  .carousel-title::after {
+    width: 60px;
+    height: 3px;
+    bottom: -8px;
+  }
+  
   .carousel-subtitle {
     font-size: 1rem;
-  }
-  
-  .carousel-media-wrapper {
-    height: 240px;
-  }
-  
-  .carousel-arrow {
-    width: 38px;
-    height: 38px;
-    margin: 0 5px;
-  }
-  
-  .play-button {
-    width: 45px;
-    height: 45px;
-  }
-  
-  .video-title {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .carousel-section {
-    padding: 3rem 0.75rem;
+    line-height: 1.5;
+    padding: 0 0.5rem;
   }
   
   .carousel-wrapper {
-    height: 380px;
+    height: auto;
+    min-height: 400px;
+    flex-direction: column;
+    gap: 1rem;
   }
   
-  .carousel-title {
-    font-size: 1.6rem;
+  .carousel-slides-container {
+    width: 100%;
+    height: 350px; /* Fixed height for better consistency */
   }
   
-  .carousel-subtitle {
-    font-size: 0.95rem;
+  /* Single slide view for mobile */
+  .carousel-slide {
+    padding: 8px;
+  }
+  
+  /* Improved visibility for current slide */
+  .carousel-slide.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .carousel-slide-content {
+    box-shadow: var(--shadow-sm);
   }
   
   .carousel-media-wrapper {
     height: 220px;
   }
   
-  .carousel-slide-title {
-    font-size: 0.9rem;
+  /* Better tap targets for mobile */
+  .carousel-overlay {
+    opacity: 0.8; /* Always slightly visible for better usability */
+    background: linear-gradient(to top, 
+      rgba(0, 0, 0, 0.7) 0%, 
+      rgba(0, 0, 0, 0.3) 40%, 
+      rgba(0, 0, 0, 0.1) 70%, 
+      rgba(0, 0, 0, 0.2) 100%); /* Improved gradient for visibility */
   }
   
-  .carousel-arrow {
+  /* Show action buttons on mobile by default for better discoverability */
+  .carousel-expand-button {
+    top: 10px;
+    right: 10px;
     width: 36px;
     height: 36px;
+    opacity: 0.9;
+    transform: scale(1);
   }
   
   .carousel-action {
-    padding: 10px 20px;
+    padding: 8px 18px;
     font-size: 0.85rem;
+    opacity: 1;
+    transform: translateY(0);
+    position: absolute;
+    bottom: 10px;
+    box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);
+  }
+  
+  /* Position arrows at sides for better visibility */
+  .carousel-arrow {
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    margin: 0;
+    opacity: 0.85;
+  }
+  
+  .carousel-prev {
+    left: 10px;
+  }
+  
+  .carousel-next {
+    right: 10px;
+  }
+  
+  .carousel-content {
+    padding: 0.8rem;
+  }
+  
+  .carousel-slide-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    -webkit-line-clamp: 1; /* Show only one line on mobile */
+  }
+  
+  /* Simplified controls for mobile */
+  .carousel-controls {
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+  
+  .carousel-indicators {
+    gap: 8px;
+  }
+  
+  .carousel-indicator {
+    width: 8px;
+    height: 8px;
+    margin: 3px;
+  }
+  
+  .carousel-indicator.active {
+    transform: scale(1.1);
   }
   
   .carousel-progress-container {
     width: 90%;
   }
   
-  .carousel-indicator {
-    width: 10px;
-    height: 10px;
-  }
-  
   .play-button {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
   }
   
   .video-title {
     font-size: 0.9rem;
-    margin-top: 8px;
+    margin-top: 6px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .carousel-section {
+    padding: 2rem 0.5rem;
   }
   
+  .carousel-header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .carousel-title {
+    font-size: 1.5rem;
+  }
+  
+  .carousel-title::after {
+    width: 50px;
+    height: 3px;
+  }
+  
+  .carousel-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .carousel-slides-container {
+    height: 320px;
+    border-radius: var(--border-radius-sm);
+  }
+  
+  .carousel-media-wrapper {
+    height: 180px;
+  }
+  
+  /* Enhanced modal styles for small screens */
   .media-modal {
-    padding: 10px;
+    padding: 0; /* Full screen modal for small devices */
   }
   
   .media-modal-content {
     max-width: 100%;
+    height: 100%;
+    max-height: none;
+    justify-content: center; /* Center vertically */
+  }
+  
+  .modal-image, 
+  .modal-video {
+    max-height: 70vh;
+    border-radius: 0; /* Remove border radius for better space usage */
   }
   
   .close-button {
-    top: -30px;
-    right: 0;
-    font-size: 1.8rem;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
     width: 32px;
     height: 32px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
   }
   
   .modal-title {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    padding: 0 1rem;
+    margin-top: 0.8rem;
+  }
+  
+  /* Better touch targets for arrow navigation */
+  .carousel-arrow {
+    width: 34px;
+    height: 34px;
+    opacity: 0.7;
+  }
+  
+  /* Reduce shadow intensity on mobile for cleaner look */
+  .carousel-slide-content {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .carousel-slide.active .carousel-slide-content {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Show one indicator for every two slides on very small screens */
+  .carousel-indicators {
+    max-width: 90%;
+    gap: 6px;
+  }
+  
+  .carousel-indicator {
+    width: 6px;
+    height: 6px;
+    margin: 2px;
+  }
+}
+
+/* Extra extra small devices - very important for mobile UX */
+@media (max-width: 360px) {
+  .carousel-section {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .carousel-title {
+    font-size: 1.35rem;
+  }
+  
+  .carousel-subtitle {
+    font-size: 0.85rem;
+  }
+  
+  .carousel-slides-container {
+    height: 300px;
+  }
+  
+  .carousel-media-wrapper {
+    height: 160px;
+  }
+  
+  .carousel-slide-title {
+    font-size: 0.8rem;
+  }
+  
+  .carousel-content {
+    padding: 0.6rem;
+  }
+  
+  .carousel-action {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
+  
+  /* Minimize controls to save space */
+  .carousel-arrow {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .carousel-arrow svg {
+    width: 18px; /* Smaller icon */
+  }
+  
+  .play-button {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .play-button svg {
+    width: 20px; /* Smaller play icon */
+  }
+  
+  /* Improve modal usability further */
+  .modal-title {
+    font-size: 0.85rem;
+  }
+}
+
+/* Touch optimizations for mobile devices */
+@media (hover: none) {
+  /* Always show controls for touch devices */
+  .carousel-overlay {
+    opacity: 0.7;
+  }
+  
+  .carousel-expand-button {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  
+  .carousel-action {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Remove hover effects that don't work well on touch */
+  .carousel-slide-content:hover {
+    transform: none;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .carousel-slide-content:active {
+    transform: scale(0.98); /* Better feedback for taps */
+  }
+  
+  .carousel-arrow:active,
+  .carousel-indicator:active,
+  .carousel-expand-button:active,
+  .close-button:active {
+    transform: scale(0.95);
   }
 }
 
@@ -895,4 +1121,3 @@
   .media-modal {
     display: none;
   }
-}

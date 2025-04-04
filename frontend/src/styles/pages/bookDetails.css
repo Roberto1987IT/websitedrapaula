@@ -275,6 +275,12 @@
     width: 24px;
     height: 24px;
   }
+
+  .book-details-image-container {
+    height: 51vh;
+  }
+
+  
 }
 
 /* Book info styles */

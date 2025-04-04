@@ -79,17 +79,26 @@ const Lancamentos = () => {
   const [animationDirection, setAnimationDirection] = useState("next");
   const [modalMedia, setModalMedia] = useState<null | MediaItem>(null);
   const [playingVideoIndex, setPlayingVideoIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   
   const carouselRef = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<number | null>(null);
   const transitionTimeoutRef = useRef<number | null>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
-  const visibleSlides = 3; // Always show 3 slides
+  // Calculate visible slides based on screen size
+  const visibleSlides = isMobile ? 1 : 3;
   const maxIndex = Math.max(0, mediaItems.length - visibleSlides);
 
   useEffect(() => {
     setIsTextVisible(true);
+    
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
@@ -100,7 +109,7 @@ const Lancamentos = () => {
         if (!isPaused && !isTransitioning) {
           goToNextSlide();
         }
-      }, 5000);
+      }, 2000);
     };
 
     startAutoSlide();
@@ -108,7 +117,7 @@ const Lancamentos = () => {
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [isPaused, isTransitioning]);
+  }, [isPaused, isTransitioning, isMobile]);
 
   useEffect(() => {
     return () => {
@@ -139,7 +148,7 @@ const Lancamentos = () => {
     
     transitionTimeoutRef.current = window.setTimeout(() => {
       setIsTransitioning(false);
-    }, 300);
+    }, 200);
   };
 
   const goToPrevSlide = () => {
@@ -154,7 +163,7 @@ const Lancamentos = () => {
 
     transitionTimeoutRef.current = window.setTimeout(() => {
       setIsTransitioning(false);
-    }, 600);
+    }, 200);
   };
 
   const goToNextSlide = () => {
@@ -169,7 +178,7 @@ const Lancamentos = () => {
 
     transitionTimeoutRef.current = window.setTimeout(() => {
       setIsTransitioning(false);
-    }, 600);
+    }, 200);
   };
 
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -266,7 +275,7 @@ const Lancamentos = () => {
             <div 
               className={`carousel-slides carousel-direction-${animationDirection} ${isTransitioning ? 'transitioning' : ''}`}
               style={{ 
-                transform: `translateX(-${activeIndex * (100 / visibleSlides)}%)`, // Adjust for 3 slides
+                transform: `translateX(-${activeIndex * (100 / visibleSlides)}%)`,
               }}
               aria-live="polite"
             >
@@ -276,7 +285,7 @@ const Lancamentos = () => {
                   className={`carousel-slide ${
                     index >= activeIndex && index < activeIndex + visibleSlides ? "active" : ""
                   }`}
-                  style={{ width: `${100 / visibleSlides}%` }} // Ensure each slide takes 1/3 of the width
+                  style={{ width: `${100 / visibleSlides}%` }}
                   aria-hidden={!(index >= activeIndex && index < activeIndex + visibleSlides)}
                   role="group"
                   aria-roledescription="slide"
