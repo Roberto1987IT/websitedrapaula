@@ -900,12 +900,12 @@
   }
   
   .carousel-slides-container {
-    height: 320px;
+    height: 390px;
     border-radius: var(--border-radius-sm);
   }
   
   .carousel-media-wrapper {
-    height: 180px;
+    height: 270px;
   }
   
   /* Enhanced modal styles for small screens */
