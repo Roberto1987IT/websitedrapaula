@@ -281,6 +281,7 @@ body {
   padding: 40px 12px 12px;
   color: var(--text-color);
   transition: opacity 0.3s ease;
+  
 }
 
 .book-title {
@@ -294,6 +295,7 @@ body {
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
   line-clamp: 2;
+  opacity: 0.02;
 }
 
 /* Rating stars */
