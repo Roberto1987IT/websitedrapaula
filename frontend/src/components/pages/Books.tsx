@@ -196,7 +196,6 @@ const Books = ({ id }: { id: string }) => {
                       </Link>
                     )}
                   </div>
-                  {/* Wishlist Icon */}
                   <button
                     className={`wishlist-button ${wishlist.includes(book.id) ? "active" : ""}`}
                     onClick={() => toggleWishlist(book.id)}

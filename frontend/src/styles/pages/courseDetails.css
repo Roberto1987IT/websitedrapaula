@@ -385,6 +385,8 @@ body {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
+
+/*
 .wishlist-button {
   background: transparent;
   color: var(--text-color);
@@ -417,6 +419,8 @@ body {
 .wishlist-active svg {
   fill: var(--red-color);
 }
+
+*/
 
 .contact-info {
   margin-top: 1.5rem;
@@ -708,3 +712,6 @@ body {
     font-size: 0.9rem;
   }
 }
+
+
+
