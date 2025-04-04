@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/pages/books.css";
 import { books, Book } from "../../bookData";
-import { ChevronRight, Star, Search, Download, Book as BookIcon } from "lucide-react";
+import { ChevronRight, Star, Search, Download, Book as BookIcon, Heart } from "lucide-react";
 import debounce from "lodash/debounce";
 
 const Books = ({ id }: { id: string }) => {
@@ -10,6 +10,7 @@ const Books = ({ id }: { id: string }) => {
   const [activeFilter, setActiveFilter] = useState<string>("impresso");
   const [hoveredBook, setHoveredBook] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [wishlist, setWishlist] = useState<number[]>([]); // State to track wishlist items
   const bookContainerRef = useRef<HTMLDivElement>(null);
 
   const handleImageLoad = useCallback((index: number) => {
@@ -30,6 +31,14 @@ const Books = ({ id }: { id: string }) => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  };
+
+  const toggleWishlist = (bookId: number) => {
+    setWishlist((prevWishlist) =>
+      prevWishlist.includes(bookId)
+        ? prevWishlist.filter((id) => id !== bookId) // Remove from wishlist
+        : [...prevWishlist, bookId] // Add to wishlist
+    );
   };
 
   const filteredBooks = books
@@ -140,9 +149,6 @@ const Books = ({ id }: { id: string }) => {
                   )}
                   <div className="book-info">
                     <h3 className="book-title">{book.title}</h3>
-
-                    
-
                     {book.category !== "ebook" && (
                       <div className="book-price-container">
                         {book.discount && book.originalPrice && (
@@ -180,6 +186,18 @@ const Books = ({ id }: { id: string }) => {
                       </Link>
                     )}
                   </div>
+                  {/* Wishlist Icon */}
+                  <button
+                    className={`wishlist-button ${wishlist.includes(book.id) ? "active" : ""}`}
+                    onClick={() => toggleWishlist(book.id)}
+                    aria-label={`Adicionar ou remover ${book.title} da lista de desejos`}
+                  >
+                    <Heart
+                      size={20}
+                      fill={wishlist.includes(book.id) ? "red" : "none"}
+                      color={wishlist.includes(book.id) ? "red" : "black"}
+                    />
+                  </button>
                 </div>
               </div>
             ))

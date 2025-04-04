@@ -240,7 +240,7 @@ body {
   }
 }
 
-/* Book discount tag */
+/* Book discount tag 
 .book-discount {
   position: absolute;
   top: 10px;
@@ -254,7 +254,7 @@ body {
   z-index: 10;
 }
 
-/* eBook badge */
+/* eBook badge 
 .book-ebook-badge {
   position: absolute;
   top: 10px;
@@ -269,7 +269,7 @@ body {
   display: flex;
   align-items: center;
   gap: 4px;
-}
+}*/
 
 /* Book info section */
 .book-info {
@@ -491,3 +491,40 @@ body {
 
 
 
+.wishlist-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20; /* Higher than other elements */
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.wishlist-button {
+  display: flex !important;
+  opacity: 1 !important;
+  background: red !important; /* To make it obvious */
+}
+
+.wishlist-button:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.wishlist-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.wishlist-button.active svg {
+  fill: red;
+  color: red;
+}

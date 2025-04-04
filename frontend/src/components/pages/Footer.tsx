@@ -21,7 +21,7 @@ const Footer = () => {
               <Instagram size={20} />
             </a>
             <a 
-              href="https://facebook.com/paulaserrano" 
+              href="https://www.facebook.com/paula.serrano.3576" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="social-icon"
