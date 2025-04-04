@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { books } from '../../bookData';
 import '../../styles/pages/bookDetails.css';
 import { Star, ChevronLeft, ShoppingCart, Heart, AlertCircle, BookOpen } from 'lucide-react';
+import { useWishlist } from '../../context/WishlistContext';
 
 const BookDetails = () => {
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
+  const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
+  const [user, setUser] = useState<boolean>(true);
   const book = books.find((book: { id: number }) => book.id === Number(id)) as {
     tags: string[];
     [key: string]: any;
@@ -18,7 +22,10 @@ const BookDetails = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    if (book && wishlist.includes(book.id)) {
+      setIsWishlisted(true);
+    }
+  }, [book, wishlist]);
 
   const showNotification = (message: string) => {
     setPopupMessage(message);
@@ -28,6 +35,24 @@ const BookDetails = () => {
     }, 3000);
   };
 
+  const handleWishlist = () => {
+    if (!user) {
+      navigate('/login');
+      return;
+    }
+
+    if (book) {
+      if (isWishlisted) {
+        removeFromWishlist(book.id);
+        showNotification('Removed from wishlist!');
+      } else {
+        addToWishlist(book.id);
+        showNotification('Added to wishlist!');
+      }
+      setIsWishlisted(!isWishlisted);
+    }
+  };
+
   const handleAddToCart = () => {
     setIsAddedToCart(true);
     showNotification('Added to cart successfully!');
@@ -35,11 +60,6 @@ const BookDetails = () => {
 
   const handleBuyNow = () => {
     showNotification('Proceeding to checkout...');
-  };
-
-  const handleWishlist = () => {
-    setIsWishlisted(!isWishlisted);
-    showNotification(isWishlisted ? 'Removed from wishlist!' : 'Added to wishlist!');
   };
 
   const formatDate = (dateString: string) => {
@@ -63,7 +83,6 @@ const BookDetails = () => {
     );
   }
 
-  // Determine availability status text and color
   const getAvailabilityInfo = (status: string) => {
     switch (status) {
       case 'in-stock':
@@ -78,7 +97,7 @@ const BookDetails = () => {
         return { text: 'Unknown', color: 'text-gray-600' };
     }
   };
-  
+
   const availability = getAvailabilityInfo(book.availability);
 
   return (
@@ -90,30 +109,30 @@ const BookDetails = () => {
         </Link>
         <h1 className="book-title">{book.title}</h1>
       </div>
-      
+
       <div className="book-details-content">
         <div className="book-details-image-container">
           <div className="relative w-full h-full overflow-hidden rounded-2xl">
             <div className={`image-loading-placeholder ${imageLoaded ? 'hidden' : 'visible'}`}></div>
-            <img 
-              src={book.image} 
-              alt={book.title} 
+            <img
+              src={book.image}
+              alt={book.title}
               className={`book-details-image ${imageLoaded ? 'loaded' : ''}`}
               onLoad={() => setImageLoaded(true)}
             />
           </div>
-          
+
           {book.featured && <div className="featured-badge">Featured</div>}
           {book.discount && <div className="discount-badge">{book.discount}% OFF</div>}
-          <button 
+          <button
             className={`wishlist-button ${isWishlisted ? 'wishlisted' : ''}`}
             onClick={handleWishlist}
-            aria-label={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
+            aria-label={isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
           >
             <Heart size={20} className={isWishlisted ? 'fill-current' : ''} />
           </button>
         </div>
-        
+
         <div className="book-details-info">
           <div className="book-details-main">
             <div className="badge-container">
@@ -121,20 +140,20 @@ const BookDetails = () => {
                 <BookOpen size={14} />
                 <span>{book.category === 'ebook' ? 'eBook' : book.category.charAt(0).toUpperCase() + book.category.slice(1)}</span>
               </div>
-              
+
               {book.newRelease && (
                 <div className="new-release-badge">
                   New Release
                 </div>
               )}
-              
+
               {book.bestSeller && (
                 <div className="bestseller-badge">
                   Bestseller
                 </div>
               )}
             </div>
-            
+
             <div className="book-rating">
               <div className="rating-stars">
                 {[...Array(5)].map((_, i) => (
@@ -148,25 +167,24 @@ const BookDetails = () => {
               </div>
               <span className="rating-count">{book.reviews} reviews</span>
             </div>
-            
+
             <div className="book-details-price">
               <div className="price-current">€{book.price.toFixed(2)}</div>
               {book.originalPrice && (
                 <div className="price-original">€{book.originalPrice.toFixed(2)}</div>
               )}
               {book.discount && (
-                
                 <div className="discount-text">
                   Poupa {book.discount}%
                 </div>
               )}
             </div>
-            
+
             <div className="book-description-container">
               <h2 className="section-title">Sobre o Livro</h2>
               <p className="book-description">{book.description}</p>
             </div>
-            
+
             <div className="book-details-meta">
               <div className="meta-item">
                 <span className="meta-label">Autor</span>
@@ -209,17 +227,17 @@ const BookDetails = () => {
                 </span>
               </div>
             </div>
-            
+
             <div className="book-actions">
-              <button 
-                className={`cart-button ${isAddedToCart ? 'added' : ''}`} 
+              <button
+                className={`cart-button ${isAddedToCart ? 'added' : ''}`}
                 onClick={handleAddToCart}
                 disabled={isAddedToCart || book.availability === 'out-of-stock'}
               >
                 <ShoppingCart size={18} />
                 <span>{isAddedToCart ? 'Added to Cart' : 'Adicionar ao Carrinho'}</span>
               </button>
-              <button 
+              <button
                 className="buy-button"
                 onClick={handleBuyNow}
                 disabled={book.availability === 'out-of-stock'}
@@ -230,12 +248,10 @@ const BookDetails = () => {
           </div>
         </div>
       </div>
-      
+
       {showPopup && (
         <div className="notification-popup">
-          <div className="notification-content">
-            {popupMessage}
-          </div>
+          <div className="notification-content">{popupMessage}</div>
         </div>
       )}
     </div>
