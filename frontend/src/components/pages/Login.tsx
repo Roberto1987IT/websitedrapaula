@@ -81,7 +81,7 @@ const Login = () => {
                         type="email"
                         id="email"
                         name="email"
-                        placeholder="Enter your email"
+                        placeholder="Insira seu e-mail"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
@@ -94,7 +94,7 @@ const Login = () => {
                             type={passwordVisible ? 'text' : 'password'}
                             id="password"
                             name="password"
-                            placeholder="Enter your password"
+                            placeholder="Insira sua senha"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
@@ -144,18 +144,18 @@ const Login = () => {
                     </div>
 
                     <div className="forgot-password">
-                        <a href="/forgot-password">Forgot Password?</a>
+                        <a href="/forgot-password">Recuperar Senha</a>
                     </div>
 
                     <button 
                         type="submit" 
                         disabled={isLoading}
                     >
-                        {isLoading ? 'Logging in...' : 'Login'}
+                        {isLoading ? 'Conectando...' : 'Fazer login'}
                     </button>
                 </form>
                 <p>
-                    Don't have an account? <a href="/register">Register</a>
+                Não possui uma conta? <a href="/register">Criar conta</a>
                 </p>
             </div>
         </div>
