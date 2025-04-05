@@ -4,12 +4,14 @@ import { books } from '../../bookData';
 import '../../styles/pages/bookDetails.css';
 import { Star, ChevronLeft, ShoppingCart, Heart, AlertCircle, BookOpen } from 'lucide-react';
 import { useWishlist } from '../../context/WishlistContext';
+import { useCart } from '../../context/CartContext';
 
 const BookDetails = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
-  const [user, setUser] = useState<boolean>(true);
+  const { addToCart } = useCart();
+  const [user, setUser] = useState<boolean>(true); // Replace with actual auth check
   const book = books.find((book: { id: number }) => book.id === Number(id)) as {
     tags: string[];
     [key: string]: any;
@@ -38,28 +40,49 @@ const BookDetails = () => {
   const handleWishlist = () => {
     if (!user) {
       navigate('/login');
+      showNotification('Por favor, faça login para adicionar à lista de desejos');
       return;
     }
 
     if (book) {
       if (isWishlisted) {
         removeFromWishlist(book.id);
-        showNotification('Removed from wishlist!');
+        showNotification('Removido da lista de desejos!');
       } else {
         addToWishlist(book.id);
-        showNotification('Added to wishlist!');
+        showNotification('Adicionado à lista de desejos!');
       }
       setIsWishlisted(!isWishlisted);
     }
   };
 
   const handleAddToCart = () => {
-    setIsAddedToCart(true);
-    showNotification('Added to cart successfully!');
+    if (!user) {
+      navigate('/login');
+      showNotification('Por favor, faça login para adicionar ao carrinho');
+      return;
+    }
+
+    if (book) {
+      addToCart(book);
+      setIsAddedToCart(true);
+      showNotification('Adicionado ao carrinho com sucesso!');
+    }
   };
 
   const handleBuyNow = () => {
-    showNotification('Proceeding to checkout...');
+    if (!user) {
+      navigate('/login');
+      showNotification('Por favor, faça login para finalizar a compra');
+      return;
+    }
+
+    if (book) {
+      addToCart(book);
+      setIsAddedToCart(true);
+      showNotification('Redirecionando para o checkout...');
+      navigate('/checkout');
+    }
   };
 
   const formatDate = (dateString: string) => {
@@ -72,11 +95,11 @@ const BookDetails = () => {
       <div className="book-details-container book-not-found">
         <div className="not-found-content">
           <AlertCircle size={48} className="not-found-icon" />
-          <h1 className="text-2xl font-bold mb-2">Book not found</h1>
-          <p className="text-muted-foreground mb-4">Sorry, we couldn't find the book you're looking for.</p>
+          <h1 className="text-2xl font-bold mb-2">Livro não encontrado</h1>
+          <p className="text-muted-foreground mb-4">Desculpe, não conseguimos encontrar o livro que procura.</p>
           <Link to="/" className="back-button inline-flex items-center px-4 py-2 rounded-full bg-primary text-primary-foreground">
             <ChevronLeft size={16} />
-            Voltar ao Livros
+            Voltar aos Livros
           </Link>
         </div>
       </div>
@@ -86,15 +109,15 @@ const BookDetails = () => {
   const getAvailabilityInfo = (status: string) => {
     switch (status) {
       case 'in-stock':
-        return { text: 'In Stock', color: 'text-green-600' };
+        return { text: 'Em Stock', color: 'text-green-600' };
       case 'limited':
-        return { text: 'Limited Stock', color: 'text-amber-600' };
+        return { text: 'Stock Limitado', color: 'text-amber-600' };
       case 'pre-order':
-        return { text: 'Pre-order', color: 'text-blue-600' };
+        return { text: 'Pré-encomenda', color: 'text-blue-600' };
       case 'out-of-stock':
-        return { text: 'Out of Stock', color: 'text-red-600' };
+        return { text: 'Esgotado', color: 'text-red-600' };
       default:
-        return { text: 'Unknown', color: 'text-gray-600' };
+        return { text: 'Indisponível', color: 'text-gray-600' };
     }
   };
 
@@ -122,12 +145,12 @@ const BookDetails = () => {
             />
           </div>
 
-          {book.featured && <div className="featured-badge">Featured</div>}
+          {book.featured && <div className="featured-badge">Destaque</div>}
           {book.discount && <div className="discount-badge">{book.discount}% OFF</div>}
           <button
             className={`wishlist-button ${isWishlisted ? 'wishlisted' : ''}`}
             onClick={handleWishlist}
-            aria-label={isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
+            aria-label={isWishlisted ? 'Remover da lista de desejos' : 'Adicionar à lista de desejos'}
           >
             <Heart size={20} className={isWishlisted ? 'fill-current' : ''} />
           </button>
@@ -143,13 +166,13 @@ const BookDetails = () => {
 
               {book.newRelease && (
                 <div className="new-release-badge">
-                  New Release
+                  Novo Lançamento
                 </div>
               )}
 
               {book.bestSeller && (
                 <div className="bestseller-badge">
-                  Bestseller
+                  Mais Vendido
                 </div>
               )}
             </div>
@@ -165,7 +188,7 @@ const BookDetails = () => {
                   />
                 ))}
               </div>
-              <span className="rating-count">{book.reviews} reviews</span>
+              <span className="rating-count">{book.reviews} avaliações</span>
             </div>
 
             <div className="book-details-price">
@@ -204,24 +227,24 @@ const BookDetails = () => {
               </div>
               {book.pages && (
                 <div className="meta-item">
-                  <span className="meta-label">Paginas</span>
+                  <span className="meta-label">Páginas</span>
                   <span className="meta-value">{book.pages}</span>
                 </div>
               )}
               {book.format && (
                 <div className="meta-item">
-                  <span className="meta-label">Format</span>
+                  <span className="meta-label">Formato</span>
                   <span className="meta-value">{book.format}</span>
                 </div>
               )}
               {book.fileSize && (
                 <div className="meta-item">
-                  <span className="meta-label">File Size</span>
+                  <span className="meta-label">Tamanho do Ficheiro</span>
                   <span className="meta-value">{book.fileSize}</span>
                 </div>
               )}
               <div className="meta-item">
-                <span className="meta-label">Disponivel</span>
+                <span className="meta-label">Disponibilidade</span>
                 <span className={`meta-value availability-${book.availability}`}>
                   {availability.text}
                 </span>
@@ -235,7 +258,7 @@ const BookDetails = () => {
                 disabled={isAddedToCart || book.availability === 'out-of-stock'}
               >
                 <ShoppingCart size={18} />
-                <span>{isAddedToCart ? 'Added to Cart' : 'Adicionar ao Carrinho'}</span>
+                <span>{isAddedToCart ? 'Adicionado ao Carrinho' : 'Adicionar ao Carrinho'}</span>
               </button>
               <button
                 className="buy-button"
