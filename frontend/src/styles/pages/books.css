@@ -505,8 +505,9 @@ body {
 @media (max-width: 992px) {
   .books-container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 40px;
     margin: 0 auto 2rem;
+    max-width: 700px;
   }
   .books {
     padding: 30px 20px;
@@ -524,7 +525,7 @@ body {
 @media (max-width: 576px) {
   .books-container {
     grid-template-columns: 1fr;
-    max-width: 320px;
+    max-width: 260px;
     margin: 0 auto 1.5rem;
   }
   

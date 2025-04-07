@@ -11,56 +11,56 @@ const testemunhos = [
     comment: "A metodologia é muito prática e facilmente aplicável no dia a dia. Superou minhas expectativas!", 
     rating: 5, 
     name: "Rita Maria",
-    role: "Empreendedora"
+    role: ""
   },
   { 
     id: 2, 
     comment: "Conteúdo excelente e bem estruturado. Consegui implementar os conhecimentos rapidamente.", 
     rating: 4, 
     name: "João Pedro",
-    role: "Empresário"
+    role: ""
   },
   { 
     id: 3, 
     comment: "Aprendi muito mais do que esperava. As técnicas ensinadas são valiosas para qualquer profissional.", 
     rating: 5, 
     name: "Mariana Silva",
-    role: "Consultora"
+    role: ""
   },
   { 
     id: 4, 
     comment: "Explicação clara e objetiva. Consegui entender conceitos complexos de forma simples.", 
     rating: 4, 
     name: "Carlos Lima",
-    role: "Gestor"
+    role: ""
   },
   { 
     id: 5, 
     comment: "Excelente didática e atenção aos detalhes. Paula tem um dom para ensinar!", 
     rating: 5, 
     name: "Ana Paula",
-    role: "Professora"
+    role: ""
   },
   { 
     id: 6, 
     comment: "Recomendo a todos que querem evoluir na carreira! Curso transformador e prático.", 
     rating: 5, 
     name: "Fernanda Souza",
-    role: "Analista"
+    role: ""
   },
   { 
     id: 7, 
     comment: "Ótimo curso com conteúdo relevante e atual. Aplicação imediata no mercado.", 
     rating: 4, 
     name: "João Vitor",
-    role: "Estudante"
+    role: ""
   },
   { 
     id: 8, 
     comment: "O melhor curso que já fiz! A Paula tem uma capacidade incrível de transmitir conhecimento.", 
     rating: 5, 
     name: "Clara Mendes",
-    role: "Coordenadora"
+    role: ""
   },
 ];
 
