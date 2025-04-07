@@ -64,8 +64,8 @@ const Cart = () => {
                         </div>
                         <h2>O teu carrinho está vazio</h2>
                         <p>Adiciona produtos ao teu carrinho para continuar o processo de compra.</p>
-                        <Link to="/livros" className="browse-button">
-                            Explorar Livros
+                        <Link to="/books" className="browse-button">
+                            Explorar
                         </Link>
                     </div>
                 ) : (
@@ -149,7 +149,7 @@ const Cart = () => {
                     </>
                 )}
 
-                <Link to="/livros" className="continue-shopping">
+                <Link to="/" className="continue-shopping">
                     Continuar Comprando
                 </Link>
             </div>

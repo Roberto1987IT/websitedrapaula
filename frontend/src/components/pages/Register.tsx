@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../../styles/pages/register.css";
 import { countries } from "../../data/countries";
+import ReactSelect from "react-select";
 
 interface FormData {
   email: string;
@@ -51,6 +52,11 @@ const Register = () => {
   const [passwordStrength, setPasswordStrength] = useState<number>(0);
   const [isCheckingBreach, setIsCheckingBreach] = useState(false);
   const navigate = useNavigate();
+
+  const countryOptions = countries.map((c) => ({
+    value: c.code,
+    label: `${c.phoneCode} (${c.code})`,
+  }));
 
   // Check if password has been breached using Have I Been Pwned API
   const checkPasswordBreach = async (password: string): Promise<boolean> => {
@@ -330,20 +336,20 @@ const Register = () => {
           <div className="form-group">
             <label htmlFor="phone">Telefone</label>
             <div className="phone-input-group">
-              <select
+              <ReactSelect
+                id="country"
                 name="country"
-                value={formData.country}
-                onChange={handleChange}
-                className={`country-select ${errors.country ? "error-input" : ""}`}
-                required
-              >
-                <option value="">Indicativo</option>
-                {countries.map((c) => (
-                  <option key={c.code} value={c.code}>
-                    {c.phoneCode} {c.code}
-                  </option>
-                ))}
-              </select>
+                options={countryOptions}
+                value={countryOptions.find((option) => option.value === formData.country)}
+                onChange={(selectedOption) =>
+                  handleChange({
+                    target: { name: "country", value: selectedOption?.value || "" },
+                  } as React.ChangeEvent<HTMLInputElement>)
+                }
+                classNamePrefix="react-select"
+                placeholder="Selecione seu país"
+                isClearable
+              />
               <input
                 type="tel"
                 id="phone"

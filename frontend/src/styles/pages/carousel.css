@@ -1113,11 +1113,12 @@
     box-shadow: none;
   }
   
-  .carousel-arrow,
-  .carousel-indicators,
-  .carousel-progress-container,
-  .carousel-overlay,
-  .carousel-expand-button,
-  .media-modal {
-    display: none;
+    .carousel-arrow,
+    .carousel-indicators,
+    .carousel-progress-container,
+    .carousel-overlay,
+    .carousel-expand-button,
+    .media-modal {
+      display: none;
+    }
   }
