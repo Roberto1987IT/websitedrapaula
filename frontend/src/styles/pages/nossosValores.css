@@ -25,6 +25,8 @@
     background-color: #fff;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     color: #333;
+    margin-top: 2rem;
+    height: 140vh;
   }
   
   /* Hero section */
@@ -255,6 +257,7 @@
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(155, 135, 245, 0.3);
     outline: none;
+    
   }
   
   .cta-button:hover {
@@ -304,6 +307,8 @@
     .valores-grid {
       grid-template-columns: 1fr;
     }
+
+    
   }
   
   @media (max-width: 480px) {
