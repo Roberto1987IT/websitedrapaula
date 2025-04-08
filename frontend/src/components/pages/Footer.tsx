@@ -30,7 +30,7 @@ const Footer = () => {
               <Facebook size={20} />
             </a>
             <a 
-              href="mailto:info@paulaserrano.com" 
+              href="mailto:paulaserranoeducacao@gmail.com" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="social-icon"
