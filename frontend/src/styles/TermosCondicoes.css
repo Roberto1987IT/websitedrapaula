@@ -1,17 +1,137 @@
+/* Main container styles */
+.termos-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
 .termos-condicoes-container {
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+  max-width: 800px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  padding: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7;
   color: #333;
+  margin-top: 3rem;
 }
 
-.termos-condicoes-container h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+/* Header styles */
+.termos-header {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eaeaea;
+  text-align: center;
+}
+
+.termos-header h1 {
+  font-size: 2.2rem;
   color: #2196F3;
+  margin-bottom: 15px;
+  font-weight: 700;
 }
 
-.termos-condicoes-container p {
-  font-size: 1rem;
+.company-name {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.update-date {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+/* Section styles */
+.termos-section {
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+}
+
+.termos-section h2 {
+  font-size: 1.5rem;
+  color: #2196F3;
   margin-bottom: 15px;
+  font-weight: 600;
+  border-left: 4px solid #2196F3;
+  padding-left: 15px;
+}
+
+.termos-section p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Footer styles */
+.termos-footer {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #eaeaea;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .termos-condicoes-container {
+    padding: 30px;
+  }
+  
+  .termos-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .termos-section h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .termos-condicoes-container {
+    padding: 20px;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  
+  .termos-header h1 {
+    font-size: 1.6rem;
+  }
+  
+  .termos-section h2 {
+    font-size: 1.2rem;
+  }
+  
+  .termos-section p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Print-friendly styles */
+@media print {
+  .termos-wrapper {
+    background: white;
+    padding: 0;
+  }
+  
+  .termos-condicoes-container {
+    box-shadow: none;
+    max-width: 100%;
+    padding: 10px;
+  }
+  
+  .termos-header h1 {
+    color: black;
+  }
+  
+  .termos-section h2 {
+    color: black;
+    border-left: none;
+    padding-left: 0;
+  }
 }
