@@ -17,7 +17,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.7;
   color: #333;
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
 /* Header styles */
@@ -30,7 +30,7 @@
 
 .politica-header h1 {
   font-size: 2.2rem;
-  color: #2c3e50;
+  color: #3498db;
   margin-bottom: 15px;
   font-weight: 700;
 }

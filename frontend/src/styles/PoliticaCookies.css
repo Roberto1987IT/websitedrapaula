@@ -1,17 +1,164 @@
+/* Main container styles */
+.politica-cookies-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
 .politica-cookies-container {
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+  max-width: 800px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  padding: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7;
   color: #333;
+  margin-top: 3rem;
 }
 
-.politica-cookies-container h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #FF9800;
+/* Header styles */
+.politica-cookies-header {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eaeaea;
+  text-align: center;
 }
 
-.politica-cookies-container p {
-  font-size: 1rem;
+.politica-cookies-header h1 {
+  font-size: 2.2rem;
+  color: #1982c9;
   margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.company-name {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.update-date {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+/* Section styles */
+.politica-cookies-section {
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+}
+
+.politica-cookies-section h2 {
+  font-size: 1.5rem;
+  color: #1982c9;
+  margin-bottom: 15px;
+  font-weight: 600;
+  border-left: 4px solid #1982c9;
+  padding-left: 15px;
+}
+
+.politica-cookies-section p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #444;
+}
+
+/* List styles */
+.politica-cookies-section ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.politica-cookies-section li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 15px;
+}
+
+.politica-cookies-section li::before {
+  content: none;
+  color: #FF9800;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Strong text styling */
+.politica-cookies-section strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Footer styles */
+.politica-cookies-footer {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #eaeaea;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .politica-cookies-container {
+    padding: 30px;
+  }
+  
+  .politica-cookies-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .politica-cookies-section h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .politica-cookies-container {
+    padding: 20px;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  
+  .politica-cookies-header h1 {
+    font-size: 1.6rem;
+  }
+  
+  .politica-cookies-section h2 {
+    font-size: 1.2rem;
+  }
+  
+  .politica-cookies-section p, 
+  .politica-cookies-section li {
+    font-size: 0.95rem;
+  }
+}
+
+/* Print-friendly styles */
+@media print {
+  .politica-cookies-wrapper {
+    background: white;
+    padding: 0;
+  }
+  
+  .politica-cookies-container {
+    box-shadow: none;
+    max-width: 100%;
+    padding: 10px;
+  }
+  
+  .politica-cookies-header h1 {
+    color: black;
+  }
+  
+  .politica-cookies-section h2 {
+    color: black;
+    border-left: none;
+    padding-left: 0;
+  }
 }
