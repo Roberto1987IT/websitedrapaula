@@ -251,21 +251,26 @@ const BookDetails = () => {
             </div>
 
             <div className="book-actions">
-              <button
-                className={`cart-button ${isAddedToCart ? 'added' : ''}`}
-                onClick={handleAddToCart}
-                disabled={isAddedToCart || book.availability === 'out-of-stock'}
-              >
-                <ShoppingCart size={18} />
-                <span>{isAddedToCart ? 'Adicionado ao Carrinho' : 'Adicionar ao Carrinho'}</span>
-              </button>
-              <button
-                className="buy-button"
-                onClick={handleBuyNow}
-                disabled={book.availability === 'out-of-stock'}
-              >
-                Comprar Agora
-              </button>
+              <div className="buttons-container">
+                <button
+                  className={`cart-button ${isAddedToCart ? 'added' : ''}`}
+                  onClick={handleAddToCart}
+                  disabled={isAddedToCart || book.availability === 'out-of-stock'}
+                >
+                  <ShoppingCart size={18} />
+                  <span>{isAddedToCart ? 'Adicionado ao Carrinho' : 'Adicionar ao Carrinho'}</span>
+                </button>
+                <button
+                  className="buy-button"
+                  onClick={handleBuyNow}
+                  disabled={book.availability === 'out-of-stock'}
+                >
+                  Comprar Agora
+                </button>
+              </div>
+              <p className="exclusive-sale-message">
+                ⚠️ Atenção: Este produto tem venda exclusiva para Portugal🇵🇹. Envios apenas para território português.
+              </p>
             </div>
           </div>
         </div>

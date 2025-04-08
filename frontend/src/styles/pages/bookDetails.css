@@ -3,7 +3,7 @@
 
 /* Main container styles */
 .book-details-container {
-  max-width: 1280px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 2rem;
   animation: fadeIn 0.5s ease-out;
@@ -46,6 +46,8 @@
 
   
 }
+
+
 
 @media (min-width: 640px) {
   .book-details-header {
@@ -126,16 +128,22 @@
 @media (max-width: 500px) {
   .book-details-image-container {
     height: 52vh;
+    
   }
 }
 
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px)  {
   .book-details-image-container {
     height: 35vh;
     margin-top: 7rem;
+    
   }
+
+
+
+
 }
 
 @media (min-width: 768px) {
@@ -143,6 +151,8 @@
     grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
     gap: 3rem;
   }
+
+  
 }
 
 /* Image container styles */
@@ -283,6 +293,30 @@
   }
 
   
+}
+
+/* Reduce margin between the image and the "Voltar" button on small devices */
+@media (max-width: 640px) {
+  .book-details-image-container {
+    margin-top: -1.5rem; /* Reduce the margin above the image */
+  }
+
+  .back-button {
+    margin-bottom: 0.5rem; /* Reduce the margin below the "Voltar" button */
+  }
+}
+
+/* Increase margin between the image and the "Voltar" button for iPad sizes */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .book-details-image-container {
+    margin-top: 15rem; /* Increase the margin above the image */
+    
+  }
+
+
+  .back-button {
+    margin-bottom: -9rem; /* Increase the margin below the "Voltar" button */
+  }
 }
 
 /* Book info styles */
@@ -476,10 +510,26 @@
   margin-top: 1.5rem;
 }
 
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
 @media (min-width: 640px) {
-  .book-actions {
+  .buttons-container {
     flex-direction: row;
   }
+}
+
+.exclusive-sale-message {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #d9534f;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
 }
 
 .cart-button,
