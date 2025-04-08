@@ -385,6 +385,17 @@ body {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* New style for the disclaimer text */
+.disclaimer-text {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: var(--light-text);
+  line-height: 1.5;
+  text-align: left;
+  padding: 10px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+  font-style: italic;
+}
 
 /*
 .wishlist-button {
@@ -711,7 +722,8 @@ body {
   .detalhes-adicionais li {
     font-size: 0.9rem;
   }
+  
+  .disclaimer-text {
+    font-size: 0.8rem;
+  }
 }
-
-
-

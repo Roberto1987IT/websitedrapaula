@@ -353,11 +353,10 @@ const CourseDetails = () => {
                 </svg>
                 Adicionar ao Carrinho
               </button>
-
-
-            
-
               
+              <div className="disclaimer-text">
+                Obs.: O valor final pode sofrer variações devido à taxa de câmbio e/ou impostos locais, conforme a política do meio de pagamento escolhido.
+              </div>
             </div>
             <div className="contact-info">
             Para esclarecimento de qualquer duvida, contate a Paula Serrano por email: <a href="mailto:paulaserranoeducacao@gmail.com" className="email-link">paulaserranoeducacao@gmail.com</a>

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { books } from '../../bookData';
+import { books, Book } from '../../bookData';
 import '../../styles/pages/bookDetails.css';
 import { Star, ChevronLeft, ShoppingCart, Heart, AlertCircle, BookOpen } from 'lucide-react';
 import { useWishlist } from '../../context/WishlistContext';
 import { useCart } from '../../context/CartContext';
+
 
 const BookDetails = () => {
   const { id } = useParams<{ id: string }>();
@@ -12,10 +13,8 @@ const BookDetails = () => {
   const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
   const { addToCart } = useCart();
   const [user, setUser] = useState<boolean>(true); // Replace with actual auth check
-  const book = books.find((book: { id: number }) => book.id === Number(id)) as {
-    tags: string[];
-    [key: string]: any;
-  } | undefined;
+  
+  const book = id ? books.find((book: Book) => book.id === Number(id)) : undefined;
   const [isWishlisted, setIsWishlisted] = useState(false);
   const [isAddedToCart, setIsAddedToCart] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
@@ -70,7 +69,7 @@ const BookDetails = () => {
     }
   };
 
-  const handleBuyNow = () => {
+  const handleBuyNow: () => void = () => {
     if (!user) {
       navigate('/login');
       showNotification('Por favor, faça login para finalizar a compra');
