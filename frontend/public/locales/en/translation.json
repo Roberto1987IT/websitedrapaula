@@ -125,5 +125,91 @@
     "img23": "Equipment",
     "img24": "Events",
     "img25": "Testimonials"
-  }
+  },
+  "folowers": {
+    "1": {
+      "comment": "The methodology is very practical and easily applicable to daily life. It exceeded my expectations!",
+      "rating": 5,
+      "name": "Rita Maria"
+    },
+    "2": {
+      "comment": "Excellent and well-structured content. I was able to implement the knowledge quickly.",
+      "rating": 4,
+      "name": "João Pedro",
+      "role": ""
+    },
+    "3": {
+      "comment": "I learned much more than I expected. The techniques taught are valuable for any professional.",
+      "rating": 5,
+      "name": "Mariana Silva",
+      "role": ""
+    },
+    "4": {
+      "comment": "Clear and objective explanation. I was able to understand complex concepts in a simple way.",
+      "rating": 4,
+      "name": "Carlos Lima",
+      "role": ""
+    },
+    "5": {
+      "comment": "Excellent teaching style and attention to detail. Paula has a gift for teaching!",
+      "rating": 5,
+      "name": "Ana Paula",
+      "role": ""
+    },
+    "6": {
+      "comment": "I recommend it to anyone who wants to grow in their career! A transformative and practical course.",
+      "rating": 5,
+      "name": "Fernanda Souza",
+      "role": ""
+    },
+    "7": {
+      "comment": "Great course with relevant and up-to-date content. Immediate application in the market.",
+      "rating": 4,
+      "name": "João Vitor",
+      "role": ""
+    },
+    "8": {
+      "comment": "The best course I've ever taken! Paula has an incredible ability to share knowledge.",
+      "rating": 5,
+      "name": "Clara Mendes",
+      "role": ""
+    }
+  },
+  "folowers_h2": "What People Say About Us",
+  "folowers_p": "Discover the experiences of our clients with our courses and mentorships",
+  "contact_form_h2": "Get in Touch",
+  "contact_our_valor1": "At Paula Serrano, we value every connection with our clients. Whether it's to clarify doubts, receive valuable feedback, or simply have a chat, our team is always ready to listen and help.",
+  "contact_our_valor2": "Use our contact form to:",
+  "contact_our_benefits1": "Request personalized quotes",
+  "contact_our_benefits2": "Get technical information about our products",
+  "contact_our_benefits3": "Provide suggestions to improve our services",
+  "contact_contact_imediatly": "For immediate assistance during business hours (Mon-Fri: 9 am to 6 pm), you can also contact us directly by phone (+351) 965 430 026. We guarantee an email response within 24 business hours for all messages received.",
+  "contact_us_form_h2": "Send Us a Message",
+  "contact_us_form_name": "Name",
+  "contact_us_form_email": "Email",
+  "contact_us_form_subject": "Subject",
+  "contact_us_form_subject_1": "Select a subject",
+  "contact_us_form_subject_2": "Question about products",
+  "contact_us_form_subject_3": "Request a quote",
+  "contact_us_form_subject_4": "Feedback",
+  "contact_us_form_subject_5": "Other subject",
+  "contact_us_form_messag": "Message",
+  "contact_us_form_messag_placeholder": "Write your detailed message here...",
+  "contact_us_form_button": "Send Message",
+  "sended": "Sended...",
+  "schedule": "Schedule",
+  "mon-fri": "Monday - Friday",
+  "phone": "Phone",
+  "phone_info": "(Call to national mobile network)",
+  "adress": "Address",
+  "cust_area": "Customer Area",
+  "ac_o1": "My Account",
+  "ac_o2": "Orders",
+  "ac_o3": "Deliveries",
+  "ac_o4": "Frequently Asked Questions",
+  "info": "INFORMATION",
+  "info_o1": "Privacy Policy",
+  "info_o2": "Cookie Policy",
+  "info_o3": "Terms and Conditions",
+  "info_o4": "Complaints Book"
 }

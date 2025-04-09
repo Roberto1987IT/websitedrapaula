@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/politicaCookies.css";
+import "../styles/PoliticaCookies.css";
 
 const PoliticaCookies = () => {
   return (
