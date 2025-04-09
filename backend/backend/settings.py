@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from datetime import timedelta
+from django.utils.translation import gettext_lazy as _
 
 # Build paths
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -164,11 +165,17 @@ AUTH_PASSWORD_VALIDATORS = [
 # ===================
 # INTERNATIONALIZATION
 # ===================
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+
+LANGUAGES = [
+    ('en', _('English')),
+    ('pt', _('Portuguese')),
+]
+
 
 # ===================
 # STATIC & MEDIA FILES
@@ -252,3 +259,8 @@ LOGGING = {
 # CUSTOM USER SETTINGS
 # ===================
 PASSWORD_RESET_TIMEOUT = 86400  # 1 day in seconds
+
+
+
+
+

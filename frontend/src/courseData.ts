@@ -5,7 +5,7 @@ import img4 from "./assets/courses/avaliação e raciocinio clinico na primeira 
 import img5 from "./assets/courses/pgis-image.png";
 
 export const courses = [
-  {
+    {
     id: 1,
     image: img1,
     title: "Brincar e TO-Teoria-Pratica",
