@@ -122,7 +122,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="footer-bottom">
-        <p className="footer-copyright">© {new Date().getFullYear()} Paula Serrano. Todos os direitos reservados.</p>
+        <p className="footer-copyright">© {new Date().getFullYear()} {t("footer_botton")}</p>
       </div>
     </footer>
   );
