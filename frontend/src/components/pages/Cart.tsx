@@ -245,6 +245,7 @@ const Cart = () => {
                 <Link to="/" className="continue-shopping">
                     {t("cart.bottom_button")}
                 </Link>
+                
             </div>
         </div>
     );

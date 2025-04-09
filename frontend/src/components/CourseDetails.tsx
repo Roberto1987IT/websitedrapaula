@@ -1,25 +1,25 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, ChevronUp, Check } from "lucide-react";
+import { ChevronDown, ChevronUp, Check, Heart } from "lucide-react";
 import { courses } from "../courseData";
-import { useCart, Course } from "../context/CartContext";
+import { useCart } from "../context/CartContext";
+import { useWishlist } from "../context/WishlistContext"; // Import useWishlist hook
 import "../styles/pages/courseDetails.css";
 
 const CourseDetails = () => {
   const { id } = useParams<{ id: string | undefined }>();
   const navigate = useNavigate();
   const { addToCart } = useCart();
+  const { wishlist, addToWishlist, removeFromWishlist } = useWishlist(); // Use wishlist context
   const course = courses.find((c) => c.id === Number(id));
-  const [isInWishlist, setIsInWishlist] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
+  
+  // Check if the course is in the wishlist using the context
+  const isInWishlist = wishlist.includes(Number(id));
 
   useEffect(() => {
-    // Check if course is in wishlist (from localStorage)
-    const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
-    setIsInWishlist(wishlist.includes(Number(id)));
-    
     // Scroll to top on page load
     window.scrollTo(0, 0);
   }, [id]);
@@ -29,17 +29,21 @@ const CourseDetails = () => {
   }, []);
 
   const toggleWishlist = () => {
-    const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
-    
-    if (isInWishlist) {
-      const newWishlist = wishlist.filter((itemId: number) => itemId !== Number(id));
-      localStorage.setItem("wishlist", JSON.stringify(newWishlist));
-    } else {
-      wishlist.push(Number(id));
-      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    // Check if the user is logged in
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+    if (!isLoggedIn) {
+      // Redirect to login page with return URL
+      navigate("/login", { state: { from: window.location.pathname } });
+      return; // Exit the function to prevent further execution
     }
-    
-    setIsInWishlist(!isInWishlist);
+
+    // Use the wishlist context to add/remove the course
+    if (isInWishlist) {
+      removeFromWishlist(Number(id));
+    } else {
+      addToWishlist(Number(id));
+    }
   };
 
   const toggleDescription = () => {
@@ -333,7 +337,20 @@ const CourseDetails = () => {
         
         <div className="purchase-section">
           <div className="purchase-card">
-            <div className="price">{course.price}</div>
+            <div className="price-wishlist-container">
+              <div className="price">{course.price}</div>
+              <button 
+                className="wishlist-button"
+                onClick={toggleWishlist}
+                aria-label={isInWishlist ? "Remover dos favoritos" : "Adicionar aos favoritos"}
+              >
+                <Heart 
+                  size={24} 
+                  fill={isInWishlist ? "#ff6b6b" : "none"} 
+                  color={isInWishlist ? "#ff6b6b" : "#757575"} 
+                />
+              </button>
+            </div>
             <div className="button-container">
               <button className="buy-button">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
