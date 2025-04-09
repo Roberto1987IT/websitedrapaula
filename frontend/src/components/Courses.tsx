@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/pages/courses.css";
 import { courses } from "../courseData";
+import { useTranslation } from "react-i18next";
 
 // Update the component to accept an id prop
 const Courses = ({ id }: { id: string }) => {
@@ -9,7 +10,7 @@ const Courses = ({ id }: { id: string }) => {
   const [isTextVisible, setIsTextVisible] = useState(false);
   const [isCoursesVisible, setIsCoursesVisible] = useState(false);
   const [hoveredCourse, setHoveredCourse] = useState<number | null>(null);
-
+  const { t } = useTranslation();
   const handleImageLoad = (id: number) => {
     setLoadedImages((prev) => [...prev, id]);
   };
@@ -30,11 +31,10 @@ const Courses = ({ id }: { id: string }) => {
       <div className="courses-container-main">
         <header className="courses-header">
           <h2 className={`courses-title ${isTextVisible ? "fade-in" : ""}`}>
-            Cursos
+            {t("tranings_courses")}
           </h2>
           <p className={`courses-subtitle ${isTextVisible ? "fade-in" : ""}`}>
-            Os favoritos de Terapeutas e Educadores para transformar o
-            desenvolvimento infantil na prática
+
           </p>
         </header>
 
@@ -66,7 +66,7 @@ const Courses = ({ id }: { id: string }) => {
                       <span className="course-action">Ver curso</span>
                     </div>
                   </div>
-                  <h3 className="course-title">{course.title}</h3>
+                  <h3 className="course-title">{t(`courses.${course.id}.title`)}</h3>
                 </div>
               </Link>
             </div>

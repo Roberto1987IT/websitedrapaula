@@ -38,6 +38,7 @@ import WhatsAppButton from './components/WhatsAppButton';
 import Politica from "./components/Politica";
 import PoliticaCookies from "./components/PoliticaCookies";
 import TermosCondicoes from "./components/TermosCondicoes";
+import "./i18n";
 
 // Placeholder for a protected Dashboard page
 const Dashboard = () => <div>Dashboard (Protected)</div>;

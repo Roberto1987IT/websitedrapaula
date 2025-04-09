@@ -4,7 +4,7 @@ import img3 from "./assets/courses/Integração Sensorial - avaliação e racioc
 import img4 from "./assets/courses/avaliação e raciocinio clinico na primeira infancia - foco no brincar e integração sensorial.jpg";
 
 export const courses = [
-  {
+    {
     id: 1,
     image: img1,
     title: "Brincar e TO-Teoria-Pratica",

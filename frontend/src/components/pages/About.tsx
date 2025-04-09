@@ -2,6 +2,8 @@ import { useState } from "react";
 import "../../styles/pages/about.css";
 import aboutImage from "../../assets/about/Design sem nome 1.png";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 
 // Add interface for props
 interface AboutProps {
@@ -10,7 +12,7 @@ interface AboutProps {
 
 const About: React.FC<AboutProps> = ({ id }) => {
   const [showFullText, setShowFullText] = useState(false);
-
+  const { t, i18n } = useTranslation();
   const toggleText = () => {
     setShowFullText(!showFullText);
   };
@@ -21,7 +23,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
       <div className="about-container">
         {/* Header Section: Tag and Heading */}
         <div className="about-header">
-          <span className="about-tag">Conheça a Paula</span>
+          <span className="about-tag">{t("come_meeting")}</span>
           <h2>Paula Serrano</h2>
         </div>
 
@@ -34,25 +36,10 @@ const About: React.FC<AboutProps> = ({ id }) => {
         <div className="about-content">
           <div className={`about-text ${showFullText ? "expanded" : "collapsed"}`}>
             <p>
-              Sou terapeuta ocupacional com 30 anos de experiência em prática clínica e 20 anos dedicados
-              à docência. Durante a minha trajetória, sempre busquei formação junto às maiores referências
-              mundiais na área, o que me levou a me especializar em integração sensorial e no brincar nos
-              Estados Unidos.
-              A prática clínica, aliada ao ensino, permitiu-me construir um raciocínio clínico sólido e
-              desenvolver uma abordagem baseada em evidências. Essa metodologia é comprovada
-              diariamente nos atendimentos às muitas crianças e famílias com quem tive o privilégio de
-              trabalhar.
+              {t("about_p1")}
             </p>
             <p className="additional-text">
-              Acredito profundamente que a infância é um período transformador, no qual nós,
-              profissionais, temos a oportunidade de alterar significativamente o percurso de vida das
-              crianças e de suas famílias. Essa certeza traz uma enorme responsabilidade à minha prática
-              clínica, mas também um compromisso em compartilhar os conhecimentos adquiridos ao longo
-              de 30 anos de estudo e trabalho.
-              Sou grata aos profissionais que me ensinaram e que moldaram minha jornada. Hoje, sinto que
-              é meu dever, por meio da minha experiência, contribuir para a formação de outros
-              profissionais e alcançar ainda mais crianças e famílias, ajudando a construir um futuro com
-              mais possibilidades e qualidade de vida para todos.
+              {t("about_p2")}
             </p>
           </div>
 
@@ -61,12 +48,12 @@ const About: React.FC<AboutProps> = ({ id }) => {
             onClick={toggleText}
             aria-expanded={showFullText}
           >
-            {showFullText ? "Ler menos" : "Ler mais"}
+            {showFullText ? t("read_less") : t("read_more")}
           </button>
 
           <Link to="/about-detail">
             <button className="about-button" aria-label="Saiba mais sobre Dra. Paula Serrano">
-              Conheça a Paula
+              {t("come_meeting")}
             </button>
           </Link>
         </div>

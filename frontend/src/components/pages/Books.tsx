@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useWishlist } from "../../context/WishlistContext"; // Import WishlistContext
+import {useTranslation } from "react-i18next";
 import "../../styles/pages/books.css";
 import { books, Book } from "../../bookData";
 import { ChevronRight, Star, Search, Download, Book as BookIcon, Heart } from "lucide-react";
@@ -11,6 +12,9 @@ const Books = ({ id }: { id: string }) => {
   const [loadedImages, setLoadedImages] = useState<number[]>([]);
   const [activeFilter, setActiveFilter] = useState<string>("impresso");
   const [hoveredBook, setHoveredBook] = useState<number | null>(null);
+
+  const {t} = useTranslation();
+
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [user, setUser] = useState<boolean>(true); // Replace with actual user authentication logic
   const bookContainerRef = useRef<HTMLDivElement>(null);
@@ -61,9 +65,9 @@ const Books = ({ id }: { id: string }) => {
     );
 
   const filters = [
-    { id: "all", label: "Todos" },
-    { id: "ebook", label: "eBooks" },
-    { id: "impresso", label: "Livros" },
+    { id: "all", label: t("all")},
+    { id: "ebook", label: t("eBooks")},
+    { id: "impresso", label: t("books") },
   ];
 
   useEffect(() => {
@@ -87,15 +91,15 @@ const Books = ({ id }: { id: string }) => {
       <section id={id} className="books">
         <div className="books-header">
           <div className="title-container">
-            <h2 className="section-title">Livros e eBooks</h2>
-            <p className="section-subtitle">Selecione os seus preferidos</p>
+            <h2 className="section-title">{t("books")} {t("and")} {t("ebooks")}</h2>
+            <p className="section-subtitle">{t("books_p")}</p>
           </div>
           <div className="search-container">
             <div className="search-wrapper">
               <Search className="search-icon" size={18} />
               <input
                 type="text"
-                placeholder="Buscar livros..."
+                placeholder={t("input_placeholder")}
                 onChange={(e) => debouncedSearch(e.target.value)}
                 className="search-input"
                 aria-label="Campo de busca por livros"
@@ -184,7 +188,7 @@ const Books = ({ id }: { id: string }) => {
                         aria-label={`Baixar eBook: ${book.title}`}
                       >
                         <Download size={16} aria-hidden="true" />
-                        <span>Baixar eBook</span>
+                        <span>{t("dwnl")} eBook</span>
                       </a>
                     ) : (
                       <Link
@@ -192,7 +196,7 @@ const Books = ({ id }: { id: string }) => {
                         className="view-details"
                         aria-label={`Ver detalhes do livro: ${book.title}`}
                       >
-                        Ver detalhes <ChevronRight size={16} aria-hidden="true" />
+                        {t('more_info')} <ChevronRight size={16} aria-hidden="true" />
                       </Link>
                     )}
                   </div>
@@ -212,7 +216,7 @@ const Books = ({ id }: { id: string }) => {
             ))
           ) : (
             <div className="no-results">
-              <p>Nenhum livro encontrado para sua busca.</p>
+              <p>{t("no_books_find")}</p>
               <button
                 className="reset-button"
                 onClick={() => {
@@ -221,7 +225,7 @@ const Books = ({ id }: { id: string }) => {
                 }}
                 aria-label="Limpar filtros de busca"
               >
-                Limpar filtros
+                {t("clr_flt")}
               </button>
             </div>
           )}
