@@ -1,7 +1,7 @@
 /* WhatsApp Button Container */
 .whatsapp-container {
   position: fixed;
-  bottom: 32px;
+  bottom: 62px;
   right: 32px;
   z-index: 9999;
 }
@@ -111,8 +111,8 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .whatsapp-container {
-    bottom: 20px;
-    right: 20px;
+    bottom: 50px;
+    right: 10px;
   }
 
   .whatsapp-button {
