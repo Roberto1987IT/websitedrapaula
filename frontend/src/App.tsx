@@ -38,6 +38,8 @@ import WhatsAppButton from './components/WhatsAppButton';
 import Politica from "./components/Politica";
 import PoliticaCookies from "./components/PoliticaCookies";
 import TermosCondicoes from "./components/TermosCondicoes";
+import PaymentSuccess from "./stripe/PaymentSuccess";
+import PaymentCancelled from "./stripe/PaymentCancelled";
 
 // Placeholder for a protected Dashboard page
 const Dashboard = () => <div>Dashboard (Protected)</div>;
@@ -148,6 +150,8 @@ function App() {
             <Route path="/politica" element={<Politica />} />
             <Route path="/politica-cookies" element={<PoliticaCookies />} />
             <Route path="/termos-condicoes" element={<TermosCondicoes />} />
+            <Route path="/payment-success" element={<PaymentSuccess />} />
+            <Route path="/payment-cancelled" element={<PaymentCancelled />} />
             <Route
               path="/wishlist"
               element={
