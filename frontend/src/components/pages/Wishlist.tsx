@@ -1,5 +1,5 @@
-import React from "react";
-import { Heart, ShoppingCart, Trash2 } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Heart, ShoppingCart, Trash2, Check, X } from "lucide-react";
 import "../../styles/wishlist.css";
 import { useWishlist } from "../../context/WishlistContext"; 
 import { books } from "../../bookData"; // Import the books data
@@ -14,6 +14,11 @@ const Wishlist = () => {
     const { wishlist, removeFromWishlist } = useWishlist();
     const { addToCart } = useCart();
 
+    // Toast notification states
+    const [showToast, setShowToast] = useState(false);
+    const [toastMessage, setToastMessage] = useState("");
+    const [toastType, setToastType] = useState<'success' | 'error' | 'info'>('success');
+
     // Get the details of the books in the wishlist
     const wishlistBooks = books.filter((book) => wishlist.includes(book.id));
     
@@ -22,6 +27,24 @@ const Wishlist = () => {
     
     // Combine both for total count
     const totalItems = wishlistBooks.length + wishlistCourses.length;
+
+    // Handle toast auto-hide after 3 seconds
+    useEffect(() => {
+        let timer: number;
+        if (showToast) {
+            timer = window.setTimeout(() => {
+                setShowToast(false);
+            }, 3000);
+        }
+        return () => clearTimeout(timer);
+    }, [showToast]);
+
+    // Function to show toast notification
+    const displayToast = (message: string, type: 'success' | 'error' | 'info' = 'success') => {
+        setToastMessage(message);
+        setToastType(type);
+        setShowToast(true);
+    };
 
     // Format price to ensure Euro symbol appears
     const formatPrice = (price: number | string): string => {
@@ -42,17 +65,42 @@ const Wishlist = () => {
     // Function to add a book to cart
     const addBookToCart = (book: Book): void => {
         addToCart(book, 'book');
-        alert("Livro adicionado ao carrinho!");
+        displayToast("Livro adicionado ao carrinho!", "success");
     };
 
     // Function to add a course to cart
     const addCourseToCart = (course: Course): void => {
         addToCart(course, 'course');
-        alert("Curso adicionado ao carrinho!");
+        displayToast("Curso adicionado ao carrinho!", "success");
+    };
+
+    // Function to handle item removal with toast notification
+    const handleRemoveItem = (id: number, type: 'book' | 'course'): void => {
+        removeFromWishlist(id);
+        displayToast(`${type === 'book' ? 'Livro' : 'Curso'} removido da lista de desejos`, "info");
     };
 
     return (
         <div className="wishlist-page">
+            {/* Toast Notification */}
+            {showToast && (
+                <div className={`toast-notification ${toastType}`}>
+                    <div className="toast-content">
+                        {toastType === 'success' && <Check size={18} className="toast-icon" />}
+                        {toastType === 'error' && <X size={18} className="toast-icon" />}
+                        {toastType === 'info' && <Heart size={18} className="toast-icon" />}
+                        <span>{toastMessage}</span>
+                    </div>
+                    <button 
+                        className="toast-close" 
+                        onClick={() => setShowToast(false)}
+                        aria-label="Fechar notificação"
+                    >
+                        <X size={14} />
+                    </button>
+                </div>
+            )}
+
             <div className="wishlist-container">
                 <div className="wishlist-header">
                     <h1><Heart className="wishlist-icon" /> Minha Lista de Desejos</h1>
@@ -96,7 +144,10 @@ const Wishlist = () => {
                                                 <button onClick={() => addBookToCart(book)} className="add-to-cart-button">
                                                     <ShoppingCart size={16} /> Adicionar ao Carrinho
                                                 </button>
-                                                <button onClick={() => removeFromWishlist(book.id)} className="remove-button">
+                                                <button 
+                                                    onClick={() => handleRemoveItem(book.id, 'book')} 
+                                                    className="remove-button"
+                                                >
                                                     <Trash2 size={16} /> Remover
                                                 </button>
                                             </div>
@@ -129,7 +180,10 @@ const Wishlist = () => {
                                                 <button onClick={() => addCourseToCart(course)} className="add-to-cart-button">
                                                     <ShoppingCart size={16} /> Adicionar ao Carrinho
                                                 </button>
-                                                <button onClick={() => removeFromWishlist(course.id)} className="remove-button">
+                                                <button 
+                                                    onClick={() => handleRemoveItem(course.id, 'course')} 
+                                                    className="remove-button"
+                                                >
                                                     <Trash2 size={16} /> Remover
                                                 </button>
                                             </div>

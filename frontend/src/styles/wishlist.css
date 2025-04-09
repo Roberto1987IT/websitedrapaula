@@ -245,3 +245,121 @@
       flex-direction: column;
     }
   }
+
+
+
+  /* Toast notification styles */
+.toast-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    min-width: 300px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: slideIn 0.3s ease forwards;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideOut {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+  
+  .toast-notification.hiding {
+    animation: slideOut 0.3s ease forwards;
+  }
+  
+  /* Success toast styling */
+  .toast-notification.success {
+    background-color: #ecfdf5;
+    border-left: 4px solid #10b981;
+    color: #065f46;
+  }
+  
+  /* Error toast styling */
+  .toast-notification.error {
+    background-color: #fef2f2;
+    border-left: 4px solid #ef4444;
+    color: #b91c1c;
+  }
+  
+  /* Info toast styling */
+  .toast-notification.info {
+    background-color: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    color: #1e40af;
+  }
+  
+  /* Toast content container */
+  .toast-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  /* Icon styling */
+  .toast-icon {
+    flex-shrink: 0;
+  }
+  
+  .toast-notification.success .toast-icon {
+    color: #10b981;
+  }
+  
+  .toast-notification.error .toast-icon {
+    color: #ef4444;
+  }
+  
+  .toast-notification.info .toast-icon {
+    color: #3b82f6;
+  }
+  
+  /* Close button styling */
+  .toast-close {
+    background: transparent;
+    border: none;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    line-height: 0;
+    transition: background-color 0.2s;
+    margin-left: 10px;
+  }
+  
+  .toast-close:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Responsiveness for mobile devices */
+  @media (max-width: 640px) {
+    .toast-notification {
+      min-width: auto;
+      width: calc(100% - 40px);
+      left: 20px;
+      right: 20px;
+    }
+  }
