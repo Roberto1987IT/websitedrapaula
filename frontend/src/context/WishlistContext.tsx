@@ -1,22 +1,37 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 type WishlistContextType = {
   wishlist: number[];
-  addToWishlist: (bookId: number) => void;
-  removeFromWishlist: (bookId: number) => void;
+  addToWishlist: (itemId: number) => void;
+  removeFromWishlist: (itemId: number) => void;
 };
 
 const WishlistContext = createContext<WishlistContextType | undefined>(undefined);
 
 export const WishlistProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [wishlist, setWishlist] = useState<number[]>([]);
+  // Initialize state from localStorage
+  const [wishlist, setWishlist] = useState<number[]>(() => {
+    const storedWishlist = localStorage.getItem("wishlist");
+    return storedWishlist ? JSON.parse(storedWishlist) : [];
+  });
 
-  const addToWishlist = (bookId: number) => {
-    setWishlist((prev) => [...new Set([...prev, bookId])]);
+  // Update localStorage when wishlist changes
+  useEffect(() => {
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  }, [wishlist]);
+
+  const addToWishlist = (itemId: number) => {
+    setWishlist((prev) => {
+      // Check if the item is already in wishlist to avoid duplicates
+      if (!prev.includes(itemId)) {
+        return [...prev, itemId];
+      }
+      return prev;
+    });
   };
 
-  const removeFromWishlist = (bookId: number) => {
-    setWishlist((prev) => prev.filter((id) => id !== bookId));
+  const removeFromWishlist = (itemId: number) => {
+    setWishlist((prev) => prev.filter((id) => id !== itemId));
   };
 
   return (

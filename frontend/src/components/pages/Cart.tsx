@@ -240,6 +240,7 @@ const Cart = () => {
                 <Link to="/" className="continue-shopping">
                     Continuar Comprando
                 </Link>
+                
             </div>
         </div>
     );
