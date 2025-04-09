@@ -15,3 +15,4 @@ frontend/dist/
 
 # Environment files
 .env
+.idea
