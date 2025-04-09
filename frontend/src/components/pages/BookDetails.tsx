@@ -63,13 +63,14 @@ const BookDetails = () => {
     }
 
     if (book) {
-      addToCart(book);
+      // Use the updated addToCart with itemType parameter
+      addToCart(book, 'book');
       setIsAddedToCart(true);
       showNotification('Adicionado ao carrinho com sucesso!');
     }
   };
 
-  const handleBuyNow: () => void = () => {
+  const handleBuyNow = () => {
     if (!user) {
       navigate('/login');
       showNotification('Por favor, faça login para finalizar a compra');
@@ -77,7 +78,8 @@ const BookDetails = () => {
     }
 
     if (book) {
-      addToCart(book);
+      // Use the updated addToCart with itemType parameter
+      addToCart(book, 'book');
       setIsAddedToCart(true);
       showNotification('Redirecionando para o checkout...');
       navigate('/checkout');

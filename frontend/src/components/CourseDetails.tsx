@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom"; // Import useNavigate
-import { Button } from "@/components/ui/button";  // Adjusted path
+import { useParams, useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp, Check } from "lucide-react";
 import { courses } from "../courseData";
+import { useCart, Course } from "../context/CartContext";
 import "../styles/pages/courseDetails.css";
 
 const CourseDetails = () => {
   const { id } = useParams<{ id: string | undefined }>();
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate();
+  const { addToCart } = useCart();
   const course = courses.find((c) => c.id === Number(id));
   const [isInWishlist, setIsInWishlist] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -59,14 +61,10 @@ const CourseDetails = () => {
       return; // Exit the function to prevent further execution
     }
 
-    // Add to cart logic (only if logged in)
-    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    if (!cart.includes(Number(id))) {
-      cart.push(Number(id));
-      localStorage.setItem("cart", JSON.stringify(cart));
+    // Add to cart using the context
+    if (course) {
+      addToCart(course, 'course');
       alert("Curso adicionado ao carrinho!");
-    } else {
-      alert("O curso já está no carrinho.");
     }
   };
 
@@ -386,8 +384,5 @@ const CourseDetails = () => {
     </div>
   );
 };
-
-// When login is successful:
-localStorage.setItem("isLoggedIn", "true"); // Use string "true"
 
 export default CourseDetails;
