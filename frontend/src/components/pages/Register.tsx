@@ -475,20 +475,21 @@ const Register = () => {
             {errors.acceptTerms && <span className="error">{errors.acceptTerms}</span>}
           </div>
 
+
           <button 
-            type="submit" 
-            disabled={isSubmitting || isCheckingBreach}
-            className={`submit-btn ${isSubmitting ? "submitting" : ""}`}
-          >
-            {isSubmitting ? (
-              <>
-                <span className="spinner"></span>
-                <span>Registrando...</span>
-              </>
-            ) : (
-              "Criar Conta"
-            )}
-          </button>
+  type="submit" 
+  disabled={isSubmitting || isCheckingBreach}
+  className={`submit-btn ${isSubmitting ? "submitting" : ""}`}
+>
+  {isSubmitting ? (
+    <>
+      <span className="spinner"></span>
+      <span>Registrando...</span>
+    </>
+  ) : (
+    <span>Criar Conta</span>
+  )}
+</button>
 
           <p className="login-link">
             Já possui uma conta? <a href="/login">Fazer login</a>
