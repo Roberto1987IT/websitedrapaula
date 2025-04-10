@@ -1,21 +1,43 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import config from "@/config";
 import "../../styles/pages/recuperar-senha.css";
 
 const RecuperarSenha = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState({ text: "", type: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setMessage({ text: "", type: "" });
     
-    // Simulate API call
-    setTimeout(() => {
-      alert("Se este email estiver registado, um link para redefinir a senha será enviado.");
-      setIsSubmitting(false);
+    try {
+      const response = await fetch(`${config.backendUrl}/api/auth/password-reset/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+      
+      // Even if the email doesn't exist, we should show the same message for security reasons
+      setMessage({
+        text: "Se este email estiver registado, um link para redefinir a senha será enviado.",
+        type: "success"
+      });
       setEmail("");
-    }, 1500);
+      
+    } catch (error) {
+      console.error("Password reset request error:", error);
+      setMessage({
+        text: "Ocorreu um erro ao processar seu pedido. Por favor, tente novamente mais tarde.",
+        type: "error"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -26,6 +48,12 @@ const RecuperarSenha = () => {
             <h2>Recuperar Palavra-Passe</h2>
             <p>Digite seu email e enviaremos um link para redefinir sua senha.</p>
           </div>
+
+          {message.text && (
+            <div className={`message ${message.type}`}>
+              {message.text}
+            </div>
+          )}
 
           <form onSubmit={handleSubmit} className="recovery-form">
             <div className="form-group">
@@ -39,6 +67,7 @@ const RecuperarSenha = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 className="recovery-input"
+                disabled={isSubmitting}
               />
             </div>
 

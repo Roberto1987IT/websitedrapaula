@@ -14,7 +14,6 @@ import ContactForm from "./components/pages/ContactForm";
 import Footer from "./components/pages/Footer";
 import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
-import RecuperarSenha from "./components/pages/RecuperarSenha";
 import Wishlist from "./components/pages/Wishlist";
 import Contact from "./components/Contact";
 import Cart from "./components/pages/Cart";
@@ -40,6 +39,8 @@ import PoliticaCookies from "./components/PoliticaCookies";
 import TermosCondicoes from "./components/TermosCondicoes";
 import PaymentSuccess from "./stripe/PaymentSuccess";
 import PaymentCancelled from "./stripe/PaymentCancelled";
+import RecuperarSenha from './components/pages/RecuperarSenha';
+import ResetPassword from './components/pages/ResetPassword';
 
 // Placeholder for a protected Dashboard page
 const Dashboard = () => <div>Dashboard (Protected)</div>;
@@ -153,6 +154,8 @@ function App() {
             <Route path="/payment-success" element={<PaymentSuccess />} />
             <Route path="/payment-cancelled" element={<PaymentCancelled />} />
             <Route path="/politica-privacidade" element={<Politica />} />
+            <Route path="/recuperar-senha" element={<RecuperarSenha />} />
+            <Route path="/reset-password/:uid/:token" element={<ResetPassword />} />
             <Route
               path="/wishlist"
               element={
