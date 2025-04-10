@@ -249,7 +249,7 @@
   "commitments": "Our Commitment",
   "commitments_p1": "Through courses, mentoring, and teaching materials, our goal is to empower professionals in their daily practices. We provide tools for them to support children and families in their journey of growth and development. In this way, we aim to contribute so that each human being can reach their full potential, respecting their uniqueness and promoting a more inclusive and strengthened society.",
   "commitments_p2": "We are committed to creating accessible resources and programs that inspire educators and families to work together for the well-being of children. We believe that through this collaboration, we can lay the foundations for a future where all children have the opportunity to thrive.",
-    "mentorship_program": "Mentorship Program",
+  "mentorship_program": "Mentorship Program",
   "mentorship_program_h1": "Personalized Professional Mentorship",
   "mentorship_program_h1_p": "Develop your skills and accelerate your career with specialized guidance.",
   "mentorship_h3_1": "The Program",
@@ -320,6 +320,114 @@
       "question": "How are the meetings conducted?",
       "answer": "The meetings are held remotely through video conferencing platforms such as Zoom or Google Meet, providing flexibility and convenience for all participants."
     }
+  },
+  "imerssion_program": "Immersion Program",
+  "imerssion_h1": "Intensive Clinical Experience",
+  "imerssion_p": "Take your professional practice to the next level with our specialized immersion program.",
+  "imerssion_geral_h1": "Overview",
+  "imerssion_geral_p": "Our immersion program offers an intensive practical experience for professionals and students who want to improve their clinical skills in a real and supervised environment. During the immersion period, you will have the opportunity to apply theoretical knowledge in practical situations, receiving direct feedback from experienced supervisors.",
+  "imerssion_geral_cards": {
+    "1": {
+      "title": "Practical Experience",
+      "text": "Learn through practice with real cases and authentic clinical situations."
+    },
+    "2": {
+      "title": "Individualized Mentoring",
+      "text": "Direct supervision with experienced professionals and continuous feedback."
+    },
+    "3": {
+      "title": "Distinguished Certification",
+      "text": "Earn a certificate that proves your intensive practical experience."
+    }
+  },
+  "formats": {
+    "disponibles": {
+      "title": "Available Formats",
+      "list": {
+        "1": {
+          "title": "Individual Immersion",
+          "text": "Personalized attention focused on your specific needs.",
+          "li": {
+            "1": "Duration: 1 to 5 days",
+            "2": "Customized program",
+            "3": "Detailed individual feedback",
+            "4": "Flexible schedules"
+          }
+        },
+        "2": {
+          "title": "Group Immersion",
+          "text": "Collaborative experience with knowledge sharing.",
+          "li": {
+            "1": "Duration: 2 to 7 days",
+            "2": "Groups of 3 to 8 people",
+            "3": "Group dynamics and case studies",
+            "4": "Professional networking"
+          }
+        },
+        "3": {
+          "title": "Intensive Immersion",
+          "text": "Comprehensive immersion program with theoretical and practical modules.",
+          "li": {
+            "1": "Duration: 1 to 4 weeks",
+            "2": "Comprehensive guidance",
+            "3": "Exclusive learning materials",
+            "4": "Premium certification"
+          }
+        }
+      }
+    }
+  },
+  "functions": {
+    "title": "How It Works",
+    "list": {
+      "1": {
+        "title": "Initial Assessment",
+        "text": "We conduct an interview to understand your specific needs and goals. This step allows us to personalize your immersion experience and maximize learning."
+      },
+      "2": {
+        "title": "Personalized Planning",
+        "text": "We develop a detailed immersion plan, including schedule, topics to be covered, and methodologies to be applied during the program."
+      },
+      "3": {
+        "title": "Immersion Experience",
+        "text": "You participate in scheduled activities, alternating between theoretical learning and practical application, always with supervision from our team."
+      },
+      "4": {
+        "title": "Feedback",
+        "text": "Throughout the immersion, you will receive continuous feedback on your performance, enabling real-time professional growth."
+      },
+      "5": {
+        "title": "Certification",
+        "text": "At the end of the program, you will receive your certification."
+      }
+    }
+  },
+  "space": "Discover our space",
+  "steps": {
+    "title": "Next Steps",
+    "h3": "Ready to start your journey of professional transformation?",
+    "p": "The process to participate in our immersion programs is simple and straightforward:",
+    "list": {
+      "1": {
+        "strong": "Get in touch",
+        "text": "Schedule an initial consultation with our team via the contact form or phone."
+      },
+      "2": {
+        "strong": "Profile evaluation",
+        "text": "We conduct a brief interview to understand your needs and goals."
+      },
+      "3": {
+        "strong": "Personalized proposal",
+        "text": "Receive a detailed proposal with program options, dates, and costs."
+      },
+      "4": {
+        "strong": "Confirm your participation",
+        "text": "Make your reservation and get ready for a transformative experience."
+      }
+    }
+  },
+  "imerssion_contact_us": {
+    "title": "Ready to Elevate Your Professional Experience?",
+    "text": "Contact us for more information about our immersion programs and schedule a consultation with our experts."
   }
-
 }

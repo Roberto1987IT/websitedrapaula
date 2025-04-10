@@ -321,5 +321,117 @@
       "question": "Como são realizados os encontros?",
       "answer": "Os encontros são realizados remotamente através de plataformas de videoconferência como Zoom ou Google Meet, permitindo flexibilidade e conveniência para todos os participantes"
     }
+  },
+  "imerssion_program": "Programa de Imersão",
+  "imerssion_h1": "Experiência Clínica Intensiva",
+  "imerssion_p": "Eleve sua prática profissional com o nosso programa de imersão especializado",
+  "imerssion_geral_h1": "Visão Geral",
+  "imerssion_geral_p": "O nosso programa de imersão oferece uma experiência prática intensiva para profissionais e estudantes que desejam melhorar as suas competencias clínicas em um ambiente real e supervisionado. Durante o período de imersão, você terá a oportunidade de aplicar conhecimentos teóricos em situações práticas, recebendo feedback direto de supervisores experientes.",
+  "imerssion_geral_cards": {
+    "1": {
+      "title": "Experiência Prática",
+      "text": "Aprenda na pratica, com casos reais e situações clínicas autênticas"
+    },
+    "2": {
+      "title": "Mentoria Individualizada",
+      "text": "Supervisão direta com profissionais experientes e feedback contínuo"
+    },
+    "3": {
+      "title": "Certificação Diferenciada",
+      "text": "Obtenha um certificado que comprova sua experiência prática intensiva"
+    }
+  },
+  "formats": {
+    "disponibles": {
+      "title": "Formatos Disponíveis",
+      "list": {
+        "1": {
+          "title": "Imersão Individual",
+          "text": "Atendimento personalizado com foco nas suas necessidades específicas",
+          "li": {
+            "1": "Duração: 1 a 5 dias",
+            "2": "Programa personalizado",
+            "3": "Feedback individual detalhado",
+            "4": "Horários flexíveis"
+          }
+        },
+        "2": {
+          "title": "Imersão em Grupo",
+          "text": "Experiência colaborativa com partilha de conhecimentos",
+          "li": {
+            "1": "Duração: 2 a 7 dias",
+            "2": "Grupos de 3 a 8 pessoas",
+            "3": "Dinâmicas e estudos de caso",
+            "4": "Networking profissional"
+          }
+        },
+        "3": {
+          "title": "Imersão Intensiva",
+          "text": "Programa completo de imersão com módulos teóricos e práticos",
+          "li": {
+            "1": "Duração: 1 a 4 semanas",
+            "2": "Acompanhamento integral",
+            "3": "Material didático exclusivo",
+            "4": "Certificação premium"
+          }
+        }
+      }
+    }
+  },
+  "functions": {
+    "title": "Como Funciona",
+    "list": {
+      "1": {
+        "title": "Avaliação Inicial",
+        "text": "Realizamos uma entrevista para entender as suas necessidades e objetivos específicos. Esta etapa permite-nos personalizar a sua experiência de imersão e maximizar a aprendizagem."
+      },
+      "2": {
+        "title": "Planeamento Personalizado",
+        "text": "Desenvolvemos um plano de imersão detalhado, incluindo cronograma, tópicos a serem abordados e metodologias que serão aplicadas durante o programa."
+      },
+      "3": {
+        "title": "Experiência de Imersão",
+        "text": "Você participa das atividades programadas, alternando entre aprendizagem teórica e aplicação prática, sempre com o acompanhamento dos nossos supervisores."
+      },
+      "4": {
+        "title": "Feedback ",
+        "text": "Durante toda a imersão, você recebe feedback contínuo sobre seu desempenho, permitindo o seu crescimento profissional em tempo real."
+      },
+      "5": {
+        "title": "Certificação",
+        "text": "Ao final do programa, você recebe a sua certificação."
+      }
+
+    }
+  },
+  "space": "Conheçam o nosso espaço",
+  "steps": {
+    "title": "Próximos Passos",
+    "h3": "Pronto para começar sua jornada de transformação profissional?",
+    "p": "O processo para participar de nossas imersões é simples e direto:",
+    "list": {
+      "1": {
+        "strong": "Entre em contato",
+        "text": "Agende uma consulta inicial com a nossa equipa através do formulário de contato ou telefone."
+      },
+      "2": {
+        "strong": "Avaliação de perfil",
+        "text": "Realizamos uma breve entrevista para entender as suas necessidades e objetivos."
+      },
+      "3": {
+        "strong": "Proposta personalizada",
+        "text": "Receba uma proposta detalhada com opções de programas, datas e investimento."
+      },
+      "4": {
+        "strong": "Confirme a sua participação",
+        "text": "Efetue a reserva e prepare-se para uma experiência transformadora."
+      }
+    }
+  },
+  "imerssion_contact_us": {
+    "title": "Pronto para Elevar a Sua Experiência Profissional?",
+    "text": "Entre em contato para mais informações sobre nossos programas de imersão e agende uma consulta com nossos especialistas."
   }
+
 }
+
