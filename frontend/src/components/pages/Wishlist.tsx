@@ -10,8 +10,15 @@ import { useCart } from "../../context/CartContext"; // Import cart context
 type Book = typeof books[0];
 type Course = typeof courses[0];
 
+// Define WishlistItem interface to match context
+interface WishlistItem {
+  id: number;
+  type: 'book' | 'course';
+}
+
 const Wishlist = () => {
-    const { wishlist, removeFromWishlist } = useWishlist();
+    // Get rid of TypeScript error by properly typing context values
+    const { wishlist, removeFromWishlist, isInWishlist } = useWishlist();
     const { addToCart } = useCart();
 
     // Toast notification states
@@ -19,11 +26,29 @@ const Wishlist = () => {
     const [toastMessage, setToastMessage] = useState("");
     const [toastType, setToastType] = useState<'success' | 'error' | 'info'>('success');
 
+    // Get book and course IDs from the wishlist
+    // We need to implement this filtering logic here since we don't have direct access to wishlistItems
+    const bookIds: number[] = [];
+    const courseIds: number[] = [];
+    
+    // Populate bookIds and courseIds by checking each item in books and courses
+    books.forEach(book => {
+      if (isInWishlist(book.id, 'book')) {
+        bookIds.push(book.id);
+      }
+    });
+    
+    courses.forEach(course => {
+      if (isInWishlist(course.id, 'course')) {
+        courseIds.push(course.id);
+      }
+    });
+    
     // Get the details of the books in the wishlist
-    const wishlistBooks = books.filter((book) => wishlist.includes(book.id));
+    const wishlistBooks = books.filter((book) => bookIds.includes(book.id));
     
     // Get the details of the courses in the wishlist
-    const wishlistCourses = courses.filter((course) => wishlist.includes(course.id));
+    const wishlistCourses = courses.filter((course) => courseIds.includes(course.id));
     
     // Combine both for total count
     const totalItems = wishlistBooks.length + wishlistCourses.length;
@@ -76,7 +101,7 @@ const Wishlist = () => {
 
     // Function to handle item removal with toast notification
     const handleRemoveItem = (id: number, type: 'book' | 'course'): void => {
-        removeFromWishlist(id);
+        removeFromWishlist(id, type);
         displayToast(`${type === 'book' ? 'Livro' : 'Curso'} removido da lista de desejos`, "info");
     };
 

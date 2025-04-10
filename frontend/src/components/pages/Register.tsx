@@ -77,7 +77,7 @@ const Register = () => {
       
       return results.includes(suffix);
     } catch (error) {
-      console.error("Error checking password breach:", error);
+      console.error("Ocorreu um erro ao analisar a segurança da palavra-passe:", error);
       return false; // Fail safe - don't block if API is unavailable
     }
   };
@@ -122,62 +122,62 @@ const Register = () => {
 
     // Basic validations
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = "Email é obrigatório";
     } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
       newErrors.email = "Invalid email format";
     }
 
     if (!formData.fullName.trim()) {
-      newErrors.fullName = "Full name is required";
+      newErrors.fullName = "É necessário preencher o nome completo.";
     } else if (formData.fullName.trim().length < 2) {
-      newErrors.fullName = "Full name must be at least 2 characters";
+      newErrors.fullName = "O nome completo é de preenchimento obrigatório";
     }
 
     if (!formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
+      newErrors.phone = "Número de telefone é obrigatório.";
     } else if (!/^\+?[0-9\s\-]+$/.test(formData.phone)) {
-      newErrors.phone = "Invalid phone number format";
+      newErrors.phone = "Formato do contacto telefónico inválido";
     } else if (formData.phone.replace(/\D/g, '').length < 8) {
-      newErrors.phone = "Phone number is too short";
+      newErrors.phone = "Contacto telefónico incompleto.";
     }
 
     if (!formData.country) {
-      newErrors.country = "Country is required";
+      newErrors.country = "O país é de preenchimento obrigatório.";
     }
 
     // Enhanced password validation
     if (!formData.password) {
-      newErrors.password = "Password is required";
+      newErrors.password = "A palavra-passe é obrigatória.";
     } else {
       if (formData.password.length < 8) {
-        newErrors.password = "Password must be at least 8 characters";
+        newErrors.password = "A palavra-passe deve ter pelo menos 8 caracteres.";
       } else if (!/[A-Z]/.test(formData.password)) {
-        newErrors.password = "Include at least one uppercase letter";
+        newErrors.password = "Inclua pelo menos uma letra maiúscula.";
       } else if (!/[a-z]/.test(formData.password)) {
-        newErrors.password = "Include at least one lowercase letter";
+        newErrors.password = "Inclua pelo menos uma letra minúscula.";
       } else if (!/[0-9]/.test(formData.password)) {
-        newErrors.password = "Include at least one number";
+        newErrors.password = "Inclua pelo menos um número.";
       } else if (!/[^A-Za-z0-9]/.test(formData.password)) {
-        newErrors.password = "Include at least one special character";
+        newErrors.password = "Inclua pelo menos um caractere especial (ex: !@#$%).";
       } else {
         // Only check breach if password meets other requirements
         setIsCheckingBreach(true);
         const isBreached = await checkPasswordBreach(formData.password);
         setIsCheckingBreach(false);
         if (isBreached) {
-          newErrors.password = "This password has appeared in data breaches. Please choose a different one.";
+          newErrors.password = "Esta palavra-passe está vulnerável. Selecione outra.";
         }
       }
     }
 
     if (!formData.confirmPassword) {
-      newErrors.confirmPassword = "Please confirm your password";
+      newErrors.confirmPassword = "Por favor, confirme a sua palavra-passe";
     } else if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = "Passwords don't match";
+      newErrors.confirmPassword = "As passwords não correspondem.";
     }
 
     if (!formData.acceptTerms) {
-      newErrors.acceptTerms = "You must accept the terms";
+      newErrors.acceptTerms = "É necessário aceitar os termos e condições para prosseguir.";
     }
 
     setErrors(newErrors);
@@ -236,7 +236,7 @@ const Register = () => {
 
         setErrors(mappedErrors);
       } else {
-        setServerError("An unexpected error occurred. Please try again.");
+        setServerError("Ocorreu um erro inesperado. Por favor, tente novamente.");
       }
     } finally {
       setIsSubmitting(false);

@@ -7,7 +7,7 @@ import { ChevronRight, Star, Search, Download, Book as BookIcon, Heart } from "l
 import debounce from "lodash/debounce";
 
 const Books = ({ id }: { id: string }) => {
-  const { wishlist, addToWishlist, removeFromWishlist } = useWishlist(); // Use wishlist context
+  const { wishlist, addToWishlist, removeFromWishlist, isInWishlist } = useWishlist(); // Use wishlist context without wishlistItems
   const [loadedImages, setLoadedImages] = useState<number[]>([]);
   const [activeFilter, setActiveFilter] = useState<string>("impresso");
   const [hoveredBook, setHoveredBook] = useState<number | null>(null);
@@ -44,10 +44,11 @@ const Books = ({ id }: { id: string }) => {
     }
 
     // Add or remove the book from the wishlist
-    if (wishlist.includes(bookId)) {
-      removeFromWishlist(bookId);
+    // Now explicitly specify the item type as 'book'
+    if (isInWishlist(bookId, 'book')) {
+      removeFromWishlist(bookId, 'book');
     } else {
-      addToWishlist(bookId);
+      addToWishlist(bookId, 'book');
     }
   };
 
@@ -197,14 +198,14 @@ const Books = ({ id }: { id: string }) => {
                     )}
                   </div>
                   <button
-                    className={`wishlist-button ${wishlist.includes(book.id) ? "active" : ""}`}
+                    className={`wishlist-button ${isInWishlist(book.id, 'book') ? "active" : ""}`}
                     onClick={() => toggleWishlist(book.id)}
                     aria-label={`Adicionar ou remover ${book.title} da lista de desejos`}
                   >
                     <Heart
                       size={20}
-                      fill={wishlist.includes(book.id) ? "red" : "none"}
-                      color={wishlist.includes(book.id) ? "red" : "black"}
+                      fill={isInWishlist(book.id, 'book') ? "red" : "none"}
+                      color={isInWishlist(book.id, 'book') ? "red" : "black"}
                     />
                   </button>
                 </div>

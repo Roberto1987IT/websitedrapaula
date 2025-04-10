@@ -11,7 +11,7 @@ const CourseDetails = () => {
   const { id } = useParams<{ id: string | undefined }>();
   const navigate = useNavigate();
   const { addToCart } = useCart();
-  const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
+  const { isInWishlist, addToWishlist, removeFromWishlist } = useWishlist();
   const course = courses.find((c) => c.id === Number(id));
   const [imageLoaded, setImageLoaded] = useState(false);
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
@@ -21,8 +21,8 @@ const CourseDetails = () => {
   const [notificationType, setNotificationType] = useState<'success' | 'error'>('success');
   const [notificationMessage, setNotificationMessage] = useState("");
   
-  // Check if the course is in the wishlist using the context
-  const isInWishlist = wishlist.includes(Number(id));
+  // Check if the course is in the wishlist using the type-aware isInWishlist function
+  const courseInWishlist = isInWishlist(Number(id), 'course');
 
   useEffect(() => {
     // Scroll to top on page load
@@ -50,12 +50,12 @@ const CourseDetails = () => {
       return; // Exit the function to prevent further execution
     }
 
-    // Use the wishlist context to add/remove the course
-    if (isInWishlist) {
-      removeFromWishlist(Number(id));
+    // Use the wishlist context to add/remove the course with 'course' type
+    if (courseInWishlist) {
+      removeFromWishlist(Number(id), 'course');
       showToast("Curso removido dos favoritos", "success");
     } else {
-      addToWishlist(Number(id));
+      addToWishlist(Number(id), 'course');
       showToast("Curso adicionado aos favoritos", "success");
     }
   };
@@ -380,12 +380,12 @@ const CourseDetails = () => {
               <button 
                 className="wishlist-button"
                 onClick={toggleWishlist}
-                aria-label={isInWishlist ? "Remover dos favoritos" : "Adicionar aos favoritos"}
+                aria-label={courseInWishlist ? "Remover dos favoritos" : "Adicionar aos favoritos"}
               >
                 <Heart 
                   size={24} 
-                  fill={isInWishlist ? "#ff6b6b" : "none"} 
-                  color={isInWishlist ? "#ff6b6b" : "#757575"} 
+                  fill={courseInWishlist ? "#ff6b6b" : "none"} 
+                  color={courseInWishlist ? "#ff6b6b" : "#757575"} 
                 />
               </button>
             </div>
