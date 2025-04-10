@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate , Link} from 'react-router-dom';
 import config from '@/config';
 import '../../styles/pages/login.css';
-import { useTranslation } from 'react-i18next';
 
 const Login = () => {
-    const { t } = useTranslation();
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -83,7 +81,7 @@ const Login = () => {
                         type="email"
                         id="email"
                         name="email"
-                        placeholder="Email"
+                        placeholder="Insira seu e-mail"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
@@ -96,7 +94,7 @@ const Login = () => {
                             type={passwordVisible ? 'text' : 'password'}
                             id="password"
                             name="password"
-                            placeholder="Password"
+                            placeholder="Insira sua senha"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
@@ -146,7 +144,7 @@ const Login = () => {
                     </div>
 
                     <div className="forgot-password">
-                        <a href="/forgot-password">{t("account.login.reset_password")}</a>
+                        <a href="/recuperar-senha">Recuperar Senha</a>
                     </div>
 
                     <button 
@@ -157,7 +155,7 @@ const Login = () => {
                     </button>
                 </form>
                 <p>
-                {t("account.login.not_member")} <a href="/register">{t("registration")}</a>
+                Não possui uma conta? <a href="/register">Criar conta</a>
                 </p>
             </div>
         </div>
