@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate , Link} from 'react-router-dom';
 import config from '@/config';
 import '../../styles/pages/login.css';
 
@@ -144,7 +144,7 @@ const Login = () => {
                     </div>
 
                     <div className="forgot-password">
-                        <a href="/forgot-password">Recuperar Senha</a>
+                        <a href="/recuperar-senha">Recuperar Senha</a>
                     </div>
 
                     <button 
