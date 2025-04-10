@@ -244,7 +244,7 @@
 
 
 
-/* 🔹 Register Button - Fixed Width */
+/* 🔹 Register Button - Fixed Width with Centered Content */
 .register-form .submit-btn {
   background: #2563eb;
   color: white;
@@ -258,11 +258,11 @@
   transition: background 0.3s ease;
   width: 100%;
   min-width: 200px; /* Ensures minimum width */
-  position: relative; /* For absolute positioning of the spinner if needed */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 48px; /* Fixed height to prevent size changes */
+  position: relative; /* For positioning children */
 }
 
 .register-form .submit-btn:hover {
@@ -273,18 +273,25 @@
   background: #3b82f6; /* Slightly lighter shade when submitting */
 }
 
+/* Container for spinner and text to properly center as a unit */
+.register-form .submit-btn span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Spinner styling */
 .spinner {
-  display: inline-block;
   width: 16px;
   height: 16px;
   border: 2px solid rgba(255,255,255,0.3);
   border-radius: 50%;
   border-top-color: white;
   animation: spin 1s ease-in-out infinite;
-  margin-right: 8px;
-  flex-shrink: 0; /* Prevents the spinner from shrinking */
+  margin-right: -8px; /* Space between spinner and text */
+  position: relative; /* Position relative to the text */
 }
+
 
 @keyframes spin {
   to { transform: rotate(360deg); }

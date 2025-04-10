@@ -482,10 +482,10 @@ const Register = () => {
   className={`submit-btn ${isSubmitting ? "submitting" : ""}`}
 >
   {isSubmitting ? (
-    <>
+    <span>
       <span className="spinner"></span>
-      <span>Registrando...</span>
-    </>
+      Registrando...
+    </span>
   ) : (
     <span>Criar Conta</span>
   )}
