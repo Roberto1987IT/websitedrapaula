@@ -212,6 +212,41 @@
   "info_o2": "Cookie Policy",
   "info_o3": "Terms and Conditions",
   "info_o4": "Complaints Book",
-  "footer_botton": "Paula Serrano. All rights reserved."
-
+  "footer_botton": "Paula Serrano. All rights reserved.",
+  "home_filosofia": "Our Philosophy",
+  "home_val": "Our Values",
+  "home_val_p": "Fundamental principles that guide every decision and initiative",
+  "mission": "Mission",
+  "mission_p1": "We value the sharing of knowledge as a powerful tool to broaden horizons and bring more quality of life to families. We believe that by disseminating knowledge, we can create a positive impact that goes far beyond the individual, reaching entire communities.",
+  "mission_p2": "We strive to create an environment where each child can flourish at their own pace, respecting their individuality and supporting their holistic development. Our approach recognizes that every growth journey is unique.",
+  "bases": "Fundamental Principles",
+  "basses": {
+    "1": {
+      "title": "Innovation",
+      "text": "We constantly seek new approaches and methodologies to improve our educational practices."
+    },
+    "2": {
+      "title": "Integrity",
+      "text": "We act with transparency and honesty in all our interactions and decisions."
+    },
+    "3": {
+      "title": "Empathy",
+      "text": "We put ourselves in others' shoes to understand their unique needs and challenges."
+    },
+    "4": {
+      "title": "Excellence",
+      "text": "We are committed to the highest standards of quality in everything we do."
+    },
+    "5": {
+      "title": "Collaboration",
+      "text": "We value teamwork and the exchange of ideas to achieve meaningful results."
+    },
+    "6": {
+      "title": "Respect",
+      "text": "We recognize and value the diversity of experiences and perspectives in our community."
+    }
+  },
+  "commitments": "Our Commitment",
+  "commitments_p1": "Through courses, mentoring, and teaching materials, our goal is to empower professionals in their daily practices. We provide tools for them to support children and families in their journey of growth and development. In this way, we aim to contribute so that each human being can reach their full potential, respecting their uniqueness and promoting a more inclusive and strengthened society.",
+  "commitments_p2": "We are committed to creating accessible resources and programs that inspire educators and families to work together for the well-being of children. We believe that through this collaboration, we can lay the foundations for a future where all children have the opportunity to thrive."
 }
