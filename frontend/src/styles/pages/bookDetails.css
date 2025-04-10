@@ -539,7 +539,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.75rem 1rem;
+  padding: 0.55rem 1rem;
   border-radius: 9999px;
   font-weight: 500;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -800,4 +800,109 @@
   width: 300px;
   height: 300px;
   opacity: 0;
+}
+
+
+
+
+
+
+/* External buy button style */
+.external-buy-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: rgb(31, 107, 169);  /* Purple color to distinguish it */
+  color: white;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.external-buy-button:hover:not(:disabled) {
+  background-color: #5b21b6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.external-buy-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.external-buy-button:disabled {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.external-buy-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+  pointer-events: none;
+}
+
+.external-buy-button:active:not(:disabled)::after {
+  width: 300px;
+  height: 300px;
+  opacity: 0;
+}
+
+/* Make buttons responsive in a 3-button layout */
+@media (max-width: 767px) {
+  .buttons-container {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .cart-button,
+  .buy-button,
+  .external-buy-button {
+    width: 100%;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.7rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .buttons-container {
+    flex-wrap: wrap;
+  }
+  
+  .cart-button,
+  .buy-button {
+    flex: 1 0 45%;
+  }
+  
+  .external-buy-button {
+    flex: 1 0 100%;
+    margin-top: 0.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .buttons-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .cart-button,
+  .buy-button,
+  .external-buy-button {
+    flex: 1;
+  }
 }

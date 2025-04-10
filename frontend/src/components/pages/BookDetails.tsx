@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { books, Book } from '../../bookData';
 import '../../styles/pages/bookDetails.css';
-import { Star, ChevronLeft, ShoppingCart, Heart, AlertCircle, BookOpen, Check, X } from 'lucide-react';
+import { Star, ChevronLeft, ShoppingCart, Heart, AlertCircle, BookOpen, Check, X, ExternalLink } from 'lucide-react';
 import { useWishlist } from '../../context/WishlistContext';
 import { useCart } from '../../context/CartContext';
 
@@ -103,6 +103,13 @@ const BookDetails = () => {
         navigate('/checkout');
       }, 1000);
     }
+  };
+
+  // Handle external purchase at Zamboni Books
+  const handleExternalPurchase = () => {
+    // Open zambonibooks in a new tab
+    window.open('https://www.zambonibooks.com.br', '_blank');
+    displayToast('Redirecionando para Zamboni Books...', 'info');
   };
 
   const formatDate = (dateString: string) => {
@@ -305,7 +312,16 @@ const BookDetails = () => {
                   onClick={handleBuyNow}
                   disabled={book.availability === 'out-of-stock'}
                 >
-                  Comprar Agora
+                  <span>🇵🇹</span>
+                  <span>Comprar Agora</span>
+                </button>
+                <button
+                  className="external-buy-button"
+                  onClick={handleExternalPurchase}
+                  aria-label="Comprar na Zamboni Books"
+                >
+                  <span>🇧🇷</span>
+                  <span>Comprar na Zamboni</span>
                 </button>
               </div>
               <p className="exclusive-sale-message">
