@@ -248,5 +248,78 @@
   },
   "commitments": "Our Commitment",
   "commitments_p1": "Through courses, mentoring, and teaching materials, our goal is to empower professionals in their daily practices. We provide tools for them to support children and families in their journey of growth and development. In this way, we aim to contribute so that each human being can reach their full potential, respecting their uniqueness and promoting a more inclusive and strengthened society.",
-  "commitments_p2": "We are committed to creating accessible resources and programs that inspire educators and families to work together for the well-being of children. We believe that through this collaboration, we can lay the foundations for a future where all children have the opportunity to thrive."
+  "commitments_p2": "We are committed to creating accessible resources and programs that inspire educators and families to work together for the well-being of children. We believe that through this collaboration, we can lay the foundations for a future where all children have the opportunity to thrive.",
+    "mentorship_program": "Mentorship Program",
+  "mentorship_program_h1": "Personalized Professional Mentorship",
+  "mentorship_program_h1_p": "Develop your skills and accelerate your career with specialized guidance.",
+  "mentorship_h3_1": "The Program",
+  "mentorship_h3_1_p": "Our professional mentorship is designed for professionals who seek to accelerate their career development through personalized guidance. With weekly meetings and continuous support, you will gain access to valuable insights and practical strategies to achieve your professional goals.",
+  "mentorship_h3_2": "Benefits",
+  "mentorship_h3_2_p": {
+    "1": {
+      "text": "Personalized insights on your professional development."
+    },
+    "2": {
+      "text": "Honest and constructive feedback on your strengths and areas for improvement."
+    },
+    "3": {
+      "text": "Access to professional networks and exclusive opportunities."
+    },
+    "4": {
+      "text": "Accelerated development of technical skills."
+    }
+  },
+  "mentorship_h3_3": "Methodology",
+  "mentorship_h3_3_p": "Our methodology combines individual mentoring sessions, practical exercises, and projects tailored to your professional context. We work with a structured approach in 3 phases:",
+  "mentorship_h3_3_p_fases": {
+    "1": {
+      "text": "Diagnosis and definition of clear objectives."
+    },
+    "2": {
+      "text": "Development of strategies and action planning."
+    },
+    "3": {
+      "text": "Implementation and evaluation of results."
+    }
+  },
+  "meet_mentorship_programm": "Explore our mentorship programs",
+  "ind_and_group_mentorchip": "Individual and Group Mentorship",
+  "mentor_info_list": {
+    "indiv": {
+      "h": "Individual Mentorship",
+      "text": "A personalized approach tailored to your specific career needs. Exclusive sessions with your dedicated mentor focused on your goals and particular challenges.",
+      "li1": "100% personalized development plan",
+      "li2": "Continuous and targeted feedback",
+      "li3": "Flexibility in scheduling and topics",
+      "li4": "Detailed tracking of your progress"
+    },
+    "group": {
+      "h": "Group Mentorship",
+      "text": "Learn in a collaborative environment with other professionals, sharing experiences and expanding your network.",
+      "li1": "Exchange of experiences among participants",
+      "li2": "More affordable than individual mentorship",
+      "li3": "Networking with professionals from different fields",
+      "li4": "Group dynamics and exercises"
+    }
+  },
+  "FAQ_title": "Frequently Asked Questions",
+  "FAQ": {
+    "1": {
+      "question": "How does the mentorship process work?",
+      "answer": "The mentorship process begins with an assessment of your profile and professional goals. Next, we establish a personalized plan with regular meetings where you will receive guidance, feedback, and challenges to accelerate your development."
+    },
+    "2": {
+      "question": "What is the duration of the mentorship?",
+      "answer": "The duration of the mentorship will be defined after assessing the needs."
+    },
+    "3": {
+      "question": "What are the prerequisites to participate?",
+      "answer": "There are no formal prerequisites, only the commitment to your development and availability for the scheduled meetings."
+    },
+    "4": {
+      "question": "How are the meetings conducted?",
+      "answer": "The meetings are held remotely through video conferencing platforms such as Zoom or Google Meet, providing flexibility and convenience for all participants."
+    }
+  }
+
 }
