@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "../../styles/pages/register.css";
 import { countries } from "../../data/countries";
@@ -460,12 +460,18 @@ const Register = () => {
               className={errors.acceptTerms ? "error-input" : ""}
               required
             />
+
+
             <label htmlFor="acceptTerms">
               Eu aceito os{" "}
-              <a href="/terms" target="_blank" rel="noopener noreferrer">Termos</a>{" "}
+
+              <Link to="/termos-condicoes">Termos</Link>{" "}
+
               e{" "}
-              <a href="/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>
+              <Link to="/politica-privacidade">Política de Privacidade</Link>
             </label>
+
+
             {errors.acceptTerms && <span className="error">{errors.acceptTerms}</span>}
           </div>
 

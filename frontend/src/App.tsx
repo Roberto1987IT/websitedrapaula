@@ -152,6 +152,7 @@ function App() {
             <Route path="/termos-condicoes" element={<TermosCondicoes />} />
             <Route path="/payment-success" element={<PaymentSuccess />} />
             <Route path="/payment-cancelled" element={<PaymentCancelled />} />
+            <Route path="/politica-privacidade" element={<Politica />} />
             <Route
               path="/wishlist"
               element={
