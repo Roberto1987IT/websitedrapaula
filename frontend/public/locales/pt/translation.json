@@ -183,7 +183,7 @@
   "contact_our_benefits1": "Solicitar orçamentos personalizados",
   "contact_our_benefits2": "Obter informações técnicas sobre os nossos produtos",
   "contact_our_benefits3": "Dar sugestões para melhorarmos os nossos serviços",
-  "contact_contact_imediatly":  "Para um atendimento imediato durante o horário comercial (Seg-Sex: 9h-18h), também pode contactar-nos diretamente pelo telefone (+351) 965 430 026. Garantimos uma resposta por e-mail em até 24 horas úteis para todas as mensagens recebidas.",
+  "contact_contact_imediatly": "Para um atendimento imediato durante o horário comercial (Seg-Sex: 9h-18h), também pode contactar-nos diretamente pelo telefone (+351) 965 430 026. Garantimos uma resposta por e-mail em até 24 horas úteis para todas as mensagens recebidas.",
   "contact_us_form_h2": "Envie-nos uma mensagem",
   "contact_us_form_name": "Nome",
   "contact_us_form_name_placeholder": "Digite seu nome completo",
@@ -208,10 +208,46 @@
   "ac_o2": "Encomendas",
   "ac_o3": "Entregas",
   "ac_o4": "Perguntas Frequentes",
-  "info": "INFORMAÇÕES",
+  "info": "Informações",
   "info_o1": "Política de Privacidade",
   "info_o2": "Política de Cookies",
   "info_o3": "Termos e condições",
   "info_o4": "Livro de Reclamações",
-  "footer_botton": "Paula Serrano. Todos os direitos reservados."
+  "footer_botton": "Paula Serrano. Todos os direitos reservados.",
+  "home_filosofia": "Nossa Filosofia",
+  "home_val": "Nosso Valores",
+  "home_val_p": "Princípios fundamentais que guiam cada decisão e iniciativa",
+  "mission": "Missão",
+  "mission_p1": "Valorizamos a partilha de conhecimento como uma ferramenta poderosa para ampliar horizontes e trazer mais qualidade de vida às famílias. Acreditamos que, ao disseminar saberes, podemos criar um impacto positivo que vai muito além do indivíduo, alcançando comunidades inteiras.",
+  "mission_p2": "Buscamos criar um ambiente onde cada criança possa florescer em seu próprio ritmo, respeitando sua individualidade e apoiando seu desenvolvimento integral. Nossa abordagem reconhece que cada jornada de crescimento é única.",
+  "bases": "Princípios Fundamentais",
+  "basses": {
+    "1": {
+      "title": "Inovação",
+      "text": "Buscamos constantemente novas abordagens e metodologias para aprimorar nossas práticas educativas."
+    },
+    "2": {
+      "title": "Integridade",
+      "text": "Agimos com transparência e honestidade em todas as nossas interações e decisões."
+    },
+    "3": {
+      "title": "Empatia",
+      "text": "Colocamo-nos no lugar do outro para compreender suas necessidades e desafios únicos."
+    },
+    "4": {
+      "title": "Excelência",
+      "text": "Comprometemo-nos com os mais altos padrões de qualidade em tudo o que fazemos."
+    },
+    "5": {
+      "title": "Colaboração",
+      "text": "Valorizamos o trabalho em equipe e a troca de ideias para alcançar resultados significativos."
+    },
+    "6": {
+      "title": "Respeito",
+      "text": "Reconhecemos e valorizamos a diversidade de experiências e perspectivas em nossa comunidade."
+    }
+  },
+  "commitments": "Nosso Compromisso",
+  "commitments_p1": "Por meio de cursos, mentorias e materiais didáticos, o nosso objetivo é capacitar profissionais nas suas práticas diárias. Oferecemos ferramentas para que eles apoiem crianças e famílias na sua jornada de crescimento e desenvolvimento. Assim, buscamos contribuir para que cada ser humano alcance seu máximo potencial, respeitando sua singularidade e promovendo uma sociedade mais inclusiva e fortalecida.",
+  "commitments_p2": "Estamos comprometidos em criar recursos acessíveis e programas que inspirem educadores e famílias a trabalharem juntos pelo bem-estar das crianças. Acreditamos que através desta colaboração podemos construir as bases para um futuro onde todas as crianças tenham a oportunidade de prosperar."
 }
