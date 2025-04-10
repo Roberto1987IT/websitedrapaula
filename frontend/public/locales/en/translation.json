@@ -429,5 +429,28 @@
   "imerssion_contact_us": {
     "title": "Ready to Elevate Your Professional Experience?",
     "text": "Contact us for more information about our immersion programs and schedule a consultation with our experts."
-  }
+  },
+  "atrigs_and_theses_h1": "Articles and Academic Theses",
+  "atrigs_and_theses_p": "Scientific knowledge in Occupational Therapy for professionals and students",
+  "article": "Article",
+  "articles": {
+    "1": {
+      "title": "Play and sensory processing in children aged 36 to 72 months",
+      "description": "Playing is the main occupation in the early years of a child's life..."
+    },
+    "2": {
+      "title": "Cultural and linguistic adaptation and collection of normative data from the Structured Observations of Sensory Related Motor Performance",
+      "description": "Since the development of the theory of sensory integration..."
+    },
+    "3": {
+      "title": "Body-related play behaviors in babies aged 10 to 12 months",
+      "description": "Introduction: By playing, the child gives meaning to the world around them..."
+    }
+  },
+  "search_bar_palceholder": "Search by title, author, or content...",
+  "showing": "Showing",
+  "publications": "Publications",
+  "of": "of",
+  "teses": "Theses",
+  "no_publications_find": "No publications found with the selected criteria."
 }

@@ -401,7 +401,6 @@
         "title": "Certificação",
         "text": "Ao final do programa, você recebe a sua certificação."
       }
-
     }
   },
   "space": "Conheçam o nosso espaço",
@@ -431,7 +430,29 @@
   "imerssion_contact_us": {
     "title": "Pronto para Elevar a Sua Experiência Profissional?",
     "text": "Entre em contato para mais informações sobre nossos programas de imersão e agende uma consulta com nossos especialistas."
-  }
-
+  },
+  "atrigs_and_theses_h1": "Artigos e Teses Acadêmicas",
+  "atrigs_and_theses_p": "Conhecimento científico em Terapia Ocupacional para profissionais e estudantes",
+  "article": "Artigo",
+  "articles": {
+    "1": {
+      "title": "O brincar e o processamento sensorial em criancas dos 36 aos 72 meses",
+      "description": "Brincar é a principal ocupação nos primeiros anos de vida da criança..."
+    },
+    "2": {
+      "title": "Adaptação cultural e linguística e recolha dos dados normativos das Structured Observations of Sensory Related Motor Performance",
+      "description": "Desde o início do desenvolvimento da teoria de integração sensorial..."
+    },
+    "3": {
+      "title": "Comportamentos do brincar com o corpo, de bebes entre os 10 e os 12 meses",
+      "description": "Introdução: Ao brincar a criança dá significado ao mundo que a rodeia..."
+    }
+  },
+  "search_bar_palceholder": "Pesquisar por título, autor ou conteúdo...",
+  "showing": "Monstrando",
+  "publications": "publicações",
+  "of": "de",
+  "teses": "Theses",
+  "no_publications_find": "Nenhuma publicação encontrada com os critérios selecionados."
 }
 
