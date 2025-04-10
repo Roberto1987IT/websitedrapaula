@@ -21,7 +21,7 @@ import Cart from "./components/pages/Cart";
 import CourseDetails from "./components/CourseDetails";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./components/Profile";
-import Cookies from "./components/pages/Cookies";
+import PrivacyPolicy from "./components/pages/PrivacyPolicy";
 import "./styles/global.css";
 import CookieConsent from "react-cookie-consent";
 import NossosValores from "./components/pages/NossosValores";
@@ -38,7 +38,8 @@ import WhatsAppButton from './components/WhatsAppButton';
 import Politica from "./components/Politica";
 import PoliticaCookies from "./components/PoliticaCookies";
 import TermosCondicoes from "./components/TermosCondicoes";
-import "./i18n";
+import PaymentSuccess from "./stripe/PaymentSuccess";
+import PaymentCancelled from "./stripe/PaymentCancelled";
 
 // Placeholder for a protected Dashboard page
 const Dashboard = () => <div>Dashboard (Protected)</div>;
@@ -131,7 +132,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/course/:id" element={<CourseDetails />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/privacy" element={<Cookies />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/about" element={<About />} />
             <Route path="/about-detail" element={<AboutDetail />} />
             <Route path="/nossos-valores" element={<NossosValores />} />
@@ -143,12 +144,14 @@ function App() {
             <Route path="/book/:id" element={<BookDetails />} />
             <Route path="/imersao-details" element={<ImersaoDetails />} />
             <Route path="/lancamento/:id" element={<LancamentoDetail />} />
-            <Route path="/privacy-policy" element={<Cookies />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/politica" element={<Politica />} />
             <Route path="/politica-cookies" element={<PoliticaCookies />} />
             <Route path="/termos-condicoes" element={<TermosCondicoes />} />
+            <Route path="/payment-success" element={<PaymentSuccess />} />
+            <Route path="/payment-cancelled" element={<PaymentCancelled />} />
             <Route
               path="/wishlist"
               element={

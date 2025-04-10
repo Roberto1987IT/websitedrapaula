@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "../../styles/pages/register.css";
 import { countries } from "../../data/countries";
 import ReactSelect from "react-select";
-import {useTranslation} from "react-i18next";
-import register from "../../../Register";
 
 interface FormData {
   email: string;
@@ -36,7 +34,6 @@ const API_BASE_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
 const REGISTER_ENDPOINT = `${API_BASE_URL}/api/auth/register/`;
 
 const Register = () => {
-  const {t} = useTranslation();
   const [formData, setFormData] = useState<FormData>({
     email: "",
     password: "",
@@ -308,7 +305,7 @@ const Register = () => {
   return (
     <section className="register-section">
       <div className="register-container">
-        <h2>{t("registration")}</h2>
+        <h2>Crie Sua Conta</h2>
         {serverError && (
           <div className="server-error">
             {serverError}
@@ -321,7 +318,7 @@ const Register = () => {
         <form className="register-form" onSubmit={handleSubmit} noValidate>
           {/* Personal Information */}
           <div className="form-group">
-            <label htmlFor="fullName">{t("account.signup.full_name")}</label>
+            <label htmlFor="fullName">Nome Completo</label>
             <input
               type="text"
               id="fullName"
@@ -331,13 +328,13 @@ const Register = () => {
               required
               autoComplete="name"
               className={errors.fullName ? "error-input" : ""}
-              placeholder={t("account.signup.full_name")}
+              placeholder="Primeiro e ultimo nome "
             />
             {errors.fullName && <span className="error">{errors.fullName}</span>}
           </div>
 
           <div className="form-group">
-            <label htmlFor="phone">{t("account.signup.phone")}</label>
+            <label htmlFor="phone">Telefone</label>
             <div className="phone-input-group">
               <ReactSelect
                 id="country"
@@ -350,7 +347,7 @@ const Register = () => {
                   } as React.ChangeEvent<HTMLInputElement>)
                 }
                 classNamePrefix="react-select"
-                placeholder={t("account.signup.country")}
+                placeholder="Selecione seu país"
                 isClearable
               />
               <input
@@ -362,7 +359,7 @@ const Register = () => {
                 required
                 autoComplete="tel"
                 className={`phone-input ${errors.phone ? "error-input" : ""}`}
-                placeholder={t("account.signup.phone")}
+                placeholder="Telefone"
               />
             </div>
             {errors.phone && <span className="error">{errors.phone}</span>}
@@ -370,7 +367,7 @@ const Register = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="gender">{t("account.signup.gender")}</label>
+            <label htmlFor="gender">Gênero</label>
             <select
               name="gender"
               id="gender"
@@ -378,17 +375,17 @@ const Register = () => {
               onChange={handleChange}
               className={errors.gender ? "error-input" : ""}
             >
-              <option value="">{t("account.signup.select_gender")}</option>
-              <option value="M">{t("account.signup.gm")}</option>
-              <option value="F">{t("account.signup.gf")}</option>
-              <option value="O">{t("account.signup.go")}</option>
-              <option value="PNS">{t("account.signup.g_anonimus")}</option>
+              <option value="">Selecionar gênero</option>
+              <option value="M">Masculino</option>
+              <option value="F">Feminino</option>
+              <option value="O">Outro</option>
+              <option value="PNS">Prefiro nao dizer</option>
             </select>
             {errors.gender && <span className="error">{errors.gender}</span>}
           </div>
 
           <div className="form-group">
-            <label htmlFor="birthDate">{t("account.signup.bd")}</label>
+            <label htmlFor="birthDate">Data de Nascimento</label>
             <input
               type="date"
               id="birthDate"
@@ -437,7 +434,7 @@ const Register = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="confirmPassword">{t("account.signup.pc")}*</label>
+            <label htmlFor="confirmPassword">Confirmar Password*</label>
             <input
               type="password"
               id="confirmPassword"
@@ -463,12 +460,18 @@ const Register = () => {
               className={errors.acceptTerms ? "error-input" : ""}
               required
             />
+
+
             <label htmlFor="acceptTerms">
-              {t("account.signup.accept_terms_cond")}{" "}
-              <a href="/terms" target="_blank" rel="noopener noreferrer">{t("terms.title")}</a>{" "}
+              Eu aceito os{" "}
+
+              <Link to="/termos-condicoes">Termos</Link>{" "}
+
               e{" "}
-              <a href="/privacy" target="_blank" rel="noopener noreferrer">{t("privacity.title")}</a>
+              <Link to="/politica-privacidade">Política de Privacidade</Link>
             </label>
+
+
             {errors.acceptTerms && <span className="error">{errors.acceptTerms}</span>}
           </div>
 
@@ -483,12 +486,12 @@ const Register = () => {
                 <span>Registrando...</span>
               </>
             ) : (
-              t("registration")
+              "Criar Conta"
             )}
           </button>
 
           <p className="login-link">
-            {t("account.signup.is_member")} <a href="/login">{t("login")}</a>
+            Já possui uma conta? <a href="/login">Fazer login</a>
           </p>
         </form>
       </div>
