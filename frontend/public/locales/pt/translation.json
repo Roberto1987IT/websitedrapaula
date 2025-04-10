@@ -249,5 +249,77 @@
   },
   "commitments": "Nosso Compromisso",
   "commitments_p1": "Por meio de cursos, mentorias e materiais didáticos, o nosso objetivo é capacitar profissionais nas suas práticas diárias. Oferecemos ferramentas para que eles apoiem crianças e famílias na sua jornada de crescimento e desenvolvimento. Assim, buscamos contribuir para que cada ser humano alcance seu máximo potencial, respeitando sua singularidade e promovendo uma sociedade mais inclusiva e fortalecida.",
-  "commitments_p2": "Estamos comprometidos em criar recursos acessíveis e programas que inspirem educadores e famílias a trabalharem juntos pelo bem-estar das crianças. Acreditamos que através desta colaboração podemos construir as bases para um futuro onde todas as crianças tenham a oportunidade de prosperar."
+  "commitments_p2": "Estamos comprometidos em criar recursos acessíveis e programas que inspirem educadores e famílias a trabalharem juntos pelo bem-estar das crianças. Acreditamos que através desta colaboração podemos construir as bases para um futuro onde todas as crianças tenham a oportunidade de prosperar.",
+  "mentorship_program": "Programa de Mentoria",
+  "mentorship_program_h1": "Mentoria Profissional Personalizada",
+  "mentorship_program_h1_p": "Desenvolva suas habilidades e acelere sua carreira com orientação especializada",
+  "mentorship_h3_1": "O Programa",
+  "mentorship_h3_1_p": "Nossa mentoria profissional foi desenvolvida para profissionais que buscam acelerar o desenvolvimento de suas carreiras através de orientação personalizada. Com encontros semanais e acompanhamento contínuo, você terá acesso a insights valiosos e estratégias práticas para atingir seus objetivos profissionais.",
+  "mentorship_h3_2": "Benefícios",
+  "mentorship_h3_2_p": {
+    "1": {
+      "text": "Visão personalizada sobre seu desenvolvimento profissional"
+    },
+    "2": {
+      "text": "Feedback sincero e construtivo sobre seus pontos fortes e áreas de melhoria"
+    },
+    "3": {
+      "text": "Acesso a redes profissionais e oportunidades exclusivas"
+    },
+    "4": {
+      "text": "Desenvolvimento acelerado de competências técnicas"
+    }
+  },
+  "mentorship_h3_3": "Metodologia",
+  "mentorship_h3_3_p": "Nossa metodologia combina sessões individuais de mentoria, exercícios práticos e projetos aplicados ao seu contexto profissional. Trabalhamos com uma abordagem estruturada em 3 fases:",
+  "mentorship_h3_3_p_fases": {
+    "1": {
+      "text": "Diagnóstico e definição de objetivos claros"
+    },
+    "2": {
+      "text": "Desenvolvimento de estratégias e plano de ação"
+    },
+    "3": {
+      "text": "Implementação e avaliação de resultados"
+    }
+  },
+  "meet_mentorship_programm": "Conheça nossos programas de mentoria",
+  "ind_and_group_mentorchip": "Mentoria Individual e Mentoria em grupo",
+  "mentor_info_list": {
+    "indiv": {
+      "h": "Mentoria Individual",
+      "text": "Atendimento personalizado para suas necessidades específicas de carreira. Sessões exclusivas com seu mentor dedicado, focadas nos seus objetivos e desafios particulares.",
+      "li1": "Plano de desenvolvimento 100% personalizado",
+      "li2": "Feedback contínuo e direcionado",
+      "li3": "Flexibilidade de horários e temas",
+      "li4": "Acompanhamento detalhado do seu progresso"
+    },
+    "group": {
+      "h": "Mentoria em Grupo",
+      "text": "Aprenda em um ambiente colaborativo com outros profissionais, compartilhando experiências e ampliando sua rede de contatos.",
+      "li1": "Troca de experiências entre os participantes",
+      "li2": "Custo mais acessível que a mentoria individual",
+      "li3": "Networking com profissionais de diferentes áreas",
+      "li4": "Dinâmicas e exercícios em grupo"
+    }
+  },
+  "FAQ_title": "Perguntas Frequentes",
+  "FAQ": {
+    "1": {
+      "question": "Como funciona o processo de mentoria?",
+      "answer": "O processo de mentoria inicia com uma avaliação do seu perfil e objetivos profissionais. Em seguida, estabelecemos um plano personalizado com encontros regulares onde você receberá orientação, feedback e desafios para acelerar seu desenvolvimento."
+    },
+    "2": {
+      "question": "Qual é a duração da mentoria?",
+      "answer": "A duração da mentoria sera definida apos a avaliacao das necessidades."
+    },
+    "3": {
+      "question": "Quais são os pré-requisitos para participar?",
+      "answer": "Não existem pré-requisitos formais, apenas o compromisso com seu desenvolvimento e disponibilidade para os encontros que forem agendados."
+    },
+    "4": {
+      "question": "Como são realizados os encontros?",
+      "answer": "Os encontros são realizados remotamente através de plataformas de videoconferência como Zoom ou Google Meet, permitindo flexibilidade e conveniência para todos os participantes"
+    }
+  }
 }
