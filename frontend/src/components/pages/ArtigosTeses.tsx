@@ -1,290 +1,297 @@
-import React, { useState, useEffect } from "react";
-import { toast } from "sonner";
-import { Download } from "lucide-react";
+import React, {useState, useEffect} from "react";
+import {toast} from "sonner";
+import {Download} from "lucide-react";
 import "../../styles/pages/artigosTeses.css";
-import { saveAs } from 'file-saver';
+import {saveAs} from 'file-saver';
+import {useTranslation} from 'react-i18next';
+
 
 interface Article {
-  id: number;
-  title: string;
-  author: string;
-  type: "artigo" | "tese";
-  date: string;
-  description: string;
-  file: string;
+    id: number;
+    title: string;
+    author: string;
+    type: "artigo" | "tese";
+    date: string;
+    description: string;
+    file: string;
 }
+
 
 // Sample articles data - using corrected filenames
 const sampleArticles: Article[] = [
-  {
-    id: 1,
-    title: "O brincar e o processamento sensorial em criancas dos 36 aos 72 meses",
-    author: "Margarida Isabel Dias Ribeiro Sabino Cardoso",
-    type: "artigo",
-    date: "12/07/2024",
-    description: "Brincar é a principal ocupação nos primeiros anos de vida da criança...",
-    file: "/pdfs/o-brincar-e-o-processamento-sensorial.pdf", // Corrected file path
-  },
-  {
-    id: 2,
-    title: "Adaptação cultural e linguística e recolha dos dados normativos das Structured Observations of Sensory Related Motor Performance",
-    author: "Paula de Jesus Mendes Serrano",
-    type: "artigo",
-    date: "03/01/2013",
-    description: "Desde o início do desenvolvimento da teoria de integração sensorial...",
-    file: "/pdfs/adaptacao-cultural-linguistica.pdf", // Corrected file path
-  },
-  {
-    id: 3,
-    title: "Comportamentos do brincar com o corpo, de bebes entre os 10 e os 12 meses",
-    author: "Ana Margarida Almeida Reis",
-    type: "artigo",
-    date: "22/02/2023",
-    description: "Introdução: Ao brincar a criança dá significado ao mundo que a rodeia...",
-    file: "/pdfs/comportamentos-brincar-corpo.pdf", // Corrected file path
-  },
+    {
+        id: 1,
+        title: "O brincar e o processamento sensorial em criancas dos 36 aos 72 meses",
+        author: "Margarida Isabel Dias Ribeiro Sabino Cardoso",
+        type: "artigo",
+        date: "12/07/2024",
+        description: "Brincar é a principal ocupação nos primeiros anos de vida da criança...",
+        file: "/pdfs/o-brincar-e-o-processamento-sensorial.pdf", // Corrected file path
+    },
+    {
+        id: 2,
+        title: "Adaptação cultural e linguística e recolha dos dados normativos das Structured Observations of Sensory Related Motor Performance",
+        author: "Paula de Jesus Mendes Serrano",
+        type: "artigo",
+        date: "03/01/2013",
+        description: "Desde o início do desenvolvimento da teoria de integração sensorial...",
+        file: "/pdfs/adaptacao-cultural-linguistica.pdf", // Corrected file path
+    },
+    {
+        id: 3,
+        title: "Comportamentos do brincar com o corpo, de bebes entre os 10 e os 12 meses",
+        author: "Ana Margarida Almeida Reis",
+        type: "artigo",
+        date: "22/02/2023",
+        description: "Introdução: Ao brincar a criança dá significado ao mundo que a rodeia...",
+        file: "/pdfs/comportamentos-brincar-corpo.pdf", // Corrected file path
+    },
 ];
 
 const ArtigosTeses = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [activeFilter, setActiveFilter] = useState("todos");
-  const [isLoading, setIsLoading] = useState(false); // Changed to false since we're using local data
-  const [allArticles] = useState<Article[]>(sampleArticles); // Directly use sample data
-  const [filteredArticles, setFilteredArticles] = useState<Article[]>(sampleArticles);
-  const [currentPage, setCurrentPage] = useState(1);
-  const articlesPerPage = 6;
+    const [searchTerm, setSearchTerm] = useState("");
+    const [activeFilter, setActiveFilter] = useState("todos");
+    const [isLoading, setIsLoading] = useState(false); // Changed to false since we're using local data
+    const [allArticles] = useState<Article[]>(sampleArticles); // Directly use sample data
+    const [filteredArticles, setFilteredArticles] = useState<Article[]>(sampleArticles);
+    const [currentPage, setCurrentPage] = useState(1);
+    const articlesPerPage = 6;
 
-  useEffect(() => {
-    // Filter articles based on search and filter criteria
-    const filtered = allArticles.filter((article) => {
-      const matchesSearch =
-        article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        article.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        article.author.toLowerCase().includes(searchTerm.toLowerCase());
 
-      const matchesFilter = activeFilter === "todos" || article.type === activeFilter;
+    useEffect(() => {
+        // Filter articles based on search and filter criteria
+        const filtered = allArticles.filter((article) => {
+            const matchesSearch =
+                article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                article.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                article.author.toLowerCase().includes(searchTerm.toLowerCase());
 
-      return matchesSearch && matchesFilter;
-    });
+            const matchesFilter = activeFilter === "todos" || article.type === activeFilter;
 
-    setFilteredArticles(filtered);
-    setCurrentPage(1); // Reset to first page when filters change
-  }, [searchTerm, activeFilter, allArticles]);
+            return matchesSearch && matchesFilter;
+        });
 
-  const handleFilterClick = (filter: "todos" | "artigo" | "tese") => {
-    setActiveFilter(filter);
-  };
+        setFilteredArticles(filtered);
+        setCurrentPage(1); // Reset to first page when filters change
+    }, [searchTerm, activeFilter, allArticles]);
 
-  const handleDownload = async (article: Article) => {
-    try {
-      // 1. Construct the correct file path
-      const baseUrl = window.location.origin; // Gets current domain (http://localhost:3000)
-      const filePath = `${baseUrl}/pdfs/${article.file}`;
-      
-      // 2. Fetch the file
-      const response = await fetch(filePath);
-      
-      // 3. Check if successful
-      if (!response.ok) throw new Error('File not found (404)');
-      
-      // 4. Get file as blob
-      const blob = await response.blob();
-      
-      // 5. Trigger download
-      saveAs(blob, `${article.title.replace(/[^\w]/g, "_")}.pdf`);
-      
-      toast.success(`Download de "${article.title}" iniciado`);
-    } catch (error) {
-      console.error('Download error:', error);
-      const errorMessage = error instanceof Error ? error.message : "Erro desconhecido";
-      toast.error(`Falha ao baixar: ${errorMessage}`);
-    }
-  };
+    const handleFilterClick = (filter: "todos" | "artigo" | "tese") => {
+        setActiveFilter(filter);
+    };
 
-  // Pagination calculations
-  const indexOfLastArticle = currentPage * articlesPerPage;
-  const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
-  const currentArticles = filteredArticles.slice(indexOfFirstArticle, indexOfLastArticle);
-  const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
+    const handleDownload = async (article: Article) => {
+        try {
+            // 1. Construct the correct file path
+            const baseUrl = window.location.origin; // Gets current domain (http://localhost:3000)
+            const filePath = `${baseUrl}/pdfs/${article.file}`;
 
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+            // 2. Fetch the file
+            const response = await fetch(filePath);
 
-  const getPaginationNumbers = () => {
-    const pages = [];
-    const maxPagesToShow = 5;
+            // 3. Check if successful
+            if (!response.ok) throw new Error('File not found (404)');
 
-    if (totalPages <= maxPagesToShow) {
-      for (let i = 1; i <= totalPages; i++) {
-        pages.push(i);
-      }
-    } else {
-      pages.push(1);
+            // 4. Get file as blob
+            const blob = await response.blob();
 
-      let startPage = Math.max(2, currentPage - 1);
-      let endPage = Math.min(totalPages - 1, currentPage + 1);
+            // 5. Trigger download
+            saveAs(blob, `${article.title.replace(/[^\w]/g, "_")}.pdf`);
 
-      if (currentPage <= 2) {
-        endPage = 3;
-      } else if (currentPage >= totalPages - 1) {
-        startPage = totalPages - 2;
-      }
+            toast.success(`Download de "${article.title}" iniciado`);
+        } catch (error) {
+            console.error('Download error:', error);
+            const errorMessage = error instanceof Error ? error.message : "Erro desconhecido";
+            toast.error(`Falha ao baixar: ${errorMessage}`);
+        }
+    };
 
-      if (startPage > 2) {
-        pages.push(-1);
-      }
+    // Pagination calculations
+    const indexOfLastArticle = currentPage * articlesPerPage;
+    const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
+    const currentArticles = filteredArticles.slice(indexOfFirstArticle, indexOfLastArticle);
+    const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
 
-      for (let i = startPage; i <= endPage; i++) {
-        pages.push(i);
-      }
+    const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
-      if (endPage < totalPages - 1) {
-        pages.push(-2);
-      }
+    const getPaginationNumbers = () => {
+        const pages = [];
+        const maxPagesToShow = 5;
 
-      pages.push(totalPages);
-    }
+        if (totalPages <= maxPagesToShow) {
+            for (let i = 1; i <= totalPages; i++) {
+                pages.push(i);
+            }
+        } else {
+            pages.push(1);
 
-    return pages;
-  };
+            let startPage = Math.max(2, currentPage - 1);
+            let endPage = Math.min(totalPages - 1, currentPage + 1);
 
-  return (
-    <div className="artigos-teses-container">
-      <div className="artigos-teses-hero">
-        <h1 className="artigos-teses-title">Artigos e Teses Acadêmicas</h1>
-        <p className="artigos-teses-subtitle">
-          Conhecimento científico em Terapia Ocupacional para profissionais e estudantes
-        </p>
-      </div>
+            if (currentPage <= 2) {
+                endPage = 3;
+            } else if (currentPage >= totalPages - 1) {
+                startPage = totalPages - 2;
+            }
 
-      <div className="search-filter-section">
-        <div className="search-wrapper">
-          <span className="search-icon">🔍</span>
-          <input
-            type="text"
-            placeholder="Pesquisar por título, autor ou conteúdo..."
-            className="search-input"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
+            if (startPage > 2) {
+                pages.push(-1);
+            }
 
-        <div className="filter-buttons">
-          <button
-            className={`filter-button ${activeFilter === "todos" ? "active" : ""}`}
-            onClick={() => handleFilterClick("todos")}
-          >
-            <span className="filter-icon">📋</span>
-            Todos
-          </button>
-          <button
-            className={`filter-button ${activeFilter === "artigo" ? "active" : ""}`}
-            onClick={() => handleFilterClick("artigo")}
-          >
-            <span className="filter-icon">📄</span>
-            Artigos
-          </button>
-          <button
-            className={`filter-button ${activeFilter === "tese" ? "active" : ""}`}
-            onClick={() => handleFilterClick("tese")}
-          >
-            <span className="filter-icon">📚</span>
-            Teses
-          </button>
-        </div>
-      </div>
+            for (let i = startPage; i <= endPage; i++) {
+                pages.push(i);
+            }
 
-      <div className="publications-stats">
-        <p>Mostrando {currentArticles.length} de {filteredArticles.length} publicações</p>
-      </div>
+            if (endPage < totalPages - 1) {
+                pages.push(-2);
+            }
 
-      <div className="artigos-teses-grid">
-        {currentArticles.length > 0 ? (
-          currentArticles.map((article) => (
-            <div key={article.id} className="publication-card">
-              <div className="publication-header">
-                <div className="publication-type">
+            pages.push(totalPages);
+        }
+
+        return pages;
+    };
+
+
+    const {t} = useTranslation();
+    return (
+        <div className="artigos-teses-container">
+            <div className="artigos-teses-hero">
+                <h1 className="artigos-teses-title">{t("atrigs_and_theses_h1")}</h1>
+                <p className="artigos-teses-subtitle">
+                    {t("atrigs_and_theses_p")}
+                </p>
+            </div>
+
+            <div className="search-filter-section">
+                <div className="search-wrapper">
+                    <span className="search-icon">🔍</span>
+                    <input
+                        type="text"
+                        placeholder={t("search_bar_palceholder")}
+                        className="search-input"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                </div>
+
+                <div className="filter-buttons">
+                    <button
+                        className={`filter-button ${activeFilter === "todos" ? "active" : ""}`}
+                        onClick={() => handleFilterClick("todos")}
+                    >
+                        <span className="filter-icon">📋</span>
+                        {t("all")}
+                    </button>
+                    <button
+                        className={`filter-button ${activeFilter === "artigo" ? "active" : ""}`}
+                        onClick={() => handleFilterClick("artigo")}
+                    >
+                        <span className="filter-icon">📄</span>
+                        {t("article")}
+                    </button>
+                    <button
+                        className={`filter-button ${activeFilter === "tese" ? "active" : ""}`}
+                        onClick={() => handleFilterClick("tese")}
+                    >
+                        <span className="filter-icon">📚</span>
+                        {t("teses")}
+                    </button>
+                </div>
+            </div>
+
+            <div className="publications-stats">
+                <p>{t("showing")} {currentArticles.length} {t("of")} {filteredArticles.length} {t("publications")}</p>
+            </div>
+
+            <div className="artigos-teses-grid">
+                {currentArticles.length > 0 ? (
+                    currentArticles.map((article) => (
+                        <div key={article.id} className="publication-card">
+                            <div className="publication-header">
+                                <div className="publication-type">
                   <span className="publication-icon">
                     {article.type === "artigo" ? "📄" : "📚"}
                   </span>
-                  <span>{article.type === "artigo" ? "Artigo" : "Tese"}</span>
-                </div>
-                <h2 className="publication-title">{article.title}</h2>
-                <div className="publication-meta">
-                  <span className="publication-author">Por {article.author}</span>
-                  <span className="publication-date">{article.date}</span>
-                </div>
-              </div>
-              <div className="publication-content">
-                <p className="publication-description">
-                  {article.description}
-                </p>
-              </div>
-              <div className="publication-actions">
-                <button
-                  className="publication-download-button"
-                  onClick={() => handleDownload(article)}
-                  aria-label={`Baixar ${article.title}`}
-                >
-                  <Download size={18} className="download-icon" />
-                  <span>Download PDF</span>
-                </button>
-              </div>
+                                    <span>{article.type === "artigo" ? "Artigo" : "Tese"}</span>
+                                </div>
+                                <h2 className="publication-title">{t(`articles.${article.id}.title`)}</h2>
+
+                                <div className="publication-meta">
+                                    <span className="publication-author">Por {article.author}</span>
+                                    <span className="publication-date">{article.date}</span>
+                                </div>
+                            </div>
+                            <div className="publication-content">
+                                <p className="publication-description">
+                                    {t(`articles.${article.id}.description`)}
+                                </p>
+                            </div>
+                            <div className="publication-actions">
+                                <button
+                                    className="publication-download-button"
+                                    onClick={() => handleDownload(article)}
+                                    aria-label={`Baixar ${article.title}`}
+                                >
+                                    <Download size={18} className="download-icon"/>
+                                    <span>Download PDF</span>
+                                </button>
+                            </div>
+                        </div>
+                    ))
+                ) : (
+                    <div className="no-results">
+                        <p>{t("no_publications_find")}</p>
+                        <button
+                            className="reset-button"
+                            onClick={() => {
+                                setSearchTerm("");
+                                setActiveFilter("todos");
+                            }}
+                        >
+                            {t("clr_flt")}
+                        </button>
+                    </div>
+                )}
             </div>
-          ))
-        ) : (
-          <div className="no-results">
-            <p>Nenhuma publicação encontrada com os critérios selecionados.</p>
-            <button
-              className="reset-button"
-              onClick={() => {
-                setSearchTerm("");
-                setActiveFilter("todos");
-              }}
-            >
-              Limpar filtros
-            </button>
-          </div>
-        )}
-      </div>
 
-      {filteredArticles.length > articlesPerPage && (
-        <div className="pagination-controls">
-          <button
-            className="pagination-button"
-            onClick={() => paginate(currentPage - 1)}
-            disabled={currentPage === 1}
-            aria-label="Página anterior"
-          >
-            ←
-          </button>
+            {filteredArticles.length > articlesPerPage && (
+                <div className="pagination-controls">
+                    <button
+                        className="pagination-button"
+                        onClick={() => paginate(currentPage - 1)}
+                        disabled={currentPage === 1}
+                        aria-label="Página anterior"
+                    >
+                        ←
+                    </button>
 
-          {getPaginationNumbers().map((number, index) => (
-            number < 0 ? (
-              <span key={index} className="pagination-ellipsis">...</span>
-            ) : (
-              <button
-                key={index}
-                className={`pagination-button ${currentPage === number ? "active" : ""}`}
-                onClick={() => paginate(number)}
-                aria-label={`Página ${number}`}
-              >
-                {number}
-              </button>
-            )
-          ))}
+                    {getPaginationNumbers().map((number, index) => (
+                        number < 0 ? (
+                            <span key={index} className="pagination-ellipsis">...</span>
+                        ) : (
+                            <button
+                                key={index}
+                                className={`pagination-button ${currentPage === number ? "active" : ""}`}
+                                onClick={() => paginate(number)}
+                                aria-label={`Página ${number}`}
+                            >
+                                {number}
+                            </button>
+                        )
+                    ))}
 
-          <button
-            className="pagination-button"
-            onClick={() => paginate(currentPage + 1)}
-            disabled={currentPage === totalPages}
-            aria-label="Próxima página"
-          >
-            →
-          </button>
+                    <button
+                        className="pagination-button"
+                        onClick={() => paginate(currentPage + 1)}
+                        disabled={currentPage === totalPages}
+                        aria-label="Próxima página"
+                    >
+                        →
+                    </button>
+                </div>
+            )}
         </div>
-      )}
-    </div>
-  );
+    );
 };
 
 export default ArtigosTeses;
