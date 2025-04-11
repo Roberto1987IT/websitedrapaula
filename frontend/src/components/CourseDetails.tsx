@@ -501,13 +501,16 @@ const CourseDetails = () => {
                   </button>
                 </>
               ) : (
-                <a href="https://imersao.inclusaoeficiente.com.br/interessados-pos-is" target="_blank" rel="noopener noreferrer" className="inscrever-button">
+                <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" className="inscrever-button">
                   Inscrever Agora
                 </a>
               )}
               
               <div className="disclaimer-text">
-                Obs.: O valor final pode sofrer variações devido à taxa de câmbio e/ou impostos locais, conforme a política do meio de pagamento escolhido.
+                {Number(id) === 5 
+                  ? "Obs: Inscreva-se para garantir sua vaga no próximo grupo. Vagas limitadas para assegurar a qualidade da formação."
+                  : "Obs.: O valor final pode sofrer variações devido à taxa de câmbio e/ou impostos locais, conforme a política do meio de pagamento escolhido."
+                }
               </div>
             </div>
             <div className="contact-info">

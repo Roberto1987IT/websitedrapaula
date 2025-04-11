@@ -716,6 +716,19 @@
 
 
 
+/* Remove outline from all navbar interactive elements */
+.navbar a:focus,
+.navbar button:focus,
+.dropdown-trigger:focus,
+.navbar-links a:focus,
+.mobile-dropdown-trigger:focus,
+.mobile-menu a:focus,
+.mobile-menu-button:focus,
+.language-selector button:focus,
+.icon:focus {
+  outline: none;
+}
+
 
 
 
