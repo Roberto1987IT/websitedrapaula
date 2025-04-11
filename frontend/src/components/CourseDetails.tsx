@@ -1,390 +1,408 @@
-import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom"; // Import useNavigate
-import { Button } from "@/components/ui/button";  // Adjusted path
-import { ChevronDown, ChevronUp, Check } from "lucide-react";
-import { courses } from "../courseData";
+import {useState, useEffect} from "react";
+import {useParams, useNavigate} from "react-router-dom"; // Import useNavigate
+import {Button} from "@/components/ui/button";  // Adjusted path
+import React from "react";
+import {useTranslation} from "react-i18next";
+import {ChevronDown, ChevronUp, Check} from "lucide-react";
+import {courses} from "../courseData";
 import "../styles/pages/courseDetails.css";
 
 const CourseDetails = () => {
-  const { id } = useParams<{ id: string | undefined }>();
-  const navigate = useNavigate(); // Initialize navigate
-  const course = courses.find((c) => c.id === Number(id));
-  const [isInWishlist, setIsInWishlist] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
+    const {t} = useTranslation();
+    const {id} = useParams<{ id: string | undefined }>();
+    const navigate = useNavigate(); // Initialize navigate
+    const course = courses.find((c) => c.id === Number(id));
+    console.log(t("courses", {returnObjects: true}));
 
-  useEffect(() => {
-    // Check if course is in wishlist (from localStorage)
-    const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
-    setIsInWishlist(wishlist.includes(Number(id)));
-    
-    // Scroll to top on page load
-    window.scrollTo(0, 0);
-  }, [id]);
+    const [isInWishlist, setIsInWishlist] = useState(false);
+    const [imageLoaded, setImageLoaded] = useState(false);
+    const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
 
-  useEffect(() => {
-    console.log("Current login state:", localStorage.getItem("isLoggedIn"));
-  }, []);
+    useEffect(() => {
+        // Check if course is in wishlist (from localStorage)
+        const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
+        setIsInWishlist(wishlist.includes(Number(id)));
 
-  const toggleWishlist = () => {
-    const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
-    
-    if (isInWishlist) {
-      const newWishlist = wishlist.filter((itemId: number) => itemId !== Number(id));
-      localStorage.setItem("wishlist", JSON.stringify(newWishlist));
-    } else {
-      wishlist.push(Number(id));
-      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        // Scroll to top on page load
+        window.scrollTo(0, 0);
+    }, [id]);
+
+    useEffect(() => {
+        console.log("Current login state:", localStorage.getItem("isLoggedIn"));
+    }, []);
+
+    const toggleWishlist = () => {
+        const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
+
+        if (isInWishlist) {
+            const newWishlist = wishlist.filter((itemId: number) => itemId !== Number(id));
+            localStorage.setItem("wishlist", JSON.stringify(newWishlist));
+        } else {
+            wishlist.push(Number(id));
+            localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        }
+
+        setIsInWishlist(!isInWishlist);
+    };
+
+    const toggleDescription = () => {
+        setIsDescriptionExpanded(!isDescriptionExpanded);
+    };
+
+    const handleAddToCart = () => {
+        // Check if the user is logged in
+        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+        console.log("Login state:", {
+            rawValue: localStorage.getItem("isLoggedIn"),
+            interpretedAs: isLoggedIn,
+        });
+
+        if (!isLoggedIn) {
+            // Redirect to login page with return URL
+            navigate("/login", {state: {from: window.location.pathname}});
+            return; // Exit the function to prevent further execution
+        }
+
+        // Add to cart logic (only if logged in)
+        const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+        if (!cart.includes(Number(id))) {
+            cart.push(Number(id));
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(t("allert_msg.add_course"));
+        } else {
+            alert(t("allert_msg.course_already_in_cart"));
+        }
+    };
+
+    if (!course) {
+        return (
+            <div className="course-details">
+                <h1>Curso não encontrado</h1>
+                <p>O curso que você está procurando não está disponível.</p>
+            </div>
+        );
     }
-    
-    setIsInWishlist(!isInWishlist);
-  };
 
-  const toggleDescription = () => {
-    setIsDescriptionExpanded(!isDescriptionExpanded);
-  };
-
-  const handleAddToCart = () => {
-    // Check if the user is logged in
-    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-
-    console.log("Login state:", {
-      rawValue: localStorage.getItem("isLoggedIn"),
-      interpretedAs: isLoggedIn,
-    });
-
-    if (!isLoggedIn) {
-      // Redirect to login page with return URL
-      navigate("/login", { state: { from: window.location.pathname } });
-      return; // Exit the function to prevent further execution
-    }
-
-    // Add to cart logic (only if logged in)
-    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    if (!cart.includes(Number(id))) {
-      cart.push(Number(id));
-      localStorage.setItem("cart", JSON.stringify(cart));
-      alert("Curso adicionado ao carrinho!");
-    } else {
-      alert("O curso já está no carrinho.");
-    }
-  };
-
-  if (!course) {
     return (
-      <div className="course-details">
-        <h1>Curso não encontrado</h1>
-        <p>O curso que você está procurando não está disponível.</p>
-      </div>
-    );
-  }
+        <div className="course-details" data-course-id={course.id}>
+            <h1>{t(`courses.${course.id}.title`)}</h1>
 
-  return (
-    <div className="course-details" data-course-id={id}>
-      <h1>{course.title}</h1>
-      
-      <div className="course-image">
-        {!imageLoaded && <div className="skeleton" style={{ height: '300px' }}></div>}
-        <img 
-          src={course.image} 
-          alt={course.title} 
-          onLoad={() => setImageLoaded(true)}
-          style={{ display: imageLoaded ? 'block' : 'none' }}
-        />
-      </div>
-      
-      <div className="course-content">
-        <div className="course-info">
-          <section>
-            <h2>Descrição do Curso</h2>
-            <div className="description-container">
-              <div className={`description-text ${!isDescriptionExpanded ? 'collapsed' : ''}`}>
-                <div className="description-structure">
-                  {course.title?.includes("Brincar e TO") && (
-                    <>
-                      <h3 className="description-subtitle">Sobre o Curso</h3>
-                      <p>Formação 4 dias presenciais com a Terapeuta Ocupacional Paula Serrano.</p>
-                      
-                      <h3 className="description-subtitle">Enquadramento</h3>
-                      <p>Os terapeutas ocupacionais usam o brincar na prática tanto para avaliação quanto para intervenção, mas o uso específico do brincar na terapia ocupacional pediátrica varia. Na literatura da terapia ocupacional sobre o brincar são referidas preocupações relativamente à forma como os terapeutas ocupacionais abordam o papel do brincar na sua intervenção.</p>
-                      <p>Vários artigos sugerem restrições e falta de ênfase à abordagem dirigida ao brincar por terapeutas ocupacionais pediátricos. Essas restrições incluem atitudes de desvalorização em relação ao brincar, enquanto se dá maior ênfase no desenvolvimento de competências não relacionadas ao brincar (ex. competências motoras, sociais), falha na avaliação do brincar e dificuldade na definição de um plano de intervenção dirigido à ocupação do brincar.</p>
-                      <p>No entanto a avaliação do brincar e a intervenção dirigida à ocupação do brincar é vital para o desenvolvimento infantil, para a saúde e respeito pela infância.</p>
-                      
-                      <h3 className="description-subtitle">Conteúdos Programáticos</h3>
-                      <div className="content-list">
-                        <ul>
-                          <li>Definindo o brincar</li>
-                          <li>Revisão das diferentes teorias do brincar</li>
-                          <li>A evolução do brincar na terapia ocupacional</li>
-                          <li>Quadros de referência do brincar na terapia ocupacional</li>
-                          <li>A sequência de desenvolvimento do brincar ao longo da infância</li>
-                          <li>Desenvolvimento das competências do brincar com o corpo, com objetos e simbólico</li>
-                        </ul>
-                      </div>
-                      
-                      <div className="content-subcategory">
-                        <h4 className="description-subtitle-secondary">Avaliação do brincar</h4>
-                        <div className="content-list">
-                          <ul>
-                            <li>Entrevista</li>
-                            <li>Questionários: The Play History (Takata)</li>
-                            <li>Organização da observação em contexto natural</li>
-                            <li>Instrumentos: Revised Knox Preschool Play scale (Knox); Test of Playfulness (TOP) (Bundy)</li>
-                            <li>Definição dos objetivos terapêuticos</li>
-                          </ul>
+            <div className="course-image">
+                {!imageLoaded && <div className="skeleton" style={{height: '300px'}}></div>}
+                <img
+                    src={course.image}
+                    alt={course.title}
+                    onLoad={() => setImageLoaded(true)}
+                    style={{display: imageLoaded ? 'block' : 'none'}}
+                />
+            </div>
+
+            <div className="course-content">
+                <div className="course-info">
+                    <section>
+                        <h2>{t(`courses.${course.id}.description_course`)}</h2>
+                        <div className="description-container">
+                            <div className={`description-text ${!isDescriptionExpanded ? 'collapsed' : ''}`}>
+                                <div className="description-structure">
+                                    {course.title?.includes("Brincar e TO") && (
+                                        <>
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.about_course`)}</h3>
+                                            <p>{t(`courses.${course.id}.about_course_p`)}</p>
+
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.equipaments`)}</h3>
+                                            <p>{t(`courses.${course.id}.equipaments_p1`)}</p>
+                                            <p>{t(`courses.${course.id}.equipaments_p2`)}</p>
+                                            <p>{t(`courses.${course.id}.equipaments_p3`)}</p>
+
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.course_content_title1`)}</h3>
+                                            <div className="content-list">
+                                                <ul>
+                                                    <li>{t(`courses.${course.id}.course_content_title1_li.1`)}</li>
+                                                    <li>{t(`courses.${course.id}.course_content_title1_li.2`)}</li>
+                                                    <li>{t(`courses.${course.id}.course_content_title1_li.3`)}</li>
+                                                    <li>{t(`courses.${course.id}.course_content_title1_li.4`)}</li>
+                                                    <li>{t(`courses.${course.id}.course_content_title1_li.5`)}</li>
+                                                </ul>
+                                            </div>
+
+                                            <div className="content-subcategory">
+                                                <h4 className="description-subtitle-secondary">{t(`courses.${course.id}.course_content_title2`)}</h4>
+                                                <div className="content-list">
+                                                    <ul>
+                                                        <li>{t(`courses.${course.id}.course_content_title2_li.1`)}</li>
+                                                        <li>{t(`courses.${course.id}.course_content_title2_li.2`)}</li>
+                                                        <li>{t(`courses.${course.id}.course_content_title2_li.3`)}</li>
+                                                        <li>{t(`courses.${course.id}.course_content_title2_li.4`)}</li>
+                                                        <li>{t(`courses.${course.id}.course_content_title2_li.5`)}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div className="content-subcategory">
+                                                <h4 className="description-subtitle-secondary">{t(`courses.${course.id}.course_content_title3`)}</h4>
+                                                <div className="content-list">
+                                                    <ul>
+                                                        <li>{t(`courses.${course.id}.course_content_title3_li.1`)}</li>
+                                                        <li>{t(`courses.${course.id}.course_content_title3_li.2`)}</li>
+                                                        <li>{t(`courses.${course.id}.course_content_title3_li.3`)}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.metodology_h`)}</h3>
+                                            <p>{t(`courses.${course.id}.metodology_p`)}</p>
+                                        </>
+                                    )}
+
+                                    {course.title?.includes("Raciocinio clinico e intervencao") && (
+                                        <>
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.title_1.title`)}</h3>
+                                            <p>{t(`courses.${course.id}.title_1.p`)}</p>
+
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.title_2.title`)}</h3>
+                                            <p>{t(`courses.${course.id}.title_2.p`)}</p>
+
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.title_3.title`)}</h3>
+                                            <p>{t(`courses.${course.id}.title_3.p`)}</p>
+
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.title_4.title`)}</h3>
+                                            <div className="content-list">
+                                                <ul>
+                                                    <li>{t(`courses.${course.id}.title_4.list.1`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_4.list.2`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_4.list.3`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_4.list.4`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_4.list.5`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_4.list.6`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_4.list.7`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_4.list.8`)}</li>
+                                                </ul>
+                                            </div>
+
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.title_5.title`)}</h3>
+                                            <div className="content-list">
+                                                <ul>
+                                                    <li>{t(`courses.${course.id}.title_5.list.1`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.list.2`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.list.3`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.list.4`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.list.5`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.list.6`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.list.7`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.list.8`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.list.9`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.list.10`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.list.11`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.list.12`)}</li>
+                                                </ul>
+                                            </div>
+
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.title_6.title`)}</h3>
+                                            <p>{t(`courses.${course.id}.title_6.p`)}</p>
+                                        </>
+                                    )}
+
+                                    {course.title?.includes("Integracao Sensorial: Avaliacao") && (
+                                        <>
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.title_1.title`)}</h3>
+                                            <p>{t(`courses.${course.id}.title_1.p`)}</p>
+
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.title_2.title`)}</h3>
+                                            <p>{t(`courses.${course.id}.title_2.p`)}</p>
+
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.title_3.title`)}</h3>
+                                            <p>{t(`courses.${course.id}.title_3.p`)}</p>
+
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.title_4.title`)}</h3>
+                                            <div className="content-list">
+                                                <ul>
+                                                    <li>{t(`courses.${course.id}.title_4.list.1`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_4.list.2`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_4.list.3`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_4.list.4`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_4.list.5`)}</li>
+                                                </ul>
+                                            </div>
+
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.title_5.title`)}</h3>
+                                            <div className="content-list">
+                                                <ul>
+                                                    <li>{t(`courses.${course.id}.title_5.list.1`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.list.2`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.list.3`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.list.4`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.list.5`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.list.6`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.list.7`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.list.8`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.list.9`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.list.10`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.list.11`)}</li>
+                                                </ul>
+                                            </div>
+
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.title_6.title`)}</h3>
+                                            <p>{t(`courses.${course.id}.title_6.p`)}</p>
+                                        </>
+                                    )}
+
+                                    {course.title?.includes("Avaliação e Raciocínio clínico na primeira Infância") && (
+                                        <div data-course="Avaliacao">
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.title_1.title`)}</h3>
+                                            <p>{t(`courses.${course.id}.title_1.p`)}</p>
+
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.title_2.title`)}</h3>
+                                            <p>{t(`courses.${course.id}.title_2.p`)}</p>
+
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.title_3.title`)}</h3>
+                                            <p>{t(`courses.${course.id}.title_3.p`)}</p>
+
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.title_4.title`)}</h3>
+                                            <div className="content-list">
+                                                <ul>
+                                                    <li>{t(`courses.${course.id}.title_4.l1.1`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_4.l1.2`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_4.l1.3`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_4.l1.4`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_4.l1.5`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_4.l1.6`)}</li>
+                                                </ul>
+                                            </div>
+
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.title_5.title`)}</h3>
+                                            <div className="content-list">
+                                                <ul>
+                                                    <li>{t(`courses.${course.id}.title_5.l1.1`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.l1.2`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.l1.3`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.l1.4`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.l1.5`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.l1.6`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.l1.7`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.l1.8`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.l1.9`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.l1.10`)}</li>
+                                                    <li>{t(`courses.${course.id}.title_5.l1.11`)}</li>
+                                                </ul>
+                                            </div>
+
+                                            <h3 className="description-subtitle">{t(`courses.${course.id}.title_6.title`)}</h3>
+                                            <p>{t(`courses.${course.id}.title_6.p`)}</p>
+                                        </div>
+                                    )}
+
+                                    {!course.title?.includes("Brincar e TO") &&
+                                        !course.title?.includes("Raciocinio clinico e intervencao") &&
+                                        !course.title?.includes("Integracao Sensorial: Avaliacao") &&
+                                        !course.title?.includes("Avaliação e Raciocínio clínico na primeira Infância") && (
+                                            <p>{course.description}</p>
+                                        )}
+                                </div>
+                            </div>
+                            <Button
+                                variant="text"
+                                size="small"
+                                className="expand-button"
+                                onClick={toggleDescription}
+                            >
+                                {isDescriptionExpanded ? (
+                                    <>
+                                        <span>{t("more_read")}</span>
+                                        <ChevronUp className="h-4 w-4"/>
+                                    </>
+                                ) : (
+                                    <>
+                                        <span>{t("less_read")}</span>
+                                        <ChevronDown className="h-4 w-4"/>
+                                    </>
+                                )}
+                            </Button>
                         </div>
-                      </div>
-                      
-                      <div className="content-subcategory">
-                        <h4 className="description-subtitle-secondary">Promover o brincar</h4>
-                        <div className="content-list">
-                          <ul>
-                            <li>O papel do Terapeuta Ocupacional</li>
-                            <li>A intervenção terapêutica</li>
-                            <li>Intervenção no contexto da criança</li>
-                          </ul>
-                        </div>
-                      </div>
-                      
-                      <h3 className="description-subtitle">Metodologia</h3>
-                      <p>Exposição teórica discussão de grupos e exercícios práticos</p>
-                    </>
-                  )}
-                  
-                  {course.title?.includes("Raciocinio clinico e intervencao") && (
-                    <>
-                      <h3 className="description-subtitle">Sobre o Curso</h3>
-                      <p>Duração - 24 horas com a Terapeuta Ocupacional Paula Serrano.</p>
-                      
-                      <h3 className="description-subtitle">Área de Intervenção</h3>
-                      <p>Integração Sensorial</p>
-                      
-                      <h3 className="description-subtitle">Destinatários</h3>
-                      <p>Terapeutas ocupacionais com certificação em Integração Sensorial</p>
-                      
-                      <h3 className="description-subtitle">Objetivos Gerais</h3>
-                      <div className="content-list">
-                        <ul>
-                          <li>Refletir sobre o desenvolvimento nos primeiros anos de vida e os fatores que o condicionam</li>
-                          <li>Analisar o contributo das teorias de desenvolvimento e das neurociências para a nossa compreensão do desenvolvimento infantil</li>
-                          <li>Analisar a evidencia científica atual sobre os sistemas sensoriais que suportam a abordagem da integração sensorial de Ayres</li>
-                          <li>Explorar a importância da avaliação de integração sensorial, as metodologias e os diversos instrumentos disponíveis</li>
-                          <li>Praticar o raciocínio clínico interpretando os dados da avaliação</li>
-                          <li>Elaborar objetivos terapêuticos com base na avaliação</li>
-                          <li>Planear a intervenção</li>
-                          <li>Analisar a intervenção terapêutica usando a abordagem de integração sensorial de Ayres</li>
-                        </ul>
-                      </div>
-                      
-                      <h3 className="description-subtitle">Conteúdos Programáticos</h3>
-                      <div className="content-list">
-                        <ul>
-                          <li>O desenvolvimento infantil e os fatores de suporte</li>
-                          <li>A integração sensorial de Ayres e a evidencia científica do impacto dos sistemas sensoriais no desenvolvimento</li>
-                          <li>A autorregulação e a disfunção sensorial</li>
-                          <li>Praxis e o conceito de Affordance</li>
-                          <li>Desenvolvimento da praxis e os sinais precoces de dispraxia</li>
-                          <li>Classificação das perturbações de processamento sensorial na primeira infância</li>
-                          <li>Instrumentos de avaliação da disfunção de integração sensorial</li>
-                          <li>Analise de uma escala de desenvolvimento sob a perspetiva da integração sensorial</li>
-                          <li>A organização da observação não estruturada e estruturada do processamento sensorial</li>
-                          <li>Análise dos dados da avaliação e Raciocínio clínico</li>
-                          <li>Planeamento da intervenção: Objetivos, organização da sessão</li>
-                          <li>Fidelidade à integração sensorial de Ayres na prática clínica</li>
-                        </ul>
-                      </div>
-                      
-                      <h3 className="description-subtitle">Metodologia</h3>
-                      <p>As sessões de trabalho serão presenciais, teóricas e práticas com analise de vídeos de casos clínicos.</p>
-                    </>
-                  )}
-                  
-                  {course.title?.includes("Integracao Sensorial: Avaliacao") && (
-                    <>
-                      <h3 className="description-subtitle">Sobre o Curso</h3>
-                      <p>Formação de 24 horas com Paula Serrano – Mestre em Terapia Ocupacional- área de especialização Integração Sensorial.</p>
-                      
-                      <h3 className="description-subtitle">Área de Intervenção</h3>
-                      <p>Integração Sensorial</p>
-                      
-                      <h3 className="description-subtitle">Destinatários</h3>
-                      <p>Terapeutas ocupacionais com formação pós graduada em Integração Sensorial</p>
-                      
-                      <h3 className="description-subtitle">Objetivos Gerais</h3>
-                      <div className="content-list">
-                        <ul>
-                          <li>Analisar a disfunção de integração sensorial e a relação com os motivos de referenciação</li>
-                          <li>Explorar a importância da avaliação de integração sensorial, as metodologias e os diversos instrumentos disponíveis</li>
-                          <li>Praticar o raciocínio clínico interpretando os dados da avaliação</li>
-                          <li>Definir objetivos de desempenho ocupacional e objetivos de integração sensorial</li>
-                          <li>Analisar vários formatos de relatório que documentem as dificuldades de integração sensorial e a relação com o desempenho ocupacional</li>
-                        </ul>
-                      </div>
-                      
-                      <h3 className="description-subtitle">Conteúdos Programáticos</h3>
-                      <div className="content-list">
-                        <ul>
-                          <li>Disfunção da Integração Sensorial</li>
-                          <li>Motivos de referenciação que levam à avaliação em integração sensorial</li>
-                          <li>O processo de avaliação em integração sensorial</li>
-                          <li>Metodologias de avaliação</li>
-                          <li>Aplicação, e análise da História Sensorial</li>
-                          <li>As observações não estruturadas e as observações estruturadas</li>
-                          <li>Análise e interpretação de instrumentos de avaliação – SPM, SPMp, perfil sensorial Dunn</li>
-                          <li>Interpretação de uma escala de desenvolvimento à luz da integração sensorial</li>
-                          <li>Raciocínio clínico</li>
-                          <li>Definição de objetivos de desempenho ocupacional e objetivos de integração sensorial</li>
-                          <li>A elaboração do relatório</li>
-                        </ul>
-                      </div>
-                      
-                      <h3 className="description-subtitle">Metodologia</h3>
-                      <p>As sessões de trabalho serão teóricas e práticas com análise de vídeos.</p>
-                    </>
-                  )}
-                  
-                  {course.title?.includes("Avaliação e Raciocínio clínico na primeira Infância") && (
-                    <div data-course="Avaliacao">
-                      <h3 className="description-subtitle">Sobre o Curso</h3>
-                      <p>Duração – 21 horas com a Terapeuta Ocupacional Paula Serrano.</p>
-                      
-                      <h3 className="description-subtitle">Área de Intervenção</h3>
-                      <p>Integração Sensorial e Brincar</p>
-                      
-                      <h3 className="description-subtitle">Destinatários</h3>
-                      <p>Terapeutas ocupacionais com formação pós graduada em Integração Sensorial</p>
-                      
-                      <h3 className="description-subtitle">Objetivos Gerais</h3>
-                      <div className="content-list">
-                        <ul>
-                          <li>Analisar a investigação e as etapas do brincar com o corpo, com os objetos e social/emocional na primeira infância</li>
-                          <li>Analisar os elementos da ludicidade (playfulness) na primeira Infância</li>
-                          <li>Analisar a importância da integração sensorial e a classificação das perturbações regulatórias do processamento sensorial na primeira infância</li>
-                          <li>Explorar a importância da avaliação de integração sensorial, e do brincar, as metodologias e os diversos instrumentos disponíveis</li>
-                          <li>Praticar o raciocínio clínico interpretando os dados da avaliação</li>
-                          <li>Elaborar objetivos terapêuticos com base na avaliação</li>
-                        </ul>
-                      </div>
-                      
-                      <h3 className="description-subtitle">Conteúdos Programáticos</h3>
-                      <div className="content-list">
-                        <ul>
-                          <li>O Brincar na Terapia Ocupacional</li>
-                          <li>O desenvolvimento do brincar dos 0 aos 3 anos: as etapas e os sinais de alarme do brincar com o corpo, com os objetos e simbólico</li>
-                          <li>O desenvolvimento do comportamento lúdico</li>
-                          <li>A avaliação do Brincar</li>
-                          <li>Instrumentos de avaliação do brincar</li>
-                          <li>A Integração Sensorial na primeira infância e a disfunção de integração sensorial</li>
-                          <li>Classificação das perturbações de processamento sensorial na primeira infância</li>
-                          <li>As Neurociências, o brincar e a integração sensorial</li>
-                          <li>Instrumentos de avaliação de integração sensorial dos 0 aos 3 anos</li>
-                          <li>Raciocínio clínico</li>
-                          <li>Avaliação, raciocínio clínico e o planeamento da intervenção</li>
-                        </ul>
-                      </div>
-                      
-                      <h3 className="description-subtitle">Metodologia</h3>
-                      <p>As sessões de trabalho serão teóricas e praticas, com analise de vídeos de casos clínicos.</p>
-                    </div>
-                  )}
-                  
-                  {!course.title?.includes("Brincar e TO") && 
-                   !course.title?.includes("Raciocinio clinico e intervencao") && 
-                   !course.title?.includes("Integracao Sensorial: Avaliacao") && 
-                   !course.title?.includes("Avaliação e Raciocínio clínico na primeira Infância") && (
-                    <p>{course.description}</p>
-                  )}
+                    </section>
+
+                    <section>
+                        <h2>{t(`courses.${course.id}.teacher`)}</h2>
+                        <p>{course.instructor}</p>
+                    </section>
+
+                    <section>
+                        <h2>{t(`courses.${course.id}.localization.title`)}</h2>
+                        <p>{t(`courses.${course.id}.localization.description`)}</p>
+                    </section>
+
+                    <section>
+                        <h2>{t(`courses.${course.id}.a_date.title`)}</h2>
+                        <p>{t(`courses.${course.id}.a_date.description`)}</p>
+                    </section>
                 </div>
-              </div>
-              <Button 
-                variant="text" 
-                size="small" 
-                className="expand-button"
-                onClick={toggleDescription}
-              >
-                {isDescriptionExpanded ? (
-                  <>
-                    <span>Ler menos</span>
-                    <ChevronUp className="h-4 w-4" />
-                  </>
-                ) : (
-                  <>
-                    <span>Ler mais</span>
-                    <ChevronDown className="h-4 w-4" />
-                  </>
-                )}
-              </Button>
+
+                <div className="purchase-section">
+                    <div className="purchase-card">
+                        <div className="price">{course.price}</div>
+                        <div className="button-container">
+                            <button className="buy-button">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 6H21L19 16H5L3 6Z" stroke="currentColor" strokeWidth="2"
+                                          strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path
+                                        d="M8 21C8.55228 21 9 20.5523 9 20C9 19.4477 8.55228 19 8 19C7.44772 19 7 19.4477 7 20C7 20.5523 7.44772 21 8 21Z"
+                                        fill="currentColor"/>
+                                    <path
+                                        d="M16 21C16.5523 21 17 20.5523 17 20C17 19.4477 16.5523 19 16 19C15.4477 19 15 19.4477 15 20C15 20.5523 15.4477 21 16 21Z"
+                                        fill="currentColor"/>
+                                </svg>
+                                {t("buy_button")}
+                            </button>
+                            <button className="cart-button" onClick={handleAddToCart}>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9 20C9 21.1 8.1 22 7 22C5.9 22 5 21.1 5 20C5 18.9 5.9 18 7 18C8.1 18 9 18.9 9 20Z"
+                                        stroke="currentColor" strokeWidth="1.5"/>
+                                    <path
+                                        d="M20 20C20 21.1 19.1 22 18 22C16.9 22 16 21.1 16 20C16 18.9 16.9 18 18 18C19.1 18 20 18.9 20 20Z"
+                                        stroke="currentColor" strokeWidth="1.5"/>
+                                    <path d="M3 3H5.5L7.5 14H18L21 7" stroke="currentColor" strokeWidth="1.5"
+                                          strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                                {t("add_to_cart")}
+                            </button>
+
+                            <div className="disclaimer-text">
+                                {t("obs")}
+                            </div>
+                        </div>
+                        <div className="contact-info">
+                            {t("contact_by_mail")} <a
+                            href="mailto:paulaserranoeducacao@gmail.com"
+                            className="email-link">paulaserranoeducacao@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div className="detalhes-adicionais">
+                        <h2>{t("learning_on_course")}</h2>
+                        <ul>
+                            {course.learningOutcomes ? (
+                                course.learningOutcomes.map((outcome, index) => (
+                                    <li key={index}>
+                                        <Check className="h-4 w-4 inline-block mr-2 text-green-600"/>
+                                        {t(`courses.${course.id}.learningOutcomes.${index}`)}
+                                    </li>
+                                ))
+                            ) : (
+                                <li>
+                                    <Check className="h-4 w-4 inline-block mr-2 text-green-600"/>
+                                    Informações sobre o conteúdo do curso em breve.
+                                </li>
+                            )}
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </section>
-
-          <section>
-            <h2>Professor(a)</h2>
-            <p>{course.instructor}</p>
-          </section>
-
-          <section>
-            <h2>Localização</h2>
-            <p>{course.Localizacao}</p>
-          </section>
-
-          <section>
-            <h2>Data</h2>
-            <p>{course.date}</p>
-          </section>
         </div>
-        
-        <div className="purchase-section">
-          <div className="purchase-card">
-            <div className="price">{course.price}</div>
-            <div className="button-container">
-              <button className="buy-button">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 6H21L19 16H5L3 6Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M8 21C8.55228 21 9 20.5523 9 20C9 19.4477 8.55228 19 8 19C7.44772 19 7 19.4477 7 20C7 20.5523 7.44772 21 8 21Z" fill="currentColor"/>
-                  <path d="M16 21C16.5523 21 17 20.5523 17 20C17 19.4477 16.5523 19 16 19C15.4477 19 15 19.4477 15 20C15 20.5523 15.4477 21 16 21Z" fill="currentColor"/>
-                </svg>
-                Comprar Agora
-              </button>
-              <button className="cart-button" onClick={handleAddToCart}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 20C9 21.1 8.1 22 7 22C5.9 22 5 21.1 5 20C5 18.9 5.9 18 7 18C8.1 18 9 18.9 9 20Z" stroke="currentColor" strokeWidth="1.5"/>
-                  <path d="M20 20C20 21.1 19.1 22 18 22C16.9 22 16 21.1 16 20C16 18.9 16.9 18 18 18C19.1 18 20 18.9 20 20Z" stroke="currentColor" strokeWidth="1.5"/>
-                  <path d="M3 3H5.5L7.5 14H18L21 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                Adicionar ao Carrinho
-              </button>
-              
-              <div className="disclaimer-text">
-                Obs.: O valor final pode sofrer variações devido à taxa de câmbio e/ou impostos locais, conforme a política do meio de pagamento escolhido.
-              </div>
-            </div>
-            <div className="contact-info">
-            Para esclarecimento de qualquer duvida, contate a Paula Serrano por email: <a href="mailto:paulaserranoeducacao@gmail.com" className="email-link">paulaserranoeducacao@gmail.com</a>
-            </div>
-          </div>
-          
-          <div className="detalhes-adicionais">
-            <h2>O que você vai aprender</h2>
-            <ul>
-              {course.learningOutcomes ? (
-                course.learningOutcomes.map((outcome, index) => (
-                  <li key={index}>
-                    <Check className="h-4 w-4 inline-block mr-2 text-green-600" />
-                    {outcome}
-                  </li>
-                ))
-              ) : (
-                <li>
-                  <Check className="h-4 w-4 inline-block mr-2 text-green-600" />
-                  Informações sobre o conteúdo do curso em breve.
-                </li>
-              )}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 // When login is successful:
