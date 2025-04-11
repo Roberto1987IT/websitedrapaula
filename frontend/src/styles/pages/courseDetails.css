@@ -1150,3 +1150,150 @@ body {
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(13, 71, 161, 0.4);
 }
+
+
+
+
+
+/* Partner logos styling */
+.partner-logos {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1600px;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  flex-direction: row;
+  margin-top: 0px;
+  padding: -5rem;
+
+  
+  
+}
+
+.partner-logos-container {
+  display: flex;
+  justify-content: space-around; /* Adjust as needed for spacing */
+  align-items: center; /* Vertically center the logos */
+  width: 100%; /* Ensure it takes the full width of its container */
+  cursor: pointer;
+  margin-top: -7rem;
+
+  
+}
+
+.partner-logo {
+  width: 50%; /* Adjust the width as needed */
+  max-width: 190px; /* Set a maximum width for each logo */
+  height: auto;
+  margin-top: -12rem;
+  
+}
+
+.partner-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .partner-logos-container {
+    gap: 5px;
+    margin-bottom: 5rem;
+  }
+
+  .partner-logo {
+    max-height: 545px;
+    margin-top: 6rem;
+    border: 2px solid red;
+    
+  }
+
+  .partner-logos-container {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 450px;
+    padding: 5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    flex-direction: row;
+    margin-top: 0px;
+    padding: -5rem;
+    cursor: pointer;
+  
+    
+    
+  }
+
+}
+
+
+
+@media (max-width: 768px) {
+  .partner-logos-container {
+    gap: 15px;
+  }
+  
+  .partner-logo {
+    max-height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partner-logos-container {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .partner-logo {
+    max-height: 205px;
+  }
+}
+
+@media (max-width: 540px) {
+  .partner-logos-container {
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .partner-logo {
+    max-height: 320px;
+    
+  }
+
+  .partner-logos-container {
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 130px;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    flex-direction: row;
+    margin-top: 0px;
+    padding: -5rem;
+  
+    
+    
+  }
+
+}
