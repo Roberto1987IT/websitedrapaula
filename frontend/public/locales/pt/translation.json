@@ -857,6 +857,15 @@
     "item_plur": "Itens",
     "item": "Item",
     "item_plural": "Itens"
+  },
+  "cart": {
+    "title": "O teu Carrinho",
+    "clr_cart": "Limpar Carrinho",
+    "empty_list": "O teu carrinho está vazio",
+    "p": "Adiciona produtos ao teu carrinho para continuar o processo de compra.",
+    "buy": "Comprar",
+    "button": "Explorar",
+    "bottom_button": "Continuar Comprar"
   }
 }
 
