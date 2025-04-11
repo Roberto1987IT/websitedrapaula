@@ -63,7 +63,7 @@ const Courses = ({ id }: { id: string }) => {
                       onError={(e) => (e.currentTarget.style.display = "none")}
                     />
                     <div className="course-overlay">
-                      <span className="course-action">Ver curso</span>
+                      <span className="course-action">{t("more_info")}</span>
                     </div>
                   </div>
                   <h3 className="course-title">{t(`courses.${course.id}.title`)}</h3>

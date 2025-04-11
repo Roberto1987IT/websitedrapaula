@@ -415,7 +415,7 @@
   "info_o2": "Cookie Policy",
   "info_o3": "Terms and Conditions",
   "info_o4": "Complaints Book",
-  "footer_botton": "Paula Serrano. All rights reserved.",
+  "footer_bottom": "Paula Serrano Educação, Lda. All rights reserved.",
   "home_filosofia": "Our Philosophy",
   "home_val": "Our Values",
   "home_val_p": "Fundamental principles that guide every decision and initiative",
@@ -678,5 +678,175 @@
   "add_to_cart": "Add to cart",
   "obs": "Note: The final price may vary due to exchange rates and/or local taxes, according to the policy of the selected payment method.",
   "contact_by_mail": "For any clarification, contact Paula Serrano by email: ",
-  "learning_on_course": "What you will learn"
+  "learning_on_course": "What you will learn",
+  "privacity": {
+    "title": "Privacy Policy",
+    "company_name": "Paula Serrano Educação",
+    "updated": "Last updated: 04/02/2025",
+    "pointes": {
+      "1": {
+        "title": "Introduction",
+        "p": "Paula Serrano Educação, Lda. is committed to protecting the privacy and personal data of its users. This Privacy Policy explains how we collect, use, and protect the information provided by visitors to our website."
+      },
+      "2": {
+        "title": "Data Collected",
+        "p": "We may collect the following personal data:",
+        "li": {
+          "1": "Name and email address (when provided by the user through contact or registration forms).",
+          "2": "Information voluntarily provided in interactions on the website.",
+          "3": "Browsing data, such as IP address, device type, and on-site behavior, for statistical purposes and to improve user experience."
+        }
+      },
+      "3": {
+        "title": "Purpose of Data Collection",
+        "p": "The collected data will be used for:",
+        "li": {
+          "1": "Responding to information and contact requests.",
+          "2": "Sending communications related to services, courses, and events (if the user has provided consent).",
+          "3": "Improving website navigation and functionality.",
+          "4": "Compliance with legal obligations."
+        }
+      },
+      "4": {
+        "title": "Contact",
+        "p": "For more information about our Privacy Policy or to exercise your rights, contact us via email:"
+      },
+      "5": {
+        "title": "Data Security",
+        "p": "We implement technical and organizational security measures to protect personal data against unauthorized access, loss, or alteration."
+      },
+      "6": {
+        "title": "User Rights",
+        "p": "Users have the right to:",
+        "li": {
+          "1": "Access, correct, or delete their personal data.",
+          "2": "Withdraw consent for data processing, when applicable.",
+          "3": "Request data portability.",
+          "4": "File a complaint with the relevant Data Protection Authority (CNPD)."
+        }
+      },
+      "7": {
+        "title": "Cookies and Tracking Technologies",
+        "p": "The website may use cookies to enhance user experience. Users can configure their browser to refuse cookies, although this may affect website navigation."
+      },
+      "8": {
+        "title": "Changes to the Privacy Policy",
+        "p": "Paula Serrano Educação, Lda. may update this Privacy Policy at any time. Any changes will be published on the website and will take effect immediately."
+      },
+      "9": {
+        "title": "Contact",
+        "p": "For more information about our Privacy Policy or to exercise your rights, contact us through the means provided on the website."
+      }
+    }
+  },
+  "ckookes": {
+    "title": "Cookie Policy",
+    "company_name": "Paula Serrano Educação",
+    "updated": "Last update: ",
+    "pointes": {
+      "1": {
+        "title": "What are Cookies?",
+        "p": "Cookies are small text files stored on your device (computer, tablet, or mobile phone) when you visit a website. These files allow the website to recognize your device and store some information about your preferences or previous actions."
+      },
+      "2": {
+        "title": "Why do we use Cookies?",
+        "p": "On the Paula Serrano Educação website, cookies are used to:",
+        "li": {
+          "1": "Improve the user's browsing experience.",
+          "2": "Ensure efficient and secure website functionality.",
+          "3": "Analyze traffic and browsing behavior to optimize content and functionality.",
+          "4": "Remember user preferences for future visits."
+        }
+      },
+      "3": {
+        "title": "Types of Cookies Used",
+        "p": "Our website may use the following types of cookies:",
+        "li_strong": {
+          "1": "Essential Cookies",
+          "2": "Performance Cookies",
+          "3": "Functional Cookies",
+          "4": "Third-Party Cookies"
+        },
+        "li": {
+          "1": "Necessary for the website to function. Without these cookies, some services cannot be provided.",
+          "2": "Collect information about how visitors use the website (e.g., most visited pages). This data is anonymous and only used to improve the website's functionality.",
+          "3": "Allow the website to remember user preferences (e.g., language or region) and provide a more personalized experience.",
+          "4": "May use external services like Google Analytics to analyze traffic. These cookies are managed by third parties and follow their own privacy policies."
+        }
+      },
+      "4": {
+        "title": "Managing Cookies",
+        "p": "When accessing our website for the first time, a notification will be presented with the option to accept or configure cookies. Users can change their cookie settings at any time in their browser, enabling or disabling some or all cookies. Please note that disabling essential cookies may affect the website's functionality."
+      },
+      "5": {
+        "title": "Changes to the Cookie Policy",
+        "p": "Paula Serrano Educação may update this policy periodically. We recommend checking this page regularly to stay informed about any changes."
+      },
+      "6": {
+        "title": "Contact",
+        "p": "If you have any questions about this Cookie Policy or how your data is managed, please contact us through the channels available on the website."
+      }
+    }
+  },
+  "terms": {
+    "title": "Terms and Conditions",
+    "company_name": "Paula Serrano Educação",
+    "updated": "Last updated: ",
+    "pointes": {
+      "1": {
+        "title": "Introduction",
+        "p": "Welcome to the website of Paula Serrano Educação, Lda. By accessing and using this website, you agree to comply with these Terms and Conditions of Use."
+      },
+      "2": {
+        "title": "Intellectual Property",
+        "p": "All content on this website, including texts, images, logos, and other materials, is the property of Paula Serrano Educação, Lda., unless otherwise stated. Reproduction, distribution, or any other use of the content without prior written authorization is prohibited."
+      },
+      "3": {
+        "title": "Purpose of Data Collection",
+        "p": "All content on this website, including texts, images, logos, and other materials, is the property of Paula Serrano Educação, Lda., unless otherwise stated. Reproduction, distribution, or any other use of the content without prior written authorization is prohibited."
+      },
+      "4": {
+        "title": "Limitation of Liability",
+        "p": "Paula Serrano Educação, Lda. makes every effort to keep the information on this website up-to-date and accurate. However, it does not guarantee the accuracy, completeness, or timeliness of the information and is not responsible for any damages resulting from the use of this website."
+      },
+      "5": {
+        "title": "Third-Party Links",
+        "p": "This website may contain links to third-party websites. Paula Serrano Educação, Lda. is not responsible for the content or privacy practices of these websites."
+      },
+      "6": {
+        "title": "Changes to the Terms and Conditions",
+        "p": "Paula Serrano Educação, Lda. reserves the right to modify these Terms and Conditions at any time. The changes will take effect upon their publication on the website."
+      },
+      "7": {
+        "title": "Applicable Law and Jurisdiction",
+        "p": "These Terms and Conditions are governed by Portuguese law. Any dispute related to this website will be subject to the exclusive jurisdiction of the Portuguese courts."
+      },
+      "8": {
+        "title": "Contact",
+        "p": "For any questions related to these Terms and Conditions, please contact us through the means available on our website."
+      }
+    }
+  },
+  "account": {
+    "login": {
+      "reset_password": "Reset Password",
+      "not_member": "Don't have an account?"
+    },
+    "signup": {
+      "full_name": "Full Name",
+      "phone": "Phone",
+      "country": "Select your country",
+      "gender": "Gender",
+      "select_gender": "Select gender",
+      "gm": "Male",
+      "gf": "Female",
+      "go": "Other",
+      "g_anonimus": "Prefer not to say",
+      "bd": "Date of Birth",
+      "pc": "Confirm Password*",
+      "accept_terms_cond": "I accept the ",
+      "is_member": "Already have an account?"
+    }
+  }
 }
+

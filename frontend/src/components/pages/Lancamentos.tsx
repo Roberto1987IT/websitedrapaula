@@ -30,7 +30,7 @@ import vid6 from "../../assets/galleryPse/vid6.mp4";
 import vid7 from "../../assets/galleryPse/vid7.mp4";
 import vid8 from "../../assets/galleryPse/vid8.mp4";
 import vid12 from "../../assets/galleryPse/vid12.mp4";
-import vid4 from "../../assets/galleryPse/vod4.mp4";
+import vid4 from "../../assets/galleryPse/vid4.mp4";
 
 type MediaItem = {
     type: 'image' | 'video';
