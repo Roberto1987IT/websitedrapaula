@@ -12,9 +12,7 @@ const CourseDetails = () => {
     const {id} = useParams<{ id: string | undefined }>();
     const navigate = useNavigate(); // Initialize navigate
     const course = courses.find((c) => c.id === Number(id));
-    console.log(t("courses", {returnObjects: true}));
-
-    const [isInWishlist, setIsInWishlist] = useState(false);
+        const [isInWishlist, setIsInWishlist] = useState(false);
     const [imageLoaded, setImageLoaded] = useState(false);
     const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
 

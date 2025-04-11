@@ -855,6 +855,14 @@
     "button": "Search Products",
     "item": "Item",
     "item_plural": "Items"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty_list": "Your cart is empty",
+    "p": "Add products to your cart to proceed with the purchase process.",
+    "buy": "Buy",
+    "button": "Search",
+    "bottom_button": "Continue Shopping"
   }
 }
 
