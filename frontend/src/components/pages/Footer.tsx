@@ -122,7 +122,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="footer-bottom">
-        <p className="footer-copyright">© {new Date().getFullYear()} {t("footer_botton")}</p>
+        <p className="footer-copyright">© {new Date().getFullYear()} {t("footer_bottom")}</p>
       </div>
     </footer>
   );

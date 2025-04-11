@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../../styles/pages/register.css";
 import { countries } from "../../data/countries";
 import ReactSelect from "react-select";
+import {useTranslation} from "react-i18next";
+import register from "../../../Register";
 
 interface FormData {
   email: string;
@@ -34,6 +36,7 @@ const API_BASE_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
 const REGISTER_ENDPOINT = `${API_BASE_URL}/api/auth/register/`;
 
 const Register = () => {
+  const {t} = useTranslation();
   const [formData, setFormData] = useState<FormData>({
     email: "",
     password: "",
@@ -77,7 +80,7 @@ const Register = () => {
       
       return results.includes(suffix);
     } catch (error) {
-      console.error("Ocorreu um erro ao analisar a segurança da palavra-passe:", error);
+      console.error("Error checking password breach:", error);
       return false; // Fail safe - don't block if API is unavailable
     }
   };
@@ -122,62 +125,62 @@ const Register = () => {
 
     // Basic validations
     if (!formData.email.trim()) {
-      newErrors.email = "Email é obrigatório";
+      newErrors.email = "Email is required";
     } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
       newErrors.email = "Invalid email format";
     }
 
     if (!formData.fullName.trim()) {
-      newErrors.fullName = "É necessário preencher o nome completo.";
+      newErrors.fullName = "Full name is required";
     } else if (formData.fullName.trim().length < 2) {
-      newErrors.fullName = "O nome completo é de preenchimento obrigatório";
+      newErrors.fullName = "Full name must be at least 2 characters";
     }
 
     if (!formData.phone.trim()) {
-      newErrors.phone = "Número de telefone é obrigatório.";
+      newErrors.phone = "Phone number is required";
     } else if (!/^\+?[0-9\s\-]+$/.test(formData.phone)) {
-      newErrors.phone = "Formato do contacto telefónico inválido";
+      newErrors.phone = "Invalid phone number format";
     } else if (formData.phone.replace(/\D/g, '').length < 8) {
-      newErrors.phone = "Contacto telefónico incompleto.";
+      newErrors.phone = "Phone number is too short";
     }
 
     if (!formData.country) {
-      newErrors.country = "O país é de preenchimento obrigatório.";
+      newErrors.country = "Country is required";
     }
 
     // Enhanced password validation
     if (!formData.password) {
-      newErrors.password = "A palavra-passe é obrigatória.";
+      newErrors.password = "Password is required";
     } else {
       if (formData.password.length < 8) {
-        newErrors.password = "A palavra-passe deve ter pelo menos 8 caracteres.";
+        newErrors.password = "Password must be at least 8 characters";
       } else if (!/[A-Z]/.test(formData.password)) {
-        newErrors.password = "Inclua pelo menos uma letra maiúscula.";
+        newErrors.password = "Include at least one uppercase letter";
       } else if (!/[a-z]/.test(formData.password)) {
-        newErrors.password = "Inclua pelo menos uma letra minúscula.";
+        newErrors.password = "Include at least one lowercase letter";
       } else if (!/[0-9]/.test(formData.password)) {
-        newErrors.password = "Inclua pelo menos um número.";
+        newErrors.password = "Include at least one number";
       } else if (!/[^A-Za-z0-9]/.test(formData.password)) {
-        newErrors.password = "Inclua pelo menos um caractere especial (ex: !@#$%).";
+        newErrors.password = "Include at least one special character";
       } else {
         // Only check breach if password meets other requirements
         setIsCheckingBreach(true);
         const isBreached = await checkPasswordBreach(formData.password);
         setIsCheckingBreach(false);
         if (isBreached) {
-          newErrors.password = "Esta palavra-passe está vulnerável. Selecione outra.";
+          newErrors.password = "This password has appeared in data breaches. Please choose a different one.";
         }
       }
     }
 
     if (!formData.confirmPassword) {
-      newErrors.confirmPassword = "Por favor, confirme a sua palavra-passe";
+      newErrors.confirmPassword = "Please confirm your password";
     } else if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = "As passwords não correspondem.";
+      newErrors.confirmPassword = "Passwords don't match";
     }
 
     if (!formData.acceptTerms) {
-      newErrors.acceptTerms = "É necessário aceitar os termos e condições para prosseguir.";
+      newErrors.acceptTerms = "You must accept the terms";
     }
 
     setErrors(newErrors);
@@ -236,7 +239,7 @@ const Register = () => {
 
         setErrors(mappedErrors);
       } else {
-        setServerError("Ocorreu um erro inesperado. Por favor, tente novamente.");
+        setServerError("An unexpected error occurred. Please try again.");
       }
     } finally {
       setIsSubmitting(false);
@@ -305,7 +308,7 @@ const Register = () => {
   return (
     <section className="register-section">
       <div className="register-container">
-        <h2>Crie Sua Conta</h2>
+        <h2>{t("registration")}</h2>
         {serverError && (
           <div className="server-error">
             {serverError}
@@ -318,7 +321,7 @@ const Register = () => {
         <form className="register-form" onSubmit={handleSubmit} noValidate>
           {/* Personal Information */}
           <div className="form-group">
-            <label htmlFor="fullName">Nome Completo</label>
+            <label htmlFor="fullName">{t("account.signup.full_name")}</label>
             <input
               type="text"
               id="fullName"
@@ -328,13 +331,13 @@ const Register = () => {
               required
               autoComplete="name"
               className={errors.fullName ? "error-input" : ""}
-              placeholder="Primeiro e ultimo nome "
+              placeholder={t("account.signup.full_name")}
             />
             {errors.fullName && <span className="error">{errors.fullName}</span>}
           </div>
 
           <div className="form-group">
-            <label htmlFor="phone">Telefone</label>
+            <label htmlFor="phone">{t("account.signup.phone")}</label>
             <div className="phone-input-group">
               <ReactSelect
                 id="country"
@@ -347,7 +350,7 @@ const Register = () => {
                   } as React.ChangeEvent<HTMLInputElement>)
                 }
                 classNamePrefix="react-select"
-                placeholder="Selecione seu país"
+                placeholder={t("account.signup.country")}
                 isClearable
               />
               <input
@@ -359,7 +362,7 @@ const Register = () => {
                 required
                 autoComplete="tel"
                 className={`phone-input ${errors.phone ? "error-input" : ""}`}
-                placeholder="Telefone"
+                placeholder={t("account.signup.phone")}
               />
             </div>
             {errors.phone && <span className="error">{errors.phone}</span>}
@@ -367,7 +370,7 @@ const Register = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="gender">Gênero</label>
+            <label htmlFor="gender">{t("account.signup.gender")}</label>
             <select
               name="gender"
               id="gender"
@@ -375,17 +378,17 @@ const Register = () => {
               onChange={handleChange}
               className={errors.gender ? "error-input" : ""}
             >
-              <option value="">Selecionar gênero</option>
-              <option value="M">Masculino</option>
-              <option value="F">Feminino</option>
-              <option value="O">Outro</option>
-              <option value="PNS">Prefiro nao dizer</option>
+              <option value="">{t("account.signup.select_gender")}</option>
+              <option value="M">{t("account.signup.gm")}</option>
+              <option value="F">{t("account.signup.gf")}</option>
+              <option value="O">{t("account.signup.go")}</option>
+              <option value="PNS">{t("account.signup.g_anonimus")}</option>
             </select>
             {errors.gender && <span className="error">{errors.gender}</span>}
           </div>
 
           <div className="form-group">
-            <label htmlFor="birthDate">Data de Nascimento</label>
+            <label htmlFor="birthDate">{t("account.signup.bd")}</label>
             <input
               type="date"
               id="birthDate"
@@ -434,7 +437,7 @@ const Register = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="confirmPassword">Confirmar Password*</label>
+            <label htmlFor="confirmPassword">{t("account.signup.pc")}*</label>
             <input
               type="password"
               id="confirmPassword"
@@ -460,39 +463,32 @@ const Register = () => {
               className={errors.acceptTerms ? "error-input" : ""}
               required
             />
-
-
             <label htmlFor="acceptTerms">
-              Eu aceito os{" "}
-
-              <Link to="/termos-condicoes">Termos</Link>{" "}
-
+              {t("account.signup.accept_terms_cond")}{" "}
+              <a href="/terms" target="_blank" rel="noopener noreferrer">{t("terms.title")}</a>{" "}
               e{" "}
-              <Link to="/politica-privacidade">Política de Privacidade</Link>
+              <a href="/privacy" target="_blank" rel="noopener noreferrer">{t("privacity.title")}</a>
             </label>
-
-
             {errors.acceptTerms && <span className="error">{errors.acceptTerms}</span>}
           </div>
 
-
           <button 
-  type="submit" 
-  disabled={isSubmitting || isCheckingBreach}
-  className={`submit-btn ${isSubmitting ? "submitting" : ""}`}
->
-  {isSubmitting ? (
-    <span>
-      <span className="spinner"></span>
-      Registrando...
-    </span>
-  ) : (
-    <span>Criar Conta</span>
-  )}
-</button>
+            type="submit" 
+            disabled={isSubmitting || isCheckingBreach}
+            className={`submit-btn ${isSubmitting ? "submitting" : ""}`}
+          >
+            {isSubmitting ? (
+              <>
+                <span className="spinner"></span>
+                <span>Registrando...</span>
+              </>
+            ) : (
+              t("registration")
+            )}
+          </button>
 
           <p className="login-link">
-            Já possui uma conta? <a href="/login">Fazer login</a>
+            {t("account.signup.is_member")} <a href="/login">{t("login")}</a>
           </p>
         </form>
       </div>

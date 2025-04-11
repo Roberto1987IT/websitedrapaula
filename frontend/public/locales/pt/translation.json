@@ -416,7 +416,7 @@
   "info_o2": "Política de Cookies",
   "info_o3": "Termos e condições",
   "info_o4": "Livro de Reclamações",
-  "footer_botton": "Paula Serrano. Todos os direitos reservados.",
+  "footer_bottom": " Paula Serrano Educação, Lda. Todos os direitos reservados.",
   "home_filosofia": "Nossa Filosofia",
   "home_val": "Nosso Valores",
   "home_val_p": "Princípios fundamentais que guiam cada decisão e iniciativa",
@@ -679,6 +679,179 @@
   "add_to_cart": "Adicionar ao carinho",
   "obs": "Obs.: O valor final pode sofrer variações devido à taxa de câmbio e/ou impostos locais, conforme a política do meio de pagamento escolhido.",
   "contact_by_mail": "Para esclarecimento de qualquer duvida, contate a Paula Serrano por email: ",
-  "learning_on_course": "O que você vai aprender"
+  "learning_on_course": "O que você vai aprender",
+  "privacity": {
+    "title": "Política de Privacidade",
+    "company_name": "Paula Serrano Educação",
+    "updated": "Última atualização: ",
+    "pointes": {
+      "1": {
+        "title": " Introdução",
+        "p": "A Paula Serrano Educação, Lda. compromete-se a proteger a privacidade e os dados pessoais dos seus utilizadores. Esta Política de Privacidade explica como recolhemos, utilizamos e protegemos as informações fornecidas pelos visitantes do nosso website."
+      },
+      "2": {
+        "title": "Dados Recolhidos",
+        "p": "Podemos recolher os seguintes dados pessoais:",
+        "li": {
+          "1": "Nome e endereço de e-mail (quando fornecidos pelo utilizador através de formulários de contacto ou inscrição).",
+          "2": "Informações fornecidas voluntariamente em interações no website.",
+          "3": "Dados de navegação, como endereço IP, tipo de dispositivo e comportamento no site, para fins estatísticos e de melhoria da experiência do utilizador."
+        }
+      },
+      "3": {
+        "title": "Finalidade da Recolha de Dados",
+        "p": "Os dados recolhidos serão utilizados para:",
+        "li": {
+          "1": "Responder a pedidos de informação e contacto.",
+          "2": "Enviar comunicações relacionadas com serviços, cursos e eventos (caso o utilizador tenha dado consentimento).",
+          "3": "Melhorar a navegação e o funcionamento do website.",
+          "4": "Cumprimento de obrigações legais"
+        }
+      },
+      "4": {
+        "title": "Contacto",
+        "p": "Para mais informações sobre a nossa Política de Privacidade ou para exercer os seus direitos, entre em contacto connosco através do e-mail:"
+      },
+      "5": {
+        "title": "Segurança dos Dados",
+        "p": "Implementamos medidas de segurança técnicas e organizacionais para proteger os dados pessoais contra acessos não autorizados, perdas ou alterações."
+      },
+      "6": {
+        "title": "Direitos do Utilizador",
+        "p": "Os utilizadores têm o direito de:",
+        "li": {
+          "1": "Aceder, corrigir ou eliminar os seus dados pessoais.",
+          "2": "Retirar o consentimento para o tratamento dos dados, quando aplicável.",
+          "3": "Solicitar a portabilidade dos dados.",
+          "4": "Apresentar reclamação junto da Comissão Nacional de Proteção de Dados (CNPD)."
+        }
+      },
+      "7": {
+        "title": " Cookies e Tecnologias de Rastreamento",
+        "p": "O website pode utilizar cookies para melhorar a experiência do utilizador. O utilizador pode configurar o seu navegador para recusar cookies, embora isso possa afetar a navegação no site."
+      },
+      "8": {
+        "title": "Alterações à Política de Privacidade",
+        "p": "A Paula Serrano Educação, Lda. pode atualizar esta Política de Privacidade a qualquer momento. Quaisquer alterações serão publicadas no website e entrarão em vigor imediatamente."
+      },
+      "9": {
+        "title": "Contacto",
+        "p": "Para mais informações sobre a nossa Política de Privacidade ou para exercer os seus direitos, entre em contacto connosco através dos meios disponibilizados no website."
+      }
+    }
+  },
+  "ckookes": {
+    "title": "Política de Cookies",
+    "company_name": "Paula Serrano Educação",
+    "updated": "Última atualização: ",
+    "pointes": {
+      "1": {
+        "title": "O que são Cookies?",
+        "p": "Cookies são pequenos ficheiros de texto armazenados no seu dispositivo (computador, tablet ou telemóvel) quando visita um website. Estes ficheiros permitem reconhecer o seu dispositivo e armazenar algumas informações sobre as suas preferências ou ações anteriores."
+      },
+      "2": {
+        "title": "Para que utilizamos Cookies?",
+        "p": "No site da Paula Serrano Educação, os cookies são utilizados para:",
+        "li": {
+          "1": "Melhorar a experiência de navegação do utilizador.",
+          "2": "Garantir o funcionamento eficiente e seguro do website.",
+          "3": "Analisar o tráfego e o comportamento de navegação, de forma a otimizar os conteúdos e funcionalidades.",
+          "4": "Memorizar as preferências do utilizador em visitas futuras."
+        }
+      },
+      "3": {
+        "title": "Tipos de Cookies Utilizados",
+        "p": "O nosso website pode utilizar os seguintes tipos de cookies:",
+        "li_strong": {
+          "1": "Cookies Essenciais",
+          "2": "Cookies de Desempenho",
+          "3": "Cookies Funcionais",
+          "4": "Cookies de Terceiros"
+        },
+        "li": {
+          "1": "Necessários para o funcionamento do site. Sem estes cookies, alguns serviços não podem ser prestados.",
+          "2": "Recolhem informações sobre como os visitantes utilizam o site (por exemplo, páginas mais visitadas). Estes dados são anónimos e usados apenas para melhorar o funcionamento do site.",
+          "3": "Permitem lembrar preferências do utilizador (como idioma ou região) e proporcionar uma experiência mais personalizada.",
+          "4": "Podem ser utilizados serviços externos como o Google Analytics para análise de tráfego. Estes cookies são geridos por terceiros e seguem as suas próprias políticas de privacidade."
+        }
+      },
+      "4": {
+        "title": "Gestão de Cookies",
+        "p": "Ao aceder ao nosso website pela primeira vez, será apresentado um aviso com a opção de aceitar ou configurar os cookies. O utilizador pode, a qualquer momento, alterar as configurações de cookies no seu navegador, ativando ou desativando alguns ou todos os cookies. Tenha em atenção que a desativação de cookies essenciais pode afetar o funcionamento do site."
+      },
+      "5": {
+        "title": "Alterações à Política de Cookies",
+        "p": "A Paula Serrano Educação poderá atualizar esta política periodicamente. Recomendamos que consulte esta página regularmente para se manter informado sobre qualquer alteração."
+      },
+      "6": {
+        "title": "Contacto",
+        "p": "Se tiver dúvidas sobre esta Política de Cookies ou sobre o tratamento dos seus dados, entre em contacto connosco através dos canais disponíveis no website."
+      }
+    }
+  },
+  "terms": {
+    "title": "Política de Privacidade e Condições",
+    "company_name": "Paula Serrano Educação",
+    "updated": "Última atualização: ",
+    "pointes": {
+      "1": {
+        "title": "Introdução",
+        "p": "Bem-vindo ao website da Paula Serrano Educação, Lda. Ao aceder e utilizar este website, o utilizador concorda em cumprir os presentes Termos e Condições de Utilização."
+      },
+      "2": {
+        "title": "Propriedade Intelectual",
+        "p": "Todo o conteúdo presente neste website, incluindo textos, imagens, logótipos e outros materiais, é propriedade da Paula Serrano Educação, Lda., salvo indicação em contrário. A reprodução, distribuição ou qualquer outro uso do conteúdo sem autorização prévia por escrito é proibido."
+      },
+      "3": {
+        "title": "Finalidade da Recolha de Dados",
+        "p": "Todo o conteúdo presente neste website, incluindo textos, imagens, logótipos e outros materiais, é propriedade da Paula Serrano Educação, Lda., salvo indicação em contrário. A reprodução, distribuição ou qualquer outro uso do conteúdo sem autorização prévia por escrito é proibido."
+      },
+      "4": {
+        "title": "Limitação de Responsabilidade",
+        "p": "A Paula Serrano Educação, Lda. envida todos os esforços para manter a informação neste website atualizada e precisa. No entanto, não garante a exatidão, integridade ou atualidade das informações e não se responsabiliza por quaisquer danos resultantes do uso deste website."
+      },
+      "5": {
+        "title": "Links para Terceiros",
+        "p": "Este website pode conter links para websites de terceiros. A Paula Serrano Educação, Lda. não se responsabiliza pelo conteúdo ou práticas de privacidade desses websites."
+      },
+      "6": {
+        "title": "Alterações aos Termos e Condições",
+        "p": "A Paula Serrano Educação, Lda. reserva-se o direito de modificar estes Termos e Condições a qualquer momento. As alterações entrarão em vigor após a sua publicação no website."
+      },
+      "7": {
+        "title": "Lei Aplicável e Jurisdição",
+        "p": "Estes Termos e Condições são regidos pela lei portuguesa. Qualquer litígio relacionado com este website será submetido à jurisdição exclusiva dos tribunais portugueses."
+      },
+      "8": {
+        "title": "Contacto",
+        "p": "Para qualquer questão relacionada com estes Termos e Condições, por favor contacte-nos através dos meios disponibilizados no nosso website."
+      }
+
+    }
+  },
+  "account": {
+    "login": {
+      "reset_password": "Reset Password",
+      "not_member": "Não possui uma conta?"
+    },
+    "signup": {
+      "full_name": "Nome Completo",
+      "phone": "Telefone",
+      "country": "Selecione o seu pais",
+      "gender": "Genero",
+      "select_gender": "Selecionar gênero",
+      "gm": "Masculino",
+      "gf": "Feminino",
+      "go": "Outro",
+      "g_anonimus": "Prefiro nao dizer",
+      "bd": "Data de Nascimento",
+      "pc": "Confirmar Password*",
+      "accept_terms_cond": "Eu aceito os ",
+      "is_member": "Já possui uma conta?"
+    }
+  }
 }
+
+
+
 

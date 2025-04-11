@@ -145,7 +145,7 @@ const Contact = () => {
 
         {/* Copyright Section */}
         <div className="contact-copyright">
-          <p>© {new Date().getFullYear()} {t("footer_botton")}</p>
+          <p>© {new Date().getFullYear()} {t("footer_bottom")}</p>
         </div>
       </div>
     </div>
