@@ -332,7 +332,96 @@ const CourseDetails = () => {
                    !course.title?.includes("Raciocinio clinico e intervencao") && 
                    !course.title?.includes("Integracao Sensorial: Avaliacao") && 
                    !course.title?.includes("Avaliação e Raciocínio clínico na primeira Infância") && (
-                    <p>{course.description}</p>
+                    <>
+                      {course.title?.includes("Programa Internacional") ? (
+                        <div className="programa-internacional">
+                          <div className="programa-header">
+                            <h3 className="description-subtitle programa-title">Sobre o Programa</h3>
+                            <div className="programa-badge">360 horas | 18 meses</div>
+                          </div>
+                          
+                          <div className="programa-info-grid">
+                            <div className="programa-info-item">
+                              <h4 className="programa-info-title">Formadores</h4>
+                              <p>Professores de Portugal, Brasil e Estados Unidos da América</p>
+                            </div>
+                            
+                            <div className="programa-info-item">
+                              <h4 className="programa-info-title">Área de Intervenção</h4>
+                              <p>Integração Sensorial</p>
+                            </div>
+                            
+                            <div className="programa-info-item">
+                              <h4 className="programa-info-title">Destinatários</h4>
+                              <p>Terapeutas ocupacionais</p>
+                            </div>
+                            
+                            <div className="programa-info-item">
+                              <h4 className="programa-info-title">Metodologia</h4>
+                              <p>Aulas teóricas on-line e aulas práticas presenciais</p>
+                            </div>
+                          </div>
+                          
+                          <div className="programa-section">
+                            <h3 className="description-subtitle">Objectivos Gerais</h3>
+                            <div className="programa-objetivos">
+                              <ul>
+                                <li>Compreender os fundamentos da Teoria de Integração Sensorial (IS) de Jean Ayres</li>
+                                <li>Identificar os sistemas sensoriais envolvidos na integração sensorial e a sua influência no desenvolvimento humano</li>
+                                <li>Reconhecer a neurofisiologia subjacente à reatividade sensorial, processamento e praxis</li>
+                                <li>Relacionar disfunções do processamento sensorial com dificuldades no desempenho ocupacional</li>
+                                <li>Avaliar e interpretar dificuldades sensoriais utilizando diversas metodologias e instrumentos de avaliação</li>
+                                <li>Interpretar a informação do processo avaliativo e utilizar o raciocínio clínico com base na taxonomia atual</li>
+                                <li>Elaborar um plano de intervenção dirigido às dificuldades de desempenho ocupacional</li>
+                                <li>Implementar a intervenção utilizando a abordagem de integração sensorial</li>
+                                <li>Discutir evidências científicas sobre a eficácia da Integração Sensorial como abordagem terapêutica</li>
+                              </ul>
+                            </div>
+                          </div>
+                          
+                          <div className="programa-section">
+                            <h3 className="description-subtitle">Conteúdos Programáticos</h3>
+                            <div className="programa-conteudos">
+                              <ul>
+                                <li>Fundamentos teóricos e neurocientíficos da Integração Sensorial</li>
+                                <li>Sistemas sensoriais e seu impacto no desenvolvimento</li>
+                                <li>Neurofisiologia da reatividade sensorial e processamento</li>
+                                <li className="with-subitems">
+                                  Avaliação em Integração Sensorial:
+                                  <ul className="subitems">
+                                    <li>Metodologias de avaliação</li>
+                                    <li>Instrumentos padronizados</li>
+                                    <li>Interpretação de resultados</li>
+                                  </ul>
+                                </li>
+                                <li>Raciocínio clínico e diagnóstico terapêutico</li>
+                                <li className="with-subitems">
+                                  Planeamento da intervenção:
+                                  <ul className="subitems">
+                                    <li>Definição de objetivos</li>
+                                    <li>Estratégias baseadas na Integração Sensorial</li>
+                                  </ul>
+                                </li>
+                                <li>Implementação da intervenção segundo a medida de fidelidade na abordagem de Ayres</li>
+                                <li>Evidência científica na prática de Integração Sensorial</li>
+                              </ul>
+                            </div>
+                          </div>
+                          
+                          <div className="programa-metodologia">
+                            <h3 className="description-subtitle">Metodologia</h3>
+                            <p>O programa combina sessões teóricas online com sessões práticas presenciais em várias cidades do Brasil (localizações a confirmar). A formação será ministrada por especialistas internacionais de Portugal, Brasil e Estados Unidos da América.</p>
+                          </div>
+                          
+                          <div className="programa-inscricao">
+                            <h3>Inscrições Limitadas</h3>
+                            <p>As inscrições para este programa são limitadas para garantir a qualidade da formação. Para informações sobre as próximas turmas e processo de inscrição, entre em contato por email.</p>
+                          </div>
+                        </div>
+                      ) : (
+                        <p>{course.description}</p>
+                      )}
+                    </>
                   )}
                 </div>
               </div>
@@ -376,32 +465,46 @@ const CourseDetails = () => {
         <div className="purchase-section">
           <div className="purchase-card">
             <div className="price-wishlist-container">
-              <div className="price">{course.price}</div>
-              <button 
-                className="wishlist-button"
-                onClick={toggleWishlist}
-                aria-label={courseInWishlist ? "Remover dos favoritos" : "Adicionar aos favoritos"}
-              >
-                <Heart 
-                  size={24} 
-                  fill={courseInWishlist ? "#ff6b6b" : "none"} 
-                  color={courseInWishlist ? "#ff6b6b" : "#757575"} 
-                />
-              </button>
+              <div className="price">
+                {Number(id) === 5 
+                  ? "Programa Completo" 
+                  : course.price}
+              </div>
+              {Number(id) !== 5 && (
+                <button 
+                  className="wishlist-button"
+                  onClick={toggleWishlist}
+                  aria-label={courseInWishlist ? "Remover dos favoritos" : "Adicionar aos favoritos"}
+                >
+                  <Heart 
+                    size={24} 
+                    fill={courseInWishlist ? "#ff6b6b" : "none"} 
+                    color={courseInWishlist ? "#ff6b6b" : "#757575"} 
+                  />
+                </button>
+              )}
             </div>
             <div className="button-container">
-              <button className="buy-button">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 6H21L19 16H5L3 6Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M8 21C8.55228 21 9 20.5523 9 20C9 19.4477 8.55228 19 8 19C7.44772 19 7 19.4477 7 20C7 20.5523 7.44772 21 8 21Z" fill="currentColor"/>
-                  <path d="M16 21C16.5523 21 17 20.5523 17 20C17 19.4477 16.5523 19 16 19C15.4477 19 15 19.4477 15 20C15 20.5523 15.4477 21 16 21Z" fill="currentColor"/>
-                </svg>
-                Comprar Agora
-              </button>
-              <button className="cart-button" onClick={handleAddToCart}>
-                <ShoppingCart size={20} />
-                Adicionar ao Carrinho
-              </button>
+              {Number(id) !== 5 ? (
+                <>
+                  <button className="buy-button">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3 6H21L19 16H5L3 6Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M8 21C8.55228 21 9 20.5523 9 20C9 19.4477 8.55228 19 8 19C7.44772 19 7 19.4477 7 20C7 20.5523 7.44772 21 8 21Z" fill="currentColor"/>
+                      <path d="M16 21C16.5523 21 17 20.5523 17 20C17 19.4477 16.5523 19 16 19C15.4477 19 15 19.4477 15 20C15 20.5523 15.4477 21 16 21Z" fill="currentColor"/>
+                    </svg>
+                    Comprar Agora
+                  </button>
+                  <button className="cart-button" onClick={handleAddToCart}>
+                    <ShoppingCart size={20} />
+                    Adicionar ao Carrinho
+                  </button>
+                </>
+              ) : (
+                <div className="special-program-notice">
+                  <p>Para receber informações sobre inscrições neste programa, entre em contato por email.</p>
+                </div>
+              )}
               
               <div className="disclaimer-text">
                 Obs.: O valor final pode sofrer variações devido à taxa de câmbio e/ou impostos locais, conforme a política do meio de pagamento escolhido.

@@ -397,42 +397,6 @@ body {
   font-style: italic;
 }
 
-/*
-.wishlist-button {
-  background: transparent;
-  color: var(--text-color);
-  box-shadow: none;
-  border: 1px solid #e0e0e0;
-  padding: 0.75rem;
-  opacity: -0.8;
-}
-
-.wishlist-button:hover {
-  background-color: rgba(0, 0, 0, 0.02);
-  color: var(--primary-color);
-  border-color: var(--primary-light);
-}
-
-.wishlist-button svg {
-  transition: fill 0.2s ease, transform 0.3s ease;
-}
-
-.wishlist-button:hover svg {
-  fill: var(--primary-color);
-  transform: scale(1.1);
-}
-
-.wishlist-active {
-  color: var(--red-color);
-  border-color: var(--red-light);
-}
-
-.wishlist-active svg {
-  fill: var(--red-color);
-}
-
-*/
-
 .contact-info {
   margin-top: 1.5rem;
   padding: 1rem;
@@ -457,7 +421,6 @@ body {
   color: var(--primary-dark);
   text-decoration: underline;
 }
-
 
 .detalhes-adicionais {
   background: #ffffff;
@@ -498,7 +461,6 @@ body {
   color: var(--text-color);
   font-size: 1rem;
 }
-
 
 .detalhes-adicionais li::before {
   content: none;
@@ -728,10 +690,6 @@ body {
   }
 }
 
-
-
-
-
 .price-wishlist-container {
   display: flex;
   align-items: center;
@@ -746,22 +704,14 @@ body {
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
- 
   position: absolute;
   right: -15px;
   top: 1%;
-
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2;
 }
-
-
-
-
-
-
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
@@ -779,8 +729,6 @@ body {
     right: -5px;
   }
 }
-
-
 
 /* Toast notification styles */
 .toast-notification {
@@ -920,4 +868,250 @@ body {
 .cart-badge.show {
   opacity: 1;
   transform: scale(1);
+}
+
+/* Special styles for course ID 5 */
+.special-program-notice {
+  background-color: rgba(76, 175, 80, 0.1);
+  padding: 1.25rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--green-dark);
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.special-program-notice p {
+  color: var(--green-dark);
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+/* Special styling for course 5's price display */
+.course-details[data-course-id="5"] .price {
+  font-size: 1.8rem !important;
+  color: var(--green-dark) !important;
+}
+
+.course-details[data-course-id="5"] .price::before {
+  content: '' !important; /* Remove the € sign */
+}
+
+
+
+
+
+
+/* Special styles for Course ID 5 - Programa Internacional */
+.programa-internacional {
+  padding: 0.5rem;
+}
+
+.programa-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.programa-title {
+  margin-top: 0 !important;
+  color: var(--primary-dark) !important;
+  font-size: 1.4rem !important;
+  border-left: 5px solid var(--primary-dark) !important;
+}
+
+.programa-badge {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 10px rgba(13, 71, 161, 0.2);
+  display: flex;
+  align-items: center;
+}
+
+.programa-badge::before {
+  content: '⏱️';
+  margin-right: 6px;
+}
+
+.programa-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  background-color: rgba(30, 136, 229, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.programa-info-item {
+  position: relative;
+}
+
+.programa-info-title {
+  color: var(--primary-dark);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.programa-info-title::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.programa-info-item p {
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 14px;
+}
+
+.programa-section {
+  margin-bottom: 2rem;
+}
+
+.programa-objetivos ul,
+.programa-conteudos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.programa-objetivos ul li,
+.programa-conteudos ul li {
+  position: relative;
+  padding: 0.6rem 0.6rem 0.6rem 2rem;
+  margin-bottom: 0.5rem;
+  background-color: rgba(30, 136, 229, 0.03);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  border-left: 3px solid rgba(30, 136, 229, 0.3);
+}
+
+.programa-objetivos ul li:hover,
+.programa-conteudos ul li:hover {
+  background-color: rgba(30, 136, 229, 0.08);
+  transform: translateX(3px);
+}
+
+.programa-objetivos ul li::before,
+.programa-conteudos ul li::before {
+  content: '✓';
+  color: var(--primary-color);
+  position: absolute;
+  left: 0.7rem;
+  font-weight: bold;
+}
+
+/* Styling for nested lists */
+.programa-conteudos ul li.with-subitems {
+  padding-bottom: 0.2rem;
+  font-weight: 600;
+}
+
+.programa-conteudos ul li.with-subitems::before {
+  content: '•';
+}
+
+.programa-conteudos ul.subitems {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+}
+
+.programa-conteudos ul.subitems li {
+  border-left: 2px dashed rgba(30, 136, 229, 0.2);
+  padding: 0.4rem 0.6rem 0.4rem 1.8rem;
+  margin-bottom: 0.3rem;
+  background-color: rgba(30, 136, 229, 0.02);
+  font-weight: normal;
+}
+
+.programa-conteudos ul.subitems li::before {
+  content: '•';
+  left: 0.7rem;
+  color: rgba(30, 136, 229, 0.6);
+}
+
+.programa-metodologia {
+  margin-bottom: 2rem;
+}
+
+.programa-metodologia p {
+  background-color: rgba(30, 136, 229, 0.03);
+  padding: 1.2rem;
+  border-radius: 10px;
+  position: relative;
+  border-left: 4px solid var(--primary-color);
+  font-style: italic;
+}
+
+.programa-inscricao {
+  background: linear-gradient(to right, rgba(30, 136, 229, 0.08), rgba(13, 71, 161, 0.05));
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 2.5rem;
+  border: 1px dashed rgba(30, 136, 229, 0.3);
+}
+
+.programa-inscricao h3 {
+  color: var(--primary-dark);
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+.programa-inscricao p {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .programa-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .programa-badge {
+    align-self: flex-start;
+  }
+  
+  .programa-info-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Make the curso 5 description look more special with a subtle background */
+.course-details[data-course-id="5"] .course-info section:first-child {
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 1), rgba(30, 136, 229, 0.03));
+  border: 1px solid rgba(30, 136, 229, 0.1);
+}
+
+/* Add special styling to the entire curso 5 page */
+.course-details[data-course-id="5"] {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(30, 136, 229, 0.02));
+}
+
+/* Enhance the subtitle styling for course 5 */
+.course-details[data-course-id="5"] .description-subtitle {
+  color: var(--primary-dark);
+  border-left: 4px solid var(--primary-color);
 }
