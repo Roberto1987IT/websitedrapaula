@@ -1,15 +1,15 @@
 import React from "react";
-import { Heart, ShoppingCart, Trash2 } from "lucide-react";
+import {Heart, ShoppingCart, Trash2} from "lucide-react";
 import "../../styles/wishlist.css";
-import { useWishlist } from "../../context/WishlistContext"; // Import WishlistContext
-import { books } from "../../bookData"; // Import the books data
+import {useWishlist} from "../../context/WishlistContext"; // Import WishlistContext
+import {useTranslation} from "react-i18next";
+import {books} from "../../bookData"; // Import the books data
 
 const Wishlist = () => {
-    const { wishlist, removeFromWishlist } = useWishlist(); // Use the global wishlist state
-
+    const {t} = useTranslation();
+    const {wishlist, removeFromWishlist} = useWishlist(); // Use the global wishlist state
     // Get the details of the books in the wishlist
     const wishlistBooks = books.filter((book) => wishlist.includes(book.id));
-
     // Placeholder function for adding to cart
     const addToCart = (id: number) => {
         console.log(`Item ${id} added to cart`);
@@ -20,20 +20,30 @@ const Wishlist = () => {
         <div className="wishlist-page fade-in">
             <div className="wishlist-container">
                 <div className="wishlist-header">
-                    <h1><Heart className="wishlist-icon" /> Minha Lista de Desejos</h1>
-                    <p className="wishlist-count">{wishlistBooks.length} itens</p>
+                    <h1><Heart className="wishlist-icon"/> {t("favorits.title")} </h1>
+                    <p className="wishlist-count">
+                        {wishlistBooks.length}{" "}
+
+                        {wishlistBooks.length === "1" ? t("favorits.item") : t("favorits.item_plural")}
+                    </p>
+
+
                 </div>
 
                 {wishlistBooks.length === 0 ? (
                     <div className="wishlist-empty">
-                        <Heart className="empty-icon" />
-                        <h2>Sua lista de desejos está vazia</h2>
-                        <p>Adicione itens à sua lista de desejos para encontrá-los aqui mais tarde.</p>
-                        <button 
+                        <Heart className="empty-icon"/>
+                        <h2>
+                            {t("favorits.empty_list")}
+                        </h2>
+                        <p>
+                            {t("favorits.p")}
+                        </p>
+                        <button
                             className="browse-button"
                             onClick={() => window.location.href = "/"}
                         >
-                            Explorar Produtos
+                            {t("favorits.button")}
                         </button>
                     </div>
                 ) : (
@@ -53,10 +63,10 @@ const Wishlist = () => {
                                 </div>
                                 <div className="wishlist-item-actions">
                                     <button onClick={() => addToCart(book.id)} className="add-to-cart-button">
-                                        <ShoppingCart /> Adicionar ao Carrinho
+                                        <ShoppingCart/> Adicionar ao Carrinho
                                     </button>
                                     <button onClick={() => removeFromWishlist(book.id)} className="remove-button">
-                                        <Trash2 /> Remover
+                                        <Trash2/> Remover
                                     </button>
                                 </div>
                             </div>

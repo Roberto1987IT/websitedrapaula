@@ -847,6 +847,14 @@
       "accept_terms_cond": "I accept the ",
       "is_member": "Already have an account?"
     }
+  },
+  "favorits": {
+    "title": "My Wishlist",
+    "empty_list": "Your wishlist is empty",
+    "p": "Add items to your wishlist to find them here later.",
+    "button": "Search Products",
+    "item": "Item",
+    "item_plural": "Items"
   }
 }
 

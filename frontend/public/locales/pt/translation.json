@@ -826,7 +826,6 @@
         "title": "Contacto",
         "p": "Para qualquer questão relacionada com estes Termos e Condições, por favor contacte-nos através dos meios disponibilizados no nosso website."
       }
-
     }
   },
   "account": {
@@ -849,6 +848,15 @@
       "accept_terms_cond": "Eu aceito os ",
       "is_member": "Já possui uma conta?"
     }
+  },
+  "favorits": {
+    "title": "Minha Lista de Desejos",
+    "empty_list": "Sua lista de desejos está vazia",
+    "p": "Adicione itens à sua lista de desejos para encontrá-los aqui mais tarde.",
+    "button": "Explorar Produtos",
+    "item_plur": "Itens",
+    "item": "Item",
+    "item_plural": "Itens"
   }
 }
 
