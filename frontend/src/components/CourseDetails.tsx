@@ -501,7 +501,7 @@ const CourseDetails = () => {
                   </button>
                 </>
               ) : (
-                <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" className="inscrever-button">
+                <a href="https://imersao.inclusaoeficiente.com.br/interessados-pos-is" target="_blank" rel="noopener noreferrer" className="inscrever-button">
                   Inscrever Agora
                 </a>
               )}
