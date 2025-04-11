@@ -501,9 +501,9 @@ const CourseDetails = () => {
                   </button>
                 </>
               ) : (
-                <div className="special-program-notice">
-                  <p>Para receber informações sobre inscrições neste programa, entre em contato por email.</p>
-                </div>
+                <a href="https://imersao.inclusaoeficiente.com.br/interessados-pos-is" target="_blank" rel="noopener noreferrer" className="inscrever-button">
+                  Inscrever Agora
+                </a>
               )}
               
               <div className="disclaimer-text">
