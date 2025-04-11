@@ -1,82 +1,57 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { ChevronDown, ChevronUp, Check, Heart, ShoppingCart, X } from "lucide-react";
+import { useParams, useNavigate } from "react-router-dom"; // Import useNavigate
+import { Button } from "@/components/ui/button";  // Adjusted path
+import { ChevronDown, ChevronUp, Check } from "lucide-react";
 import { courses } from "../courseData";
-import { useCart } from "../context/CartContext";
-import { useWishlist } from "../context/WishlistContext";
-
 import "../styles/pages/courseDetails.css";
-
-
 
 const CourseDetails = () => {
   const { id } = useParams<{ id: string | undefined }>();
-  const navigate = useNavigate();
-  const { addToCart } = useCart();
-  const { isInWishlist, addToWishlist, removeFromWishlist } = useWishlist();
+  const navigate = useNavigate(); // Initialize navigate
   const course = courses.find((c) => c.id === Number(id));
+  const [isInWishlist, setIsInWishlist] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
-  
-  // Add notification state
-  const [showNotification, setShowNotification] = useState(false);
-  const [notificationType, setNotificationType] = useState<'success' | 'error'>('success');
-  const [notificationMessage, setNotificationMessage] = useState("");
-  
-  // Check if the course is in the wishlist using the type-aware isInWishlist function
-  const courseInWishlist = isInWishlist(Number(id), 'course');
 
   useEffect(() => {
+    // Check if course is in wishlist (from localStorage)
+    const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
+    setIsInWishlist(wishlist.includes(Number(id)));
+    
     // Scroll to top on page load
     window.scrollTo(0, 0);
   }, [id]);
 
   useEffect(() => {
-    // Hide notification after 3 seconds
-    let timer: number;
-    if (showNotification) {
-      timer = window.setTimeout(() => {
-        setShowNotification(false);
-      }, 3000);
-    }
-    return () => clearTimeout(timer);
-  }, [showNotification]);
+    console.log("Current login state:", localStorage.getItem("isLoggedIn"));
+  }, []);
 
   const toggleWishlist = () => {
-    // Check if the user is logged in
-    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-
-    if (!isLoggedIn) {
-      // Redirect to login page with return URL
-      navigate("/login", { state: { from: window.location.pathname } });
-      return; // Exit the function to prevent further execution
-    }
-
-    // Use the wishlist context to add/remove the course with 'course' type
-    if (courseInWishlist) {
-      removeFromWishlist(Number(id), 'course');
-      showToast("Curso removido dos favoritos", "success");
+    const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
+    
+    if (isInWishlist) {
+      const newWishlist = wishlist.filter((itemId: number) => itemId !== Number(id));
+      localStorage.setItem("wishlist", JSON.stringify(newWishlist));
     } else {
-      addToWishlist(Number(id), 'course');
-      showToast("Curso adicionado aos favoritos", "success");
+      wishlist.push(Number(id));
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
     }
+    
+    setIsInWishlist(!isInWishlist);
   };
 
   const toggleDescription = () => {
     setIsDescriptionExpanded(!isDescriptionExpanded);
   };
 
-  // Function to show toast notification
-  const showToast = (message: string, type: 'success' | 'error' = 'success') => {
-    setNotificationMessage(message);
-    setNotificationType(type);
-    setShowNotification(true);
-  };
-
   const handleAddToCart = () => {
     // Check if the user is logged in
     const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+    console.log("Login state:", {
+      rawValue: localStorage.getItem("isLoggedIn"),
+      interpretedAs: isLoggedIn,
+    });
 
     if (!isLoggedIn) {
       // Redirect to login page with return URL
@@ -84,11 +59,14 @@ const CourseDetails = () => {
       return; // Exit the function to prevent further execution
     }
 
-    // Add to cart using the context
-    if (course) {
-      addToCart(course, 'course');
-      // Show toast notification instead of alert
-      showToast("Curso adicionado ao carrinho!", "success");
+    // Add to cart logic (only if logged in)
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    if (!cart.includes(Number(id))) {
+      cart.push(Number(id));
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("Curso adicionado ao carrinho!");
+    } else {
+      alert("O curso já está no carrinho.");
     }
   };
 
@@ -103,27 +81,6 @@ const CourseDetails = () => {
 
   return (
     <div className="course-details" data-course-id={id}>
-      {/* Toast Notification */}
-      {showNotification && (
-        <div className={`toast-notification ${notificationType}`}>
-          <div className="toast-content">
-            {notificationType === 'success' ? (
-              <Check size={18} className="toast-icon" />
-            ) : (
-              <X size={18} className="toast-icon" />
-            )}
-            <span>{notificationMessage}</span>
-          </div>
-          <button 
-            className="toast-close" 
-            onClick={() => setShowNotification(false)}
-            aria-label="Fechar notificação"
-          >
-            <X size={14} />
-          </button>
-        </div>
-      )}
-
       <h1>{course.title}</h1>
       
       <div className="course-image">
@@ -134,15 +91,6 @@ const CourseDetails = () => {
           onLoad={() => setImageLoaded(true)}
           style={{ display: imageLoaded ? 'block' : 'none' }}
         />
-        
-        {/* Partner logos for course ID 5 */}
-        {Number(id) === 5 && (
-          <div className="partner-logos">
-            <div className="partner-logos-container">
-              
-            </div>
-          </div>
-        )}
       </div>
       
       <div className="course-content">
@@ -344,96 +292,7 @@ const CourseDetails = () => {
                    !course.title?.includes("Raciocinio clinico e intervencao") && 
                    !course.title?.includes("Integracao Sensorial: Avaliacao") && 
                    !course.title?.includes("Avaliação e Raciocínio clínico na primeira Infância") && (
-                    <>
-                      {course.title?.includes("Programa Internacional") ? (
-                        <div className="programa-internacional">
-                          <div className="programa-header">
-                            <h3 className="description-subtitle programa-title">Sobre o Programa</h3>
-                            <div className="programa-badge">360 horas | 18 meses</div>
-                          </div>
-                          
-                          <div className="programa-info-grid">
-                            <div className="programa-info-item">
-                              <h4 className="programa-info-title">Formadores</h4>
-                              <p>Professores de Portugal, Brasil e Estados Unidos da América</p>
-                            </div>
-                            
-                            <div className="programa-info-item">
-                              <h4 className="programa-info-title">Área de Intervenção</h4>
-                              <p>Integração Sensorial</p>
-                            </div>
-                            
-                            <div className="programa-info-item">
-                              <h4 className="programa-info-title">Destinatários</h4>
-                              <p>Terapeutas ocupacionais</p>
-                            </div>
-                            
-                            <div className="programa-info-item">
-                              <h4 className="programa-info-title">Metodologia</h4>
-                              <p>Aulas teóricas on-line e aulas práticas presenciais</p>
-                            </div>
-                          </div>
-                          
-                          <div className="programa-section">
-                            <h3 className="description-subtitle">Objectivos Gerais</h3>
-                            <div className="programa-objetivos">
-                              <ul>
-                                <li>Compreender os fundamentos da Teoria de Integração Sensorial (IS) de Jean Ayres</li>
-                                <li>Identificar os sistemas sensoriais envolvidos na integração sensorial e a sua influência no desenvolvimento humano</li>
-                                <li>Reconhecer a neurofisiologia subjacente à reatividade sensorial, processamento e praxis</li>
-                                <li>Relacionar disfunções do processamento sensorial com dificuldades no desempenho ocupacional</li>
-                                <li>Avaliar e interpretar dificuldades sensoriais utilizando diversas metodologias e instrumentos de avaliação</li>
-                                <li>Interpretar a informação do processo avaliativo e utilizar o raciocínio clínico com base na taxonomia atual</li>
-                                <li>Elaborar um plano de intervenção dirigido às dificuldades de desempenho ocupacional</li>
-                                <li>Implementar a intervenção utilizando a abordagem de integração sensorial</li>
-                                <li>Discutir evidências científicas sobre a eficácia da Integração Sensorial como abordagem terapêutica</li>
-                              </ul>
-                            </div>
-                          </div>
-                          
-                          <div className="programa-section">
-                            <h3 className="description-subtitle">Conteúdos Programáticos</h3>
-                            <div className="programa-conteudos">
-                              <ul>
-                                <li>Fundamentos teóricos e neurocientíficos da Integração Sensorial</li>
-                                <li>Sistemas sensoriais e seu impacto no desenvolvimento</li>
-                                <li>Neurofisiologia da reatividade sensorial e processamento</li>
-                                <li className="with-subitems">
-                                  Avaliação em Integração Sensorial:
-                                  <ul className="subitems">
-                                    <li>Metodologias de avaliação</li>
-                                    <li>Instrumentos padronizados</li>
-                                    <li>Interpretação de resultados</li>
-                                  </ul>
-                                </li>
-                                <li>Raciocínio clínico e diagnóstico terapêutico</li>
-                                <li className="with-subitems">
-                                  Planeamento da intervenção:
-                                  <ul className="subitems">
-                                    <li>Definição de objetivos</li>
-                                    <li>Estratégias baseadas na Integração Sensorial</li>
-                                  </ul>
-                                </li>
-                                <li>Implementação da intervenção segundo a medida de fidelidade na abordagem de Ayres</li>
-                                <li>Evidência científica na prática de Integração Sensorial</li>
-                              </ul>
-                            </div>
-                          </div>
-                          
-                          <div className="programa-metodologia">
-                            <h3 className="description-subtitle">Metodologia</h3>
-                            <p>O programa combina sessões teóricas online com sessões práticas presenciais em várias cidades do Brasil (localizações a confirmar). A formação será ministrada por especialistas internacionais de Portugal, Brasil e Estados Unidos da América.</p>
-                          </div>
-                          
-                          <div className="programa-inscricao">
-                            <h3>Inscrições Limitadas</h3>
-                            <p>As inscrições para este programa são limitadas para garantir a qualidade da formação. Para informações sobre as próximas turmas e processo de inscrição, entre em contato por email.</p>
-                          </div>
-                        </div>
-                      ) : (
-                        <p>{course.description}</p>
-                      )}
-                    </>
+                    <p>{course.description}</p>
                   )}
                 </div>
               </div>
@@ -476,53 +335,27 @@ const CourseDetails = () => {
         
         <div className="purchase-section">
           <div className="purchase-card">
-            <div className="price-wishlist-container">
-              <div className="price">
-                {Number(id) === 5 
-                  ? "Programa Completo" 
-                  : course.price}
-              </div>
-              {Number(id) !== 5 && (
-                <button 
-                  className="wishlist-button"
-                  onClick={toggleWishlist}
-                  aria-label={courseInWishlist ? "Remover dos favoritos" : "Adicionar aos favoritos"}
-                >
-                  <Heart 
-                    size={24} 
-                    fill={courseInWishlist ? "#ff6b6b" : "none"} 
-                    color={courseInWishlist ? "#ff6b6b" : "#757575"} 
-                  />
-                </button>
-              )}
-            </div>
+            <div className="price">{course.price}</div>
             <div className="button-container">
-              {Number(id) !== 5 ? (
-                <>
-                  <button className="buy-button">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M3 6H21L19 16H5L3 6Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M8 21C8.55228 21 9 20.5523 9 20C9 19.4477 8.55228 19 8 19C7.44772 19 7 19.4477 7 20C7 20.5523 7.44772 21 8 21Z" fill="currentColor"/>
-                      <path d="M16 21C16.5523 21 17 20.5523 17 20C17 19.4477 16.5523 19 16 19C15.4477 19 15 19.4477 15 20C15 20.5523 15.4477 21 16 21Z" fill="currentColor"/>
-                    </svg>
-                    Comprar Agora
-                  </button>
-                  <button className="cart-button" onClick={handleAddToCart}>
-                    <ShoppingCart size={20} />
-                    Adicionar ao Carrinho
-                  </button>
-                </>
-              ) : (
-                <a href="https://imersao.inclusaoeficiente.com.br/interessados-pos-is" target="_blank" rel="noopener noreferrer" className="inscrever-button">
-                  Inscrever Agora
-                </a>
-              )}
+              <button className="buy-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 6H21L19 16H5L3 6Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M8 21C8.55228 21 9 20.5523 9 20C9 19.4477 8.55228 19 8 19C7.44772 19 7 19.4477 7 20C7 20.5523 7.44772 21 8 21Z" fill="currentColor"/>
+                  <path d="M16 21C16.5523 21 17 20.5523 17 20C17 19.4477 16.5523 19 16 19C15.4477 19 15 19.4477 15 20C15 20.5523 15.4477 21 16 21Z" fill="currentColor"/>
+                </svg>
+                Comprar Agora
+              </button>
+              <button className="cart-button" onClick={handleAddToCart}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 20C9 21.1 8.1 22 7 22C5.9 22 5 21.1 5 20C5 18.9 5.9 18 7 18C8.1 18 9 18.9 9 20Z" stroke="currentColor" strokeWidth="1.5"/>
+                  <path d="M20 20C20 21.1 19.1 22 18 22C16.9 22 16 21.1 16 20C16 18.9 16.9 18 18 18C19.1 18 20 18.9 20 20Z" stroke="currentColor" strokeWidth="1.5"/>
+                  <path d="M3 3H5.5L7.5 14H18L21 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                Adicionar ao Carrinho
+              </button>
               
               <div className="disclaimer-text">
-                {Number(id) === 5 
-                  ? "Obs: Inscreva-se para garantir sua vaga no próximo grupo. Vagas limitadas para assegurar a qualidade da formação."
-                  : "Obs.: O valor final pode sofrer variações devido à taxa de câmbio e/ou impostos locais, conforme a política do meio de pagamento escolhido."
-                }
+                Obs.: O valor final pode sofrer variações devido à taxa de câmbio e/ou impostos locais, conforme a política do meio de pagamento escolhido.
               </div>
             </div>
             <div className="contact-info">
@@ -537,7 +370,6 @@ const CourseDetails = () => {
                 course.learningOutcomes.map((outcome, index) => (
                   <li key={index}>
                     <Check className="h-4 w-4 inline-block mr-2 text-green-600" />
-
                     {outcome}
                   </li>
                 ))
@@ -554,5 +386,8 @@ const CourseDetails = () => {
     </div>
   );
 };
+
+// When login is successful:
+localStorage.setItem("isLoggedIn", "true"); // Use string "true"
 
 export default CourseDetails;

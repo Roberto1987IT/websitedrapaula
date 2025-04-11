@@ -16,6 +16,8 @@
   "banner_title_h1": "Intervenção terapêutica na prática",
   "banner_title_p": "Formações e recursos para terapeutas, educadores e pais que querem fazer a diferença.",
   "more_info": "Saber mais",
+  "more_read": "Ler mais",
+  "less_read": "Ler menos",
   "courses_description": "Os favoritos de Terapeutas e Educadores para transformar o desenvolvimento infantil na prática",
   "courses": {
     "1": {
@@ -30,7 +32,47 @@
         "Desenvolvimento de Competências de Brincar e da Ludicidade",
         "Métodos de Avaliação",
         "Estratégias de Intervenção"
-      ]
+      ],
+      "description_course": "Descrição do Curso",
+      "about_course": "Sobre o Curso",
+      "about_course_p": "Formação 4 dias presenciais com a Terapeuta Ocupacional Paula Serrano.",
+      "equipaments": "Enquadramento",
+      "equipaments_p1": "Os terapeutas ocupacionais usam o brincar na prática tanto para avaliação quanto para intervenção, mas o uso específico do brincar na terapia ocupacional pediátrica varia. Na literatura da terapia ocupacional sobre o brincar são referidas preocupações relativamente à forma como os terapeutas ocupacionais abordam o papel do brincar na sua intervenção.",
+      "equipaments_p2": "Vários artigos sugerem restrições e falta de ênfase à abordagem dirigida ao brincar por terapeutas ocupacionais pediátricos. Essas restrições incluem atitudes de desvalorização em relação ao brincar, enquanto se dá maior ênfase no desenvolvimento de competências não relacionadas ao brincar (ex. competências motoras, sociais), falha na avaliação do brincar e dificuldade na definição de um plano de intervenção dirigido à ocupação do brincar.",
+      "equipaments_p3": "No entanto a avaliação do brincar e a intervenção dirigida à ocupação do brincar é vital para o desenvolvimento infantil, para a saúde e respeito pela infância.",
+      "course_content_title1": "Conteúdos Programáticos",
+      "course_content_title1_li": {
+        "1": "Definindo o brincar",
+        "2": "Revisão das diferentes teorias do brincar",
+        "3": "A evolução do brincar na terapia ocupacional",
+        "4": "Quadros de referência do brincar na terapia ocupacional",
+        "5": "A sequência de desenvolvimento do brincar ao longo da infância"
+      },
+      "course_content_title2": "Avaliação do brincar",
+      "course_content_title2_li": {
+        "1": "Entrevista",
+        "2": "Questionários: The Play History (Takata)",
+        "3": "Organização da observação em contexto natural",
+        "4": "Instrumentos: Revised Knox Preschool Play scale (Knox); Test of Playfulness (TOP) (Bundy)",
+        "5": "Definição dos objetivos terapêuticos"
+      },
+      "course_content_title3": "Promover o brincar",
+      "course_content_title3_li": {
+        "1": "O papel do Terapeuta Ocupacional",
+        "2": "A intervenção terapêutica",
+        "3": "Intervenção no contexto da criança"
+      },
+      "metodology_h": "Metodologia",
+      "metodology_p": "Exposição teórica discussão de grupos e exercícios práticos",
+      "teacher": "Professor(a)",
+      "localization": {
+        "title": "Localização",
+        "description": "Brasil / Rio de Janeiro"
+      },
+      "a_date": {
+        "title": "Data",
+        "description": "17-20 de Maio, 2025"
+      }
     },
     "2": {
       "title": "Raciocínio Clínico e Intervenção em Integração Sensorial nos Primeiros Anos de Vida",
@@ -44,7 +86,63 @@
         "Aplicar conhecimentos de neurociências na prática de integração sensorial",
         "Utilizar instrumentos como SPM2 e Perfil Sensorial de Dunn",
         "Desenvolver raciocínio clínico na análise de dados de avaliação"
-      ]
+      ],
+      "description_course": "Descrição do Curso",
+      "title_1": {
+        "title": "Sobre o Curso",
+        "p": "Duração - 24 horas com a Terapeuta Ocupacional Paula Serrano."
+      },
+      "title_2": {
+        "title": "Área de Intervenção",
+        "p": "Integração Sensorial."
+      },
+      "title_3": {
+        "title": "Destinatários",
+        "p": "Terapeutas ocupacionais com certificação em Integração Sensorial"
+      },
+      "title_4": {
+        "title": "Objetivos Gerais",
+        "list": {
+          "1": "Refletir sobre o desenvolvimento nos primeiros anos de vida e os fatores que o condicionam",
+          "2": "Analisar o contributo das teorias de desenvolvimento e das neurociências para a nossa compreensão do desenvolvimento infantil",
+          "3": "Analisar a evidencia científica atual sobre os sistemas sensoriais que suportam a abordagem da integração sensorial de Ayres",
+          "4": "Explorar a importância da avaliação de integração sensorial, as metodologias e os diversos instrumentos disponíveis",
+          "5": "Praticar o raciocínio clínico interpretando os dados da avaliação",
+          "6": "Elaborar objetivos terapêuticos com base na avaliação",
+          "7": "Planear a intervenção",
+          "8": "Analisar a intervenção terapêutica usando a abordagem de integração sensorial de Ayres"
+        }
+      },
+      "title_5": {
+        "title": "Conteúdos Programáticos",
+        "list": {
+          "1": "O desenvolvimento infantil e os fatores de suporte",
+          "2": "A integração sensorial de Ayres e a evidencia científica do impacto dos sistemas sensoriais no desenvolvimento",
+          "3": "A autorregulação e a disfunção sensorial",
+          "4": "Praxis e o conceito de Affordance",
+          "5": "Desenvolvimento da praxis e os sinais precoces de dispraxia",
+          "6": "Classificação das perturbações de processamento sensorial na primeira infância",
+          "7": "Instrumentos de avaliação da disfunção de integração sensorial",
+          "8": "Analise de uma escala de desenvolvimento sob a perspetiva da integração sensorial",
+          "9": "A organização da observação não estruturada e estruturada do processamento sensorial",
+          "10": "Análise dos dados da avaliação e Raciocínio clínico",
+          "11": "Planeamento da intervenção: Objetivos, organização da sessão",
+          "12": "Fidelidade à integração sensorial de Ayres na prática clínica"
+        }
+      },
+      "title_6": {
+        "title": "Metodologia",
+        "p": "As sessões de trabalho serão presenciais, teóricas e práticas com analise de vídeos de casos clínicos."
+      },
+      "teacher": "Professor(a)",
+      "localization": {
+        "title": "Localização",
+        "description": "Portugal/Faro"
+      },
+      "a_date": {
+        "title": "Data",
+        "description": "10-12 de Junho, 2025"
+      }
     },
     "3": {
       "title": "Integração Sensorial: Avaliação e Raciocínio Clínico",
@@ -58,7 +156,59 @@
         "Aplicar metodologias de integração sensorial em avaliações",
         "Interpretar instrumentos como SPM, SPMp e Perfil Sensorial de Dunn",
         "Desenvolver raciocínio clínico baseado em dados"
-      ]
+      ],
+      "description_course": "Descrição do Curso",
+      "title_1": {
+        "title": "Sobre o Curso",
+        "p": "Formação de 24 horas com Paula Serrano – Mestre em Terapia Ocupacional- área de especialização Integração Sensorial."
+      },
+      "title_2": {
+        "title": "Área de Intervenção",
+        "p": "Integração Sensorial."
+      },
+      "title_3": {
+        "title": "Destinatários",
+        "p": "Terapeutas ocupacionais com formação pós graduada em Integração Sensorial"
+      },
+      "title_4": {
+        "title": "Objetivos Gerais",
+        "list": {
+          "1": "Analisar a disfunção de integração sensorial e a relação com os motivos de referenciação",
+          "2": "Explorar a importância da avaliação de integração sensorial, as metodologias e os diversos instrumentos disponíveis",
+          "3": "Praticar o raciocínio clínico interpretando os dados da avaliação",
+          "4": "Definir objetivos de desempenho ocupacional e objetivos de integração sensorial",
+          "5": "Analisar vários formatos de relatório que documentem as dificuldades de integração sensorial e a relação com o desempenho ocupacional"
+        }
+      },
+      "title_5": {
+        "title": "Conteúdos Programáticos",
+        "list": {
+          "1": "Disfunção da Integração Sensorial",
+          "2": "Motivos de referenciação que levam à avaliação em integração sensorial",
+          "3": "O processo de avaliação em integração sensorial",
+          "4": "Metodologias de avaliação",
+          "5": "Aplicação, e análise da História Sensorial",
+          "6": "As observações não estruturadas e as observações estruturadas",
+          "7": "Análise e interpretação de instrumentos de avaliação – SPM, SPMp, perfil sensorial Dunn",
+          "8": "Interpretação de uma escala de desenvolvimento à luz da integração sensorial",
+          "9": "Raciocínio clínico",
+          "10": "Definição de objetivos de desempenho ocupacional e objetivos de integração sensorial",
+          "11": "A elaboração do relatório"
+        }
+      },
+      "title_6": {
+        "title": "Metodologia",
+        "p": "As sessões de trabalho serão teóricas e práticas com análise de vídeos."
+      },
+      "teacher": "Professor(a)",
+      "localization": {
+        "title": "Localização",
+        "description": "A definir"
+      },
+      "a_date": {
+        "title": "Data",
+        "description": "Brevemente.."
+      }
     },
     "4": {
       "title": "Avaliação e Raciocínio Clínico na Primeira Infância – Foco no brincar e integração sensorial",
@@ -72,7 +222,60 @@
         "Identificar os elementos da ludicidade na primeira infância",
         "Aplicar ferramentas de avaliação do brincar e integração sensorial",
         "Classificar perturbações do processamento sensorial na primeira infância"
-      ]
+      ],
+      "description_course": "Descrição do Curso",
+      "title_1": {
+        "title": "Sobre o Curso",
+        "p": "Duração – 21 horas com a Terapeuta Ocupacional Paula Serrano."
+      },
+      "title_2": {
+        "title": "Área de Intervenção",
+        "p": "Integração Sensorial e Brincar"
+      },
+      "title_3": {
+        "title": "Destinatários",
+        "p": "Terapeutas ocupacionais com formação pós graduada em Integração Sensorial"
+      },
+      "title_4": {
+        "title": "Objetivos Gerais",
+        "l1": {
+          "1": "Analisar a investigação e as etapas do brincar com o corpo, com os objetos e social/emocional na primeira infância",
+          "2": "Analisar os elementos da ludicidade (playfulness) na primeira Infância",
+          "3": "Analisar a importância da integração sensorial e a classificação das perturbações regulatórias do processamento sensorial na primeira infância",
+          "4": "Explorar a importância da avaliação de integração sensorial, e do brincar, as metodologias e os diversos instrumentos disponíveis",
+          "5": "Praticar o raciocínio clínico interpretando os dados da avaliação",
+          "6": "Elaborar objetivos terapêuticos com base na avaliação"
+        }
+      },
+      "title_5": {
+        "title": "Conteúdos Programáticos",
+        "l1": {
+          "1": "O Brincar na Terapia Ocupacional",
+          "2": "O desenvolvimento do brincar dos 0 aos 3 anos: as etapas e os sinais de alarme do brincar com o corpo, com os objetos e simbólico",
+          "3": "O desenvolvimento do comportamento lúdico",
+          "4": "A avaliação do Brincar",
+          "5": "Instrumentos de avaliação do brincar",
+          "6": "A Integração Sensorial na primeira infância e a disfunção de integração sensorial",
+          "7": "Classificação das perturbações de processamento sensorial na primeira infância",
+          "8": "As Neurociências, o brincar e a integração sensorial",
+          "9": "Instrumentos de avaliação de integração sensorial dos 0 aos 3 anos",
+          "10": "Raciocínio clínico",
+          "11": "Avaliação, raciocínio clínico e o planeamento da intervenção"
+        }
+      },
+      "title_6": {
+        "title": "Metodologia",
+        "p": "As sessões de trabalho serão teóricas e praticas, com analise de vídeos de casos clínicos."
+      },
+      "teacher": "Professor(a)",
+      "localization": {
+        "title": "Localização",
+        "description": "A definir"
+      },
+      "a_date": {
+        "title": "Data",
+        "description": "Brevemente.."
+      }
     }
   },
   "tranings_mentorships_description_p": "Descubra como a mentoria pode transformar sua carreira.",
@@ -453,6 +656,29 @@
   "publications": "publicações",
   "of": "de",
   "teses": "Theses",
-  "no_publications_find": "Nenhuma publicação encontrada com os critérios selecionados."
+  "no_publications_find": "Nenhuma publicação encontrada com os critérios selecionados.",
+  "allert_msg": {
+    "add_course": "Adicionado ao carrinho!",
+    "course_already_in_cart": "O item já está no carrinho."
+  },
+  "months": {
+    "january": "Janeiro",
+    "february": "Fevereiro",
+    "march": "Março",
+    "april": "Abril",
+    "may": "Maio",
+    "june": "Junho",
+    "july": "Julho",
+    "august": "Agosto",
+    "september": "Setembro",
+    "october": "Outubro",
+    "november": "Novembro",
+    "december": "Dezembro"
+  },
+  "buy_button": "comprar agora",
+  "add_to_cart": "Adicionar ao carinho",
+  "obs": "Obs.: O valor final pode sofrer variações devido à taxa de câmbio e/ou impostos locais, conforme a política do meio de pagamento escolhido.",
+  "contact_by_mail": "Para esclarecimento de qualquer duvida, contate a Paula Serrano por email: ",
+  "learning_on_course": "O que você vai aprender"
 }
 

@@ -16,63 +16,266 @@
   "banner_title_h1": "Therapeutic intervention in practice",
   "banner_title_p": "Trainings and resources for therapists, educators, and parents who want to make a difference.",
   "more_info": "Learn more",
+  "more_read": "Read more",
+  "less_read": "Read less",
   "courses_description": "The favorites of Therapists and Educators to transform child development into practice",
   "courses": {
     "1": {
       "title": "Play and OT - Theory and Practice",
-      "description": "Play in Occupational Therapy – From theory to practice\n\nCourse\n4-day in-person training\n\nInstructor:\n Paula Serrano – Occupational Therapist\n\nOverview\nOccupational therapists use play in practice both for assessment and intervention, but the specific use of play in pediatric occupational therapy varies. ...",
+      "description": "Play in Occupational Therapy – From Theory to Practice\n\nCourse\n4-day in-person training\n\nInstructor:\nPaula Serrano – Occupational Therapist\n\nOverview: Occupational therapists use play in practice both for assessment and intervention, but the specific use of play...",
       "price": 515,
       "instructor": "Paula Serrano",
       "location": "Brazil / Rio de Janeiro",
       "date": "May 17-20, 2025",
       "learningOutcomes": [
-        "Play Theories and Reference Frameworks",
-        "Development of Play Skills and Playfulness",
-        "Evaluation Methods",
+        "Theories and Frames of Reference",
+        "Development of Play and Playfulness Skills",
+        "Assessment Methods",
         "Intervention Strategies"
-      ]
+      ],
+      "description_course": "Course Description",
+      "about_course": "About the Course",
+      "about_course_p": "4-day in-person training with Occupational Therapist Paula Serrano.",
+      "equipaments": "Overview",
+      "equipaments_p1": "Occupational therapists use play in practice both for assessment and intervention, but the specific use of play in pediatric occupational therapy varies. In the occupational therapy literature on play, there are concerns regarding how occupational therapists approach the role of play in their intervention.",
+      "equipaments_p2": "Various articles suggest limitations and a lack of emphasis on play-focused interventions by pediatric occupational therapists. These limitations include diminished attitudes toward play, with greater emphasis placed on competencies unrelated to play (e.g., motor, social skills), failure to assess play, and difficulty defining a play-focused intervention plan.",
+      "equipaments_p3": "However, assessing play and engaging in play-focused interventions are vital for child development, health, and honoring childhood.",
+      "course_content_title1": "Program Content",
+      "course_content_title1_li": {
+        "1": "Defining Play",
+        "2": "Reviewing Different Theories of Play",
+        "3": "The Evolution of Play in Occupational Therapy",
+        "4": "Frames of Reference for Play in Occupational Therapy",
+        "5": "The Developmental Sequence of Play Throughout Childhood"
+      },
+      "course_content_title2": "Play Assessment",
+      "course_content_title2_li": {
+        "1": "Interview",
+        "2": "Questionnaires: The Play History (Takata)",
+        "3": "Organizing Observation in a Natural Context",
+        "4": "Instruments: Revised Knox Preschool Play Scale (Knox); Test of Playfulness (TOP) (Bundy)",
+        "5": "Defining Therapeutic Goals"
+      },
+      "course_content_title3": "Promoting Play",
+      "course_content_title3_li": {
+        "1": "The Role of the Occupational Therapist",
+        "2": "Therapeutic Intervention",
+        "3": "Intervention in the Child's Context"
+      },
+      "metodology_h": "Methodology",
+      "metodology_p": "Theoretical lectures, group discussions, and practical exercises",
+      "teacher": "Teacher",
+      "localization": {
+        "title": "Location",
+        "description": "Brazil / Rio de Janeiro"
+      },
+      "a_date": {
+        "title": "Date",
+        "description": "May 17-20, 2025"
+      }
     },
     "2": {
       "title": "Clinical Reasoning and Sensory Integration Intervention in Early Childhood",
-      "description": "Clinical reasoning and sensory integration intervention in early childhood\n\nProgram duration: 24 hours\n\nInstructor:\nPaula Serrano – Occupational Therapist\n\nArea of Intervention:\nSensory Integration\n\nObjectives: Reflect on early development and its influencing factors ...",
+      "description": "Clinical reasoning and intervention in sensory integration in early childhood\n\nTraining Program: 24 hours\n\nInstructor:\nPaula Serrano – Occupational Therapist\n\nIntervention Area:\nSensory Integration\n\nGeneral Objectives: Reflect on development in the early years...",
       "price": 350,
       "instructor": "Paula Serrano",
       "location": "Portugal / Faro",
       "date": "June 10-12, 2025",
       "learningOutcomes": [
-        "Understand the factors influencing early childhood development",
+        "Understand factors influencing early childhood development",
         "Apply neuroscience knowledge in sensory integration practice",
-        "Use specific instruments like SPM2 and Dunn’s Sensory Profile",
-        "Develop clinical reasoning for assessment data analysis"
-      ]
+        "Use tools like SPM2 and Dunn's Sensory Profile",
+        "Develop clinical reasoning in assessment data analysis"
+      ],
+      "description_course": "Course Description",
+      "title_1": {
+        "title": "About the Course",
+        "p": "Duration – 24 hours with Occupational Therapist Paula Serrano."
+      },
+      "title_2": {
+        "title": "Intervention Area",
+        "p": "Sensory Integration."
+      },
+      "title_3": {
+        "title": "Target Audience",
+        "p": "Occupational therapists certified in Sensory Integration"
+      },
+      "title_4": {
+        "title": "General Objectives",
+        "list": {
+          "1": "Reflect on development in the early years and influencing factors",
+          "2": "Analyze contributions of developmental theories and neuroscience to understanding child development",
+          "3": "Analyze the current scientific evidence on sensory systems supporting Ayres Sensory Integration",
+          "4": "Explore the importance of sensory integration assessment, methodologies, and tools available",
+          "5": "Practice clinical reasoning by interpreting assessment data",
+          "6": "Develop therapeutic goals based on assessment",
+          "7": "Plan intervention",
+          "8": "Analyze therapeutic intervention using Ayres Sensory Integration approach"
+        }
+      },
+      "title_5": {
+        "title": "Program Content",
+        "list": {
+          "1": "Child development and supporting factors",
+          "2": "Ayres Sensory Integration and scientific evidence on the impact of sensory systems on development",
+          "3": "Self-regulation and sensory dysfunction",
+          "4": "Praxis and the concept of Affordance",
+          "5": "Development of praxis and early signs of dyspraxia",
+          "6": "Classification of sensory processing disorders in early childhood",
+          "7": "Tools for evaluating sensory integration dysfunction",
+          "8": "Analysis of a developmental scale within the perspective of sensory integration",
+          "9": "Organizing structured and unstructured sensory processing observations",
+          "10": "Assessment data analysis and Clinical Reasoning",
+          "11": "Intervention Planning: Goals, session organization",
+          "12": "Ayres Sensory Integration fidelity in clinical practice"
+        }
+      },
+      "title_6": {
+        "title": "Methodology",
+        "p": "Sessions will be in-person, theoretical, and practical with video analysis of clinical cases."
+      },
+      "teacher": "Teacher",
+      "localization": {
+        "title": "Location",
+        "description": "Portugal/Faro"
+      },
+      "a_date": {
+        "title": "Date",
+        "description": "June 10-12, 2025"
+      }
     },
     "3": {
       "title": "Sensory Integration: Assessment and Clinical Reasoning",
-      "description": "Sensory Integration: Assessment and Clinical Reasoning\n\nTraining program - 24 hours\n\nInstructor:\nPaula Serrano – Master in Occupational Therapy, specializing in Sensory Integration\n\nCourse Content: Analyze sensory integration dysfunction, explore assessment tools ...",
+      "description": "Sensory Integration: Assessment and Clinical Reasoning\n\nTraining program: 24 hours\n\nInstructor:\nPaula Serrano – Master in Occupational Therapy\n\nProgram Content: Sensory integration dysfunction, exploration of assessment tools...",
       "price": 350,
       "instructor": "Paula Serrano",
-      "location": "To be defined",
+      "location": "To be determined",
       "date": "Coming soon...",
       "learningOutcomes": [
         "Identify and analyze sensory integration dysfunctions",
-        "Apply sensory integration evaluation methodologies",
-        "Interpret instruments like SPM, SPMp, and Dunn’s Sensory Profile",
-        "Develop clinical reasoning from assessment data"
-      ]
+        "Apply sensory integration methodologies in assessments",
+        "Interpret instruments such as SPM, SPMp, and the Dunn Sensory Profile",
+        "Develop clinical reasoning based on data"
+      ],
+      "description_course": "Course Description",
+      "title_1": {
+        "title": "About the Course",
+        "p": "24-hour training with Paula Serrano – Master in Occupational Therapy, specializing in Sensory Integration."
+      },
+      "title_2": {
+        "title": "Intervention Area",
+        "p": "Sensory Integration."
+      },
+      "title_3": {
+        "title": "Audience",
+        "p": "Occupational therapists with postgraduate training in Sensory Integration"
+      },
+      "title_4": {
+        "title": "General Objectives",
+        "list": {
+          "1": "Analyze sensory integration dysfunction and its relationship with referral reasons",
+          "2": "Explore the importance of sensory integration assessment, methodologies, and the various available instruments",
+          "3": "Practice clinical reasoning by interpreting assessment data",
+          "4": "Set occupational performance goals and sensory integration objectives",
+          "5": "Analyze different report formats documenting sensory integration difficulties and their relationship to occupational performance"
+        }
+      },
+      "title_5": {
+        "title": "Program Content",
+        "list": {
+          "1": "Sensory Integration Dysfunction",
+          "2": "Referral reasons leading to a sensory integration assessment",
+          "3": "The sensory integration assessment process",
+          "4": "Assessment methodologies",
+          "5": "Application and analysis of Sensory History",
+          "6": "Structured and unstructured observations",
+          "7": "Analysis and interpretation of assessment tools – SPM, SPMp, Dunn Sensory Profile",
+          "8": "Interpreting developmental scales in light of sensory integration",
+          "9": "Clinical reasoning",
+          "10": "Setting occupational performance and sensory integration goals",
+          "11": "Report writing"
+        }
+      },
+      "title_6": {
+        "title": "Methodology",
+        "p": "The sessions will be both theoretical and practical with video analysis."
+      },
+      "teacher": "Teacher",
+      "localization": {
+        "title": "Location",
+        "description": "To be determined"
+      },
+      "a_date": {
+        "title": "Date",
+        "description": "Coming soon..."
+      }
     },
     "4": {
       "title": "Assessment and Clinical Reasoning in Early Childhood – Focus on Play and Sensory Integration",
-      "description": "Training on Assessment and Clinical Reasoning in Early Childhood – 21 hours\n\nInstructor:\nPaula Serrano – Occupational Therapist\n\nCourse Content: Explore play development (0-3 years), play assessment tools, sensory processing disorder classification ...",
+      "description": "Assessment and Clinical Reasoning in Early Childhood – Focus on Play and Sensory Integration\n\nDuration: 21 hours\n\nInstructor:\nPaula Serrano – Occupational Therapist\n\nProgram Content: Play development (0-3 years), assessment tools, and classification of sensory processing disorders...",
       "price": 350,
       "instructor": "Paula Serrano",
-      "location": "To be defined",
-      "date": "Coming soon...",
+      "location": "TBD",
+      "date": "Coming Soon...",
       "learningOutcomes": [
-        "Understand stages of play from 0-3 years",
+        "Understand the stages of play from 0 to 3 years",
         "Identify elements of playfulness in early childhood",
-        "Apply tools for play and sensory integration assessment",
+        "Apply tools to assess play and sensory integration",
         "Classify sensory processing disorders in early childhood"
-      ]
+      ],
+      "description_course": "Course Description",
+      "title_1": {
+        "title": "About the Course",
+        "p": "Duration – 21 hours with Occupational Therapist Paula Serrano."
+      },
+      "title_2": {
+        "title": "Intervention Area",
+        "p": "Sensory Integration and Play"
+      },
+      "title_3": {
+        "title": "Target Audience",
+        "p": "Occupational therapists with postgraduate training in Sensory Integration"
+      },
+      "title_4": {
+        "title": "General Objectives",
+        "l1": {
+          "1": "Analyze research and stages of play with the body, objects, and social/emotional in early childhood",
+          "2": "Analyze elements of playfulness in early childhood",
+          "3": "Analyze the importance of sensory integration and classify sensory processing disorders in early childhood",
+          "4": "Explore sensory integration and play assessment, methodologies, and tools available",
+          "5": "Practice clinical reasoning by interpreting assessment data",
+          "6": "Define therapeutic goals based on assessment"
+        }
+      },
+      "title_5": {
+        "title": "Program Content",
+        "l1": {
+          "1": "Play in Occupational Therapy",
+          "2": "Play development from 0 to 3 years: stages and warning signs",
+          "3": "Development of playful behavior",
+          "4": "Play assessment",
+          "5": "Tools for assessing play",
+          "6": "Sensory Integration in early childhood and sensory integration dysfunction",
+          "7": "Classification of sensory processing disorders in early childhood",
+          "8": "Neuroscience, play, and sensory integration",
+          "9": "Sensory integration assessment tools for ages 0 to 3",
+          "10": "Clinical reasoning",
+          "11": "Assessment, clinical reasoning, and intervention planning"
+        }
+      },
+      "title_6": {
+        "title": "Methodology",
+        "p": "Sessions will be theoretical and practical with video analysis of clinical cases."
+      },
+      "teacher": "Teacher",
+      "localization": {
+        "title": "Location",
+        "description": "To Be Determined"
+      },
+      "a_date": {
+        "title": "Date",
+        "description": "Coming Soon..."
+      }
     }
   },
   "tranings_mentorships_description_p": "Discover how mentorship can transform your career.",
@@ -452,5 +655,28 @@
   "publications": "Publications",
   "of": "of",
   "teses": "Theses",
-  "no_publications_find": "No publications found with the selected criteria."
+  "no_publications_find": "No publications found with the selected criteria.",
+  "allert_msg": {
+    "add_course": "Added to the cart!",
+    "course_already_in_cart": "The item is already in the cart."
+  },
+  "months": {
+    "january": "January",
+    "february": "February",
+    "march": "March",
+    "april": "April",
+    "may": "May",
+    "june": "June",
+    "july": "July",
+    "august": "August",
+    "september": "September",
+    "october": "October",
+    "november": "November",
+    "december": "December"
+  },
+  "buy_button": "Buy now",
+  "add_to_cart": "Add to cart",
+  "obs": "Note: The final price may vary due to exchange rates and/or local taxes, according to the policy of the selected payment method.",
+  "contact_by_mail": "For any clarification, contact Paula Serrano by email: ",
+  "learning_on_course": "What you will learn"
 }
