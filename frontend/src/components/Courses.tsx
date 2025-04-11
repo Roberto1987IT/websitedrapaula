@@ -24,6 +24,9 @@ const Courses = ({ id }: { id: string }) => {
     };
   }, []);
 
+  // Determine if we have exactly 5 courses to apply special layout
+  const hasFiveCourses = courses.length === 5;
+
   return (
     // Add the id prop to the section element
     <section id={id} className="courses-section">
@@ -38,7 +41,7 @@ const Courses = ({ id }: { id: string }) => {
           </p>
         </header>
 
-        <div className={`courses-grid ${isCoursesVisible ? "fade-in" : ""}`}>
+        <div className={`courses-grid ${isCoursesVisible ? "fade-in" : ""} ${hasFiveCourses ? "five-courses" : ""}`}>
           {courses.map((course) => (
             <div
               key={course.id}
@@ -46,7 +49,11 @@ const Courses = ({ id }: { id: string }) => {
               onMouseEnter={() => setHoveredCourse(course.id)}
               onMouseLeave={() => setHoveredCourse(null)}
             >
-              <Link to={`/course/${course.id}`} className="course-link">
+              <Link 
+                to={`/course/${course.id}`} 
+                className="course-link"
+                aria-label={`Ver o curso: ${course.title}`}
+              >
                 <div
                   className={`course-card ${
                     hoveredCourse === course.id ? "hovered" : ""

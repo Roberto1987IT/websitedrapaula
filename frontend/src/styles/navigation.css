@@ -50,6 +50,12 @@
   display: flex;
   align-items: center;
   text-decoration: none;
+  
+}
+
+.navbar-logo a:focus {
+  outline: none;
+  
 }
 
 .logo-img {
