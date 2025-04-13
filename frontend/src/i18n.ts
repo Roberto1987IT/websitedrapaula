@@ -10,19 +10,20 @@ i18n
     .use(LanguageDetector)
     .use(initReactI18next) // Интеграция с React
     .init({
-        fallbackLng: "pt",
+        lng: "en",
+        fallbackLng: ["en", "pt"],
         supportedLngs: ["en", "pt"],
         debug: true,
         interpolation: {
             escapeValue: false, // Без экранизации для вставки HTML
         },
         backend: {
-            loadPath: "/locales/{{lng}}/translation.json", // Путь к JSON-файлам
+            loadPath: "/locales/{{lng}}/translation.json",
         },
         detection: {
             order: ["localStorage", "cookie", "navigator", "htmlTag"], // Определение языка
             caches: ["localStorage"], // Сохранение выбора языка
         },
     });
-
+console.log(i18n.language);
 export default i18n;

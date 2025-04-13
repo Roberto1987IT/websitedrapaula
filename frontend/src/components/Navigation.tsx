@@ -5,14 +5,15 @@ import axios from "axios";
 import { jwtDecode } from 'jwt-decode';
 import logo from "../assets/20.png";
 import "../styles/navigation.css";
-
+import { useTranslation } from 'react-i18next';
+import {languages} from "i18next";
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdowns, setActiveDropdowns] = useState({
     navDropdown: null as string | null,
     userDropdown: false,
   });
-  const [language, setLanguage] = useState<"PT" | "EN">("PT");
+  const { t, i18n } = useTranslation();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState("");
   const [tokenExpired, setTokenExpired] = useState(false);
@@ -274,7 +275,7 @@ const Navigation = () => {
 
   // Calculate background color opacity based on scroll position
   const navbarOpacity = Math.min(1, scrollPosition / 200); // Adjust the divisor to control the sensitivity
-
+  console.log("++++++hello world", i18n.languages)
   return (
     <nav className="navbar" style={{ backgroundColor: `rgba(255, 255, 255, ${0.95 - navbarOpacity * 0.3})` }}>
       <div className="navbar-container">
@@ -433,14 +434,14 @@ const Navigation = () => {
             />
 
             <div className="language-selector desktop">
-              {["PT", "EN"].map((lang) => (
+              {i18n.languages.map((lang) => (
                 <button
                   key={lang}
-                  className={language === lang ? "active" : ""}
-                  onClick={() => setLanguage(lang as "PT" | "EN")}
-                  aria-pressed={language === lang}
+                  className={i18n.language === lang ? "active" : ""}
+                  onClick={() => i18n.changeLanguage(lang as "PT" | "EN")}
+                  aria-pressed={i18n.language === lang}
                 >
-                  {lang} {lang === "PT" ? "🇵🇹" : "🇬🇧"}
+                  {lang} {lang === "pt" ? "🇵🇹" : "🇬🇧"}
                 </button>
               ))}
             </div>
@@ -552,17 +553,17 @@ const Navigation = () => {
           )}
 
           <div className="mobile-language-selector">
-            {["PT", "EN"].map((lang) => (
+            {i18n.languages.map((lang) => (
               <button
                 key={lang}
-                className={language === lang ? "active" : ""}
+                className={i18n.language === lang ? "active" : ""}
                 onClick={() => {
-                  setLanguage(lang as "PT" | "EN");
                   closeMobileMenu();
-                  console.log("hello world", lang)
+                  console.log("++++++hello world", i18n.languages)
+                  i18n.changeLanguage(lang);
                 }}
               >
-                {lang} {lang === "PT" ? "🇵🇹" : "🇬🇧"}
+                {lang} {lang === "pt" ? "🇵🇹" : "🇬🇧"}
               </button>
             ))}
           </div>
