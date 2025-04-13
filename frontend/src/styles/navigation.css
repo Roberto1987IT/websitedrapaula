@@ -678,7 +678,7 @@
   }
   
   .dropdown-container {
-    margin-right: 0.15rem; /* Even smaller margin */
+    margin-right: -0.55rem; /* Even smaller margin */
   }
   
   .language-selector.desktop {
@@ -732,7 +732,14 @@
 
 
 
+.dropdown-icon.rotate {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
 
+.dropdown-icon {
+  transition: transform 0.3s ease;
+}
 
 
 
