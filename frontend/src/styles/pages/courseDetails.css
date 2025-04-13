@@ -1334,3 +1334,9 @@ body {
   }
 
 }
+
+
+
+* {
+  outline: none !important;
+}
