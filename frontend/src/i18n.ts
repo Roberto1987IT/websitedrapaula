@@ -10,7 +10,7 @@ i18n
     .use(LanguageDetector)
     .use(initReactI18next) // Интеграция с React
     .init({
-        lng: "en",
+        lng: "EN",
         fallbackLng: ["en", "pt"],
         supportedLngs: ["en", "pt"],
         debug: true,
@@ -25,5 +25,4 @@ i18n
             caches: ["localStorage"], // Сохранение выбора языка
         },
     });
-console.log(i18n.language);
 export default i18n;
