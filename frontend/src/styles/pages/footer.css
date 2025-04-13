@@ -318,3 +318,10 @@
     font-size: 16px;
   }
 }
+
+
+/* Remove the default focus outline (green border) */
+.footer-link:focus,
+.social-icon:focus {
+  outline: none;
+}
