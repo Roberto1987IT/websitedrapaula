@@ -6,7 +6,6 @@ import { jwtDecode } from 'jwt-decode';
 import logo from "../assets/20.png";
 import "../styles/navigation.css";
 import { useTranslation } from 'react-i18next';
-import {languages} from "i18next";
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdowns, setActiveDropdowns] = useState({
@@ -26,30 +25,30 @@ const Navigation = () => {
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const navigationLinks = [
-    { label: "Home", href: "/nossos-valores" },
+    { label: t("home"), href: "/nossos-valores" },
     {
-      label: "Conheça a Paula Serrano",
+      label: t("meating_ps"),
       href: "#about",
     },
     {
-      label: "Formações",
+      label: t("tranings"),
       href: "#",
       subItems: [
-        { label: "Cursos", href: "#cursos" },
-        { label: "Mentorias", href: "#mentorias" },
-        { label: "Imersoes", href: "#imersoes" },
+        { label: t("tranings_courses"), href: "#cursos" },
+        { label: t("tranings_mentorships"), href: "#mentorias" },
+        { label: t("tranings_Immersions"), href: "#imersoes" },
       ],
     },
 
     {
-      label: "Recursos",
+      label: t("resources"),
       href: "#",
       subItems: [
-        { label: "Livros e ebooks", href: "#livros" },
-        { label: "Artigos e teses", href: "/artigos-teses" },
+        { label: t("resources_books"), href: "#livros" },
+        { label: t("resources_articles"), href: "/artigos-teses" },
       ],
     },
-    { label: "Contacto", href: "/contact" },
+    { label: t("contact"), href: "/contact" },
   ];
 
   // Function to check if the token is expired
@@ -275,7 +274,6 @@ const Navigation = () => {
 
   // Calculate background color opacity based on scroll position
   const navbarOpacity = Math.min(1, scrollPosition / 200); // Adjust the divisor to control the sensitivity
-  console.log("++++++hello world", i18n.languages)
   return (
     <nav className="navbar" style={{ backgroundColor: `rgba(255, 255, 255, ${0.95 - navbarOpacity * 0.3})` }}>
       <div className="navbar-container">
@@ -381,7 +379,7 @@ const Navigation = () => {
                       onClick={handleLogout}
                     >
                       <LogOut size={18} />
-                      Logout
+                      {t("logout")}
                     </button>
                   </>
                 ) : (
@@ -396,7 +394,7 @@ const Navigation = () => {
                       }}
                     >
                       <LogIn size={18} />
-                      Iniciar sessão
+                      {t("login")}
                     </button>
                     <button
                       className="user-dropdown-button"
@@ -408,7 +406,7 @@ const Navigation = () => {
                       }}
                     >
                       <UserPlus size={18} />
-                      Criar uma conta
+                      {t("registration")}
                     </button>
                   </>
                 )}
@@ -522,7 +520,7 @@ const Navigation = () => {
                 onClick={handleLogout}
               >
                 <LogOut size={18} />
-                Logout
+                {t("logout")}
               </button>
             </>
           ) : (
@@ -536,7 +534,7 @@ const Navigation = () => {
                 }}
               >
                 <LogIn size={18} />
-                Iniciar sessão
+                {t("login")}
               </button>
               <button
                 className="mobile-menu-button"
@@ -547,7 +545,7 @@ const Navigation = () => {
                 }}
               >
                 <UserPlus size={18} />
-                Criar uma conta
+                {t("registration")}
               </button>
             </>
           )}
@@ -559,7 +557,6 @@ const Navigation = () => {
                 className={i18n.language === lang ? "active" : ""}
                 onClick={() => {
                   closeMobileMenu();
-                  console.log("++++++hello world", i18n.languages)
                   i18n.changeLanguage(lang);
                 }}
               >
