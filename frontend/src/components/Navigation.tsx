@@ -167,11 +167,8 @@ const Navigation = () => {
           // If already on the home page, scroll to the section
           scrollToSection(sectionId);
         } else {
-          // If on another page, navigate to the home page and THEN scroll
-          navigate("/"); // Navigate to home first
-          setTimeout(() => {  //wait for page to load
-            scrollToSection(sectionId); //scroll to the section
-          }, 100);
+          // If on another page, navigate to the home page with the hash in the URL
+          navigate(`/#${sectionId}`);
         }
       } else {
         // For non-hash links, just navigate normally
@@ -179,7 +176,7 @@ const Navigation = () => {
         scrollToTop();  //Scroll to the top
       }
     }, 10); // Small delay to ensure the closing animation starts
-  };
+  }
 
   const handleLogout = () => {
     localStorage.removeItem("access");
