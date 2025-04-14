@@ -3,10 +3,8 @@ import { ShoppingCart, ArrowRight, X, Plus, Minus, BookOpen, GraduationCap } fro
 import { useCart } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import "../../styles/cart.css";
-import { useTranslation } from "react-i18next";
 
 const Cart = () => {
-    const { t } = useTranslation();
     const { cart, removeFromCart, updateQuantity, clearCart } = useCart();
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -93,8 +91,8 @@ const Cart = () => {
                 <div className="cart-header">
                     <div className="header-content">
                         <h1>
-                            <ShoppingCart className="cart-icon" />
-                            {t("cart.title")}
+                            <ShoppingCart className="cart-icon" /> 
+                            O teu Carrinho
                             <span className="item-count-badge">
                                 {cart.reduce((sum, item) => sum + item.quantity, 0)}
                             </span>
@@ -115,10 +113,10 @@ const Cart = () => {
                         <div className="empty-icon-container">
                             <BookOpen size={48} className="empty-icon" />
                         </div>
-                        <h2>{t("cart.empty_list")}</h2>
-                        <p>{t("cart.p")}</p>
-                        <Link to="/books" className="browse-button">
-                            {t("cart.button")}
+                        <h2>O teu carrinho está vazio</h2>
+                        <p>Adiciona produtos ao teu carrinho para continuar o processo de compra.</p>
+                        <Link to="/" className="browse-button">
+                            Explorar
                         </Link>
                     </div>
                 ) : (
@@ -232,10 +230,7 @@ const Cart = () => {
                                 className="checkout-button"
                                 onClick={() => console.log("Proceed to checkout")}
                             >
-
-                                {
-                                    t("cart.buy")
-                                }
+                                Finalizar Compra
                                 <ArrowRight size={18} />
                             </button>
                         </div>
@@ -243,7 +238,7 @@ const Cart = () => {
                 )}
 
                 <Link to="/" className="continue-shopping">
-                    {t("cart.bottom_button")}
+                    Continuar Comprando
                 </Link>
                 
             </div>
