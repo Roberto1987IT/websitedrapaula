@@ -2,7 +2,7 @@ import img1 from "./assets/courses/Brincar e terapia ocupacional - da teoria à 
 import img2 from "./assets/courses/raciocinio clinico e intervenção nos primeiros anos de vida.jpg";
 import img3 from "./assets/courses/Integração Sensorial - avaliação e raciocinio clinico.jpg";
 import img4 from "./assets/courses/avaliação e raciocinio clinico na primeira infancia - foco no brincar e integração sensorial.jpg";
-import img5 from "./assets/courses/LOGO PGIS Pos Graduação Integração Sensorial-05 (1).jpg";
+import img5 from "./assets/courses/pgis-image.png";
 
 export const courses = [
   {

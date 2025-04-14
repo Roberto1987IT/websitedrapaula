@@ -141,6 +141,8 @@
     
   }
 
+  
+
 
 
 
@@ -151,6 +153,10 @@
     grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
     gap: 3rem;
   }
+
+  
+
+  
 
   
 }
@@ -263,7 +269,7 @@
 }
 
 /* Make wishlist button responsive */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .wishlist-button {
     width: 3.5rem;
     height: 3.5rem;
@@ -273,6 +279,10 @@
     width: 28px;
     height: 28px;
   }
+
+  
+
+  
 }
 
 @media (max-width: 480px) {
@@ -282,6 +292,8 @@
     bottom: 1rem;
     right: 1rem;
   }
+
+  
   
   .wishlist-button svg {
     width: 24px;
@@ -301,6 +313,8 @@
     margin-top: -1.5rem; /* Reduce the margin above the image */
   }
 
+  
+
   .back-button {
     margin-bottom: 0.5rem; /* Reduce the margin below the "Voltar" button */
   }
@@ -312,6 +326,8 @@
     margin-top: 15rem; /* Increase the margin above the image */
     
   }
+
+  
 
 
   .back-button {
