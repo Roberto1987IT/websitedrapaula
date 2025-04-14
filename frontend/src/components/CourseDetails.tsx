@@ -5,9 +5,7 @@ import { ChevronDown, ChevronUp, Check, Heart, ShoppingCart, X } from "lucide-re
 import { courses } from "../courseData";
 import { useCart } from "../context/CartContext";
 import { useWishlist } from "../context/WishlistContext";
-import logoMarca from "../assets/courses/logo.boxBranco.png";
-import logoBoxBranco from "../assets/courses/logo-centro-educacional-wordmark-em-branco-sem-fundo.png";
-import logoMkClass from "../assets/courses/logoWebsite (3).jpeg"; 
+
 import "../styles/pages/courseDetails.css";
 
 
@@ -141,9 +139,7 @@ const CourseDetails = () => {
         {Number(id) === 5 && (
           <div className="partner-logos">
             <div className="partner-logos-container">
-              <img src={logoMarca} alt="Logo Marca" className="partner-logo" />
-              <img src={logoMkClass} alt="Logo MK Class" className="partner-logo" />
-              <img src={logoBoxBranco} alt="Logo Box Branco" className="partner-logo" />
+              
             </div>
           </div>
         )}
