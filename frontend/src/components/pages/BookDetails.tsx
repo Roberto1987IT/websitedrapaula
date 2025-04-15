@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { books, Book } from '../../bookData';
 import '../../styles/pages/bookDetails.css';
-import { Star, ChevronLeft, ShoppingCart, Heart, AlertCircle, BookOpen } from 'lucide-react';
+import { Star, ChevronLeft, ShoppingCart, Heart, AlertCircle, BookOpen, Check, X, ExternalLink } from 'lucide-react';
 import { useWishlist } from '../../context/WishlistContext';
 import { useCart } from '../../context/CartContext';
 
@@ -10,46 +10,63 @@ import { useCart } from '../../context/CartContext';
 const BookDetails = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
   const { addToCart } = useCart();
   const [user, setUser] = useState<boolean>(true); // Replace with actual auth check
   
   const book = id ? books.find((book: Book) => book.id === Number(id)) : undefined;
   const [isWishlisted, setIsWishlisted] = useState(false);
   const [isAddedToCart, setIsAddedToCart] = useState(false);
-  const [showPopup, setShowPopup] = useState(false);
-  const [popupMessage, setPopupMessage] = useState('');
+  
+  // Toast notification states
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
+  const [toastType, setToastType] = useState<'success' | 'error' | 'info'>('success');
+  
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (book && wishlist.includes(book.id)) {
-      setIsWishlisted(true);
+    if (book) {
+      // Check if book is in wishlist with type 'book'
+      setIsWishlisted(isInWishlist(book.id, 'book'));
     }
-  }, [book, wishlist]);
+  }, [book, isInWishlist]);
 
-  const showNotification = (message: string) => {
-    setPopupMessage(message);
-    setShowPopup(true);
-    setTimeout(() => {
-      setShowPopup(false);
-    }, 3000);
+  // Add effect to automatically hide toast after delay
+  useEffect(() => {
+    let timer: number;
+    if (showToast) {
+      timer = window.setTimeout(() => {
+        setShowToast(false);
+      }, 3000);
+    }
+    return () => clearTimeout(timer);
+  }, [showToast]);
+
+  // New function to show toast notifications
+  const displayToast = (message: string, type: 'success' | 'error' | 'info' = 'success') => {
+    setToastMessage(message);
+    setToastType(type);
+    setShowToast(true);
   };
 
   const handleWishlist = () => {
     if (!user) {
       navigate('/login');
-      showNotification('Por favor, faça login para adicionar à lista de desejos');
+      displayToast('Por favor, faça login para adicionar à lista de desejos', 'info');
       return;
     }
 
     if (book) {
       if (isWishlisted) {
-        removeFromWishlist(book.id);
-        showNotification('Removido da lista de desejos!');
+        // Explicitly specify the type as 'book'
+        removeFromWishlist(book.id, 'book');
+        displayToast('Removido da lista de desejos!', 'success');
       } else {
-        addToWishlist(book.id);
-        showNotification('Adicionado à lista de desejos!');
+        // Explicitly specify the type as 'book'
+        addToWishlist(book.id, 'book');
+        displayToast('Adicionado à lista de desejos!', 'success');
       }
       setIsWishlisted(!isWishlisted);
     }
@@ -58,30 +75,41 @@ const BookDetails = () => {
   const handleAddToCart = () => {
     if (!user) {
       navigate('/login');
-      showNotification('Por favor, faça login para adicionar ao carrinho');
+      displayToast('Por favor, faça login para adicionar ao carrinho', 'info');
       return;
     }
 
     if (book) {
-      addToCart(book);
+      // Use the updated addToCart with itemType parameter
+      addToCart(book, 'book');
       setIsAddedToCart(true);
-      showNotification('Adicionado ao carrinho com sucesso!');
+      displayToast('Livro adicionado ao carrinho com sucesso!', 'success');
     }
   };
 
-  const handleBuyNow: () => void = () => {
+  const handleBuyNow = () => {
     if (!user) {
       navigate('/login');
-      showNotification('Por favor, faça login para finalizar a compra');
+      displayToast('Por favor, faça login para finalizar a compra', 'info');
       return;
     }
 
     if (book) {
-      addToCart(book);
+      // Use the updated addToCart with itemType parameter
+      addToCart(book, 'book');
       setIsAddedToCart(true);
-      showNotification('Redirecionando para o checkout...');
-      navigate('/checkout');
+      displayToast('Redirecionando para o checkout...', 'info');
+      setTimeout(() => {
+        navigate('/checkout');
+      }, 1000);
     }
+  };
+
+  // Handle external purchase at Zamboni Books
+  const handleExternalPurchase = () => {
+    // Open zambonibooks in a new tab
+    window.open('https://www.zambonibooks.com.br', '_blank');
+    displayToast('Redirecionando para Zamboni Books...', 'info');
   };
 
   const formatDate = (dateString: string) => {
@@ -124,6 +152,25 @@ const BookDetails = () => {
 
   return (
     <div className="book-details-container">
+      {/* Toast Notification */}
+      {showToast && (
+        <div className={`toast-notification ${toastType}`}>
+          <div className="toast-content">
+            {toastType === 'success' && <Check size={18} className="toast-icon" />}
+            {toastType === 'error' && <X size={18} className="toast-icon" />}
+            {toastType === 'info' && <AlertCircle size={18} className="toast-icon" />}
+            <span>{toastMessage}</span>
+          </div>
+          <button 
+            className="toast-close" 
+            onClick={() => setShowToast(false)}
+            aria-label="Fechar notificação"
+          >
+            <X size={14} />
+          </button>
+        </div>
+      )}
+
       <div className="book-details-header">
         <Link to="/#livros" className="back-button">
           <ChevronLeft size={16} />
@@ -265,7 +312,16 @@ const BookDetails = () => {
                   onClick={handleBuyNow}
                   disabled={book.availability === 'out-of-stock'}
                 >
-                  Comprar Agora
+                  <span>🇵🇹</span>
+                  <span>Comprar Agora</span>
+                </button>
+                <button
+                  className="external-buy-button"
+                  onClick={handleExternalPurchase}
+                  aria-label="Comprar na Zamboni Books"
+                >
+                  <span>🇧🇷</span>
+                  <span>Comprar na Zamboni</span>
                 </button>
               </div>
               <p className="exclusive-sale-message">
@@ -275,12 +331,6 @@ const BookDetails = () => {
           </div>
         </div>
       </div>
-
-      {showPopup && (
-        <div className="notification-popup">
-          <div className="notification-content">{popupMessage}</div>
-        </div>
-      )}
     </div>
   );
 };

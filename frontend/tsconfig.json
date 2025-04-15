@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "target": "ESNext",
+    "target": "ES6",
     "jsx": "react-jsx",
     "module": "ESNext",
     "strict": true,
@@ -12,11 +12,16 @@
     "allowJs": false,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"] // This is the important part!
-    }
+      "@/*": ["./src/*"]
+    },
+    "downlevelIteration": true,
+    "noFallthroughCasesInSwitch": true,
+    "importHelpers": true
   },
-  "include": ["src"], // Ensure the src folder is included
-  "exclude": ["node_modules"] // Exclude unnecessary files
+  "include": ["src"],
+  "exclude": ["node_modules", "build", "dist"]
 }

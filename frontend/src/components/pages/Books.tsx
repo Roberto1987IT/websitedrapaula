@@ -4,11 +4,11 @@ import { useWishlist } from "../../context/WishlistContext"; // Import WishlistC
 import {useTranslation } from "react-i18next";
 import "../../styles/pages/books.css";
 import { books, Book } from "../../bookData";
-import { ChevronRight, Star, Search, Download, Book as BookIcon, Heart } from "lucide-react";
+import { ChevronRight, Star, Search, Download, Book as BookIcon, Heart, Check, X } from "lucide-react";
 import debounce from "lodash/debounce";
 
 const Books = ({ id }: { id: string }) => {
-  const { wishlist, addToWishlist, removeFromWishlist } = useWishlist(); // Use wishlist context
+  const { wishlist, addToWishlist, removeFromWishlist, isInWishlist } = useWishlist(); // Use wishlist context without wishlistItems
   const [loadedImages, setLoadedImages] = useState<number[]>([]);
   const [activeFilter, setActiveFilter] = useState<string>("impresso");
   const [hoveredBook, setHoveredBook] = useState<number | null>(null);
@@ -19,6 +19,11 @@ const Books = ({ id }: { id: string }) => {
   const [user, setUser] = useState<boolean>(true); // Replace with actual user authentication logic
   const bookContainerRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+  
+  // Add notification state
+  const [showNotification, setShowNotification] = useState(false);
+  const [notificationType, setNotificationType] = useState<'success' | 'error'>('success');
+  const [notificationMessage, setNotificationMessage] = useState("");
 
   const handleImageLoad = useCallback((index: number) => {
     setLoadedImages((prev) => [...new Set([...prev, index])]);
@@ -28,6 +33,24 @@ const Books = ({ id }: { id: string }) => {
     debounce((value: string) => setSearchQuery(value), 300),
     []
   );
+
+  // Function to show toast notification
+  const showToast = (message: string, type: 'success' | 'error' = 'success') => {
+    setNotificationMessage(message);
+    setNotificationType(type);
+    setShowNotification(true);
+  };
+
+  // Add useEffect to hide notification after 3 seconds
+  useEffect(() => {
+    let timer: number;
+    if (showNotification) {
+      timer = window.setTimeout(() => {
+        setShowNotification(false);
+      }, 3000);
+    }
+    return () => clearTimeout(timer);
+  }, [showNotification]);
 
   const handleDownload = (e: React.MouseEvent, url: string) => {
     e.preventDefault();
@@ -47,11 +70,13 @@ const Books = ({ id }: { id: string }) => {
       return;
     }
 
-    // Add or remove the book from the wishlist
-    if (wishlist.includes(bookId)) {
-      removeFromWishlist(bookId);
+    // Add or remove the book from the wishlist and show toast notification
+    if (isInWishlist(bookId, 'book')) {
+      removeFromWishlist(bookId, 'book');
+      showToast("Livro removido dos favoritos", "success");
     } else {
-      addToWishlist(bookId);
+      addToWishlist(bookId, 'book');
+      showToast("Livro adicionado aos favoritos", "success");
     }
   };
 
@@ -88,6 +113,27 @@ const Books = ({ id }: { id: string }) => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Toast Notification */}
+      {showNotification && (
+        <div className={`toast-notification ${notificationType}`}>
+          <div className="toast-content">
+            {notificationType === 'success' ? (
+              <Check size={18} className="toast-icon" />
+            ) : (
+              <X size={18} className="toast-icon" />
+            )}
+            <span>{notificationMessage}</span>
+          </div>
+          <button 
+            className="toast-close" 
+            onClick={() => setShowNotification(false)}
+            aria-label="Fechar notificação"
+          >
+            <X size={14} />
+          </button>
+        </div>
+      )}
+      
       <section id={id} className="books">
         <div className="books-header">
           <div className="title-container">
@@ -201,14 +247,14 @@ const Books = ({ id }: { id: string }) => {
                     )}
                   </div>
                   <button
-                    className={`wishlist-button ${wishlist.includes(book.id) ? "active" : ""}`}
+                    className={`wishlist-button ${isInWishlist(book.id, 'book') ? "active" : ""}`}
                     onClick={() => toggleWishlist(book.id)}
                     aria-label={`Adicionar ou remover ${book.title} da lista de desejos`}
                   >
                     <Heart
                       size={20}
-                      fill={wishlist.includes(book.id) ? "red" : "none"}
-                      color={wishlist.includes(book.id) ? "red" : "black"}
+                      fill={isInWishlist(book.id, 'book') ? "red" : "none"}
+                      color={isInWishlist(book.id, 'book') ? "red" : "black"}
                     />
                   </button>
                 </div>

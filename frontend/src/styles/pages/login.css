@@ -104,12 +104,14 @@
 .toggle-password svg {
     width: 20px; /* ✅ Larger icon */
     height: 15px;
-    color: black;
+    color: white; /* Changed to white color */
     transition: color 0.2s ease;
+    /* Add a light shadow to help with visibility */
+    filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.5));
 }
 
 .toggle-password:hover svg {
-    color: #000;
+    color: #f0f0f0; /* Slightly darker white on hover */
 }
 
 /* 🔹 Forgot Password Link */
