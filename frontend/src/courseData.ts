@@ -2,6 +2,8 @@ import img1 from "./assets/courses/Brincar e terapia ocupacional - da teoria à 
 import img2 from "./assets/courses/raciocinio clinico e intervenção nos primeiros anos de vida.jpg";
 import img3 from "./assets/courses/Integração Sensorial - avaliação e raciocinio clinico.jpg";
 import img4 from "./assets/courses/avaliação e raciocinio clinico na primeira infancia - foco no brincar e integração sensorial.jpg";
+import img5 from "./assets/courses/pgis-image.png";
+
 
 export const courses = [
     {
@@ -225,4 +227,67 @@ As sessões de trabalho serão teóricas e praticas, com analise de vídeos de c
       "Classificar perturbações de processamento sensorial na primeira infância",
     ]
   },
+      {
+    id: 5,
+    image: img5,
+    title: "Programa Internacional de formação em Integração Sensorial",
+    description: `
+  Programa Internacional de formação em Integração Sensorial
+  
+  Programa da ação de formação:
+  Duração - 360 horas (18 meses)
+  
+  Formadores:
+  Professores de Portugal, Brasil e Estados Unidos da América
+  
+  Área de Intervenção:
+  Integração Sensorial
+  
+  Destinatários:
+  Terapeutas ocupacionais
+  
+  Metodologia:
+  Aulas teóricas on-line e aulas práticas presenciais
+  
+  Objectivos Gerais:
+  • Compreender os fundamentos da Teoria de Integração Sensorial (IS) de Jean Ayres
+  • Identificar os sistemas sensoriais envolvidos na integração sensorial e a sua influência no desenvolvimento humano
+  • Reconhecer a neurofisiologia subjacente à reatividade sensorial, processamento e praxis
+  • Relacionar disfunções do processamento sensorial com dificuldades no desempenho ocupacional
+  • Avaliar e interpretar dificuldades sensoriais utilizando diversas metodologias e instrumentos de avaliação
+  • Interpretar a informação do processo avaliativo e utilizar o raciocínio clínico com base na taxonomia atual
+  • Elaborar um plano de intervenção dirigido às dificuldades de desempenho ocupacional
+  • Implementar a intervenção utilizando a abordagem de integração sensorial
+  • Discutir evidências científicas sobre a eficácia da Integração Sensorial como abordagem terapêutica
+  
+  Conteúdos Programáticos:
+  • Fundamentos teóricos e neurocientíficos da Integração Sensorial
+  • Sistemas sensoriais e seu impacto no desenvolvimento
+  • Neurofisiologia da reatividade sensorial e processamento
+  • Avaliação em Integração Sensorial:
+    - Metodologias de avaliação
+    - Instrumentos padronizados
+    - Interpretação de resultados
+  • Raciocínio clínico e diagnóstico terapêutico
+  • Planeamento da intervenção:
+    - Definição de objetivos
+    - Estratégias baseadas na Integração Sensorial
+  • Implementação da intervenção segundo a medida de fidelidade na abordagem de Ayres
+  • Evidência científica na prática de Integração Sensorial
+  
+  Metodologia:
+  O programa combina sessões teóricas online com sessões práticas presenciais em várias cidades do Brasil (localizações a confirmar). A formação será ministrada por especialistas internacionais de Portugal, Brasil e Estados Unidos da América.
+  `,
+    price: null,
+    instructor: "Paula Serrano e equipa internacional",
+    Localizacao: "Online e Brasil (várias cidades a confirmar)",
+    date: "Data de início a confirmar",
+    learningOutcomes: [
+      "Compreender os fundamentos da Teoria de Integração Sensorial de Ayres",
+      "Avaliar e interpretar dificuldades sensoriais usando metodologias específicas",
+      "Elaborar planos de intervenção para dificuldades de desempenho ocupacional",
+      "Implementar intervenções baseadas na abordagem de integração sensorial",
+      "Analisar a evidência científica sobre a eficácia da Integração Sensorial",
+    ]
+  }
 ];
