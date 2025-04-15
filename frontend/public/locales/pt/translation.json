@@ -315,7 +315,7 @@
       },
       "title_2": {
         "title": "Objetivos Gerais",
-        "l1": {
+        "li": {
           "1": "Compreender os fundamentos da Teoria de Integração Sensorial (IS) de Jean Ayres",
           "2": "Identificar os sistemas sensoriais envolvidos na integração sensorial e a sua influência no desenvolvimento humano",
           "3": "Reconhecer a neurofisiologia subjacente à reatividade sensorial, processamento e praxis",
@@ -329,7 +329,7 @@
       },
       "title_3": {
         "title": "Conteúdos Programáticos",
-        "l1": {
+        "li": {
           "1": "Fundamentos teóricos e neurocientíficos da Integração Sensorial",
           "2": "Sistemas sensoriais e seu impacto no desenvolvimento",
           "3": "Neurofisiologia da reatividade sensorial e processamento",

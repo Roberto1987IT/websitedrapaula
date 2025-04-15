@@ -12,7 +12,7 @@ const CourseDetails = () => {
     const {id} = useParams<{ id: string | undefined }>();
     const navigate = useNavigate(); // Initialize navigate
     const course = courses.find((c) => c.id === Number(id));
-        const [isInWishlist, setIsInWishlist] = useState(false);
+    const [isInWishlist, setIsInWishlist] = useState(false);
     const [imageLoaded, setImageLoaded] = useState(false);
     const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
 
@@ -290,12 +290,106 @@ const CourseDetails = () => {
                                         </div>
                                     )}
 
-                                    {!course.title?.includes("Brincar e TO") &&
-                                        !course.title?.includes("Raciocinio clinico e intervencao") &&
-                                        !course.title?.includes("Integracao Sensorial: Avaliacao") &&
-                                        !course.title?.includes("Avaliação e Raciocínio clínico na primeira Infância") && (
-                                            <p>{course.description}</p>
-                                        )}
+                                    {course.title?.includes("Programa Internacional") ? (
+                                        <div className="programa-internacional">
+                                            <div className="programa-header">
+                                                <h3 className="description-subtitle programa-title">{t("courses.5.title_1.title")}</h3>
+                                                <div className="programa-badge">{t("courses.5.title_1.p")}</div>
+                                                <div className="programa-info-grid">
+                                                    <div className="programa-info-item">
+                                                        <h4 className="programa-info-title">Formadores</h4>
+                                                        <p>Professores de Portugal, Brasil e Estados Unidos da
+                                                            América</p>
+                                                    </div>
+                                                    <div className="programa-info-item">
+                                                        <h4 className="programa-info-title"> Área de Intervenção</h4>
+                                                        <p>Integração Sensorial</p>
+                                                    </div>
+                                                    <div className="programa-info-item">
+                                                        <h4 className="programa-info-title"> Destinatários </h4>
+                                                        <p>Terapeutas ocupacionais</p>
+                                                    </div>
+                                                    <div className="programa-info-item">
+                                                        <h4 className="programa-info-title">Metodologia</h4>
+                                                        <p>Aulas teóricas on - line e aulas práticas presenciais</p>
+                                                    </div>
+                                                </div>
+                                                <div className="programa-section">
+                                                    <h3 className="description-subtitle">{t("courses.5.title_2.title")}</h3>
+                                                    <div className="programa-objetivos">
+                                                        <ul>
+                                                            <li>{t("courses.5.title_2.li.1")}</li>
+                                                            <li>{t("courses.5.title_2.li.2")}</li>
+                                                            <li>{t("courses.5.title_2.li.3")}</li>
+                                                            <li>{t("courses.5.title_2.li.4")}</li>
+                                                            <li>{t("courses.5.title_2.li.5")}</li>
+                                                            <li>{t("courses.5.title_2.li.6")}</li>
+                                                            <li>{t("courses.5.title_2.li.7")}</li>
+                                                            <li>{t("courses.5.title_2.li.8")}</li>
+                                                            <li>{t("courses.5.title_2.li.9")}</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div className="programa-section">
+                                                    <h3 className="description-subtitle">{t("courses.5.title_3.title")}</h3>
+                                                    <div
+                                                        className="programa-conteudos">
+                                                        <ul>
+                                                            <li>{t("courses.5.title_3.li.1")}</li>
+                                                            <li>{t("courses.5.title_3.li.2")}</li>
+                                                            <li>{t("courses.5.title_3.li.3")}</li>
+                                                            <li className="with-subitems">
+                                                                {t("courses.5.title_3.li.4.title")}
+                                                                <ul className="subitems">
+                                                                    <li>
+                                                                        {t("courses.5.title_3.li.4.li.0")}
+                                                                    </li>
+                                                                    <li>
+                                                                        {t("courses.5.title_3.li.4.li.1")}
+                                                                    </li>
+                                                                    <li>
+                                                                        {t("courses.5.title_3.li.4.li.2")}
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                {t("courses.5.title_3.li.5")}
+                                                            </li>
+                                                            <li className="with-subitems">
+                                                                {t("courses.5.title_3.li.6.title")}
+                                                                <ul className="subitems">
+                                                                    <li>
+                                                                        {t("courses.5.title_3.li.6.li.0")}
+                                                                    </li>
+                                                                    <li>
+                                                                        {t("courses.5.title_3.li.6.li.1")}
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                {t("courses.5.title_3.li.7")}
+                                                            </li>
+                                                            <li>
+                                                                {t("courses.5.title_3.li.8")}
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div className="programa-metodologia">
+                                                    <h3 className="description-subtitle">{t("courses.5.title_4.title")}</h3>
+                                                    <p>{t("courses.5.title_4.p")}</p>
+                                                </div>
+                                                <div
+                                                    className="programa-inscricao">
+                                                    <h3>{t("courses.5.title_5.title")}</h3>
+                                                    <p>{t("courses.5.title_5.p")}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        <p>{course.description}</p>
+                                    )}
+
                                 </div>
                             </div>
                             <Button
@@ -321,7 +415,7 @@ const CourseDetails = () => {
 
                     <section>
                         <h2>{t(`courses.${course.id}.teacher`)}</h2>
-                        <p>{course.instructor}</p>
+                        <p>{t(`courses.${course.id}.instructor`)}</p>
                     </section>
 
                     <section>

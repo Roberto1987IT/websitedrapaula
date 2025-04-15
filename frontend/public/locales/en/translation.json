@@ -315,7 +315,7 @@
   },
   "title_2": {
     "title": "General Objectives",
-    "l1": {
+    "li": {
       "1": "Understand the fundamentals of Jean Ayres' Sensory Integration (SI) Theory",
       "2": "Identify sensory systems involved in sensory integration and their influence on human development",
       "3": "Recognize the neurophysiology underlying sensory reactivity, processing, and praxis",
@@ -329,7 +329,7 @@
   },
   "title_3": {
     "title": "Program Content",
-    "l1": {
+    "li": {
       "1": "Theoretical and neuroscience-based foundations of Sensory Integration",
       "2": "Sensory systems and their impact on development",
       "3": "Neurophysiology of sensory reactivity and processing",
