@@ -3,6 +3,7 @@ import { Menu, X, Heart, ShoppingBag, User, ChevronDown, LogIn, UserPlus, UserCi
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { jwtDecode } from 'jwt-decode';
+import i18n from "i18next";
 import logo from "../assets/20.png";
 import "../styles/navigation.css";
 import { useTranslation } from 'react-i18next';
