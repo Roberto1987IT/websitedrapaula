@@ -276,6 +276,100 @@
         "title": "Data",
         "description": "Brevemente.."
       }
+    },
+    "5": {
+      "title": "Programa Internacional de formação em Integração Sensorial",
+      "price": null,
+      "instructor": "Paula Serrano e equipa internacional",
+      "Localizacao": "Online e Brasil (várias cidades a confirmar)",
+      "date": "Data de início a confirmar",
+      "learningOutcomes": [
+        "Compreender os fundamentos da Teoria de Integração Sensorial de Ayres",
+        "Avaliar e interpretar dificuldades sensoriais usando metodologias específicas",
+        "Elaborar planos de intervenção para dificuldades de desempenho ocupacional",
+        "Implementar intervenções baseadas na abordagem de integração sensorial",
+        "Analisar a evidência científica sobre a eficácia da Integração Sensorial"
+      ],
+      "description_course": "Descrição do Curso",
+      "title_1": {
+        "title": "Sobre o Curso",
+        "p": "360 horas | 18 meses",
+        "subtitle": {
+          "1":{
+            "title": "Formadores",
+            "p": "Professores de Portugal, Brasil e Estados Unidos da América"
+          },
+          "2": {
+            "title": "Destinatários",
+            "p": "Terapeutas ocupacionais"
+          },
+          "3":{
+            "title": "Área de Intervenção",
+            "p": "Integração Sensorial"
+          },
+          "4": {
+            "title": "Metodologia",
+            "p": "Aulas teóricas on-line e aulas práticas presenciais"
+          }
+        }
+      },
+      "title_2": {
+        "title": "Objetivos Gerais",
+        "l1": {
+          "1": "Compreender os fundamentos da Teoria de Integração Sensorial (IS) de Jean Ayres",
+          "2": "Identificar os sistemas sensoriais envolvidos na integração sensorial e a sua influência no desenvolvimento humano",
+          "3": "Reconhecer a neurofisiologia subjacente à reatividade sensorial, processamento e praxis",
+          "4": "Relacionar disfunções do processamento sensorial com dificuldades no desempenho ocupacional",
+          "5": "Avaliar e interpretar dificuldades sensoriais utilizando diversas metodologias e instrumentos de avaliação",
+          "6": "Interpretar a informação do processo avaliativo e utilizar o raciocínio clínico com base na taxonomia atual",
+          "7": "Elaborar um plano de intervenção dirigido às dificuldades de desempenho ocupacional",
+          "8": "Implementar a intervenção utilizando a abordagem de integração sensorial",
+          "9": "Discutir evidências científicas sobre a eficácia da Integração Sensorial como abordagem terapêutica"
+        }
+      },
+      "title_3": {
+        "title": "Conteúdos Programáticos",
+        "l1": {
+          "1": "Fundamentos teóricos e neurocientíficos da Integração Sensorial",
+          "2": "Sistemas sensoriais e seu impacto no desenvolvimento",
+          "3": "Neurofisiologia da reatividade sensorial e processamento",
+          "4": {
+            "title": "Avaliação em Integração Sensorial",
+            "li": [
+              "Metodologias de avaliação",
+              "Instrumentos padronizados",
+              "Interpretação de resultados"
+            ]
+          },
+          "5": "Raciocínio clínico e diagnóstico terapêutico",
+          "6":{
+            "title": "Planeamento da intervenção:",
+            "li": [
+              "Definição de objetivos",
+              "Estratégias baseadas na Integração Sensorial"
+            ]
+          },
+          "7": "Implementação da intervenção segundo a medida de fidelidade na abordagem de Ayres",
+          "8": "Evidência científica na prática de Integração Sensorial"
+        }
+      },
+      "title_4": {
+        "title": "Metodologia",
+        "p": "O programa combina sessões teóricas online com sessões práticas presenciais em várias cidades do Brasil (localizações a confirmar). A formação será ministrada por especialistas internacionais de Portugal, Brasil e Estados Unidos da América."
+      },
+      "title_5": {
+        "title": "Inscrições Limitadas",
+        "p": "As inscrições para este programa são limitadas para garantir a qualidade da formação. Para informações sobre as próximas turmas e processo de inscrição, entre em contacto por email."
+      },
+      "teacher": "Professor(a)",
+      "localization": {
+        "title": "Localização",
+        "description": "Online e Brasil (várias cidades a confirmar)"
+      },
+      "a_date": {
+        "title": "Data",
+        "description": "Data de início a confirmar"
+      }
     }
   },
   "tranings_mentorships_description_p": "Descubra como a mentoria pode transformar sua carreira.",
