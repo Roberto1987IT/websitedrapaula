@@ -371,7 +371,16 @@
     "description": "Start date to be confirmed"
   }
 }
-
+  },
+  "book": {
+    "1": {},
+    "2": {},
+    "3": {},
+    "4": {},
+    "5": {},
+    "6": {},
+    "7": {},
+    "8": {}
   },
   "tranings_mentorships_description_p": "Discover how mentorship can transform your career.",
   "tranings_mentorships_description_h2": "Professional Mentorship: What Is It and What Are Its Benefits?",

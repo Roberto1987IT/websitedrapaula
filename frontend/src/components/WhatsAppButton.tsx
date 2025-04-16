@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/WhatsAppButton.css';
+import { useTranslation } from 'react-i18next';
 
 interface WhatsAppButtonProps {
   phoneNumber?: string;
@@ -56,7 +57,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
     }
     // Desktop will use the regular web URL via the href
   };
-
+  const { t } = useTranslation();
   return (
     <div className={`whatsapp-container ${className || ''}`}>
       <a 
@@ -92,7 +93,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
         </svg>
         
         <div className={`tooltip ${isHovered ? 'visible' : ''}`}>
-          Precisa de ajuda? Fale conosco!
+          {t("whatsapp_contact_me")}
           <span className="tooltip-arrow"></span>
         </div>
       </a>
