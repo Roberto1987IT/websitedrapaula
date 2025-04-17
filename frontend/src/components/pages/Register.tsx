@@ -430,7 +430,7 @@ const Register = () => {
               minLength={8}
               autoComplete="new-password"
               className={errors.password ? "error-input" : ""}
-              placeholder="Sua senha deve ter no mínimo 8 caracteres."
+              placeholder={t("form_placeholder.pass_roles")}
             />
             {renderPasswordStrength()}
             {errors.password && <span className="error">{errors.password}</span>}
@@ -447,7 +447,7 @@ const Register = () => {
               required
               autoComplete="new-password"
               className={errors.confirmPassword ? "error-input" : ""}
-              placeholder="Confirme sua senha"
+              placeholder={t("form_placeholder.pass_conf")}
             />
             {errors.confirmPassword && <span className="error">{errors.confirmPassword}</span>}
           </div>
@@ -466,7 +466,7 @@ const Register = () => {
             <label htmlFor="acceptTerms">
               {t("account.signup.accept_terms_cond")}{" "}
               <a href="/terms" target="_blank" rel="noopener noreferrer">{t("terms.title")}</a>{" "}
-              e{" "}
+              {t("and")} {" "}
               <a href="/privacy" target="_blank" rel="noopener noreferrer">{t("privacity.title")}</a>
             </label>
             {errors.acceptTerms && <span className="error">{errors.acceptTerms}</span>}

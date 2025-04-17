@@ -1435,7 +1435,11 @@
   "whatsapp_contact_me": "Precisa de ajuda? Fale conosco!",
   "back": "Voltar",
   "zomboni": "Comprar na Zamboni",
-  "book_botton_atention": "⚠\uFE0F Atenção: Este produto tem venda exclusiva para Portugal\uD83C\uDDF5\uD83C\uDDF9. Envios apenas para território português."
+  "book_botton_atention": "⚠\uFE0F Atenção: Este produto tem venda exclusiva para Portugal\uD83C\uDDF5\uD83C\uDDF9. Envios apenas para território português.",
+  "form_placeholder": {
+    "pass_roles": "Sua senha deve ter no mínimo 8 caracteres.",
+    "pass_conf": "Confirme sua senha"
+  },
 }
 
 

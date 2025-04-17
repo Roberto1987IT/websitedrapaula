@@ -1433,6 +1433,10 @@
   "whatsapp_contact_me": "Need help? Contact us!",
   "back": "Back",
   "zomboni": "Buy from Zamboni",
-  "book_botton_atention": "⚠️ Attention: This product is exclusively sold in Portugal 🇵🇹. Shipping only within Portuguese territory."
+  "book_botton_atention": "⚠️ Attention: This product is exclusively sold in Portugal 🇵🇹. Shipping only within Portuguese territory.",
+  "form_placeholder": {
+    "pass_roles": "Your password must be at least 8 characters long.",
+    "pass_conf": "Confirm your password"
+  }
 }
 
