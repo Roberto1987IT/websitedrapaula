@@ -143,7 +143,6 @@ export const books: Book[] = [
     bestSeller: false,
     newRelease: false
   },
-  // Add 4 eBooks here
   {
     id: 5,
     image: book5,

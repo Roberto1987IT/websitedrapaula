@@ -278,109 +278,568 @@
       }
     },
     "5": {
-  "title": "International Program in Sensory Integration Training",
-  "price": null,
-  "instructor": "Paula Serrano and international team",
-  "location": "Online and Brazil (various cities to be confirmed)",
-  "date": "Start date to be confirmed",
-  "learningOutcomes": [
-    "Understand the fundamentals of Ayres' Sensory Integration Theory",
-    "Assess and interpret sensory difficulties using specific methodologies",
-    "Develop intervention plans for occupational performance difficulties",
-    "Implement interventions based on the sensory integration approach",
-    "Analyze scientific evidence on the effectiveness of Sensory Integration"
-  ],
-  "description_course": "Course Description",
-  "title_1": {
-    "title": "About the Course",
-    "p": "360 hours | 18 months",
-    "subtitle": {
-      "1": {
-        "title": "Trainers",
-        "p": "Professors from Portugal, Brazil, and the United States of America"
+      "title": "International Program in Sensory Integration Training",
+      "price": null,
+      "instructor": "Paula Serrano and international team",
+      "location": "Online and Brazil (various cities to be confirmed)",
+      "date": "Start date to be confirmed",
+      "learningOutcomes": [
+        "Understand the fundamentals of Ayres' Sensory Integration Theory",
+        "Assess and interpret sensory difficulties using specific methodologies",
+        "Develop intervention plans for occupational performance difficulties",
+        "Implement interventions based on the sensory integration approach",
+        "Analyze scientific evidence on the effectiveness of Sensory Integration"
+      ],
+      "description_course": "Course Description",
+      "title_1": {
+        "title": "About the Course",
+        "p": "360 hours | 18 months",
+        "subtitle": {
+          "1": {
+            "title": "Trainers",
+            "p": "Professors from Portugal, Brazil, and the United States of America"
+          },
+          "2": {
+            "title": "Target Audience",
+            "p": "Occupational therapists"
+          },
+          "3": {
+            "title": "Area of Intervention",
+            "p": "Sensory Integration"
+          },
+          "4": {
+            "title": "Methodology",
+            "p": "Online theoretical classes and practical in-person sessions"
+          }
+        }
       },
-      "2": {
-        "title": "Target Audience",
-        "p": "Occupational therapists"
+      "title_2": {
+        "title": "General Objectives",
+        "li": {
+          "1": "Understand the fundamentals of Jean Ayres' Sensory Integration (SI) Theory",
+          "2": "Identify sensory systems involved in sensory integration and their influence on human development",
+          "3": "Recognize the neurophysiology underlying sensory reactivity, processing, and praxis",
+          "4": "Relate sensory processing disorders to difficulties in occupational performance",
+          "5": "Assess and interpret sensory difficulties using various methodologies and evaluation instruments",
+          "6": "Interpret assessment data and use clinical reasoning based on the current taxonomy",
+          "7": "Develop an intervention plan addressing occupational performance difficulties",
+          "8": "Implement intervention using the sensory integration approach",
+          "9": "Discuss scientific evidence on the effectiveness of Sensory Integration as a therapeutic approach"
+        }
       },
-      "3": {
-        "title": "Area of Intervention",
-        "p": "Sensory Integration"
+      "title_3": {
+        "title": "Program Content",
+        "li": {
+          "1": "Theoretical and neuroscience-based foundations of Sensory Integration",
+          "2": "Sensory systems and their impact on development",
+          "3": "Neurophysiology of sensory reactivity and processing",
+          "4": {
+            "title": "Assessment in Sensory Integration",
+            "li": [
+              "Assessment methodologies",
+              "Standardized instruments",
+              "Interpretation of results"
+            ]
+          },
+          "5": "Clinical reasoning and therapeutic diagnosis",
+          "6": {
+            "title": "Intervention Planning:",
+            "li": [
+              "Defining objectives",
+              "Strategies based on Sensory Integration"
+            ]
+          },
+          "7": "Implementation of intervention according to Ayres' fidelity measure",
+          "8": "Scientific evidence in the practice of Sensory Integration"
+        }
       },
-      "4": {
+      "title_4": {
         "title": "Methodology",
-        "p": "Online theoretical classes and practical in-person sessions"
+        "p": "The program combines online theoretical sessions with practical in-person sessions in various cities in Brazil (locations to be confirmed). The training will be provided by international experts from Portugal, Brazil, and the United States of America."
+      },
+      "title_5": {
+        "title": "Limited Enrollments",
+        "p": "Enrollments for this program are limited to ensure training quality. For information about upcoming cohorts and the enrollment process, please contact via email."
+      },
+      "teacher": "Instructor",
+      "localization": {
+        "title": "Location",
+        "description": "Online and Brazil (various cities to be confirmed)"
+      },
+      "a_date": {
+        "title": "Date",
+        "description": "Start date to be confirmed"
       }
     }
   },
-  "title_2": {
-    "title": "General Objectives",
-    "li": {
-      "1": "Understand the fundamentals of Jean Ayres' Sensory Integration (SI) Theory",
-      "2": "Identify sensory systems involved in sensory integration and their influence on human development",
-      "3": "Recognize the neurophysiology underlying sensory reactivity, processing, and praxis",
-      "4": "Relate sensory processing disorders to difficulties in occupational performance",
-      "5": "Assess and interpret sensory difficulties using various methodologies and evaluation instruments",
-      "6": "Interpret assessment data and use clinical reasoning based on the current taxonomy",
-      "7": "Develop an intervention plan addressing occupational performance difficulties",
-      "8": "Implement intervention using the sensory integration approach",
-      "9": "Discuss scientific evidence on the effectiveness of Sensory Integration as a therapeutic approach"
-    }
-  },
-  "title_3": {
-    "title": "Program Content",
-    "li": {
-      "1": "Theoretical and neuroscience-based foundations of Sensory Integration",
-      "2": "Sensory systems and their impact on development",
-      "3": "Neurophysiology of sensory reactivity and processing",
-      "4": {
-        "title": "Assessment in Sensory Integration",
-        "li": [
-          "Assessment methodologies",
-          "Standardized instruments",
-          "Interpretation of results"
-        ]
-      },
-      "5": "Clinical reasoning and therapeutic diagnosis",
-      "6": {
-        "title": "Intervention Planning:",
-        "li": [
-          "Defining objectives",
-          "Strategies based on Sensory Integration"
-        ]
-      },
-      "7": "Implementation of intervention according to Ayres' fidelity measure",
-      "8": "Scientific evidence in the practice of Sensory Integration"
-    }
-  },
-  "title_4": {
-    "title": "Methodology",
-    "p": "The program combines online theoretical sessions with practical in-person sessions in various cities in Brazil (locations to be confirmed). The training will be provided by international experts from Portugal, Brazil, and the United States of America."
-  },
-  "title_5": {
-    "title": "Limited Enrollments",
-    "p": "Enrollments for this program are limited to ensure training quality. For information about upcoming cohorts and the enrollment process, please contact via email."
-  },
-  "teacher": "Instructor",
-  "localization": {
-    "title": "Location",
-    "description": "Online and Brazil (various cities to be confirmed)"
-  },
-  "a_date": {
-    "title": "Date",
-    "description": "Start date to be confirmed"
-  }
-}
-  },
   "book": {
-    "1": {},
-    "2": {},
-    "3": {},
-    "4": {},
-    "5": {},
-    "6": {},
-    "7": {},
-    "8": {}
+    "1": {
+      "title": "A crianca e a Motricidade Fina",
+      "about_book": "About the Book",
+      "description": "Fine motor skills are how we use our arms, hands, and fingers. They refer to the skills needed to manipulate an object, meaning how to use the hand and fingers precisely, according to the demands of the activity. The development of fine motor skills is essential for the child's interaction with the environment and happens when the child engages with objects and uses tools, for example in daily life activities. This book focuses on the development of fine motor skills across different childhood age groups, illustrating their relationship with the child's everyday life. In addition to development, it explores the skills required for fine motor skills to develop smoothly. It also recommends equipment and materials that can help children who have difficulties in this area.",
+      "price": "14",
+      "category": "printed",
+      "rating": 5,
+      "reviews": {
+        "int": 28,
+        "title": "reviews"
+      },
+      "author": {
+        "title": "Author",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2016-09-15",
+        "title": "Published"
+      },
+      "publisher": {
+        "editor": "Papa-Letras",
+        "title": "Publisher"
+      },
+      "language": {
+        "title": "Language",
+        "lng": "Portuguese"
+      },
+      "pages": {
+        "title": "Pages",
+        "pages": 120
+      },
+      "desponibility": "Availability",
+      "isbn": "9789898214591",
+      "tags": [
+        "child development",
+        "education",
+        "motor skills",
+        "manual skills"
+      ],
+      "dimensions": "172 x 245 x 7 mm",
+      "weight": "320g",
+      "availability": "in-stock",
+      "stock": 45,
+      "recommendedAge": "Educators and parents of children aged 2-7 years",
+      "relatedBooks": [
+        4,
+        3
+      ],
+      "bestSeller": "Best Seller",
+      "newRelease": "New Release"
+    },
+    "2": {
+      "title": "A Integracao Sensorial",
+      "about_book": "About the Book",
+      "description": "Sensory integration is the neurological process that organizes our sensations and is the foundation for all forms of learning so that we can live in the world and make sense of it. It is the base for academic learning, for the skills needed to perform daily life and social activities, and even for the ability to have empathy for others. What we see, smell, hear, taste, or touch is deciphered at every moment in our living experience, along with our 'hidden senses': vestibular and proprioceptive. When a child has problems processing sensations (sensory integration dysfunction), they struggle to use the information received through the senses to function efficiently in daily activities – problems may arise with motor coordination, sleep regulation, eating, attention, self-care tasks, learning, play, and emotional and social development.",
+      "price": "14.90",
+      "category": "printed",
+      "rating": 5,
+      "reviews": {
+        "int": 42,
+        "title": "reviews"
+      },
+      "author": {
+        "title": "Author",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2018-09-20",
+        "title": "Published"
+      },
+      "publisher": {
+        "editor": "Papa-Letras",
+        "title": "Publisher"
+      },
+      "language": {
+        "title": "Language",
+        "lng": "Portuguese"
+      },
+      "pages": {
+        "title": "Pages",
+        "pages": 168
+      },
+      "isbn": "",
+      "dimensions": "",
+      "weight": "",
+      "availability": {
+        "title": "Availability",
+        "res": "In Stock"
+      },
+      "format": {
+        "title": "Format",
+        "res": "Book"
+      },
+      "stock": "",
+      "tags": [
+        "sensory integration",
+        "child development",
+        "play",
+        "neuroeducation"
+      ],
+      "fileSize": {
+        "title": "File Size",
+        "size": "8.2 MB"
+      },
+      "recommendedAge": "Professionals and parents of children aged 0–5",
+      "relatedBooks": [
+        3,
+        1
+      ],
+      "bestSeller": "Best Seller",
+      "newRelease": "New Release"
+    },
+    "3": {
+      "title": "Brincar e Integracao Sensorial Nos Primeiros Anos",
+      "about_book": "About the Book",
+      "description": "All babies are born with characteristics that make them unique. Gradually, they adapt to their family and the environment in which they are born, and naturally, development happens and autonomy emerges as they engage and move within the family's life cycle. Development is the term used to describe the changes in a child's physical growth and their ability to learn in terms of sensorimotor, socioemotional, cognitive behavior, and communication skills. All these areas are interconnected, each depending on and influencing the others, becoming visible through the baby's behavior and their increasing autonomy.",
+      "price": "16.00",
+      "originalPrice": 24.99,
+      "category": "printed",
+      "rating": 5,
+      "reviews": {
+        "int": 15,
+        "title": "reviews"
+      },
+      "author": {
+        "title": "Author",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2024-03-30",
+        "title": "Published"
+      },
+      "publisher": {
+        "editor": "Papa-Letras",
+        "title": "Publisher"
+      },
+      "language": {
+        "title": "Language",
+        "lng": "Portuguese"
+      },
+      "pages": {
+        "title": "Pages",
+        "pages": 240
+      },
+      "isbn": "",
+      "dimensions": "",
+      "weight": "",
+      "availability": {
+        "title": "Availability",
+        "res": "In Stock"
+      },
+      "format": {
+        "title": "Format",
+        "res": "Book"
+      },
+      "stock": "",
+      "tags": [
+        "sensory integration",
+        "child development",
+        "play",
+        "neuroeducation"
+      ],
+      "fileSize": {
+        "title": "File Size"
+      },
+      "recommendedAge": "Professionals and parents of children aged 0–5",
+      "relatedBooks": [
+        3,
+        1
+      ],
+      "bestSeller": "Best Seller",
+      "newRelease": "New Release"
+    },
+    "4": {
+      "title": "O Desenvolvimento da Autonomia dos 0 aos 3 anos",
+      "about_book": "About the Book",
+      "description": "All babies are born with characteristics that make them unique. Gradually, they adapt to the family and the environment they are born into, and naturally, development occurs, and autonomy begins to emerge as they engage and move within the family life cycle. Development is the term used to describe changes in a child's physical growth and their ability to learn in terms of sensory-motor behavior, socio-emotional, cognitive, and communication skills. All of these areas are interconnected, and each one depends on and influences the others, being visible in the baby's behavior and their growing autonomy.",
+      "price": "18.00",
+      "category": "Printed",
+      "rating": 5,
+      "reviews": {
+        "int": 36,
+        "title": "reviews"
+      },
+      "author": {
+        "title": "Author",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2017-04-10",
+        "title": "Published"
+      },
+      "publisher": {
+        "editor": "Papa-Letras",
+        "title": "Publisher"
+      },
+      "language": {
+        "title": "Language",
+        "lng": "Portuguese"
+      },
+      "pages": {
+        "title": "Pages",
+        "pages": 200
+      },
+      "isbn": "9789898214645",
+      "dimensions": "188 x 258 x 15 mm",
+      "weight": "380g",
+      "availability": {
+        "title": "Availability",
+        "res": "In Stock"
+      },
+      "stock": 12,
+      "tags": [
+        "Child Autonomy",
+        "Development",
+        "Montessori Methodology",
+        "Early Childhood"
+      ],
+      "recommendedAge": "Parents and caregivers of children aged 0-3 years",
+      "relatedBooks": [
+        1,
+        2
+      ],
+      "bestSeller": "",
+      "newRelease": ""
+    },
+    "5": {
+      "title": "A Integração Sensorial e o Engajamento Ocupacional na Infância (eBook)",
+      "about_book": "About the Book",
+      "description": "This eBook explores the relationship between sensory integration and occupational engagement in childhood, providing practical tools for professionals and parents.",
+      "price": "9.99",
+      "category": "eBook",
+      "rating": 5,
+      "reviews": {
+        "int": 52,
+        "title": "evaluations"
+      },
+      "author": {
+        "title": "Author",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2023-05-10",
+        "title": "Published"
+      },
+      "publisher": {
+        "editor": "Papa Letras",
+        "title": "Publisher"
+      },
+      "language": {
+        "title": "Language",
+        "lng": "Portuguese"
+      },
+      "pages": {
+        "title": "Pages",
+        "pages": 180
+      },
+      "format": {
+        "title": "Format",
+        "res": "eBook"
+      },
+      "fileSize": {
+        "title": "File Size"
+      },
+      "availability": {
+        "title": "Availability",
+        "res": "In Stock"
+      },
+      "isbn": "",
+      "dimensions": "",
+      "weight": "",
+      "stock": 12,
+      "tags": [
+        "sensory integration",
+        "occupational engagement",
+        "child development",
+        "ebook"
+      ],
+      "recommendedAge": "Professionals and parents of children aged 0-8 years",
+      "relatedBooks": [
+        2,
+        3
+      ],
+      "bestSeller": "Best Seller",
+      "newRelease": "New Release"
+    },
+    "6": {
+      "title": "A Linguagem e o Brincar em Condicoes Neurodiversas (eBook)",
+      "about_book": "About the Book",
+      "description": "A complete collection of sensory activities and games to naturally and funly stimulate children's development.",
+      "price": "7.99",
+      "category": "eBook",
+      "rating": 5,
+      "reviews": {
+        "int": 78,
+        "title": "evaluations"
+      },
+      "author": {
+        "title": "Author",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2023-06-15",
+        "title": "Published"
+      },
+      "publisher": {
+        "editor": "Papa-Letras",
+        "title": "Publisher"
+      },
+      "language": {
+        "title": "Language",
+        "lng": "Portuguese"
+      },
+      "pages": {
+        "title": "Pages",
+        "pages": 120
+      },
+      "format": {
+        "title": "Format",
+        "res": "eBook"
+      },
+      "fileSize": {
+        "title": "File Size"
+      },
+      "availability": {
+        "title": "Availability",
+        "res": "In Stock"
+      },
+      "isbn": "",
+      "dimensions": "",
+      "weight": "",
+      "stock": "",
+      "tags": [
+        "sensory play",
+        "practical activities",
+        "child development",
+        "ebook"
+      ],
+      "recommendedAge": "Parents and educators of children aged 1-6 years",
+      "relatedBooks": [
+        5,
+        7
+      ],
+      "bestSeller": "Best Seller",
+      "newRelease": "New Release"
+    },
+    "7": {
+      "title": "Instrumentos de Avaliacao do Modelo Ludico (eBook)",
+      "about_book": "About the Book",
+      "description": "An essential guide on the milestones of child development and how to identify early signs that may require specialized attention.",
+      "price": "8.99",
+      "category": "ebook",
+      "rating": 5,
+      "reviews": {
+        "int": 45,
+        "title": "Reviews"
+      },
+      "author": {
+        "title": "Author",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2023-08-20",
+        "title": "Published"
+      },
+      "publisher": {
+        "editor": "Papa-Letras",
+        "title": "Publisher"
+      },
+      "language": {
+        "title": "Language",
+        "lng": "Portuguese"
+      },
+      "pages": {
+        "title": "Pages",
+        "pages": 150
+      },
+      "format": {
+        "title": "Format",
+        "res": "eBook"
+      },
+      "fileSize": {
+        "title": "File Size"
+      },
+      "availability": {
+        "title": "Availability",
+        "res": "In Stock"
+      },
+      "isbn": "",
+      "dimensions": "",
+      "weight": "",
+      "stock": "",
+      "tags": [
+        "child development",
+        "warning signs",
+        "early intervention",
+        "ebook"
+      ],
+      "recommendedAge": "Professionals, parents, and caregivers",
+      "relatedBooks": [
+        6,
+        8
+      ],
+      "bestSeller": "",
+      "newRelease": "New Release"
+    },
+    "8": {
+      "title": "The Role of Play in Child Assessment and Intervention (eBook)",
+      "about_book": "About the Book",
+      "description": "A complete manual with practical strategies to promote children's autonomy in the early years of life, following the principles of evidence-based approaches.",
+      "price": "6.99",
+      "category": "ebook",
+      "rating": 5,
+      "reviews": {
+        "int": 63,
+        "title": "Reviews"
+      },
+      "author": {
+        "title": "Author",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2023-09-10",
+        "title": "Published"
+      },
+      "publisher": {
+        "editor": "Papa-Letras",
+        "title": "Publisher"
+      },
+      "language": {
+        "title": "Language",
+        "lng": "Portuguese"
+      },
+      "pages": {
+        "title": "Pages",
+        "pages": 130
+      },
+      "format": {
+        "title": "Format",
+        "res": "eBook"
+      },
+      "fileSize": {
+        "title": "File Size"
+      },
+      "availability": {
+        "title": "Availability",
+        "res": "In Stock"
+      },
+      "isbn": "",
+      "dimensions": "",
+      "weight": "",
+      "stock": 0,
+      "tags": [
+        "child autonomy",
+        "early childhood",
+        "parenting",
+        "education",
+        "ebook"
+      ],
+      "recommendedAge": "Parents and educators of children aged 0-5 years",
+      "relatedBooks": [
+        4,
+        7
+      ],
+      "bestSeller": "Best Seller",
+      "newRelease": "New Release"
+    }
   },
   "tranings_mentorships_description_p": "Discover how mentorship can transform your career.",
   "tranings_mentorships_description_h2": "Professional Mentorship: What Is It and What Are Its Benefits?",
@@ -780,6 +1239,7 @@
   },
   "buy_button": "Buy now",
   "add_to_cart": "Add to cart",
+  "has_been_add_to_cart": "A item added to cart",
   "obs": "Note: The final price may vary due to exchange rates and/or local taxes, according to the policy of the selected payment method.",
   "contact_by_mail": "For any clarification, contact Paula Serrano by email: ",
   "learning_on_course": "What you will learn",
@@ -968,6 +1428,9 @@
     "button": "Search",
     "bottom_button": "Continue Shopping"
   },
-  "whatsapp_contact_me": "Need help? Contact us!"
+  "whatsapp_contact_me": "Need help? Contact us!",
+  "back": "Back",
+  "zomboni": "Buy from Zamboni",
+  "book_botton_atention": "⚠️ Attention: This product is exclusively sold in Portugal 🇵🇹. Shipping only within Portuguese territory."
 }
 

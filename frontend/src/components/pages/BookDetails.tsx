@@ -5,6 +5,7 @@ import '../../styles/pages/bookDetails.css';
 import { Star, ChevronLeft, ShoppingCart, Heart, AlertCircle, BookOpen, Check, X, ExternalLink } from 'lucide-react';
 import { useWishlist } from '../../context/WishlistContext';
 import { useCart } from '../../context/CartContext';
+import { useTranslation } from 'react-i18next';
 
 
 const BookDetails = () => {
@@ -149,7 +150,7 @@ const BookDetails = () => {
   };
 
   const availability = getAvailabilityInfo(book.availability);
-
+  const { t } = useTranslation();
   return (
     <div className="book-details-container">
       {/* Toast Notification */}
@@ -174,9 +175,9 @@ const BookDetails = () => {
       <div className="book-details-header">
         <Link to="/#livros" className="back-button">
           <ChevronLeft size={16} />
-          <span>Voltar</span>
+          <span>{t("back")}</span>
         </Link>
-        <h1 className="book-title">{book.title}</h1>
+        <h1 className="book-title">{t(`book.${book.id}.title`)}</h1>
       </div>
 
       <div className="book-details-content">
@@ -212,13 +213,13 @@ const BookDetails = () => {
 
               {book.newRelease && (
                 <div className="new-release-badge">
-                  Novo Lançamento
+                  {t(`book.${book.id}.newRelease`)}
                 </div>
               )}
 
               {book.bestSeller && (
                 <div className="bestseller-badge">
-                  Mais Vendido
+                  {t(`book.${book.id}.bestSeller`)}
                 </div>
               )}
             </div>
@@ -234,7 +235,7 @@ const BookDetails = () => {
                   />
                 ))}
               </div>
-              <span className="rating-count">{book.reviews} avaliações</span>
+              <span className="rating-count">{book.reviews} {t(`book.${book.id}.reviews.title`)}</span>
             </div>
 
             <div className="book-details-price">
@@ -250,49 +251,49 @@ const BookDetails = () => {
             </div>
 
             <div className="book-description-container">
-              <h2 className="section-title">Sobre o Livro</h2>
-              <p className="book-description">{book.description}</p>
+              <h2 className="section-title">{t(`book.${book.id}.about_book`)}</h2>
+              <p className="book-description">{t(`book.${book.id}.description`)}</p>
             </div>
 
             <div className="book-details-meta">
               <div className="meta-item">
-                <span className="meta-label">Autor</span>
+                <span className="meta-label">{t(`book.${book.id}.author.title`)}</span>
                 <span className="meta-value">{book.author}</span>
               </div>
               <div className="meta-item">
-                <span className="meta-label">Publicado</span>
-                <span className="meta-value">{formatDate(book.publicationDate)}</span>
+                <span className="meta-label">{t(`book.${book.id}.publicationDate.title`)}</span>
+                <span className="meta-value">{t(`book.${book.id}.publicationDate.date`)}</span>
               </div>
               <div className="meta-item">
-                <span className="meta-label">Linguagem</span>
-                <span className="meta-value">{book.language}</span>
+                <span className="meta-label">{t(`book.${book.id}.language.title`)}</span>
+                <span className="meta-value">{t(`book.${book.id}.language.lng`)}</span>
               </div>
               <div className="meta-item">
-                <span className="meta-label">Editora</span>
+                <span className="meta-label">{t(`book.${book.id}.publisher.title`)}</span>
                 <span className="meta-value">{book.publisher}</span>
               </div>
               {book.pages && (
                 <div className="meta-item">
-                  <span className="meta-label">Páginas</span>
+                  <span className="meta-label">{t(`book.${book.id}.pages.title`)}</span>
                   <span className="meta-value">{book.pages}</span>
                 </div>
               )}
               {book.format && (
                 <div className="meta-item">
-                  <span className="meta-label">Formato</span>
-                  <span className="meta-value">{book.format}</span>
+                  <span className="meta-label">{t(`book.${book.id}.format.title`)}</span>
+                  <span className="meta-value">{t(`book.${book.id}.format.res`)}</span>
                 </div>
               )}
               {book.fileSize && (
                 <div className="meta-item">
-                  <span className="meta-label">Tamanho do Ficheiro</span>
+                  <span className="meta-label">{t(`book.${book.id}.fileSize.title`)}</span>
                   <span className="meta-value">{book.fileSize}</span>
                 </div>
               )}
               <div className="meta-item">
-                <span className="meta-label">Disponibilidade</span>
+                <span className="meta-label">{t(`book.${book.id}.availability.title`)}</span>
                 <span className={`meta-value availability-${book.availability}`}>
-                  {availability.text}
+                  {t(`book.${book.id}.availability.res`)}
                 </span>
               </div>
             </div>
@@ -305,7 +306,7 @@ const BookDetails = () => {
                   disabled={isAddedToCart || book.availability === 'out-of-stock'}
                 >
                   <ShoppingCart size={18} />
-                  <span>{isAddedToCart ? 'Adicionado ao Carrinho' : 'Adicionar ao Carrinho'}</span>
+                  <span>{isAddedToCart ? t("has_been_add_to_cart") : t("add_to_cart")}</span>
                 </button>
                 <button
                   className="buy-button"
@@ -313,7 +314,7 @@ const BookDetails = () => {
                   disabled={book.availability === 'out-of-stock'}
                 >
                   <span>🇵🇹</span>
-                  <span>Comprar Agora</span>
+                  <span>{t("buy_button")}</span>
                 </button>
                 <button
                   className="external-buy-button"
@@ -321,11 +322,11 @@ const BookDetails = () => {
                   aria-label="Comprar na Zamboni Books"
                 >
                   <span>🇧🇷</span>
-                  <span>Comprar na Zamboni</span>
+                  <span>{t("zomboni")}</span>
                 </button>
               </div>
               <p className="exclusive-sale-message">
-                ⚠️ Atenção: Este produto tem venda exclusiva para Portugal🇵🇹. Envios apenas para território português.
+                {t("book_botton_atention")}
               </p>
             </div>
           </div>
