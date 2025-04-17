@@ -1,185 +1,311 @@
 :root {
-    --primary-color: #2c3e50;
-    --accent-color: #3498db;
-    --text-color: #333333;
-    --text-light: #666666;
-    --border-color: #e0e0e0;
-    --transition-speed: 0.3s;
-    --border-radius: 12px;
-    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --primary-color: white;
+  --secondary-color: #7E69AB;
+  --accent-color: #007bff;
+  --text-color: #333333;
+  --text-light: #666666;
+  --border-color: #e0e0e0;
+  --transition-speed: 0.3s;
+  --border-radius: 12px;
+  --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  --overlay-color: rgba(97, 147, 255, 0.85);
+}
+
+/* Main Section Styling */
+.lancamentos-section {
+  padding: 80px 20px;
+  background-color: #fff;
+  position: relative;
+}
+
+.lancamentos-container-main {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Header Styling */
+.lancamentos-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.lancamentos-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1.2rem;
+  line-height: 1.3;
+  position: relative;
+  display: inline-block;
+}
+
+.lancamentos-title:after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+  border-radius: 2px;
+}
+
+.lancamentos-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-light);
+  font-weight: 500;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Grid Layout */
+.lancamentos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 2rem;
+  
+}
+
+/* Card Styling */
+.lancamento-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+}
+
+.lancamento-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.lancamento-card {
+  background: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  transition: all var(--transition-speed) ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.lancamento-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px #007bff;
+}
+
+.lancamento-card.hovered {
+  transform: translateY(-8px);
+  
+}
+
+.lancamento-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  aspect-ratio: 1 / 1;
+}
+
+.lancamento-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.lancamento-card:hover .lancamento-image {
+  transform: scale(1.05);
+}
+
+.lancamento-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--overlay-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lancamento-card:hover .lancamento-overlay {
+  opacity: 1;
+}
+
+.lancamento-action {
+  color: white;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: 2px solid white;
+  border-radius: 30px;
+  transition: all 0.2s ease;
+}
+
+.lancamento-action:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.lancamento-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  padding: 1.2rem;
+  text-align: center;
+  line-height: 1.5;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animation */
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.7s ease-in;
+}
+
+.lancamentos-title:not(.fade-in),
+.lancamentos-subtitle:not(.fade-in) {
+  opacity: 0;
+}
+
+/* Loading animation for images */
+.lancamento-image:not(.loaded) {
+  background: linear-gradient(90deg, #f0f0f0, #f8f8f8, #f0f0f0);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Responsive layouts */
+@media (max-width: 1280px) {
+  .lancamentos-section {
+    padding: 70px 20px;
   }
   
-  .lancamentos {
-    text-align: center;
-    padding: 60px 20px;
-    margin-top: 20px;
-    background-color: #fff;
-    position: relative;
+  .lancamentos-grid {
+    gap: 25px;
+  }
+}
+
+/* Large tablets */
+@media (max-width: 1024px) {
+  .lancamentos-section {
+    padding: 60px 15px;
   }
   
-  .lancamentos h2 {
-    font-size: clamp(2rem, 4vw, 2.5rem);
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    line-height: 1.3;
+  .lancamentos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
   }
   
-  .lancamentos p {
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    color: var(--text-light);
-    font-weight: 500;
-    max-width: 800px;
-    margin: 0 auto 2.5rem;
-    line-height: 1.7;
+  .lancamentos-header {
+    margin-bottom: 3rem;
+  }
+}
+
+/* Small tablets and large phones */
+@media (max-width: 768px) {
+  .lancamentos-section {
+    padding: 50px 15px;
   }
   
-  .lancamentos-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto 4rem;
-    padding: 0 10px;
-  }
-  
-  .lancamento-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 1.5rem;
-  }
-  
-  .lancamento-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .lancamento-card {
-    background: #fff;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    overflow: hidden;
-    width: 100%;
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-    aspect-ratio: 1 / 1; /* Square on desktop */
-  }
-  
-  .lancamento-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  .lancamento-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  .lancamentos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px; /* Increased gap between items */
+    margin-bottom: 3rem;
   }
   
   .lancamento-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--text-color);
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    padding: 0 10px;
-    text-align: center;
-    max-width: 100%;
-    word-wrap: break-word;
-    line-height: 1.4;
+    font-size: 1rem;
+    padding: 1rem;
   }
   
-  /* Tablets (2 Columns) */
-  @media (max-width: 1024px) {
-    .lancamentos {
-      padding: 50px 15px;
-    }
-  
-    .lancamentos-container {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-      margin-bottom: 3.5rem;
-    }
-  
-    .lancamento-card {
-      aspect-ratio: 16 / 9; /* Wider, less tall for tablets */
-    }
-  
-    .lancamento-title {
-      font-size: 1.1rem;
-      margin-top: 0.8rem;
-    }
-  
-    .lancamento-wrapper {
-      margin-bottom: 1.2rem;
-    }
+  .lancamentos-header {
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 640px) {
+  .lancamentos-section {
+    padding: 40px 12px;
   }
   
-  /* Mobile (1 Column) */
-  @media (max-width: 768px) {
-    .lancamentos {
-      padding: 40px 10px;
-    }
-  
-    .lancamentos-container {
-      grid-template-columns: 1fr;
-      gap: 25px;
-      margin-bottom: 3rem;
-    }
-  
-    .lancamento-card {
-      aspect-ratio: 4 / 3; /* Compact for mobile */
-    }
-  
-    .lancamento-title {
-      font-size: 1rem;
-      margin-top: 0.8rem;
-    }
-  
-    .lancamento-wrapper {
-      margin-bottom: 1.5rem;
-    }
+  .lancamentos-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 60px; /* Further increased gap for mobile vertical layout */
+    row-gap: 70px; /* Even more space between rows */
   }
   
-  /* Very Small Devices (e.g., 480px and below) */
-  @media (max-width: 480px) {
-    .lancamentos {
-      padding: 30px 5px;
-    }
-  
-    .lancamentos-container {
-      gap: 20px;
-      margin-bottom: 2.5rem;
-    }
-  
-    .lancamento-card {
-      aspect-ratio: 3 / 2; /* Slightly wider for tiny screens */
-    }
-  
-    .lancamento-title {
-      font-size: 0.9rem;
-      margin-top: 0.5rem;
-      padding: 0 5px;
-    }
-  
-    .lancamento-wrapper {
-      margin-bottom: 1rem;
-    }
+  .lancamento-image-wrapper {
+    aspect-ratio: 16 / 9;
   }
   
-  /* Fade-in effect */
-  .fade-in {
-    opacity: 1;
-    transition: opacity 0.5s ease-in;
+  .lancamentos-header {
+    margin-bottom: 2.5rem;
   }
   
-  .lancamentos h2:not(.fade-in),
-  .lancamentos p:not(.fade-in) {
-    opacity: 0;
+  .lancamentos-title:after {
+    width: 60px;
+    height: 2px;
+    bottom: -10px;
   }
+  
+  .lancamento-item {
+    margin-bottom: 25px; /* Increased margin for card items */
+  }
+}
+
+/* Very small devices */
+@media (max-width: 480px) {
+  .lancamentos-section {
+    padding: 30px 10px;
+  }
+  
+  .lancamentos-grid {
+    gap: 75px; /* Further increased gap for very small devices */
+    row-gap: 85px; /* More space between rows for very small screens */
+  }
+  
+  .lancamentos-title {
+    font-size: 1.8rem;
+  }
+  
+  .lancamentos-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2.5rem; /* Extra space below subtitle */
+  }
+  
+  .lancamento-title {
+    font-size: 0.95rem;
+    padding: 0.8rem;
+  }
+  
+  .lancamento-action {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .lancamento-card {
+    margin-bottom: 30px; /* Increased space below cards */
+  }
+}

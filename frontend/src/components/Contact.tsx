@@ -1,5 +1,6 @@
 import React, { useState, FormEvent } from "react";
 import "../styles/contact.css";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -36,33 +37,14 @@ const Contact = () => {
     setFormSubmitted(true);
     setFormData({ name: "", email: "", message: "" });
   };
+  const { t } = useTranslation();
 
   return (
     <div className="contact-page">
       <div className="contact-container">
-        <h1 className="contact-header">Contacto</h1>
+        <h1 className="contact-header">{t("contact")}</h1>
         
         <div className="contact-content">
-          {/* Contact Information Section */}
-          <div className="contact-info">
-            <div className="info-section">
-              <h2>Horário</h2>
-              <p>Segunda - Sexta: 9:00 - 18:00</p>
-            </div>
-
-            <div className="info-section">
-              <h2>Telefone</h2>
-              <p className="phone-number">(+351) 965 430 026</p>
-              <p className="phone-note">Chamada para rede móvel nacional</p>
-            </div>
-
-            <div className="info-section">
-              <h2>Endereço</h2>
-              <p>Rua Arthur Águedo Miranda, Bloco 2, Loja A</p>
-              <p>Loja C - 000-000, Faro</p>
-            </div>
-          </div>
-
           {/* Contact Form Section */}
           <div className="contact-form">
             {formSubmitted ? (
@@ -71,18 +53,18 @@ const Contact = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
-                <h2>Fale Conosco</h2>
+                <h2>{t("contact_us_form_h2")}</h2>
                 {error && <div className="error-message">{error}</div>}
 
                 <div className="form-group">
-                  <label htmlFor="name">Nome</label>
+                  <label htmlFor="name">{t("full_name")}</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Seu nome completo"
+                    placeholder={t("contact_us_form_name_placeholder")}
                   />
                 </div>
 
@@ -94,56 +76,76 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="seu.email@exemplo.com"
+                    placeholder="email@exemplo.com"
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="message">Mensagem</label>
+                  <label htmlFor="message">{t("contact_us_form_messag")}</label>
                   <textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Escreva sua mensagem aqui..."
+                    placeholder={t("contact_us_form_messag_placeholder")}
                     rows={5}
                   />
                 </div>
 
                 <button type="submit" className="submit-button">
-                  Enviar
+                  {t("contact_us_form_button")}
                 </button>
               </form>
             )}
+          </div>
+
+          {/* Contact Information Section */}
+          <div className="contact-info">
+            <div className="info-section">
+              <h2>{t("schedule")}</h2>
+              <p>{t("mon-fri")}: 9:00 - 18:00</p>
+            </div>
+
+            <div className="info-section">
+              <h2>{t("phone")}</h2>
+              <p className="phone-number">(+351) 964 309 035</p>
+              <p className="phone-note">{t("phone_info")}</p>
+            </div>
+
+            <div className="info-section">
+              <h2>Email</h2>
+              <p>paulaserranoeducacao@gmail.com</p>
+              
+            </div>
           </div>
         </div>
 
         {/* Footer Section */}
         <div className="contact-footer">
           <div className="footer-section">
-            <h3>Área do Cliente</h3>
+            <h3>{t("cust_area")}</h3>
             <ul>
-              <li><a href="/account">A minha conta</a></li>
-              <li><a href="/orders">Encomendas</a></li>
-              <li><a href="/deliveries">Entregas</a></li>
-              <li><a href="/faq">Perguntas Frequentes</a></li>
+              <li><a href="/account">{t("ac_o1")}</a></li>
+              <li><a href="/orders">{t("ac_o2")}</a></li>
+              <li><a href="/deliveries">{t("ac_o3")}</a></li>
+              <li><a href="/faq">{t("ac_o4")}</a></li>
             </ul>
           </div>
 
           <div className="footer-section">
-            <h3>Informações</h3>
+            <h3>{t("info")}</h3>
             <ul>
-              <li><a href="/privacy">Política de Privacidade</a></li>
-              <li><a href="/cookies">Política de Cookies</a></li>
-              <li><a href="/terms">Termos e Condições</a></li>
-              <li><a href="/complaints">Livro de Reclamações</a></li>
+              <li><a href="/privacy">{t("info_o1")}</a></li>
+              <li><a href="/cookies">{t("info_o2")}</a></li>
+              <li><a href="/terms">{t("info_o3")}</a></li>
+              <li><a href="/complaints">{t("info_o4")}</a></li>
             </ul>
           </div>
         </div>
 
         {/* Copyright Section */}
         <div className="contact-copyright">
-          <p>© {new Date().getFullYear()} Paula Serrano. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} {t("footer_bottom")}</p>
         </div>
       </div>
     </div>

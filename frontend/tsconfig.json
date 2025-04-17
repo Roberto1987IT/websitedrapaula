@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "target": "ESNext",
+    "target": "ES6",
     "jsx": "react-jsx",
     "module": "ESNext",
     "strict": true,
@@ -11,7 +11,17 @@
     "noEmit": true,
     "allowJs": false,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  }
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "downlevelIteration": true,
+    "noFallthroughCasesInSwitch": true,
+    "importHelpers": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "build", "dist"]
 }
-

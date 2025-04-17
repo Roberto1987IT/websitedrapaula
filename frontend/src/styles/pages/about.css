@@ -14,7 +14,6 @@
   gap: 50px;
   flex-wrap: wrap;
   text-align: left;
-  
 }
 
 /* Header Section (Tag and Heading) */
@@ -27,6 +26,49 @@
 .about-content {
   flex: 1;
   max-width: 550px;
+  position: relative;
+}
+
+.about-text {
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.about-text.collapsed {
+  max-height: 400px;
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+
+.about-text.expanded {
+  max-height: 800px;
+}
+
+.additional-text {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.expanded .additional-text {
+  opacity: 1;
+}
+
+.read-more-button {
+  background: transparent;
+  color: #007bff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 6px 0;
+  margin-bottom: 15px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  display: block;
+}
+
+.read-more-button:hover {
+  color: #0056b3;
+  text-decoration: underline;
 }
 
 .about-tag {
@@ -85,9 +127,7 @@
   margin: 0 auto;
   line-height: 0;
   overflow: hidden;
-  
   border-radius: 40%;
-  
 }
 
 .about-image img {
@@ -129,6 +169,10 @@
     max-width: 250px;
     margin: 20px auto 0;
   }
+  .read-more-button {
+    text-align: center;
+    margin: 0 auto 15px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -142,5 +186,9 @@
     width: 80%;
     max-width: 250px;
     margin: 20px auto 0;
+  }
+
+  .about-tag {
+    margin-top: 5rem;
   }
 }

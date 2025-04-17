@@ -1,0 +1,350 @@
+/* AboutDetail.css - Enhanced styling */
+
+
+.about-detail {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f5f6fa, #ffffff);
+  padding: 3rem 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+  margin-top: 3rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.about-detail-content {
+  max-width: 56rem;
+  margin: 0 auto;
+  transition: all 0.3s ease-in-out;
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Back link styling */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  color: #4a6eb5;
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.back-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(134, 183, 254, 0.1);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+  z-index: -1;
+  border-radius: 0.5rem;
+}
+
+.back-link:hover {
+  color: #2c4f9c;
+  transform: translateX(-3px);
+}
+
+.back-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.back-link svg {
+  margin-right: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.back-link:hover svg {
+  transform: translateX(-2px);
+}
+
+/* Profile section with image */
+.about-profile-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-direction: column;
+}
+
+.about-image-container {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin-bottom: 1.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(134, 183, 254, 0.2);
+  border: 4px solid white;
+  transition: all 0.5s ease;
+  animation: fadeInUp 1s ease-out;
+}
+
+.about-image-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(134, 183, 254, 0.3);
+}
+
+.about-profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.about-image-container:hover .about-profile-image {
+  transform: scale(1.1);
+}
+
+.about-intro {
+  text-align: center;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+/* Profile tag */
+.about-tag {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(134, 183, 254, 0.15), rgba(134, 183, 254, 0.3));
+  color: #4a6eb5;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(134, 183, 254, 0.15);
+  transition: all 0.3s ease;
+}
+
+.about-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(134, 183, 254, 0.2);
+}
+
+/* Heading styles */
+.about-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.about-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 3rem;
+  height: 0.25rem;
+  background: linear-gradient(to right, #86b7fe, #4a6eb5);
+  border-radius: 9999px;
+}
+
+/* Content card */
+.about-card {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(134, 183, 254, 0.1);
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Text styles */
+.about-text {
+  color: #4a5568;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.about-text p:hover {
+  transform: translateX(5px);
+}
+
+.about-subheading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.about-subheading::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  height: 1.25rem;
+  width: 0.25rem;
+  background: linear-gradient(to bottom, #86b7fe, #4a6eb5);
+  border-radius: 9999px;
+}
+
+/* List styling */
+.about-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 2rem;
+}
+
+.about-list li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.about-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #86b7fe;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.about-list li:hover {
+  transform: translateX(5px);
+}
+
+.about-list li:hover::before {
+  background-color: #4a6eb5;
+  transform: scale(1.5);
+}
+
+/* Footer styling */
+.about-footer {
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: #718096;
+  border-top: 1px solid rgba(203, 213, 224, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 2rem;
+  }
+  
+  .about-card {
+    padding: 3rem;
+  }
+  
+  .about-footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+
+
+@media (min-width: 768px) {
+  .about-detail {
+    padding: 5rem 0;
+  }
+  
+  .about-heading {
+    font-size: 3rem;
+  }
+  
+  .about-text {
+    font-size: 1.1rem;
+  }
+  
+  .about-subheading {
+    font-size: 1.75rem;
+  }
+
+  .about-profile-section {
+    flex-direction: row;
+    text-align: left;
+    gap: 2.5rem;
+  }
+
+  .about-image-container {
+    margin-bottom: 0;
+  }
+
+  .about-intro {
+    text-align: left;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-detail {
+    padding: 2rem 0;
+  }
+  
+  .about-heading {
+    font-size: 2rem;
+  }
+  
+  .about-card {
+    padding: 1.5rem;
+  }
+  
+  .about-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .about-list li {
+    margin-bottom: 1.25rem;
+  }
+
+  .about-image-container {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}

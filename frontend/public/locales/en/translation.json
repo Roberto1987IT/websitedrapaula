@@ -1,0 +1,1452 @@
+{
+  "full_name": "Full Name",
+  "home": "Home",
+  "meating_ps": "Meet Paula Serrano",
+  "tranings": "Trainings",
+  "tranings_courses": "Courses",
+  "tranings_mentorships": "Mentorships",
+  "tranings_Immersions": "Immersions",
+  "resources": "Resources",
+  "resources_books": "Books and eBooks",
+  "resources_articles": "Articles and Theses",
+  "contact": "Contact",
+  "login": "Log in",
+  "registration": "Sign up",
+  "logout": "Log out",
+  "come_meeting": "Meet Paula",
+  "banner_title_h1": "Therapeutic intervention in practice",
+  "banner_title_p": "Trainings and resources for therapists, educators, and parents who want to make a difference.",
+  "more_info": "Learn more",
+  "more_read": "Read more",
+  "less_read": "Read less",
+  "courses_description": "The favorites of Therapists and Educators to transform child development into practice",
+  "courses": {
+    "1": {
+      "title": "Play and OT - Theory and Practice",
+      "description": "Play in Occupational Therapy – From Theory to Practice\n\nCourse\n4-day in-person training\n\nInstructor:\nPaula Serrano – Occupational Therapist\n\nOverview: Occupational therapists use play in practice both for assessment and intervention, but the specific use of play...",
+      "price": 515,
+      "instructor": "Paula Serrano",
+      "location": "Brazil / Rio de Janeiro",
+      "date": "May 17-20, 2025",
+      "learningOutcomes": [
+        "Theories and Frames of Reference",
+        "Development of Play and Playfulness Skills",
+        "Assessment Methods",
+        "Intervention Strategies"
+      ],
+      "description_course": "Course Description",
+      "about_course": "About the Course",
+      "about_course_p": "4-day in-person training with Occupational Therapist Paula Serrano.",
+      "equipaments": "Overview",
+      "equipaments_p1": "Occupational therapists use play in practice both for assessment and intervention, but the specific use of play in pediatric occupational therapy varies. In the occupational therapy literature on play, there are concerns regarding how occupational therapists approach the role of play in their intervention.",
+      "equipaments_p2": "Various articles suggest limitations and a lack of emphasis on play-focused interventions by pediatric occupational therapists. These limitations include diminished attitudes toward play, with greater emphasis placed on competencies unrelated to play (e.g., motor, social skills), failure to assess play, and difficulty defining a play-focused intervention plan.",
+      "equipaments_p3": "However, assessing play and engaging in play-focused interventions are vital for child development, health, and honoring childhood.",
+      "course_content_title1": "Program Content",
+      "course_content_title1_li": {
+        "1": "Defining Play",
+        "2": "Reviewing Different Theories of Play",
+        "3": "The Evolution of Play in Occupational Therapy",
+        "4": "Frames of Reference for Play in Occupational Therapy",
+        "5": "The Developmental Sequence of Play Throughout Childhood"
+      },
+      "course_content_title2": "Play Assessment",
+      "course_content_title2_li": {
+        "1": "Interview",
+        "2": "Questionnaires: The Play History (Takata)",
+        "3": "Organizing Observation in a Natural Context",
+        "4": "Instruments: Revised Knox Preschool Play Scale (Knox); Test of Playfulness (TOP) (Bundy)",
+        "5": "Defining Therapeutic Goals"
+      },
+      "course_content_title3": "Promoting Play",
+      "course_content_title3_li": {
+        "1": "The Role of the Occupational Therapist",
+        "2": "Therapeutic Intervention",
+        "3": "Intervention in the Child's Context"
+      },
+      "metodology_h": "Methodology",
+      "metodology_p": "Theoretical lectures, group discussions, and practical exercises",
+      "teacher": "Teacher",
+      "localization": {
+        "title": "Location",
+        "description": "Brazil / Rio de Janeiro"
+      },
+      "a_date": {
+        "title": "Date",
+        "description": "May 17-20, 2025"
+      }
+    },
+    "2": {
+      "title": "Clinical Reasoning and Sensory Integration Intervention in Early Childhood",
+      "description": "Clinical reasoning and intervention in sensory integration in early childhood\n\nTraining Program: 24 hours\n\nInstructor:\nPaula Serrano – Occupational Therapist\n\nIntervention Area:\nSensory Integration\n\nGeneral Objectives: Reflect on development in the early years...",
+      "price": 350,
+      "instructor": "Paula Serrano",
+      "location": "Portugal / Faro",
+      "date": "June 10-12, 2025",
+      "learningOutcomes": [
+        "Understand factors influencing early childhood development",
+        "Apply neuroscience knowledge in sensory integration practice",
+        "Use tools like SPM2 and Dunn's Sensory Profile",
+        "Develop clinical reasoning in assessment data analysis"
+      ],
+      "description_course": "Course Description",
+      "title_1": {
+        "title": "About the Course",
+        "p": "Duration – 24 hours with Occupational Therapist Paula Serrano."
+      },
+      "title_2": {
+        "title": "Intervention Area",
+        "p": "Sensory Integration."
+      },
+      "title_3": {
+        "title": "Target Audience",
+        "p": "Occupational therapists certified in Sensory Integration"
+      },
+      "title_4": {
+        "title": "General Objectives",
+        "list": {
+          "1": "Reflect on development in the early years and influencing factors",
+          "2": "Analyze contributions of developmental theories and neuroscience to understanding child development",
+          "3": "Analyze the current scientific evidence on sensory systems supporting Ayres Sensory Integration",
+          "4": "Explore the importance of sensory integration assessment, methodologies, and tools available",
+          "5": "Practice clinical reasoning by interpreting assessment data",
+          "6": "Develop therapeutic goals based on assessment",
+          "7": "Plan intervention",
+          "8": "Analyze therapeutic intervention using Ayres Sensory Integration approach"
+        }
+      },
+      "title_5": {
+        "title": "Program Content",
+        "list": {
+          "1": "Child development and supporting factors",
+          "2": "Ayres Sensory Integration and scientific evidence on the impact of sensory systems on development",
+          "3": "Self-regulation and sensory dysfunction",
+          "4": "Praxis and the concept of Affordance",
+          "5": "Development of praxis and early signs of dyspraxia",
+          "6": "Classification of sensory processing disorders in early childhood",
+          "7": "Tools for evaluating sensory integration dysfunction",
+          "8": "Analysis of a developmental scale within the perspective of sensory integration",
+          "9": "Organizing structured and unstructured sensory processing observations",
+          "10": "Assessment data analysis and Clinical Reasoning",
+          "11": "Intervention Planning: Goals, session organization",
+          "12": "Ayres Sensory Integration fidelity in clinical practice"
+        }
+      },
+      "title_6": {
+        "title": "Methodology",
+        "p": "Sessions will be in-person, theoretical, and practical with video analysis of clinical cases."
+      },
+      "teacher": "Teacher",
+      "localization": {
+        "title": "Location",
+        "description": "Portugal/Faro"
+      },
+      "a_date": {
+        "title": "Date",
+        "description": "June 10-12, 2025"
+      }
+    },
+    "3": {
+      "title": "Sensory Integration: Assessment and Clinical Reasoning",
+      "description": "Sensory Integration: Assessment and Clinical Reasoning\n\nTraining program: 24 hours\n\nInstructor:\nPaula Serrano – Master in Occupational Therapy\n\nProgram Content: Sensory integration dysfunction, exploration of assessment tools...",
+      "price": 350,
+      "instructor": "Paula Serrano",
+      "location": "To be determined",
+      "date": "Coming soon...",
+      "learningOutcomes": [
+        "Identify and analyze sensory integration dysfunctions",
+        "Apply sensory integration methodologies in assessments",
+        "Interpret instruments such as SPM, SPMp, and the Dunn Sensory Profile",
+        "Develop clinical reasoning based on data"
+      ],
+      "description_course": "Course Description",
+      "title_1": {
+        "title": "About the Course",
+        "p": "24-hour training with Paula Serrano – Master in Occupational Therapy, specializing in Sensory Integration."
+      },
+      "title_2": {
+        "title": "Intervention Area",
+        "p": "Sensory Integration."
+      },
+      "title_3": {
+        "title": "Audience",
+        "p": "Occupational therapists with postgraduate training in Sensory Integration"
+      },
+      "title_4": {
+        "title": "General Objectives",
+        "list": {
+          "1": "Analyze sensory integration dysfunction and its relationship with referral reasons",
+          "2": "Explore the importance of sensory integration assessment, methodologies, and the various available instruments",
+          "3": "Practice clinical reasoning by interpreting assessment data",
+          "4": "Set occupational performance goals and sensory integration objectives",
+          "5": "Analyze different report formats documenting sensory integration difficulties and their relationship to occupational performance"
+        }
+      },
+      "title_5": {
+        "title": "Program Content",
+        "list": {
+          "1": "Sensory Integration Dysfunction",
+          "2": "Referral reasons leading to a sensory integration assessment",
+          "3": "The sensory integration assessment process",
+          "4": "Assessment methodologies",
+          "5": "Application and analysis of Sensory History",
+          "6": "Structured and unstructured observations",
+          "7": "Analysis and interpretation of assessment tools – SPM, SPMp, Dunn Sensory Profile",
+          "8": "Interpreting developmental scales in light of sensory integration",
+          "9": "Clinical reasoning",
+          "10": "Setting occupational performance and sensory integration goals",
+          "11": "Report writing"
+        }
+      },
+      "title_6": {
+        "title": "Methodology",
+        "p": "The sessions will be both theoretical and practical with video analysis."
+      },
+      "teacher": "Teacher",
+      "localization": {
+        "title": "Location",
+        "description": "To be determined"
+      },
+      "a_date": {
+        "title": "Date",
+        "description": "Coming soon..."
+      }
+    },
+    "4": {
+      "title": "Assessment and Clinical Reasoning in Early Childhood – Focus on Play and Sensory Integration",
+      "description": "Assessment and Clinical Reasoning in Early Childhood – Focus on Play and Sensory Integration\n\nDuration: 21 hours\n\nInstructor:\nPaula Serrano – Occupational Therapist\n\nProgram Content: Play development (0-3 years), assessment tools, and classification of sensory processing disorders...",
+      "price": 350,
+      "instructor": "Paula Serrano",
+      "location": "TBD",
+      "date": "Coming Soon...",
+      "learningOutcomes": [
+        "Understand the stages of play from 0 to 3 years",
+        "Identify elements of playfulness in early childhood",
+        "Apply tools to assess play and sensory integration",
+        "Classify sensory processing disorders in early childhood"
+      ],
+      "description_course": "Course Description",
+      "title_1": {
+        "title": "About the Course",
+        "p": "Duration – 21 hours with Occupational Therapist Paula Serrano."
+      },
+      "title_2": {
+        "title": "Intervention Area",
+        "p": "Sensory Integration and Play"
+      },
+      "title_3": {
+        "title": "Target Audience",
+        "p": "Occupational therapists with postgraduate training in Sensory Integration"
+      },
+      "title_4": {
+        "title": "General Objectives",
+        "l1": {
+          "1": "Analyze research and stages of play with the body, objects, and social/emotional in early childhood",
+          "2": "Analyze elements of playfulness in early childhood",
+          "3": "Analyze the importance of sensory integration and classify sensory processing disorders in early childhood",
+          "4": "Explore sensory integration and play assessment, methodologies, and tools available",
+          "5": "Practice clinical reasoning by interpreting assessment data",
+          "6": "Define therapeutic goals based on assessment"
+        }
+      },
+      "title_5": {
+        "title": "Program Content",
+        "l1": {
+          "1": "Play in Occupational Therapy",
+          "2": "Play development from 0 to 3 years: stages and warning signs",
+          "3": "Development of playful behavior",
+          "4": "Play assessment",
+          "5": "Tools for assessing play",
+          "6": "Sensory Integration in early childhood and sensory integration dysfunction",
+          "7": "Classification of sensory processing disorders in early childhood",
+          "8": "Neuroscience, play, and sensory integration",
+          "9": "Sensory integration assessment tools for ages 0 to 3",
+          "10": "Clinical reasoning",
+          "11": "Assessment, clinical reasoning, and intervention planning"
+        }
+      },
+      "title_6": {
+        "title": "Methodology",
+        "p": "Sessions will be theoretical and practical with video analysis of clinical cases."
+      },
+      "teacher": "Teacher",
+      "localization": {
+        "title": "Location",
+        "description": "To Be Determined"
+      },
+      "a_date": {
+        "title": "Date",
+        "description": "Coming Soon..."
+      }
+    },
+    "5": {
+      "title": "International Program in Sensory Integration Training",
+      "price": null,
+      "instructor": "Paula Serrano and international team",
+      "location": "Online and Brazil (various cities to be confirmed)",
+      "date": "Start date to be confirmed",
+      "learningOutcomes": [
+        "Understand the fundamentals of Ayres' Sensory Integration Theory",
+        "Assess and interpret sensory difficulties using specific methodologies",
+        "Develop intervention plans for occupational performance difficulties",
+        "Implement interventions based on the sensory integration approach",
+        "Analyze scientific evidence on the effectiveness of Sensory Integration"
+      ],
+      "description_course": "Course Description",
+      "title_1": {
+        "title": "About the Course",
+        "p": "360 hours | 18 months",
+        "subtitle": {
+          "1": {
+            "title": "Trainers",
+            "p": "Professors from Portugal, Brazil, and the United States of America"
+          },
+          "2": {
+            "title": "Target Audience",
+            "p": "Occupational therapists"
+          },
+          "3": {
+            "title": "Area of Intervention",
+            "p": "Sensory Integration"
+          },
+          "4": {
+            "title": "Methodology",
+            "p": "Online theoretical classes and practical in-person sessions"
+          }
+        }
+      },
+      "title_2": {
+        "title": "General Objectives",
+        "li": {
+          "1": "Understand the fundamentals of Jean Ayres' Sensory Integration (SI) Theory",
+          "2": "Identify sensory systems involved in sensory integration and their influence on human development",
+          "3": "Recognize the neurophysiology underlying sensory reactivity, processing, and praxis",
+          "4": "Relate sensory processing disorders to difficulties in occupational performance",
+          "5": "Assess and interpret sensory difficulties using various methodologies and evaluation instruments",
+          "6": "Interpret assessment data and use clinical reasoning based on the current taxonomy",
+          "7": "Develop an intervention plan addressing occupational performance difficulties",
+          "8": "Implement intervention using the sensory integration approach",
+          "9": "Discuss scientific evidence on the effectiveness of Sensory Integration as a therapeutic approach"
+        }
+      },
+      "title_3": {
+        "title": "Program Content",
+        "li": {
+          "1": "Theoretical and neuroscience-based foundations of Sensory Integration",
+          "2": "Sensory systems and their impact on development",
+          "3": "Neurophysiology of sensory reactivity and processing",
+          "4": {
+            "title": "Assessment in Sensory Integration",
+            "li": [
+              "Assessment methodologies",
+              "Standardized instruments",
+              "Interpretation of results"
+            ]
+          },
+          "5": "Clinical reasoning and therapeutic diagnosis",
+          "6": {
+            "title": "Intervention Planning:",
+            "li": [
+              "Defining objectives",
+              "Strategies based on Sensory Integration"
+            ]
+          },
+          "7": "Implementation of intervention according to Ayres' fidelity measure",
+          "8": "Scientific evidence in the practice of Sensory Integration"
+        }
+      },
+      "title_4": {
+        "title": "Methodology",
+        "p": "The program combines online theoretical sessions with practical in-person sessions in various cities in Brazil (locations to be confirmed). The training will be provided by international experts from Portugal, Brazil, and the United States of America."
+      },
+      "title_5": {
+        "title": "Limited Enrollments",
+        "p": "Enrollments for this program are limited to ensure training quality. For information about upcoming cohorts and the enrollment process, please contact via email."
+      },
+      "teacher": "Instructor",
+      "localization": {
+        "title": "Location",
+        "description": "Online and Brazil (various cities to be confirmed)"
+      },
+      "a_date": {
+        "title": "Date",
+        "description": "Start date to be confirmed"
+      }
+    }
+  },
+  "book": {
+    "1": {
+      "title": "A crianca e a Motricidade Fina",
+      "about_book": "About the Book",
+      "description": "Fine motor skills are how we use our arms, hands, and fingers. They refer to the skills needed to manipulate an object, meaning how to use the hand and fingers precisely, according to the demands of the activity. The development of fine motor skills is essential for the child's interaction with the environment and happens when the child engages with objects and uses tools, for example in daily life activities. This book focuses on the development of fine motor skills across different childhood age groups, illustrating their relationship with the child's everyday life. In addition to development, it explores the skills required for fine motor skills to develop smoothly. It also recommends equipment and materials that can help children who have difficulties in this area.",
+      "price": "14",
+      "category": "printed",
+      "rating": 5,
+      "reviews": {
+        "int": 28,
+        "title": "reviews"
+      },
+      "author": {
+        "title": "Author",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2016-09-15",
+        "title": "Published"
+      },
+      "publisher": {
+        "editor": "Papa-Letras",
+        "title": "Publisher"
+      },
+      "language": {
+        "title": "Language",
+        "lng": "Portuguese"
+      },
+      "pages": {
+        "title": "Pages",
+        "pages": 120
+      },
+      "desponibility": "Availability",
+      "isbn": "9789898214591",
+      "tags": [
+        "child development",
+        "education",
+        "motor skills",
+        "manual skills"
+      ],
+      "dimensions": "172 x 245 x 7 mm",
+      "weight": "320g",
+      "availability": "in-stock",
+      "stock": 45,
+      "recommendedAge": "Educators and parents of children aged 2-7 years",
+      "relatedBooks": [
+        4,
+        3
+      ],
+      "bestSeller": "Best Seller",
+      "newRelease": "New Release"
+    },
+    "2": {
+      "title": "A Integracao Sensorial",
+      "about_book": "About the Book",
+      "description": "Sensory integration is the neurological process that organizes our sensations and is the foundation for all forms of learning so that we can live in the world and make sense of it. It is the base for academic learning, for the skills needed to perform daily life and social activities, and even for the ability to have empathy for others. What we see, smell, hear, taste, or touch is deciphered at every moment in our living experience, along with our 'hidden senses': vestibular and proprioceptive. When a child has problems processing sensations (sensory integration dysfunction), they struggle to use the information received through the senses to function efficiently in daily activities – problems may arise with motor coordination, sleep regulation, eating, attention, self-care tasks, learning, play, and emotional and social development.",
+      "price": "14.90",
+      "category": "printed",
+      "rating": 5,
+      "reviews": {
+        "int": 42,
+        "title": "reviews"
+      },
+      "author": {
+        "title": "Author",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2018-09-20",
+        "title": "Published"
+      },
+      "publisher": {
+        "editor": "Papa-Letras",
+        "title": "Publisher"
+      },
+      "language": {
+        "title": "Language",
+        "lng": "Portuguese"
+      },
+      "pages": {
+        "title": "Pages",
+        "pages": 168
+      },
+      "isbn": "",
+      "dimensions": "",
+      "weight": "",
+      "availability": {
+        "title": "Availability",
+        "res": "In Stock"
+      },
+      "format": {
+        "title": "Format",
+        "res": "Book"
+      },
+      "stock": "",
+      "tags": [
+        "sensory integration",
+        "child development",
+        "play",
+        "neuroeducation"
+      ],
+      "fileSize": {
+        "title": "File Size",
+        "size": "8.2 MB"
+      },
+      "recommendedAge": "Professionals and parents of children aged 0–5",
+      "relatedBooks": [
+        3,
+        1
+      ],
+      "bestSeller": "Best Seller",
+      "newRelease": "New Release"
+    },
+    "3": {
+      "title": "Brincar e Integracao Sensorial Nos Primeiros Anos",
+      "about_book": "About the Book",
+      "description": "All babies are born with characteristics that make them unique. Gradually, they adapt to their family and the environment in which they are born, and naturally, development happens and autonomy emerges as they engage and move within the family's life cycle. Development is the term used to describe the changes in a child's physical growth and their ability to learn in terms of sensorimotor, socioemotional, cognitive behavior, and communication skills. All these areas are interconnected, each depending on and influencing the others, becoming visible through the baby's behavior and their increasing autonomy.",
+      "price": "16.00",
+      "originalPrice": 24.99,
+      "category": "printed",
+      "rating": 5,
+      "reviews": {
+        "int": 15,
+        "title": "reviews"
+      },
+      "author": {
+        "title": "Author",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2024-03-30",
+        "title": "Published"
+      },
+      "publisher": {
+        "editor": "Papa-Letras",
+        "title": "Publisher"
+      },
+      "language": {
+        "title": "Language",
+        "lng": "Portuguese"
+      },
+      "pages": {
+        "title": "Pages",
+        "pages": 240
+      },
+      "isbn": "",
+      "dimensions": "",
+      "weight": "",
+      "availability": {
+        "title": "Availability",
+        "res": "In Stock"
+      },
+      "format": {
+        "title": "Format",
+        "res": "Book"
+      },
+      "stock": "",
+      "tags": [
+        "sensory integration",
+        "child development",
+        "play",
+        "neuroeducation"
+      ],
+      "fileSize": {
+        "title": "File Size"
+      },
+      "recommendedAge": "Professionals and parents of children aged 0–5",
+      "relatedBooks": [
+        3,
+        1
+      ],
+      "bestSeller": "Best Seller",
+      "newRelease": "New Release"
+    },
+    "4": {
+      "title": "O Desenvolvimento da Autonomia dos 0 aos 3 anos",
+      "about_book": "About the Book",
+      "description": "All babies are born with characteristics that make them unique. Gradually, they adapt to the family and the environment they are born into, and naturally, development occurs, and autonomy begins to emerge as they engage and move within the family life cycle. Development is the term used to describe changes in a child's physical growth and their ability to learn in terms of sensory-motor behavior, socio-emotional, cognitive, and communication skills. All of these areas are interconnected, and each one depends on and influences the others, being visible in the baby's behavior and their growing autonomy.",
+      "price": "18.00",
+      "category": "Printed",
+      "rating": 5,
+      "reviews": {
+        "int": 36,
+        "title": "reviews"
+      },
+      "author": {
+        "title": "Author",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2017-04-10",
+        "title": "Published"
+      },
+      "publisher": {
+        "editor": "Papa-Letras",
+        "title": "Publisher"
+      },
+      "language": {
+        "title": "Language",
+        "lng": "Portuguese"
+      },
+      "pages": {
+        "title": "Pages",
+        "pages": 200
+      },
+      "isbn": "9789898214645",
+      "dimensions": "188 x 258 x 15 mm",
+      "weight": "380g",
+      "availability": {
+        "title": "Availability",
+        "res": "In Stock"
+      },
+      "stock": 12,
+      "tags": [
+        "Child Autonomy",
+        "Development",
+        "Montessori Methodology",
+        "Early Childhood"
+      ],
+      "recommendedAge": "Parents and caregivers of children aged 0-3 years",
+      "relatedBooks": [
+        1,
+        2
+      ],
+      "bestSeller": "",
+      "newRelease": ""
+    },
+    "5": {
+      "title": "A Integração Sensorial e o Engajamento Ocupacional na Infância (eBook)",
+      "about_book": "About the Book",
+      "description": "This eBook explores the relationship between sensory integration and occupational engagement in childhood, providing practical tools for professionals and parents.",
+      "price": "9.99",
+      "category": "eBook",
+      "rating": 5,
+      "reviews": {
+        "int": 52,
+        "title": "evaluations"
+      },
+      "author": {
+        "title": "Author",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2023-05-10",
+        "title": "Published"
+      },
+      "publisher": {
+        "editor": "Papa Letras",
+        "title": "Publisher"
+      },
+      "language": {
+        "title": "Language",
+        "lng": "Portuguese"
+      },
+      "pages": {
+        "title": "Pages",
+        "pages": 180
+      },
+      "format": {
+        "title": "Format",
+        "res": "eBook"
+      },
+      "fileSize": {
+        "title": "File Size"
+      },
+      "availability": {
+        "title": "Availability",
+        "res": "In Stock"
+      },
+      "isbn": "",
+      "dimensions": "",
+      "weight": "",
+      "stock": 12,
+      "tags": [
+        "sensory integration",
+        "occupational engagement",
+        "child development",
+        "ebook"
+      ],
+      "recommendedAge": "Professionals and parents of children aged 0-8 years",
+      "relatedBooks": [
+        2,
+        3
+      ],
+      "bestSeller": "Best Seller",
+      "newRelease": "New Release"
+    },
+    "6": {
+      "title": "A Linguagem e o Brincar em Condicoes Neurodiversas (eBook)",
+      "about_book": "About the Book",
+      "description": "A complete collection of sensory activities and games to naturally and funly stimulate children's development.",
+      "price": "7.99",
+      "category": "eBook",
+      "rating": 5,
+      "reviews": {
+        "int": 78,
+        "title": "evaluations"
+      },
+      "author": {
+        "title": "Author",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2023-06-15",
+        "title": "Published"
+      },
+      "publisher": {
+        "editor": "Papa-Letras",
+        "title": "Publisher"
+      },
+      "language": {
+        "title": "Language",
+        "lng": "Portuguese"
+      },
+      "pages": {
+        "title": "Pages",
+        "pages": 120
+      },
+      "format": {
+        "title": "Format",
+        "res": "eBook"
+      },
+      "fileSize": {
+        "title": "File Size"
+      },
+      "availability": {
+        "title": "Availability",
+        "res": "In Stock"
+      },
+      "isbn": "",
+      "dimensions": "",
+      "weight": "",
+      "stock": "",
+      "tags": [
+        "sensory play",
+        "practical activities",
+        "child development",
+        "ebook"
+      ],
+      "recommendedAge": "Parents and educators of children aged 1-6 years",
+      "relatedBooks": [
+        5,
+        7
+      ],
+      "bestSeller": "Best Seller",
+      "newRelease": "New Release"
+    },
+    "7": {
+      "title": "Instrumentos de Avaliacao do Modelo Ludico (eBook)",
+      "about_book": "About the Book",
+      "description": "An essential guide on the milestones of child development and how to identify early signs that may require specialized attention.",
+      "price": "8.99",
+      "category": "ebook",
+      "rating": 5,
+      "reviews": {
+        "int": 45,
+        "title": "Reviews"
+      },
+      "author": {
+        "title": "Author",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2023-08-20",
+        "title": "Published"
+      },
+      "publisher": {
+        "editor": "Papa-Letras",
+        "title": "Publisher"
+      },
+      "language": {
+        "title": "Language",
+        "lng": "Portuguese"
+      },
+      "pages": {
+        "title": "Pages",
+        "pages": 150
+      },
+      "format": {
+        "title": "Format",
+        "res": "eBook"
+      },
+      "fileSize": {
+        "title": "File Size"
+      },
+      "availability": {
+        "title": "Availability",
+        "res": "In Stock"
+      },
+      "isbn": "",
+      "dimensions": "",
+      "weight": "",
+      "stock": "",
+      "tags": [
+        "child development",
+        "warning signs",
+        "early intervention",
+        "ebook"
+      ],
+      "recommendedAge": "Professionals, parents, and caregivers",
+      "relatedBooks": [
+        6,
+        8
+      ],
+      "bestSeller": "",
+      "newRelease": "New Release"
+    },
+    "8": {
+      "title": "The Role of Play in Child Assessment and Intervention (eBook)",
+      "about_book": "About the Book",
+      "description": "A complete manual with practical strategies to promote children's autonomy in the early years of life, following the principles of evidence-based approaches.",
+      "price": "6.99",
+      "category": "ebook",
+      "rating": 5,
+      "reviews": {
+        "int": 63,
+        "title": "Reviews"
+      },
+      "author": {
+        "title": "Author",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2023-09-10",
+        "title": "Published"
+      },
+      "publisher": {
+        "editor": "Papa-Letras",
+        "title": "Publisher"
+      },
+      "language": {
+        "title": "Language",
+        "lng": "Portuguese"
+      },
+      "pages": {
+        "title": "Pages",
+        "pages": 130
+      },
+      "format": {
+        "title": "Format",
+        "res": "eBook"
+      },
+      "fileSize": {
+        "title": "File Size"
+      },
+      "availability": {
+        "title": "Availability",
+        "res": "In Stock"
+      },
+      "isbn": "",
+      "dimensions": "",
+      "weight": "",
+      "stock": 0,
+      "tags": [
+        "child autonomy",
+        "early childhood",
+        "parenting",
+        "education",
+        "ebook"
+      ],
+      "recommendedAge": "Parents and educators of children aged 0-5 years",
+      "relatedBooks": [
+        4,
+        7
+      ],
+      "bestSeller": "Best Seller",
+      "newRelease": "New Release"
+    }
+  },
+  "tranings_mentorships_description_p": "Discover how mentorship can transform your career.",
+  "tranings_mentorships_description_h2": "Professional Mentorship: What Is It and What Are Its Benefits?",
+  "tranings_mentorships_description_h2_p": "Professional mentorship is a process where a more experienced professional (mentor) guides and supports a less experienced professional (mentee) in career development. This relationship is based on the exchange of experiences, knowledge, and practical advice, helping the mentee overcome challenges and develop skills.",
+  "tranings_mentorships_description_h3": "Benefits of Professional Mentorship",
+  "mentorships_ul_lu1": "Access to valuable knowledge and experiences.",
+  "mentorships_ul_lu2": "Insights into best practices and effective strategies.",
+  "mentorships_ul_lu3": "Accelerated skill development.",
+  "books": "Books",
+  "and": "and",
+  "ebooks": "Ebooks",
+  "books_p": "Select your favorites",
+  "input_placeholder": "Search books...",
+  "all": "All",
+  "dwnl": "Download",
+  "no_books_find": "No books found for your search.",
+  "clr_flt": "Clear filters",
+  "about_p1": "I am an occupational therapist with 30 years of experience in clinical practice and 20 years dedicated to teaching. Throughout my career, I have always sought training from the world's leading references in the field, which led me to specialize in sensory integration and play in the United States. Clinical practice, combined with teaching, has allowed me to build solid clinical reasoning and develop an evidence-based approach. This methodology is proven daily in the care provided to the many children and families I have had the privilege to work with.",
+  "about_p2": "I deeply believe that childhood is a transformative period in which we, as professionals, have the opportunity to significantly alter the life paths of children and their families. This belief brings great responsibility to my clinical practice but also a commitment to sharing knowledge.",
+  "read_more": "Read more",
+  "read_less": "Read less",
+  "bio": "Biography",
+  "bio_p1": "Paula Serrano – Occupational Therapist since 1993. Holds a Master's degree in Occupational Therapy – Specialization in Sensory Integration, from the Escola Superior de Saúde do Alcoitão.",
+  "bio_p2": "Certified in Sensory Integration by the University of Southern California – Department of Occupational Science and Therapy and Western Psychological Services. Also certified in Neurodevelopmental Treatment (Bobath) by the European Bobath Tutors' Association.",
+  "bio_p3": "Has 30 years of clinical experience working with children and families.",
+  "bio_p4": "Clinical director, coordinator, and occupational therapist at the Center for Stimulation for Development and Learning «Miúdos & Etc.».",
+  "bio_p5": "Certified trainer in the fields of child development, special education, sensory integration, and play since 2000. Has also been active as a trainer in Brazil and Spain since 2018.",
+  "bio_p6": "Guest assistant professor in the Master's program in Occupational Therapy, specializing in Sensory Integration, since 2006.",
+  "bio_p7": "Co-supervisor of several master’s theses in the areas of play and sensory integration.",
+  "book_author": "She is the author of the books:",
+  "author_coauthor": "Author and co-author of chapters of the books:",
+  "practice_learn": "Learn in Practice!",
+  "practice_learn_p": "Schedule your individual or group immersion and develop your skills during the clinical experience.",
+  "news_h2": "Image Gallery",
+  "news_p": "Each image and video tells part of our journey!",
+  "galery_img": {
+    "img1": "Training Room.",
+    "img2": "Group Classes",
+    "img3": "Rooms for theory-to-practice in occupational therapy.",
+    "img4": "Exclusive Trainings.",
+    "img5": "Practical Lessons.",
+    "img6": "Evaluation and Clinical Reasoning.",
+    "img7": "Classrooms for teaching",
+    "img8": "Individual and group activities.",
+    "img9": "Living space.",
+    "img10": "Welcoming environment.",
+    "img11": "Architectural details.",
+    "img12": "Modern rooms.",
+    "img13": "State-of-the-art equipment.",
+    "img14": "Event space.",
+    "img15": "Study area.",
+    "img16": "Practical laboratory.",
+    "img17": "Collaborative space.",
+    "img18": "Relaxation environment.",
+    "img19": "Practical activities",
+    "img20": "Group lessons",
+    "img21": "Demonstrations",
+    "img22": "Training spaces",
+    "img23": "Equipment",
+    "img24": "Events",
+    "img25": "Testimonials"
+  },
+  "folowers": {
+    "1": {
+      "comment": "The methodology is very practical and easily applicable to daily life. It exceeded my expectations!",
+      "rating": 5,
+      "name": "Rita Maria"
+    },
+    "2": {
+      "comment": "Excellent and well-structured content. I was able to implement the knowledge quickly.",
+      "rating": 4,
+      "name": "João Pedro",
+      "role": ""
+    },
+    "3": {
+      "comment": "I learned much more than I expected. The techniques taught are valuable for any professional.",
+      "rating": 5,
+      "name": "Mariana Silva",
+      "role": ""
+    },
+    "4": {
+      "comment": "Clear and objective explanation. I was able to understand complex concepts in a simple way.",
+      "rating": 4,
+      "name": "Carlos Lima",
+      "role": ""
+    },
+    "5": {
+      "comment": "Excellent teaching style and attention to detail. Paula has a gift for teaching!",
+      "rating": 5,
+      "name": "Ana Paula",
+      "role": ""
+    },
+    "6": {
+      "comment": "I recommend it to anyone who wants to grow in their career! A transformative and practical course.",
+      "rating": 5,
+      "name": "Fernanda Souza",
+      "role": ""
+    },
+    "7": {
+      "comment": "Great course with relevant and up-to-date content. Immediate application in the market.",
+      "rating": 4,
+      "name": "João Vitor",
+      "role": ""
+    },
+    "8": {
+      "comment": "The best course I've ever taken! Paula has an incredible ability to share knowledge.",
+      "rating": 5,
+      "name": "Clara Mendes",
+      "role": ""
+    }
+  },
+  "folowers_h2": "What People Say About Us",
+  "folowers_p": "Discover the experiences of our clients with our courses and mentorships",
+  "contact_form_h2": "Get in Touch",
+  "contact_our_valor1": "At Paula Serrano, we value every connection with our clients. Whether it's to clarify doubts, receive valuable feedback, or simply have a chat, our team is always ready to listen and help.",
+  "contact_our_valor2": "Use our contact form to:",
+  "contact_our_benefits1": "Request personalized quotes",
+  "contact_our_benefits2": "Get technical information about our products",
+  "contact_our_benefits3": "Provide suggestions to improve our services",
+  "contact_contact_imediatly": "For immediate assistance during business hours (Mon-Fri: 9 am to 6 pm), you can also contact us directly by phone (+351) 965 430 026. We guarantee an email response within 24 business hours for all messages received.",
+  "contact_us_form_h2": "Send Us a Message",
+  "contact_us_form_name": "Name",
+  "contact_us_form_name_placeholder": "Type your full name",
+  "contact_us_form_email": "Email",
+  "contact_us_form_subject": "Subject",
+  "contact_us_form_subject_1": "Select a subject",
+  "contact_us_form_subject_2": "Question about products",
+  "contact_us_form_subject_3": "Request a quote",
+  "contact_us_form_subject_4": "Feedback",
+  "contact_us_form_subject_5": "Other subject",
+  "contact_us_form_messag": "Message",
+  "contact_us_form_messag_placeholder": "Write your detailed message here...",
+  "contact_us_form_button": "Send Message",
+  "sended": "Sended...",
+  "schedule": "Schedule",
+  "mon-fri": "Monday - Friday",
+  "phone": "Phone",
+  "phone_info": "(Call to national mobile network)",
+  "adress": "Address",
+  "cust_area": "Customer Area",
+  "ac_o1": "My Account",
+  "ac_o2": "Orders",
+  "ac_o3": "Deliveries",
+  "ac_o4": "Frequently Asked Questions",
+  "info": "INFORMATION",
+  "info_o1": "Privacy Policy",
+  "info_o2": "Cookie Policy",
+  "info_o3": "Terms and Conditions",
+  "info_o4": "Complaints Book",
+  "footer_bottom": "Paula Serrano Educação, Lda. All rights reserved.",
+  "home_filosofia": "Our Philosophy",
+  "home_val": "Our Values",
+  "home_val_p": "Fundamental principles that guide every decision and initiative",
+  "mission": "Mission",
+  "mission_p1": "We value the sharing of knowledge as a powerful tool to broaden horizons and bring more quality of life to families. We believe that by disseminating knowledge, we can create a positive impact that goes far beyond the individual, reaching entire communities.",
+  "mission_p2": "We strive to create an environment where each child can flourish at their own pace, respecting their individuality and supporting their holistic development. Our approach recognizes that every growth journey is unique.",
+  "bases": "Fundamental Principles",
+  "basses": {
+    "1": {
+      "title": "Innovation",
+      "text": "We constantly seek new approaches and methodologies to improve our educational practices."
+    },
+    "2": {
+      "title": "Integrity",
+      "text": "We act with transparency and honesty in all our interactions and decisions."
+    },
+    "3": {
+      "title": "Empathy",
+      "text": "We put ourselves in others' shoes to understand their unique needs and challenges."
+    },
+    "4": {
+      "title": "Excellence",
+      "text": "We are committed to the highest standards of quality in everything we do."
+    },
+    "5": {
+      "title": "Collaboration",
+      "text": "We value teamwork and the exchange of ideas to achieve meaningful results."
+    },
+    "6": {
+      "title": "Respect",
+      "text": "We recognize and value the diversity of experiences and perspectives in our community."
+    }
+  },
+  "commitments": "Our Commitment",
+  "commitments_p1": "Through courses, mentoring, and teaching materials, our goal is to empower professionals in their daily practices. We provide tools for them to support children and families in their journey of growth and development. In this way, we aim to contribute so that each human being can reach their full potential, respecting their uniqueness and promoting a more inclusive and strengthened society.",
+  "commitments_p2": "We are committed to creating accessible resources and programs that inspire educators and families to work together for the well-being of children. We believe that through this collaboration, we can lay the foundations for a future where all children have the opportunity to thrive.",
+  "mentorship_program": "Mentorship Program",
+  "mentorship_program_h1": "Personalized Professional Mentorship",
+  "mentorship_program_h1_p": "Develop your skills and accelerate your career with specialized guidance.",
+  "mentorship_h3_1": "The Program",
+  "mentorship_h3_1_p": "Our professional mentorship is designed for professionals who seek to accelerate their career development through personalized guidance. With weekly meetings and continuous support, you will gain access to valuable insights and practical strategies to achieve your professional goals.",
+  "mentorship_h3_2": "Benefits",
+  "mentorship_h3_2_p": {
+    "1": {
+      "text": "Personalized insights on your professional development."
+    },
+    "2": {
+      "text": "Honest and constructive feedback on your strengths and areas for improvement."
+    },
+    "3": {
+      "text": "Access to professional networks and exclusive opportunities."
+    },
+    "4": {
+      "text": "Accelerated development of technical skills."
+    }
+  },
+  "mentorship_h3_3": "Methodology",
+  "mentorship_h3_3_p": "Our methodology combines individual mentoring sessions, practical exercises, and projects tailored to your professional context. We work with a structured approach in 3 phases:",
+  "mentorship_h3_3_p_fases": {
+    "1": {
+      "text": "Diagnosis and definition of clear objectives."
+    },
+    "2": {
+      "text": "Development of strategies and action planning."
+    },
+    "3": {
+      "text": "Implementation and evaluation of results."
+    }
+  },
+  "meet_mentorship_programm": "Explore our mentorship programs",
+  "ind_and_group_mentorchip": "Individual and Group Mentorship",
+  "mentor_info_list": {
+    "indiv": {
+      "h": "Individual Mentorship",
+      "text": "A personalized approach tailored to your specific career needs. Exclusive sessions with your dedicated mentor focused on your goals and particular challenges.",
+      "li1": "100% personalized development plan",
+      "li2": "Continuous and targeted feedback",
+      "li3": "Flexibility in scheduling and topics",
+      "li4": "Detailed tracking of your progress"
+    },
+    "group": {
+      "h": "Group Mentorship",
+      "text": "Learn in a collaborative environment with other professionals, sharing experiences and expanding your network.",
+      "li1": "Exchange of experiences among participants",
+      "li2": "More affordable than individual mentorship",
+      "li3": "Networking with professionals from different fields",
+      "li4": "Group dynamics and exercises"
+    }
+  },
+  "FAQ_title": "Frequently Asked Questions",
+  "FAQ": {
+    "1": {
+      "question": "How does the mentorship process work?",
+      "answer": "The mentorship process begins with an assessment of your profile and professional goals. Next, we establish a personalized plan with regular meetings where you will receive guidance, feedback, and challenges to accelerate your development."
+    },
+    "2": {
+      "question": "What is the duration of the mentorship?",
+      "answer": "The duration of the mentorship will be defined after assessing the needs."
+    },
+    "3": {
+      "question": "What are the prerequisites to participate?",
+      "answer": "There are no formal prerequisites, only the commitment to your development and availability for the scheduled meetings."
+    },
+    "4": {
+      "question": "How are the meetings conducted?",
+      "answer": "The meetings are held remotely through video conferencing platforms such as Zoom or Google Meet, providing flexibility and convenience for all participants."
+    }
+  },
+  "imerssion_program": "Immersion Program",
+  "imerssion_h1": "Intensive Clinical Experience",
+  "imerssion_p": "Take your professional practice to the next level with our specialized immersion program.",
+  "imerssion_geral_h1": "Overview",
+  "imerssion_geral_p": "Our immersion program offers an intensive practical experience for professionals and students who want to improve their clinical skills in a real and supervised environment. During the immersion period, you will have the opportunity to apply theoretical knowledge in practical situations, receiving direct feedback from experienced supervisors.",
+  "imerssion_geral_cards": {
+    "1": {
+      "title": "Practical Experience",
+      "text": "Learn through practice with real cases and authentic clinical situations."
+    },
+    "2": {
+      "title": "Individualized Mentoring",
+      "text": "Direct supervision with experienced professionals and continuous feedback."
+    },
+    "3": {
+      "title": "Distinguished Certification",
+      "text": "Earn a certificate that proves your intensive practical experience."
+    }
+  },
+  "formats": {
+    "disponibles": {
+      "title": "Available Formats",
+      "list": {
+        "1": {
+          "title": "Individual Immersion",
+          "text": "Personalized attention focused on your specific needs.",
+          "li": {
+            "1": "Duration: 1 to 5 days",
+            "2": "Customized program",
+            "3": "Detailed individual feedback",
+            "4": "Flexible schedules"
+          }
+        },
+        "2": {
+          "title": "Group Immersion",
+          "text": "Collaborative experience with knowledge sharing.",
+          "li": {
+            "1": "Duration: 2 to 7 days",
+            "2": "Groups of 3 to 8 people",
+            "3": "Group dynamics and case studies",
+            "4": "Professional networking"
+          }
+        },
+        "3": {
+          "title": "Intensive Immersion",
+          "text": "Comprehensive immersion program with theoretical and practical modules.",
+          "li": {
+            "1": "Duration: 1 to 4 weeks",
+            "2": "Comprehensive guidance",
+            "3": "Exclusive learning materials",
+            "4": "Premium certification"
+          }
+        }
+      }
+    }
+  },
+  "functions": {
+    "title": "How It Works",
+    "list": {
+      "1": {
+        "title": "Initial Assessment",
+        "text": "We conduct an interview to understand your specific needs and goals. This step allows us to personalize your immersion experience and maximize learning."
+      },
+      "2": {
+        "title": "Personalized Planning",
+        "text": "We develop a detailed immersion plan, including schedule, topics to be covered, and methodologies to be applied during the program."
+      },
+      "3": {
+        "title": "Immersion Experience",
+        "text": "You participate in scheduled activities, alternating between theoretical learning and practical application, always with supervision from our team."
+      },
+      "4": {
+        "title": "Feedback",
+        "text": "Throughout the immersion, you will receive continuous feedback on your performance, enabling real-time professional growth."
+      },
+      "5": {
+        "title": "Certification",
+        "text": "At the end of the program, you will receive your certification."
+      }
+    }
+  },
+  "space": "Discover our space",
+  "steps": {
+    "title": "Next Steps",
+    "h3": "Ready to start your journey of professional transformation?",
+    "p": "The process to participate in our immersion programs is simple and straightforward:",
+    "list": {
+      "1": {
+        "strong": "Get in touch",
+        "text": "Schedule an initial consultation with our team via the contact form or phone."
+      },
+      "2": {
+        "strong": "Profile evaluation",
+        "text": "We conduct a brief interview to understand your needs and goals."
+      },
+      "3": {
+        "strong": "Personalized proposal",
+        "text": "Receive a detailed proposal with program options, dates, and costs."
+      },
+      "4": {
+        "strong": "Confirm your participation",
+        "text": "Make your reservation and get ready for a transformative experience."
+      }
+    }
+  },
+  "imerssion_contact_us": {
+    "title": "Ready to Elevate Your Professional Experience?",
+    "text": "Contact us for more information about our immersion programs and schedule a consultation with our experts."
+  },
+  "atrigs_and_theses_h1": "Articles and Academic Theses",
+  "atrigs_and_theses_p": "Scientific knowledge in Occupational Therapy for professionals and students",
+  "article": "Article",
+  "articles": {
+    "1": {
+      "title": "Play and sensory processing in children aged 36 to 72 months",
+      "description": "Playing is the main occupation in the early years of a child's life..."
+    },
+    "2": {
+      "title": "Cultural and linguistic adaptation and collection of normative data from the Structured Observations of Sensory Related Motor Performance",
+      "description": "Since the development of the theory of sensory integration..."
+    },
+    "3": {
+      "title": "Body-related play behaviors in babies aged 10 to 12 months",
+      "description": "Introduction: By playing, the child gives meaning to the world around them..."
+    }
+  },
+  "search_bar_palceholder": "Search by title, author, or content...",
+  "showing": "Showing",
+  "publications": "Publications",
+  "of": "of",
+  "teses": "Theses",
+  "no_publications_find": "No publications found with the selected criteria.",
+  "allert_msg": {
+    "add_course": "Added to the cart!",
+    "course_already_in_cart": "The item is already in the cart."
+  },
+  "months": {
+    "january": "January",
+    "february": "February",
+    "march": "March",
+    "april": "April",
+    "may": "May",
+    "june": "June",
+    "july": "July",
+    "august": "August",
+    "september": "September",
+    "october": "October",
+    "november": "November",
+    "december": "December"
+  },
+  "buy_button": "Buy now",
+  "add_to_cart": "Add to cart",
+  "has_been_add_to_cart": "A item added to cart",
+  "obs": "Note: The final price may vary due to exchange rates and/or local taxes, according to the policy of the selected payment method.",
+  "contact_by_mail": "For any clarification, contact Paula Serrano by email: ",
+  "learning_on_course": "What you will learn",
+  "privacity": {
+    "title": "Privacy Policy",
+    "company_name": "Paula Serrano Educação",
+    "updated": "Last updated: 04/02/2025",
+    "pointes": {
+      "1": {
+        "title": "Introduction",
+        "p": "Paula Serrano Educação, Lda. is committed to protecting the privacy and personal data of its users. This Privacy Policy explains how we collect, use, and protect the information provided by visitors to our website."
+      },
+      "2": {
+        "title": "Data Collected",
+        "p": "We may collect the following personal data:",
+        "li": {
+          "1": "Name and email address (when provided by the user through contact or registration forms).",
+          "2": "Information voluntarily provided in interactions on the website.",
+          "3": "Browsing data, such as IP address, device type, and on-site behavior, for statistical purposes and to improve user experience."
+        }
+      },
+      "3": {
+        "title": "Purpose of Data Collection",
+        "p": "The collected data will be used for:",
+        "li": {
+          "1": "Responding to information and contact requests.",
+          "2": "Sending communications related to services, courses, and events (if the user has provided consent).",
+          "3": "Improving website navigation and functionality.",
+          "4": "Compliance with legal obligations."
+        }
+      },
+      "4": {
+        "title": "Contact",
+        "p": "For more information about our Privacy Policy or to exercise your rights, contact us via email:"
+      },
+      "5": {
+        "title": "Data Security",
+        "p": "We implement technical and organizational security measures to protect personal data against unauthorized access, loss, or alteration."
+      },
+      "6": {
+        "title": "User Rights",
+        "p": "Users have the right to:",
+        "li": {
+          "1": "Access, correct, or delete their personal data.",
+          "2": "Withdraw consent for data processing, when applicable.",
+          "3": "Request data portability.",
+          "4": "File a complaint with the relevant Data Protection Authority (CNPD)."
+        }
+      },
+      "7": {
+        "title": "Cookies and Tracking Technologies",
+        "p": "The website may use cookies to enhance user experience. Users can configure their browser to refuse cookies, although this may affect website navigation."
+      },
+      "8": {
+        "title": "Changes to the Privacy Policy",
+        "p": "Paula Serrano Educação, Lda. may update this Privacy Policy at any time. Any changes will be published on the website and will take effect immediately."
+      },
+      "9": {
+        "title": "Contact",
+        "p": "For more information about our Privacy Policy or to exercise your rights, contact us through the means provided on the website."
+      }
+    }
+  },
+  "ckookes": {
+    "title": "Cookie Policy",
+    "company_name": "Paula Serrano Educação",
+    "updated": "Last update: ",
+    "pointes": {
+      "1": {
+        "title": "What are Cookies?",
+        "p": "Cookies are small text files stored on your device (computer, tablet, or mobile phone) when you visit a website. These files allow the website to recognize your device and store some information about your preferences or previous actions."
+      },
+      "2": {
+        "title": "Why do we use Cookies?",
+        "p": "On the Paula Serrano Educação website, cookies are used to:",
+        "li": {
+          "1": "Improve the user's browsing experience.",
+          "2": "Ensure efficient and secure website functionality.",
+          "3": "Analyze traffic and browsing behavior to optimize content and functionality.",
+          "4": "Remember user preferences for future visits."
+        }
+      },
+      "3": {
+        "title": "Types of Cookies Used",
+        "p": "Our website may use the following types of cookies:",
+        "li_strong": {
+          "1": "Essential Cookies",
+          "2": "Performance Cookies",
+          "3": "Functional Cookies",
+          "4": "Third-Party Cookies"
+        },
+        "li": {
+          "1": "Necessary for the website to function. Without these cookies, some services cannot be provided.",
+          "2": "Collect information about how visitors use the website (e.g., most visited pages). This data is anonymous and only used to improve the website's functionality.",
+          "3": "Allow the website to remember user preferences (e.g., language or region) and provide a more personalized experience.",
+          "4": "May use external services like Google Analytics to analyze traffic. These cookies are managed by third parties and follow their own privacy policies."
+        }
+      },
+      "4": {
+        "title": "Managing Cookies",
+        "p": "When accessing our website for the first time, a notification will be presented with the option to accept or configure cookies. Users can change their cookie settings at any time in their browser, enabling or disabling some or all cookies. Please note that disabling essential cookies may affect the website's functionality."
+      },
+      "5": {
+        "title": "Changes to the Cookie Policy",
+        "p": "Paula Serrano Educação may update this policy periodically. We recommend checking this page regularly to stay informed about any changes."
+      },
+      "6": {
+        "title": "Contact",
+        "p": "If you have any questions about this Cookie Policy or how your data is managed, please contact us through the channels available on the website."
+      }
+    }
+  },
+  "terms": {
+    "title": "Terms and Conditions",
+    "company_name": "Paula Serrano Educação",
+    "updated": "Last updated: ",
+    "pointes": {
+      "1": {
+        "title": "Introduction",
+        "p": "Welcome to the website of Paula Serrano Educação, Lda. By accessing and using this website, you agree to comply with these Terms and Conditions of Use."
+      },
+      "2": {
+        "title": "Intellectual Property",
+        "p": "All content on this website, including texts, images, logos, and other materials, is the property of Paula Serrano Educação, Lda., unless otherwise stated. Reproduction, distribution, or any other use of the content without prior written authorization is prohibited."
+      },
+      "3": {
+        "title": "Purpose of Data Collection",
+        "p": "All content on this website, including texts, images, logos, and other materials, is the property of Paula Serrano Educação, Lda., unless otherwise stated. Reproduction, distribution, or any other use of the content without prior written authorization is prohibited."
+      },
+      "4": {
+        "title": "Limitation of Liability",
+        "p": "Paula Serrano Educação, Lda. makes every effort to keep the information on this website up-to-date and accurate. However, it does not guarantee the accuracy, completeness, or timeliness of the information and is not responsible for any damages resulting from the use of this website."
+      },
+      "5": {
+        "title": "Third-Party Links",
+        "p": "This website may contain links to third-party websites. Paula Serrano Educação, Lda. is not responsible for the content or privacy practices of these websites."
+      },
+      "6": {
+        "title": "Changes to the Terms and Conditions",
+        "p": "Paula Serrano Educação, Lda. reserves the right to modify these Terms and Conditions at any time. The changes will take effect upon their publication on the website."
+      },
+      "7": {
+        "title": "Applicable Law and Jurisdiction",
+        "p": "These Terms and Conditions are governed by Portuguese law. Any dispute related to this website will be subject to the exclusive jurisdiction of the Portuguese courts."
+      },
+      "8": {
+        "title": "Contact",
+        "p": "For any questions related to these Terms and Conditions, please contact us through the means available on our website."
+      }
+    }
+  },
+  "account": {
+    "login": {
+      "reset_password": "Reset Password",
+      "not_member": "Don't have an account?"
+    },
+    "signup": {
+      "full_name": "Full Name",
+      "phone": "Phone",
+      "country": "Select your country",
+      "gender": "Gender",
+      "select_gender": "Select gender",
+      "gm": "Male",
+      "gf": "Female",
+      "go": "Other",
+      "g_anonimus": "Prefer not to say",
+      "bd": "Date of Birth",
+      "pc": "Confirm Password*",
+      "accept_terms_cond": "I accept the ",
+      "is_member": "Already have an account?"
+    }
+  },
+  "favorits": {
+    "title": "My Wishlist",
+    "empty_list": "Your wishlist is empty",
+    "p": "Add items to your wishlist to find them here later.",
+    "button": "Search Products",
+    "item": "Item",
+    "item_plural": "Items"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty_list": "Your cart is empty",
+    "p": "Add products to your cart to proceed with the purchase process.",
+    "buy": "Buy",
+    "button": "Search",
+    "bottom_button": "Continue Shopping"
+  },
+  "whatsapp_contact_me": "Need help? Contact us!",
+  "back": "Back",
+  "zomboni": "Buy from Zamboni",
+  "book_botton_atention": "⚠️ Attention: This product is exclusively sold in Portugal 🇵🇹. Shipping only within Portuguese territory.",
+  "form_placeholder": {
+    "pass_roles": "Your password must be at least 8 characters long.",
+    "pass_conf": "Confirm your password"
+  }
+}
+
