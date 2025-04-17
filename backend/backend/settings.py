@@ -1,7 +1,9 @@
 import os
 from pathlib import Path
 from datetime import timedelta
+from secret_files.secret_data import SECRET_KEY, PSQL_DB, PSQL_USER, PSQL_USER_PASSWORD
 from django.utils.translation import gettext_lazy as _
+
 
 # Build paths
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,6 +15,15 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-$mt2*as%uu)_(hbol%z
 DEBUG = os.getenv('DJANGO_DEBUG', 'True') == 'True'
 ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = SECRET_KEY
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+# For development, allow localhost and 127.0.0.1
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
+# Application definition
 # ===================
 # APPLICATION CONFIG
 # ===================
@@ -141,6 +152,23 @@ TEMPLATES = [
     },
 ]
 
+WSGI_APPLICATION = 'backend.wsgi.application'
+
+# Database
+# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': PSQL_DB,
+        'USER': PSQL_USER,
+        'PASSWORD': PSQL_USER_PASSWORD,
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
+
+# Password validation
+# https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 # ===================
 # PASSWORD VALIDATION
 # ===================
