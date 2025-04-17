@@ -249,6 +249,7 @@ const Register = () => {
   const renderPasswordStrength = () => {
     if (!formData.password) return null;
 
+
     const strengthColors = [
       "#ff3e36", // Very weak
       "#ff691f", // Weak
