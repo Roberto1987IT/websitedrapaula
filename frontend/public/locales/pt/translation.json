@@ -862,8 +862,18 @@
   "about_p2": "Acredito profundamente que a infância é um período transformador, no qual nós, profissionais, temos a oportunidade de alterar significativamente o percurso de vida das crianças e de suas famílias. Essa certeza traz uma enorme responsabilidade à minha prática clínica, mas também um compromisso em compartilhar os conhecimentos.",
   "read_more": "Ler mais",
   "read_less": "Ler menos",
+  "bio": "Biografia",
+  "bio_p1": "Paula Serrano – Terapeuta Ocupacional desde 1993. Com um mestrado em Terapia Ocupacional – Área de especialização Integração Sensorial, pela Escola Superior de Saúde do Alcoitão.",
+  "bio_p2": "É certificada em Integração Sensorial pela University of Southern California – Department of Occupational Science and Therapy e Western Psychological Services. É também certificada no tratamento do neuro desenvolvimento (Bobath) pela European Bobath Tutors' Association.",
+  "bio_p3": "Tem 30 anos de experiência de prática clínica com crianças e famílias.",
+  "bio_p4": "É diretora clínica, coordenadora e terapeuta ocupacional do Centro de Estimulação para o Desenvolvimento e Aprendizagem «Miúdos & Etc.».",
+  "bio_p5": "É formadora certificada nas áreas específicas de desenvolvimento infantil, ensino especial, integração sensorial e brincar desde 2000. Desde 2018 mantém a atividade como formadora também no Brasil e Espanha.",
+  "bio_p6": "É professora adjunta convidada no Mestrado em Terapia Ocupacional, área de especialidade Integração Sensorial desde 2006.",
+  "bio_p7": "Coorientadora de diversas teses de mestrado, nas áreas do brincar e integração sensorial.",
+  "book_author": "É autora dos livros:",
+  "author_coauthor": "Autora e coautora de capítulos dos livros:",
   "practice_learn": "Aprenda na Prática!",
-  "practice_learn_p": "Agende a sua imersão individual ou em grupo e desenvolva as suas competencias durante a experiência clínica.",
+  "practice_learn_p": "Agende a sua imersão individual ou em grupo e desenvolva as suas competências durante a experiência clínica.",
   "news_h2": "Galeria de Imagens",
   "news_p": "Cada imagem e vídeo conta parte da nossa jornada!",
   "galery_img": {
@@ -1439,7 +1449,7 @@
   "form_placeholder": {
     "pass_roles": "Sua senha deve ter no mínimo 8 caracteres.",
     "pass_conf": "Confirme sua senha"
-  },
+  }
 }
 
 

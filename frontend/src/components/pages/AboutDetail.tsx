@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import '../../styles/pages/aboutDetail.css';
 import aboutImage from "../../assets/about/Design sem nome 1.png";
+import { useTranslation } from "react-i18next";
 
 const AboutDetail = () => {
   // Scroll to top on page load
@@ -9,6 +10,7 @@ const AboutDetail = () => {
     window.scrollTo(0, 0);
   }, []);
 
+    const { t, i18n } = useTranslation();
   return (
     <div className="about-detail">
       <div className="container">
@@ -32,7 +34,7 @@ const AboutDetail = () => {
             >
               <path d="m15 18-6-6 6-6" />
             </svg>
-            Voltar
+            {t("back")}
           </Link>
 
           <div className="about-main-content">
@@ -45,27 +47,27 @@ const AboutDetail = () => {
                 />
               </div>
               <div className="about-intro">
-                <span className="about-tag">Biografia</span>
+                <span className="about-tag">{t("bio")}</span>
                 <h1 className="about-heading">Paula Serrano</h1>
               </div>
             </div>
 
             <div className="about-card about-text">
-              <p>Paula Serrano – Terapeuta Ocupacional desde 1993. Com um mestrado em Terapia Ocupacional – Área de especialização Integração Sensorial, pela Escola Superior de Saúde do Alcoitão.</p>
+              <p>{t("bio_p1")}</p>
 
-              <p>É certificada em Integração Sensorial pela University of Southern California – Department of Occupational Science and Therapy e Western Psychological Services. É também certificada no tratamento do neuro desenvolvimento (Bobath) pela European Bobath Tutors' Association.</p>
+              <p>{t("bio_p2")}</p>
 
-              <p>Tem 30 anos de experiência de prática clínica com crianças e famílias.</p>
+              <p>{t("bio_p3")}</p>
 
-              <p>É diretora clínica, coordenadora e terapeuta ocupacional do Centro de Estimulação para o Desenvolvimento e Aprendizagem «Miúdos & Etc.».</p>
+              <p>{t("bio_p4")}</p>
 
-              <p>É formadora certificada nas áreas específicas de desenvolvimento infantil, ensino especial, integração sensorial e brincar desde 2000. Desde 2018 mantém a atividade como formadora também no Brasil e Espanha.</p>
+              <p>{t("bio_p5")}</p>
 
-              <p>É professora adjunta convidada no Mestrado em Terapia Ocupacional, área de especialidade Integração Sensorial desde 2006.</p>
+              <p>{t("bio_p6")}</p>
 
-              <p>Coorientadora de diversas teses de mestrado, nas áreas do brincar e integração sensorial.</p>
+              <p>{t("bio_p7")}</p>
 
-              <h2 className="about-subheading">É autora dos livros:</h2>
+              <h2 className="about-subheading">{t("book_author")}</h2>
               <ul className="about-list">
                 <li>Serrano, P.; De Luque, C. (2015). A Criança e a Motricidade Fina. Lisboa, Portugal: Papa-Letras. (Também editado pela editora Narcea em Castelhano)</li>
                 <li>Serrano, P. (2016). Integração Sensorial. Lisboa, Portugal: Papa-Letras. (Também editado pela editora Narcea em Castelhano)</li>
@@ -73,7 +75,7 @@ const AboutDetail = () => {
                 <li>Serrano, P. (2024). Brincar e Integração Sensorial nos Primeiros Anos de Vida. Lisboa, Portugal: Papa-Letras.</li>
               </ul>
 
-              <h2 className="about-subheading">Autora e coautora de capítulos dos livros:</h2>
+              <h2 className="about-subheading">{t("practice_learn")}:</h2>
               <ul className="about-list">
                 <li>Serrano, P.; Carmo, A. L. (2020). "A Influência da Integração Sensorial na autorregulação do bebé". In Uma Viagem à primeira Infância – um dia para recordar, editado por Universidade do Algarve editora, 31-39. Faro, Portugal: Universidade do Algarve editora.</li>
                 <li>Serrano, P. (2021). "Brincar, desenvolvimento, saúde e bem-estar na primeira infância". In Tratado da Brinquedoteca Hospitalar, humanização teoria e prática, 148-163. Rio de Janeiro, Brasil: Wak Editora.</li>
