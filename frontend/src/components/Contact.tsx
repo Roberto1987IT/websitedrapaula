@@ -57,7 +57,7 @@ const Contact = () => {
                 {error && <div className="error-message">{error}</div>}
 
                 <div className="form-group">
-                  <label htmlFor="name">{t("name")}</label>
+                  <label htmlFor="name">{t("full_name")}</label>
                   <input
                     type="text"
                     id="name"

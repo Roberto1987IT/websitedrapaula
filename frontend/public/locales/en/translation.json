@@ -1,4 +1,5 @@
 {
+  "full_name": "Full Name",
   "home": "Home",
   "meating_ps": "Meet Paula Serrano",
   "tranings": "Trainings",
@@ -952,6 +953,7 @@
   "contact_contact_imediatly": "For immediate assistance during business hours (Mon-Fri: 9 am to 6 pm), you can also contact us directly by phone (+351) 965 430 026. We guarantee an email response within 24 business hours for all messages received.",
   "contact_us_form_h2": "Send Us a Message",
   "contact_us_form_name": "Name",
+  "contact_us_form_name_placeholder": "Type your full name",
   "contact_us_form_email": "Email",
   "contact_us_form_subject": "Subject",
   "contact_us_form_subject_1": "Select a subject",
