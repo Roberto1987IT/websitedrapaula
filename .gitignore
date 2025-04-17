@@ -15,6 +15,6 @@ frontend/dist/
 
 # Environment files
 .env
-
 #secret files
 backend/secret_files/
+.idea

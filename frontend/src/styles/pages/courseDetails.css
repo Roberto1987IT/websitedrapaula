@@ -1,26 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+:root {
+  --primary-color: #1E88E5;
+  --primary-light: #64B5F6;
+  --primary-dark: #0D47A1;
+  --secondary-color: #0D47A1;
+  --accent-color: #2979FF;
+  --text-color: #424242;
+  --light-text: #757575;
+  --background-color: #FFFFFF;
+  --card-background: #FAFAFA;
+  --green-color: #4CAF50;
+  --green-light: #8BC34A;
+  --green-dark: #2E7D32;
+  --red-color: #ea384c;
+  --red-light: #ff6b6b;
+  --red-dark: #c62828;
+  --border-radius: 12px;
+  --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  --transition-speed: 0.3s;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F5F7FA;
+}
 
 .course-details {
-  padding: 3rem 2rem;
+  padding: 2.5rem;
   max-width: 1200px;
-  margin: 2rem auto;
+  margin: 6rem auto 4rem;
   background-color: var(--background-color);
   font-family: 'Poppins', sans-serif;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   position: relative;
-  margin-top: 130px;
+  overflow: hidden;
 }
 
 .course-details h1 {
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  margin-bottom: 1.5rem;
+  font-size: 2.25rem;
+  color: #1E88E5;
+  margin-bottom: 1.75rem;
   font-weight: 700;
   text-align: center;
   position: relative;
   padding-bottom: 1rem;
+  line-height: 1.3;
 }
 
 .course-details h1::after {
@@ -29,18 +57,17 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
+  width: 80px;
   height: 4px;
-  background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+  background: linear-gradient(135deg, var(--green-light), var(--green-dark));
   border-radius: 2px;
 }
 
-/* Layout do Conteúdo */
 .course-content {
   display: flex;
   gap: 3rem;
   align-items: flex-start;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 .course-info {
@@ -49,22 +76,23 @@
 }
 
 .course-info section {
-  margin-bottom: 2.5rem;
-  padding: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1.75rem;
   background-color: var(--card-background);
   border-radius: var(--border-radius);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: all var(--transition-speed) ease;
+  border: 1px solid rgba(30, 136, 229, 0.08);
 }
 
 .course-info section:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 24px rgba(30, 136, 229, 0.1);
 }
 
 .course-info h2 {
   font-size: 1.5rem;
-  color: var(--secondary-color);
+  color: #1E88E5;
   margin-bottom: 1rem;
   font-weight: 600;
   display: flex;
@@ -76,13 +104,159 @@
   display: inline-block;
   width: 8px;
   height: 25px;
-  background: linear-gradient(to bottom, var(--primary-light), var(--primary-color));
+  background: linear-gradient(to bottom, var(--green-light), var(--green-dark));
   margin-right: 12px;
   border-radius: 4px;
 }
 
+.description-container {
+  position: relative;
+}
+
+.description-text {
+  font-size: 1.05rem;
+  color: var(--text-color);
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+.description-text.collapsed {
+  max-height: 7.2em; /* Line height * 4 lines */
+  overflow: hidden;
+  position: relative;
+}
+
+.description-text.collapsed::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(to top, var(--card-background), transparent);
+  pointer-events: none;
+}
+
+.description-structure {
+  white-space: normal;
+}
+
+.description-subtitle {
+  color: var(--green-dark);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  border-left: 4px solid var(--green-dark);
+  padding-left: 10px;
+}
+
+.description-subtitle-secondary {
+  color: var(--green-dark);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+  border-left: 3px solid var(--green-light);
+  padding-left: 10px;
+  margin-left: 15px;
+}
+
+.content-subcategory {
+  margin-left: 15px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.content-subcategory::before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: rgba(46, 125, 50, 0.2);
+}
+
+.content-list {
+  margin-left: 1rem;
+}
+
+.content-list ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.content-list ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.content-list ul li:before {
+  content: '•';
+  color: var(--green-color);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Special styling for the fourth course description */
+/* Adding decorative icon elements to highlight the Avaliação course */
+.description-structure [class*="Avaliacao"] h3.description-subtitle::before {
+  content: '★';
+  margin-right: 8px;
+  color: var(--green-light);
+}
+
+.description-structure [data-course="Avaliacao"] .content-list ul li {
+  background-color: rgba(139, 195, 74, 0.05);
+  padding: 8px 8px 8px 2rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.description-structure [data-course="Avaliacao"] .content-list ul li:hover {
+  background-color: rgba(139, 195, 74, 0.1);
+  padding-left: 2.5rem;
+}
+
+/* Enhanced styling for the fourth course's methodology section */
+.description-structure [data-course="Avaliacao"] p:last-of-type {
+  font-style: italic;
+  background-color: rgba(76, 175, 80, 0.08);
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 3px solid var(--green-color);
+}
+
+.expand-button {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: var(--green-dark);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--green-dark);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  justify-content: center;
+  width: 100%;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.expand-button:hover {
+  background-color: rgba(76, 175, 80, 0.1);
+  transform: translateY(-2px);
+}
+
 .course-info p {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--text-color);
   line-height: 1.8;
   margin-bottom: 1rem;
@@ -95,7 +269,7 @@
 }
 
 .course-info li {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--text-color);
   line-height: 1.8;
   margin-bottom: 0.8rem;
@@ -105,31 +279,13 @@
 
 .course-info ul li::before {
   content: '•';
-  color: var(--primary-color);
+  color: var(--green-color);
   font-weight: bold;
   display: inline-block;
   width: 1em;
   margin-left: -1em;
 }
 
-.course-info ol {
-  counter-reset: item;
-}
-
-.course-info ol li {
-  counter-increment: item;
-}
-
-.course-info ol li::before {
-  content: counter(item) ". ";
-  color: var(--primary-color);
-  font-weight: bold;
-  display: inline-block;
-  margin-left: -1.5em;
-  margin-right: 0.5em;
-}
-
-/* Estilos da Seção de Compra */
 .purchase-section {
   flex: 1;
   display: flex;
@@ -141,12 +297,12 @@
 }
 
 .purchase-card {
-  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  background: #ffffff;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  padding: 2rem;
+  padding: 2.25rem;
   text-align: center;
-  border: 1px solid rgba(110, 89, 165, 0.1);
+  border: 1px solid rgba(30, 136, 229, 0.1);
   position: relative;
   overflow: hidden;
 }
@@ -158,97 +314,126 @@
   left: 0;
   width: 100%;
   height: 6px;
-  background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+  background: linear-gradient(135deg, var(--green-light), var(--green-dark));
+  border-radius: 2px;
 }
 
 .purchase-card .price {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--primary-color);
-  margin-bottom: 1.5rem;
+  color: black;
+  margin-bottom: 1.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .purchase-card .price::before {
-  content: '$';
-  font-size: 1.5rem;
+  content: '€';
+  font-size: 2.1rem;
   position: relative;
-  top: -15px;
+  top: 1px;
+  right: -90px;
   margin-right: 5px;
 }
 
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
 .buy-button,
-.cart-button {
+.cart-button,
+.wishlist-button {
   width: 100%;
   padding: 1rem;
   font-size: 1rem;
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  transition: all var(--transition-speed) ease;
+  transition: all 0.25s ease;
   font-weight: 600;
-  margin-bottom: 1rem;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.buy-button::before,
-.cart-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateX(-100%);
-  transition: transform var(--transition-speed) ease;
-  z-index: -1;
-}
-
-.buy-button:hover::before,
-.cart-button:hover::before {
-  transform: translateX(0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .buy-button {
-  background: linear-gradient(135deg, var(--accent-color), #ff5722);
+  background: linear-gradient(135deg, var(--green-color), var(--green-dark));
   color: white;
-  box-shadow: 0 4px 15px rgba(255, 120, 70, 0.4);
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
 }
 
 .buy-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(255, 120, 70, 0.6);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.5);
 }
 
 .cart-button {
-  background: green;
-  color: white;
-  box-shadow: 0 4px 15px rgba(110, 89, 165, 0.4);
+  background: white;
+  color: #1E88E5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #1E88E5;
 }
 
 .cart-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(110, 89, 165, 0.6);
+  background-color: rgba(76, 175, 80, 0.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Seção de Informações Adicionais */
+/* New style for the disclaimer text */
+.disclaimer-text {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: var(--light-text);
+  line-height: 1.5;
+  text-align: left;
+  padding: 10px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+  font-style: italic;
+}
+
+.contact-info {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: rgba(30, 136, 229, 0.05);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  border-left: 3px solid var(--primary-color);
+  text-align: left;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.email-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.email-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
 .detalhes-adicionais {
-  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  background: #ffffff;
   border-radius: var(--border-radius);
-  padding: 1.5rem;
+  padding: 1.75rem;
   box-shadow: var(--box-shadow);
-  border: 1px solid rgba(110, 89, 165, 0.1);
+  border: 1px solid rgba(30, 136, 229, 0.1);
 }
 
 .detalhes-adicionais h2 {
   font-size: 1.3rem;
-  color: var(--secondary-color);
-  margin-bottom: 1rem;
+  color: var(--green-dark);
+  margin-bottom: 1.25rem;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -259,7 +444,7 @@
   display: inline-block;
   width: 6px;
   height: 20px;
-  background: linear-gradient(to bottom, var(--primary-light), var(--primary-color));
+  background: linear-gradient(to bottom, var(--green-light), var(--green-dark));
   margin-right: 10px;
   border-radius: 3px;
 }
@@ -270,22 +455,32 @@
 }
 
 .detalhes-adicionais li {
-  margin-bottom: 0.8rem;
-  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  padding-left: 1.75rem;
   position: relative;
-  color: var(--light-text);
-  font-size: 0.95rem;
+  color: var(--text-color);
+  font-size: 1rem;
 }
 
 .detalhes-adicionais li::before {
-  content: '✓';
-  color: var(--primary-color);
-  position: absolute;
-  left: 0;
-  font-weight: bold;
+  content: none;
 }
 
-/* Animações */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -308,25 +503,112 @@
   }
 }
 
-/* Ajustes Responsivos */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Special highlight animation for fourth course */
+@keyframes highlightBorder {
+  0% {
+    border-color: rgba(30, 136, 229, 0.08);
+  }
+  50% {
+    border-color: rgba(139, 195, 74, 0.5);
+  }
+  100% {
+    border-color: rgba(30, 136, 229, 0.08);
+  }
+}
+
+/* Apply special animation to the fourth course description section */
+.course-details[data-course-id="4"] .course-info section:first-child {
+  animation: highlightBorder 3s ease-in-out infinite;
+  border-width: 2px;
+}
+
+.purchase-card {
+  animation: float 6s ease-in-out infinite;
+}
+
+.course-image {
+  width: 100%;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: var(--box-shadow);
+  position: relative;
+}
+
+.course-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+  display: block;
+}
+
+.course-image:hover img {
+  transform: scale(1.03);
+}
+
+@media (min-width: 1025px) {
+  .course-image {
+    max-height: 500px;
+    overflow: hidden;
+    margin: 0 auto 2rem;
+    max-width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .course-image img {
+    object-position: center;
+  }
+}
+
+@media (min-width: 1400px) {
+  .course-image {
+    max-width: 70%;
+    max-height: 450px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .course-details {
+    margin: 6rem 2rem 4rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .course-content {
     gap: 2rem;
   }
   
   .course-details {
-    padding: 2rem 1.5rem;
+    padding: 2rem;
+  }
+  
+  .course-details h1 {
+    font-size: 2rem;
+  }
+  
+  .purchase-card {
+    padding: 1.75rem;
   }
 }
 
 @media (max-width: 768px) {
-
-  h1 {
-    margin-top: 4rem;
-  }
   .course-content {
     flex-direction: column;
-    margin-top: 2rem;
   }
 
   .purchase-section {
@@ -336,50 +618,725 @@
   }
 
   .course-details h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    padding-bottom: 0.75rem;
   }
   
   .course-info section {
-    padding: 1.2rem;
+    padding: 1.5rem;
   }
   
   .purchase-card .price {
-    font-size: 2rem;
+    font-size: 2.25rem;
+  }
+  
+  .course-details {
+    margin-top: 5rem;
   }
 }
 
 @media (max-width: 480px) {
   .course-details {
-    padding: 1.5rem 1rem;
-    margin: 1rem;
+    padding: 1.5rem;
+    margin: 4.5rem 1rem 2rem;
   }
   
   .course-details h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .course-info h2,
   .detalhes-adicionais h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .purchase-card {
     padding: 1.5rem;
   }
 
-  .purchase-card .price {
+  .purchase-card .price::before {
     font-size: 1.8rem;
+    position: relative;
+    left: 82px;
   }
 
   .buy-button,
-  .cart-button {
+  .cart-button,
+  .wishlist-button {
     padding: 0.8rem;
     font-size: 0.95rem;
   }
   
   .course-info section {
     margin-bottom: 1.5rem;
+    padding: 1.25rem;
+  }
+  
+  .detalhes-adicionais {
+    padding: 1.25rem;
+  }
+  
+  .course-info p,
+  .course-info li {
+    font-size: 0.95rem;
+  }
+  
+  .detalhes-adicionais li {
+    font-size: 0.9rem;
+  }
+  
+  .disclaimer-text {
+    font-size: 0.8rem;
+  }
+}
+
+.price-wishlist-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+  position: relative;
+}
+
+.wishlist-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  position: absolute;
+  right: -15px;
+  top: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .price-wishlist-container {
+    justify-content: center;
+  }
+  
+  .wishlist-button {
+    right: -10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wishlist-button {
+    right: -5px;
+  }
+}
+
+/* Toast notification styles */
+.toast-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  min-width: 300px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: slideIn 0.3s ease forwards;
+  font-size: 14px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.toast-notification.hiding {
+  animation: slideOut 0.3s ease forwards;
+}
+
+.toast-notification.success {
+  background-color: #ecfdf5;
+  border-left: 4px solid #10b981;
+  color: #065f46;
+}
+
+.toast-notification.error {
+  background-color: #fef2f2;
+  border-left: 4px solid #ef4444;
+  color: #b91c1c;
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toast-icon {
+  flex-shrink: 0;
+}
+
+.toast-notification.success .toast-icon {
+  color: #10b981;
+}
+
+.toast-notification.error .toast-icon {
+  color: #ef4444;
+}
+
+.toast-close {
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  line-height: 0;
+  transition: background-color 0.2s;
+  margin-left: 10px;
+}
+
+.toast-close:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* For cart button animation */
+.cart-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.cart-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.cart-button.clicked::after {
+  width: 300px;
+  height: 300px;
+  opacity: 0;
+}
+
+/* Add a small cart badge that animates on adding item */
+.cart-badge {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background-color: #4a6cf7;
+  color: white;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: transform 0.3s, opacity 0.3s;
+  z-index: 100;
+}
+
+.cart-badge.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Special styles for course ID 5 */
+.special-program-notice {
+  background-color: rgba(76, 175, 80, 0.1);
+  padding: 1.25rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--green-dark);
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.special-program-notice p {
+  color: var(--green-dark);
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+/* Special styling for course 5's price display */
+.course-details[data-course-id="5"] .price {
+  font-size: 1.8rem !important;
+  color: var(--green-dark) !important;
+}
+
+.course-details[data-course-id="5"] .price::before {
+  content: '' !important; /* Remove the € sign */
+}
+
+
+
+
+
+
+/* Special styles for Course ID 5 - Programa Internacional */
+.programa-internacional {
+  padding: 0.5rem;
+}
+
+.programa-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.programa-title {
+  margin-top: 0 !important;
+  color: var(--primary-dark) !important;
+  font-size: 1.4rem !important;
+  border-left: 5px solid var(--primary-dark) !important;
+}
+
+.programa-badge {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 10px rgba(13, 71, 161, 0.2);
+  display: flex;
+  align-items: center;
+}
+
+.programa-badge::before {
+  content: '⏱️';
+  margin-right: 6px;
+}
+
+.programa-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  background-color: rgba(30, 136, 229, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.programa-info-item {
+  position: relative;
+}
+
+.programa-info-title {
+  color: var(--primary-dark);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.programa-info-title::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.programa-info-item p {
+  font-size: 0.95rem;
+  margin: 0;
+  padding-left: 14px;
+}
+
+.programa-section {
+  margin-bottom: 2rem;
+}
+
+.programa-objetivos ul,
+.programa-conteudos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.programa-objetivos ul li,
+.programa-conteudos ul li {
+  position: relative;
+  padding: 0.6rem 0.6rem 0.6rem 2rem;
+  margin-bottom: 0.5rem;
+  background-color: rgba(30, 136, 229, 0.03);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  border-left: 3px solid rgba(30, 136, 229, 0.3);
+}
+
+.programa-objetivos ul li:hover,
+.programa-conteudos ul li:hover {
+  background-color: rgba(30, 136, 229, 0.08);
+  transform: translateX(3px);
+}
+
+.programa-objetivos ul li::before,
+.programa-conteudos ul li::before {
+  content: '✓';
+  color: var(--primary-color);
+  position: absolute;
+  left: 0.7rem;
+  font-weight: bold;
+}
+
+/* Styling for nested lists */
+.programa-conteudos ul li.with-subitems {
+  padding-bottom: 0.2rem;
+  font-weight: 600;
+}
+
+.programa-conteudos ul li.with-subitems::before {
+  content: '•';
+}
+
+.programa-conteudos ul.subitems {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+}
+
+.programa-conteudos ul.subitems li {
+  border-left: 2px dashed rgba(30, 136, 229, 0.2);
+  padding: 0.4rem 0.6rem 0.4rem 1.8rem;
+  margin-bottom: 0.3rem;
+  background-color: rgba(30, 136, 229, 0.02);
+  font-weight: normal;
+}
+
+.programa-conteudos ul.subitems li::before {
+  content: '•';
+  left: 0.7rem;
+  color: rgba(30, 136, 229, 0.6);
+}
+
+.programa-metodologia {
+  margin-bottom: 2rem;
+}
+
+.programa-metodologia p {
+  background-color: rgba(30, 136, 229, 0.03);
+  padding: 1.2rem;
+  border-radius: 10px;
+  position: relative;
+  border-left: 4px solid var(--primary-color);
+  font-style: italic;
+}
+
+.programa-inscricao {
+  background: linear-gradient(to right, rgba(30, 136, 229, 0.08), rgba(13, 71, 161, 0.05));
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 2.5rem;
+  border: 1px dashed rgba(30, 136, 229, 0.3);
+}
+
+.programa-inscricao h3 {
+  color: var(--primary-dark);
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+.programa-inscricao p {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .programa-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .programa-badge {
+    align-self: flex-start;
+  }
+  
+  .programa-info-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Make the curso 5 description look more special with a subtle background */
+.course-details[data-course-id="5"] .course-info section:first-child {
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 1), rgba(30, 136, 229, 0.03));
+  border: 1px solid rgba(30, 136, 229, 0.1);
+}
+
+/* Add special styling to the entire curso 5 page */
+.course-details[data-course-id="5"] {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(30, 136, 229, 0.02));
+}
+
+/* Enhance the subtitle styling for course 5 */
+.course-details[data-course-id="5"] .description-subtitle {
+  color: var(--primary-dark);
+  border-left: 4px solid var(--primary-color);
+}
+
+
+
+
+/* Style for the Inscrever Agora button */
+.inscrever-button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  box-shadow: 0 4px 15px rgba(13, 71, 161, 0.3);
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.inscrever-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(13, 71, 161, 0.5);
+}
+
+.inscrever-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(13, 71, 161, 0.4);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Partner logos styling */
+.partner-logos {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1600px;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  flex-direction: row;
+  margin-top: 0px;
+  padding: -5rem;
+
+  
+  
+}
+
+.partner-logos-container {
+  display: flex;
+  justify-content: space-around; /* Adjust as needed for spacing */
+  align-items: center; /* Vertically center the logos */
+  width: 100%; /* Ensure it takes the full width of its container */
+  cursor: pointer;
+  margin-top: -7rem;
+
+  
+}
+
+.partner-logo {
+  width: 50%; /* Adjust the width as needed */
+  max-width: 190px; /* Set a maximum width for each logo */
+  height: auto;
+  margin-top: -12rem;
+  
+}
+
+.partner-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .partner-logos-container {
+    gap: 5px;
+    margin-bottom: 5rem;
+    max-height: 700px;
+    max-width: fit-content;
+  }
+
+  .partner-logo {
+    max-height: 545px;
+    margin-top: 6rem;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 5rem;
+    
+  }
+
+  .partner-logos-container {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 450px;
+    padding: 5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    flex-direction: row;
+    margin-top: 0px;
+    padding: -5rem;
+    cursor: pointer;
+  
+    
+    
+  }
+
+}
+
+@media (max-width: 820px) {
+  .partner-logos-container {
+    gap: 15px;
+  }
+}
+
+  .partner-logo {
+    max-height: 200px;
+    margin-left: 1rem;
+  }
+
+
+
+@media (max-width: 768px) {
+  .partner-logos-container {
+    gap: 15px;
+  }
+  
+  .partner-logo {
+    max-height: 170px;
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .partner-logos-container {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .partner-logo {
+    max-height: 205px;
+    margin-right: -1em;
+    padding: 1px;
+    margin-top: -8rem;
+    
   }
 }
 
 
+
+@media (max-width: 540px) {
+  .partner-logos-container {
+    flex-direction: column;
+    gap: 1px;
+    
+  }
+
+  .partner-logo {
+    max-height: 320px;
+    margin-left: 1rem;
+    margin-top: -8rem;
+    
+    
+  }
+
+  .partner-logos-container {
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 155px;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    flex-direction: row;
+    margin-top: 0px;
+    padding: -5rem;
+  
+    
+    
+  }
+
+}
+
+
+
+* {
+  outline: none !important;
+}

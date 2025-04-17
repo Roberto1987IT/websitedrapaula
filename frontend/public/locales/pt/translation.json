@@ -1,0 +1,1447 @@
+{
+  "full_name": "Nome Completo",
+  "home": "Inicio",
+  "meating_ps": "Conheça a Paula Serrano",
+  "tranings": "Formações",
+  "tranings_courses": "Cursos",
+  "tranings_mentorships": "Mentorias",
+  "tranings_Immersions": "Imersoes",
+  "resources": "Recursos",
+  "resources_books": "Livros e ebooks",
+  "resources_articles": "Artigos e teses",
+  "contact": "Contacto",
+  "login": "Iniciar sessão",
+  "registration": "Criar uma conta",
+  "logout": "Abandonar a sessão",
+  "come_meeting": "Conheça a Paula",
+  "banner_title_h1": "Intervenção terapêutica na prática",
+  "banner_title_p": "Formações e recursos para terapeutas, educadores e pais que querem fazer a diferença.",
+  "more_info": "Saber mais",
+  "more_read": "Ler mais",
+  "less_read": "Ler menos",
+  "courses_description": "Os favoritos de Terapeutas e Educadores para transformar o desenvolvimento infantil na prática",
+  "courses": {
+    "1": {
+      "title": "Brincar e TO - Teoria e Prática",
+      "description": "O Brincar na Terapia Ocupacional – Da teoria à prática\n\nCurso\nFormação 4 dias presenciais\n\nFormadora:\nPaula Serrano – Terapeuta Ocupacional\n\nEnquadramento Os terapeutas ocupacionais usam o brincar na prática tanto para avaliação quanto para intervenção, mas o uso específico do brincar ...",
+      "price": 515,
+      "instructor": "Paula Serrano",
+      "location": "Brasil / Rio de Janeiro",
+      "date": "17-20 de Maio, 2025",
+      "learningOutcomes": [
+        "Teorias e Quadros de Referência",
+        "Desenvolvimento de Competências de Brincar e da Ludicidade",
+        "Métodos de Avaliação",
+        "Estratégias de Intervenção"
+      ],
+      "description_course": "Descrição do Curso",
+      "about_course": "Sobre o Curso",
+      "about_course_p": "Formação 4 dias presenciais com a Terapeuta Ocupacional Paula Serrano.",
+      "equipaments": "Enquadramento",
+      "equipaments_p1": "Os terapeutas ocupacionais usam o brincar na prática tanto para avaliação quanto para intervenção, mas o uso específico do brincar na terapia ocupacional pediátrica varia. Na literatura da terapia ocupacional sobre o brincar são referidas preocupações relativamente à forma como os terapeutas ocupacionais abordam o papel do brincar na sua intervenção.",
+      "equipaments_p2": "Vários artigos sugerem restrições e falta de ênfase à abordagem dirigida ao brincar por terapeutas ocupacionais pediátricos. Essas restrições incluem atitudes de desvalorização em relação ao brincar, enquanto se dá maior ênfase no desenvolvimento de competências não relacionadas ao brincar (ex. competências motoras, sociais), falha na avaliação do brincar e dificuldade na definição de um plano de intervenção dirigido à ocupação do brincar.",
+      "equipaments_p3": "No entanto a avaliação do brincar e a intervenção dirigida à ocupação do brincar é vital para o desenvolvimento infantil, para a saúde e respeito pela infância.",
+      "course_content_title1": "Conteúdos Programáticos",
+      "course_content_title1_li": {
+        "1": "Definindo o brincar",
+        "2": "Revisão das diferentes teorias do brincar",
+        "3": "A evolução do brincar na terapia ocupacional",
+        "4": "Quadros de referência do brincar na terapia ocupacional",
+        "5": "A sequência de desenvolvimento do brincar ao longo da infância"
+      },
+      "course_content_title2": "Avaliação do brincar",
+      "course_content_title2_li": {
+        "1": "Entrevista",
+        "2": "Questionários: The Play History (Takata)",
+        "3": "Organização da observação em contexto natural",
+        "4": "Instrumentos: Revised Knox Preschool Play scale (Knox); Test of Playfulness (TOP) (Bundy)",
+        "5": "Definição dos objetivos terapêuticos"
+      },
+      "course_content_title3": "Promover o brincar",
+      "course_content_title3_li": {
+        "1": "O papel do Terapeuta Ocupacional",
+        "2": "A intervenção terapêutica",
+        "3": "Intervenção no contexto da criança"
+      },
+      "metodology_h": "Metodologia",
+      "metodology_p": "Exposição teórica discussão de grupos e exercícios práticos",
+      "teacher": "Professor(a)",
+      "localization": {
+        "title": "Localização",
+        "description": "Brasil / Rio de Janeiro"
+      },
+      "a_date": {
+        "title": "Data",
+        "description": "17-20 de Maio, 2025"
+      }
+    },
+    "2": {
+      "title": "Raciocínio Clínico e Intervenção em Integração Sensorial nos Primeiros Anos de Vida",
+      "description": "Raciocínio clínico e intervenção em integração sensorial nos primeiros anos de vida\n\nPrograma da ação de formação: 24 horas\n\nFormadora:\nPaula Serrano – Terapeuta Ocupacional\n\nÁrea de Intervenção:\nIntegração Sensorial\n\nObjectivos Gerais: Refletir sobre o desenvolvimento nos primeiros anos de vida ...",
+      "price": 350,
+      "instructor": "Paula Serrano",
+      "location": "Portugal / Faro",
+      "date": "10-12 de Junho, 2025",
+      "learningOutcomes": [
+        "Compreender os fatores que influenciam o desenvolvimento nos primeiros anos de vida",
+        "Aplicar conhecimentos de neurociências na prática de integração sensorial",
+        "Utilizar instrumentos como SPM2 e Perfil Sensorial de Dunn",
+        "Desenvolver raciocínio clínico na análise de dados de avaliação"
+      ],
+      "description_course": "Descrição do Curso",
+      "title_1": {
+        "title": "Sobre o Curso",
+        "p": "Duração - 24 horas com a Terapeuta Ocupacional Paula Serrano."
+      },
+      "title_2": {
+        "title": "Área de Intervenção",
+        "p": "Integração Sensorial."
+      },
+      "title_3": {
+        "title": "Destinatários",
+        "p": "Terapeutas ocupacionais com certificação em Integração Sensorial"
+      },
+      "title_4": {
+        "title": "Objetivos Gerais",
+        "list": {
+          "1": "Refletir sobre o desenvolvimento nos primeiros anos de vida e os fatores que o condicionam",
+          "2": "Analisar o contributo das teorias de desenvolvimento e das neurociências para a nossa compreensão do desenvolvimento infantil",
+          "3": "Analisar a evidencia científica atual sobre os sistemas sensoriais que suportam a abordagem da integração sensorial de Ayres",
+          "4": "Explorar a importância da avaliação de integração sensorial, as metodologias e os diversos instrumentos disponíveis",
+          "5": "Praticar o raciocínio clínico interpretando os dados da avaliação",
+          "6": "Elaborar objetivos terapêuticos com base na avaliação",
+          "7": "Planear a intervenção",
+          "8": "Analisar a intervenção terapêutica usando a abordagem de integração sensorial de Ayres"
+        }
+      },
+      "title_5": {
+        "title": "Conteúdos Programáticos",
+        "list": {
+          "1": "O desenvolvimento infantil e os fatores de suporte",
+          "2": "A integração sensorial de Ayres e a evidencia científica do impacto dos sistemas sensoriais no desenvolvimento",
+          "3": "A autorregulação e a disfunção sensorial",
+          "4": "Praxis e o conceito de Affordance",
+          "5": "Desenvolvimento da praxis e os sinais precoces de dispraxia",
+          "6": "Classificação das perturbações de processamento sensorial na primeira infância",
+          "7": "Instrumentos de avaliação da disfunção de integração sensorial",
+          "8": "Analise de uma escala de desenvolvimento sob a perspetiva da integração sensorial",
+          "9": "A organização da observação não estruturada e estruturada do processamento sensorial",
+          "10": "Análise dos dados da avaliação e Raciocínio clínico",
+          "11": "Planeamento da intervenção: Objetivos, organização da sessão",
+          "12": "Fidelidade à integração sensorial de Ayres na prática clínica"
+        }
+      },
+      "title_6": {
+        "title": "Metodologia",
+        "p": "As sessões de trabalho serão presenciais, teóricas e práticas com analise de vídeos de casos clínicos."
+      },
+      "teacher": "Professor(a)",
+      "localization": {
+        "title": "Localização",
+        "description": "Portugal/Faro"
+      },
+      "a_date": {
+        "title": "Data",
+        "description": "10-12 de Junho, 2025"
+      }
+    },
+    "3": {
+      "title": "Integração Sensorial: Avaliação e Raciocínio Clínico",
+      "description": "Integração sensorial: Avaliação e Raciocínio Clínico\n\nPrograma da ação de formação: 24 horas\n\nFormadora:\nPaula Serrano – Mestre em Terapia Ocupacional\n\nConteúdo Programático: Disfunção de integração sensorial, exploração de ferramentas de avaliação ...",
+      "price": 350,
+      "instructor": "Paula Serrano",
+      "location": "A definir",
+      "date": "Brevemente...",
+      "learningOutcomes": [
+        "Identificar e analisar disfunções de integração sensorial",
+        "Aplicar metodologias de integração sensorial em avaliações",
+        "Interpretar instrumentos como SPM, SPMp e Perfil Sensorial de Dunn",
+        "Desenvolver raciocínio clínico baseado em dados"
+      ],
+      "description_course": "Descrição do Curso",
+      "title_1": {
+        "title": "Sobre o Curso",
+        "p": "Formação de 24 horas com Paula Serrano – Mestre em Terapia Ocupacional- área de especialização Integração Sensorial."
+      },
+      "title_2": {
+        "title": "Área de Intervenção",
+        "p": "Integração Sensorial."
+      },
+      "title_3": {
+        "title": "Destinatários",
+        "p": "Terapeutas ocupacionais com formação pós graduada em Integração Sensorial"
+      },
+      "title_4": {
+        "title": "Objetivos Gerais",
+        "list": {
+          "1": "Analisar a disfunção de integração sensorial e a relação com os motivos de referenciação",
+          "2": "Explorar a importância da avaliação de integração sensorial, as metodologias e os diversos instrumentos disponíveis",
+          "3": "Praticar o raciocínio clínico interpretando os dados da avaliação",
+          "4": "Definir objetivos de desempenho ocupacional e objetivos de integração sensorial",
+          "5": "Analisar vários formatos de relatório que documentem as dificuldades de integração sensorial e a relação com o desempenho ocupacional"
+        }
+      },
+      "title_5": {
+        "title": "Conteúdos Programáticos",
+        "list": {
+          "1": "Disfunção da Integração Sensorial",
+          "2": "Motivos de referenciação que levam à avaliação em integração sensorial",
+          "3": "O processo de avaliação em integração sensorial",
+          "4": "Metodologias de avaliação",
+          "5": "Aplicação, e análise da História Sensorial",
+          "6": "As observações não estruturadas e as observações estruturadas",
+          "7": "Análise e interpretação de instrumentos de avaliação – SPM, SPMp, perfil sensorial Dunn",
+          "8": "Interpretação de uma escala de desenvolvimento à luz da integração sensorial",
+          "9": "Raciocínio clínico",
+          "10": "Definição de objetivos de desempenho ocupacional e objetivos de integração sensorial",
+          "11": "A elaboração do relatório"
+        }
+      },
+      "title_6": {
+        "title": "Metodologia",
+        "p": "As sessões de trabalho serão teóricas e práticas com análise de vídeos."
+      },
+      "teacher": "Professor(a)",
+      "localization": {
+        "title": "Localização",
+        "description": "A definir"
+      },
+      "a_date": {
+        "title": "Data",
+        "description": "Brevemente.."
+      }
+    },
+    "4": {
+      "title": "Avaliação e Raciocínio Clínico na Primeira Infância – Foco no brincar e integração sensorial",
+      "description": "Avaliação e Raciocínio Clínico na Primeira Infância – Foco no Brincar e Integração Sensorial\n\nDuração: 21 horas\n\nFormadora:\nPaula Serrano – Terapeuta Ocupacional\n\nConteúdo Programático: Desenvolvimento lúdico (0-3 anos), ferramentas de avaliação e classificação de perturbações do processamento sensorial ...",
+      "price": 350,
+      "instructor": "Paula Serrano",
+      "location": "A definir",
+      "date": "Brevemente...",
+      "learningOutcomes": [
+        "Compreender as etapas do brincar de 0 a 3 anos",
+        "Identificar os elementos da ludicidade na primeira infância",
+        "Aplicar ferramentas de avaliação do brincar e integração sensorial",
+        "Classificar perturbações do processamento sensorial na primeira infância"
+      ],
+      "description_course": "Descrição do Curso",
+      "title_1": {
+        "title": "Sobre o Curso",
+        "p": "Duração – 21 horas com a Terapeuta Ocupacional Paula Serrano."
+      },
+      "title_2": {
+        "title": "Área de Intervenção",
+        "p": "Integração Sensorial e Brincar"
+      },
+      "title_3": {
+        "title": "Destinatários",
+        "p": "Terapeutas ocupacionais com formação pós graduada em Integração Sensorial"
+      },
+      "title_4": {
+        "title": "Objetivos Gerais",
+        "l1": {
+          "1": "Analisar a investigação e as etapas do brincar com o corpo, com os objetos e social/emocional na primeira infância",
+          "2": "Analisar os elementos da ludicidade (playfulness) na primeira Infância",
+          "3": "Analisar a importância da integração sensorial e a classificação das perturbações regulatórias do processamento sensorial na primeira infância",
+          "4": "Explorar a importância da avaliação de integração sensorial, e do brincar, as metodologias e os diversos instrumentos disponíveis",
+          "5": "Praticar o raciocínio clínico interpretando os dados da avaliação",
+          "6": "Elaborar objetivos terapêuticos com base na avaliação"
+        }
+      },
+      "title_5": {
+        "title": "Conteúdos Programáticos",
+        "l1": {
+          "1": "O Brincar na Terapia Ocupacional",
+          "2": "O desenvolvimento do brincar dos 0 aos 3 anos: as etapas e os sinais de alarme do brincar com o corpo, com os objetos e simbólico",
+          "3": "O desenvolvimento do comportamento lúdico",
+          "4": "A avaliação do Brincar",
+          "5": "Instrumentos de avaliação do brincar",
+          "6": "A Integração Sensorial na primeira infância e a disfunção de integração sensorial",
+          "7": "Classificação das perturbações de processamento sensorial na primeira infância",
+          "8": "As Neurociências, o brincar e a integração sensorial",
+          "9": "Instrumentos de avaliação de integração sensorial dos 0 aos 3 anos",
+          "10": "Raciocínio clínico",
+          "11": "Avaliação, raciocínio clínico e o planeamento da intervenção"
+        }
+      },
+      "title_6": {
+        "title": "Metodologia",
+        "p": "As sessões de trabalho serão teóricas e praticas, com analise de vídeos de casos clínicos."
+      },
+      "teacher": "Professor(a)",
+      "localization": {
+        "title": "Localização",
+        "description": "A definir"
+      },
+      "a_date": {
+        "title": "Data",
+        "description": "Brevemente.."
+      }
+    },
+    "5": {
+      "title": "Programa Internacional de formação em Integração Sensorial",
+      "price": null,
+      "instructor": "Paula Serrano e equipa internacional",
+      "Localizacao": "Online e Brasil (várias cidades a confirmar)",
+      "date": "Data de início a confirmar",
+      "learningOutcomes": [
+        "Compreender os fundamentos da Teoria de Integração Sensorial de Ayres",
+        "Avaliar e interpretar dificuldades sensoriais usando metodologias específicas",
+        "Elaborar planos de intervenção para dificuldades de desempenho ocupacional",
+        "Implementar intervenções baseadas na abordagem de integração sensorial",
+        "Analisar a evidência científica sobre a eficácia da Integração Sensorial"
+      ],
+      "description_course": "Descrição do Curso",
+      "title_1": {
+        "title": "Sobre o Curso",
+        "p": "360 horas | 18 meses",
+        "subtitle": {
+          "1": {
+            "title": "Formadores",
+            "p": "Professores de Portugal, Brasil e Estados Unidos da América"
+          },
+          "2": {
+            "title": "Destinatários",
+            "p": "Terapeutas ocupacionais"
+          },
+          "3": {
+            "title": "Área de Intervenção",
+            "p": "Integração Sensorial"
+          },
+          "4": {
+            "title": "Metodologia",
+            "p": "Aulas teóricas on-line e aulas práticas presenciais"
+          }
+        }
+      },
+      "title_2": {
+        "title": "Objetivos Gerais",
+        "li": {
+          "1": "Compreender os fundamentos da Teoria de Integração Sensorial (IS) de Jean Ayres",
+          "2": "Identificar os sistemas sensoriais envolvidos na integração sensorial e a sua influência no desenvolvimento humano",
+          "3": "Reconhecer a neurofisiologia subjacente à reatividade sensorial, processamento e praxis",
+          "4": "Relacionar disfunções do processamento sensorial com dificuldades no desempenho ocupacional",
+          "5": "Avaliar e interpretar dificuldades sensoriais utilizando diversas metodologias e instrumentos de avaliação",
+          "6": "Interpretar a informação do processo avaliativo e utilizar o raciocínio clínico com base na taxonomia atual",
+          "7": "Elaborar um plano de intervenção dirigido às dificuldades de desempenho ocupacional",
+          "8": "Implementar a intervenção utilizando a abordagem de integração sensorial",
+          "9": "Discutir evidências científicas sobre a eficácia da Integração Sensorial como abordagem terapêutica"
+        }
+      },
+      "title_3": {
+        "title": "Conteúdos Programáticos",
+        "li": {
+          "1": "Fundamentos teóricos e neurocientíficos da Integração Sensorial",
+          "2": "Sistemas sensoriais e seu impacto no desenvolvimento",
+          "3": "Neurofisiologia da reatividade sensorial e processamento",
+          "4": {
+            "title": "Avaliação em Integração Sensorial",
+            "li": [
+              "Metodologias de avaliação",
+              "Instrumentos padronizados",
+              "Interpretação de resultados"
+            ]
+          },
+          "5": "Raciocínio clínico e diagnóstico terapêutico",
+          "6": {
+            "title": "Planeamento da intervenção:",
+            "li": [
+              "Definição de objetivos",
+              "Estratégias baseadas na Integração Sensorial"
+            ]
+          },
+          "7": "Implementação da intervenção segundo a medida de fidelidade na abordagem de Ayres",
+          "8": "Evidência científica na prática de Integração Sensorial"
+        }
+      },
+      "title_4": {
+        "title": "Metodologia",
+        "p": "O programa combina sessões teóricas online com sessões práticas presenciais em várias cidades do Brasil (localizações a confirmar). A formação será ministrada por especialistas internacionais de Portugal, Brasil e Estados Unidos da América."
+      },
+      "title_5": {
+        "title": "Inscrições Limitadas",
+        "p": "As inscrições para este programa são limitadas para garantir a qualidade da formação. Para informações sobre as próximas turmas e processo de inscrição, entre em contacto por email."
+      },
+      "teacher": "Professor(a)",
+      "localization": {
+        "title": "Localização",
+        "description": "Online e Brasil (várias cidades a confirmar)"
+      },
+      "a_date": {
+        "title": "Data",
+        "description": "Data de início a confirmar"
+      }
+    }
+  },
+  "book": {
+    "1": {
+      "title": "A crianca e a Motricidade Fina",
+      "about_book": "Sobre o Livro",
+      "description": "A motricidade fina é a maneira como usamos os nossos braços, mãos e dedos. Refere-se às competências necessárias para manipular um objeto, ou seja, como usar a mão e os dedos de forma precisa, de acordo com a exigência da atividade.O desenvolvimento da motricidade fina é essencial para a interação da criança com o meio e acontece quando a criança se relaciona com objetos e usa ferramentas, por exemplo nas atividades da vida diária. Este livro foca-se no desenvolvimento da motricidade fina, nas diversas faixas etárias da infância, ilustrando a sua relação com o dia a dia da criança. Para além do desenvolvimento, explora as competências necessárias para que a motricidade fina se desenvolva sem problemas.São ainda, aconselhados equipamentos e materiais, que podem ajudar as crianças que apresentam dificuldades nesta área.",
+      "price": "14",
+      "category": "impresso",
+      "rating": 5,
+      "reviews": {
+        "int": 28,
+        "title": " avaliações"
+      },
+      "author": {
+        "title": "Autor",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2016-09-15",
+        "title": "Publicado"
+      },
+      "publisher": {
+        "editor": "Papa-Letras",
+        "title": "Editora"
+      },
+      "language": {
+        "title": "Linguagem",
+        "lng": "Português"
+      },
+      "pages": {
+        "title": "Paginas",
+        "pages": 120
+      },
+      "desponibility": "Disponibilidade",
+      "isbn": "9789898214591",
+      "tags": [
+        "desenvolvimento infantil",
+        "educação",
+        "motricidade",
+        "habilidades manuais"
+      ],
+      "dimensions": "172 x 245 x 7 mm",
+      "weight": "320g",
+      "availability": "in-stock",
+      "stock": 45,
+      "recommendedAge": "Educadores e pais de crianças de 2-7 anos",
+      "relatedBooks": [
+        4,
+        3
+      ],
+      "bestSeller": "Mais Vendido",
+      "newRelease": "Novo Lançamento"
+    },
+    "2": {
+      "title": "A Integracao Sensorial",
+      "about_book": "Sobre o Livro",
+      "description": "A integração sensorial é o processo neurológico que organiza as nossas sensações, é a base para todas as formas de aprendizagem para que possamos viver no mundo e este faça sentido. É o alicerce para a aprendizagem académica, para as competências necessárias à realização das atividades da vida diária e sociais, e mesmo para a capacidade de ter empatia pelo outro.Aquilo que vemos, cheiramos, ouvimos, saboreamos ou tocamos é decifrado a cada momento na nossa experiência de viver, juntamente com os nossos «sentidos secretos»: vestibular e propriocetivo. Quando a criança tem problemas no processamento das sensações (disfunção de integração sensorial) tem dificuldade em usar a informação recebida pelos sentidos para conseguir funcionar eficientemente nas atividades quotidianas - podem surgir problemas de coordenação motora, dificuldades na regulação do sono, na alimentação, na atenção, no desempenho das atividades de autocuidado, na aprendizagem, no brincar e no desenvolvimento emocional e social.",
+      "price": "14.90",
+      "category": "impresso",
+      "rating": 5,
+      "reviews": {
+        "int": 42,
+        "title": "avaliações"
+      },
+      "author": {
+        "title": "Autor",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2018-09-20",
+        "title": "Publicado"
+      },
+      "publisher": {
+        "editor": "Papa-Letras",
+        "title": "Editora"
+      },
+      "language": {
+        "title": "Linguagem",
+        "lng": "Português"
+      },
+      "pages": {
+        "title": "Paginas",
+        "pages": 168
+      },
+      "isbn": "",
+      "dimensions": "",
+      "weight": "",
+      "availability": {
+        "title": "Disponibilidade",
+        "res": "Em Stock"
+      },
+      "format": {
+        "title": "Formato",
+        "res": "Livro"
+      },
+      "stock": "",
+      "tags": [
+        "integração sensorial",
+        "desenvolvimento infantil",
+        "brincadeiras",
+        "neuroeducação"
+      ],
+      "fileSize": {
+        "title": "Tamanho do Ficheiro",
+        "size": "8.2 MB"
+      },
+      "recommendedAge": "Profissionais e pais de crianças de 0-5 anos",
+      "relatedBooks": [
+        3,
+        1
+      ],
+      "bestSeller": "Mais Vendido",
+      "newRelease": "Novo Lançamento"
+    },
+    "3": {
+      "title": "Brincar e Integracao Sensorial Nos Primeiros Anos",
+      "about_book": "Sobre o Livro",
+      "description": "Todos os bebés nascem com características que os tornam únicos. Gradualmente vão-se adaptando à família e ao meio onde nascem e, de forma natural, o desenvolvimento acontece e a autonomia vai surgindo, à medida que se envolvem e se movem no ciclo de vida da família. Desenvolvimento é o termo usado para descrever as mudanças no crescimento físico da criança e na sua capacidade de aprender em termos de comportamento sensório-motor, socioemocional, cognitivo e em competências de comunicação. Todas estas áreas estão ligadas e cada uma depende e influencia as outras, sendo visíveis no comportamento do bebé e na sua cada vez maior autonomia.",
+      "price": "16.00",
+      "originalPrice": 24.99,
+      "category": "impresso",
+      "rating": 5,
+      "reviews": {
+        "int": 15,
+        "title": "avaliações"
+      },
+      "author": {
+        "title": "Autor",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2024-03-30",
+        "title": "Publicado"
+      },
+      "publisher": {
+        "editor": "Papa-Letras",
+        "title": "Editora"
+      },
+      "language": {
+        "title": "Linguagem",
+        "lng": "Português"
+      },
+      "pages": {
+        "title": "Paginas",
+        "pages": 240
+      },
+      "isbn": "",
+      "dimensions": "",
+      "weight": "",
+      "availability": {
+        "title": "Disponibilidade",
+        "res": "Em Stock"
+      },
+      "format": {
+        "title": "Formato",
+        "res": "Livro"
+      },
+      "stock": "",
+      "tags": [
+        "integração sensorial",
+        "desenvolvimento infantil",
+        "brincadeiras",
+        "neuroeducação"
+      ],
+      "fileSize": {
+        "title": "Tamanho do Ficheiro"
+      },
+      "recommendedAge": "Profissionais e pais de crianças de 0-5 anos",
+      "relatedBooks": [
+        3,
+        1
+      ],
+      "bestSeller": "Mais Vendido",
+      "newRelease": "Novo Lançamento"
+    },
+    "4": {
+      "title": "O Desenvolvimento da Autonomia dos 0 aos 3 anos",
+      "about_book": "Sobre o Livro",
+      "description": "Todos os bebés nascem com características que os tornam únicos. Gradualmente vão-se adaptando à família e ao meio onde nascem e, de forma natural, o desenvolvimento acontece e a autonomia vai surgindo, à medida que se envolvem e se movem no ciclo de vida da família. Desenvolvimento é o termo usado para descrever as mudanças no crescimento físico da criança e na sua capacidade de aprender em termos de comportamento sensório-motor, socioemocional, cognitivo e em competências de comunicação. Todas estas áreas estão ligadas e cada uma depende e influencia as outras, sendo visíveis no comportamento do bebé e na sua cada vez maior autonomia.",
+      "price": "18.00",
+      "category": "impresso",
+      "rating": 5,
+      "reviews": {
+        "int": 36,
+        "title": "avaliações"
+      },
+      "author": {
+        "title": "Autor",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2017-04-10",
+        "title": "Publicado"
+      },
+      "publisher": {
+        "editor": "Papa-Letras",
+        "title": "Editora"
+      },
+      "language": {
+        "title": "Linguagem",
+        "lng": "Português"
+      },
+      "pages": {
+        "title": "Paginas",
+        "pages": 200
+      },
+      "isbn": "9789898214645",
+      "dimensions": "188 x 258 x 15 mm",
+      "weight": "380g",
+      "availability": {
+        "title": "Disponibilidade",
+        "res": "Em Stock"
+      },
+      "stock": 12,
+      "tags": [
+        "autonomia infantil",
+        "desenvolvimento",
+        "metodologia montessori",
+        "primeira infância"
+      ],
+      "recommendedAge": "Pais e cuidadores de crianças de 0-3 anos",
+      "relatedBooks": [
+        1,
+        2
+      ],
+      "bestSeller": "",
+      "newRelease": ""
+    },
+    "5": {
+      "title": "A Integração Sensorial e o Engajamento Ocupacional na Infância (eBook)",
+      "about_book": "Sobre o Livro",
+      "description": "Este eBook explora a relação entre integração sensorial e engajamento ocupacional na infância, fornecendo ferramentas práticas para profissionais e pais.",
+      "price": "9.99",
+      "category": "ebook",
+      "rating": 5,
+      "reviews": {
+        "int": 52,
+        "title": "avaliações"
+      },
+      "author": {
+        "title": "Autor",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2023-05-10",
+        "title": "Publicado"
+      },
+      "publisher": {
+        "editor": "Papa Letras",
+        "title": "Editora"
+      },
+      "language": {
+        "title": "Linguagem",
+        "lng": "Português"
+      },
+      "pages": {
+        "title": "Paginas",
+        "pages": 180
+      },
+      "format": {
+        "title": "Formato",
+        "res": "ebook"
+      },
+      "fileSize": {
+        "title": "Tamanho do Ficheiro"
+      },
+      "availability": {
+        "title": "Disponibilidade",
+        "res": "Em Stock"
+      },
+      "isbn": "",
+      "dimensions": "",
+      "weight": "",
+      "stock": 12,
+      "tags": [
+        "integração sensorial",
+        "engajamento ocupacional",
+        "desenvolvimento infantil",
+        "ebook"
+      ],
+      "recommendedAge": "Profissionais e pais de crianças de 0-8 anos",
+      "relatedBooks": [
+        2,
+        3
+      ],
+      "bestSeller": "Mais Vendido",
+      "newRelease": "Novo Lançamento"
+    },
+    "6": {
+      "title": "A Linguagem e o Brincar em Condicoes Neurodiversas (eBook)",
+      "about_book": "Sobre o Livro",
+      "description": "Uma coleção completa de atividades e brincadeiras sensoriais para estimular o desenvolvimento infantil de forma natural e divertida.",
+      "price": "7.99",
+      "category": "ebook",
+      "rating": 5,
+      "reviews": {
+        "int": 78,
+        "title": "avaliações"
+      },
+      "author": {
+        "title": "Autor",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2023-06-15",
+        "title": "Publicado"
+      },
+      "publisher": {
+        "editor": "Papa-Letras",
+        "title": "Editora"
+      },
+      "language": {
+        "title": "Linguagem",
+        "lng": "Português"
+      },
+      "pages": {
+        "title": "Paginas",
+        "pages": 120
+      },
+      "format": {
+        "title": "Format",
+        "res": "eBook"
+      },
+      "fileSize": {
+        "title": "File Size"
+      },
+      "availability": {
+        "title": "Availability",
+        "res": "Em Stock"
+      },
+      "isbn": "",
+      "dimensions": "",
+      "weight": "",
+      "stock": "",
+      "tags": [
+        "brincadeiras sensoriais",
+        "atividades práticas",
+        "desenvolvimento infantil",
+        "ebook"
+      ],
+      "recommendedAge": "Pais e educadores de crianças de 1-6 anos",
+      "relatedBooks": [
+        5,
+        7
+      ],
+      "bestSeller": "Mais Vendido",
+      "newRelease": "Novo Lançamento"
+    },
+    "7": {
+      "title": "Instrumentos de Avaliacao do Modelo Ludico (eBook)",
+      "about_book": "Sobre o Livro",
+      "description": "Um guia essencial sobre os marcos do desenvolvimento infantil e como identificar precocemente sinais que possam necessitar de atenção especializada.",
+      "price": "8.99",
+      "category": "ebook",
+      "rating": 5,
+      "reviews": {
+        "int": 45,
+        "title": "avaliações"
+      },
+      "author": {
+        "title": "Autor",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2023-08-20",
+        "title": "Publicado"
+      },
+      "publisher": {
+        "editor": "Papa-Letras",
+        "title": "Editora"
+      },
+      "language": {
+        "title": "Linguagem",
+        "lng": "Português"
+      },
+      "pages": {
+        "title": "Paginas",
+        "pages": 150
+      },
+      "format": {
+        "title": "Format",
+        "res": "eBook"
+      },
+      "fileSize": {
+        "title": "File Size"
+      },
+      "availability": {
+        "title": "Availability",
+        "res": "Em Stock"
+      },
+      "isbn": "",
+      "dimensions": "",
+      "weight": "",
+      "stock": "",
+      "tags": [
+        "desenvolvimento infantil",
+        "sinais de alerta",
+        "intervenção precoce",
+        "ebook"
+      ],
+      "recommendedAge": "Profissionais, pais e cuidadores",
+      "relatedBooks": [
+        6,
+        8
+      ],
+      "bestSeller": "",
+      "newRelease": "Novo Lançamento"
+    },
+    "8": {
+      "title": "The Role of play in child assessment and intervention (eBook)",
+      "about_book": "Sobre o Livro",
+      "description": "Um manual completo com estratégias práticas para promover a autonomia das crianças nos primeiros anos de vida, seguindo princípios de abordagens baseadas em evidências.",
+      "price": "6.99",
+      "category": "ebook",
+      "rating": 5,
+      "reviews": {
+        "int": 63,
+        "title": "avaliações"
+      },
+      "author": {
+        "title": "Autor",
+        "author": "Paula Serrano"
+      },
+      "publicationDate": {
+        "date": "2023-09-10",
+        "title": "Publicado"
+      },
+      "publisher": {
+        "editor": "Papa-Letras",
+        "title": "Editora"
+      },
+      "language": {
+        "title": "Linguagem",
+        "lng": "Português"
+      },
+      "pages": {
+        "title": "Paginas",
+        "pages": 130
+      },
+      "format": {
+        "title": "Format",
+        "res": "eBook"
+      },
+      "fileSize": {
+        "title": "File Size"
+      },
+      "availability": {
+        "title": "Availability",
+        "res": "Em Stock"
+      },
+      "isbn": "",
+      "dimensions": "",
+      "weight": "",
+      "stock": 0,
+      "tags": [
+        "autonomia infantil",
+        "primeira infância",
+        "parentalidade",
+        "educação",
+        "ebook"
+      ],
+      "recommendedAge": "Pais e educadores de crianças de 0-5 anos",
+      "relatedBooks": [
+        4,
+        7
+      ],
+      "bestSeller": "Mais Vendido",
+      "newRelease": "Novo Lançamento"
+    }
+  },
+  "tranings_mentorships_description_p": "Descubra como a mentoria pode transformar sua carreira.",
+  "tranings_mentorships_description_h2": "Mentoria Profissional: O Que é e Quais São as Suas Vantagens?",
+  "tranings_mentorships_description_h2_p": " A mentoria profissional é um processo no qual um profissional mais experiente (mentor) orienta e apoia outro profissional menos  experiente (mentorado) no desenvolvimento da sua carreira. Essa relação baseia-se na troca de experiências, conhecimentos e conselhos práticos, ajudando o mentorado a superar desafios e desenvolver competências.",
+  "tranings_mentorships_description_h3": "Vantagens da Mentoria Profissional",
+  "mentorships_ul_lu1": "Acesso a conhecimentos e experiências valiosos.",
+  "mentorships_ul_lu2": "Insights sobre boas práticas e estratégias eficazes.",
+  "mentorships_ul_lu3": "Desenvolvimento acelerado de competências.",
+  "books": "Livros",
+  "and": "e",
+  "ebooks": "Ebooks",
+  "books_p": "Selecione os seus preferidos",
+  "input_placeholder": "Buscar livros...",
+  "all": "Todos",
+  "dwnl": "Baixar",
+  "no_books_find": "Nenhum livro encontrado para sua busca.",
+  "clr_flt": "Limpar filtros",
+  "about_p1": "Sou terapeuta ocupacional com 30 anos de experiência em prática clínica e 20 anos dedicados à docência. Durante a minha trajetória, sempre busquei formação junto às maiores referências mundiais na área, o que me levou a me especializar em integração sensorial e no brincar nos Estados Unidos. A prática clínica, aliada ao ensino, permitiu-me construir um raciocínio clínico sólido e desenvolver uma abordagem baseada em evidências. Essa metodologia é comprovada diariamente nos atendimentos às muitas crianças e famílias com quem tive o privilégio de trabalhar.",
+  "about_p2": "Acredito profundamente que a infância é um período transformador, no qual nós, profissionais, temos a oportunidade de alterar significativamente o percurso de vida das crianças e de suas famílias. Essa certeza traz uma enorme responsabilidade à minha prática clínica, mas também um compromisso em compartilhar os conhecimentos.",
+  "read_more": "Ler mais",
+  "read_less": "Ler menos",
+  "practice_learn": "Aprenda na Prática!",
+  "practice_learn_p": "Agende a sua imersão individual ou em grupo e desenvolva as suas competencias durante a experiência clínica.",
+  "news_h2": "Galeria de Imagens",
+  "news_p": "Cada imagem e vídeo conta parte da nossa jornada!",
+  "galery_img": {
+    "img1": "Sala de Formacoes.",
+    "img2": "Aulas de Grupo",
+    "img3": "Salas para teoria à prática em terapia ocupacional.",
+    "img4": "Formacoes exclusivas.",
+    "img5": "Aulas praticas.",
+    "img6": "Avaliacao e Raciocínio Clinico.",
+    "img7": "Salas para ensino",
+    "img8": "Ativadades Individuais e em grupo.",
+    "img9": "Espaço de convivência.",
+    "img10": "Ambiente acolhedor.",
+    "img11": "Detalhes arquitetônicos.",
+    "img12": "Salas modernas.",
+    "img13": "Equipamentos de última geração.",
+    "img14": "Espaço para eventos.",
+    "img15": "Área de estudos.",
+    "img16": "Laboratório prático.",
+    "img17": "Espaço colaborativo.",
+    "img18": "Ambiente de relaxamento.",
+    "img19": "Atividades práticas",
+    "img20": "Aulas em grupo",
+    "img21": "Demonstrações",
+    "img22": "Espaços de formação",
+    "img23": "Equipamentos",
+    "img24": "Eventos",
+    "img25": "Depoimentos"
+  },
+  "folowers": {
+    "1": {
+      "comment": "A metodologia é muito prática e facilmente aplicável no dia a dia. Superou minhas expectativas!",
+      "rating": 5,
+      "name": "Rita Maria"
+    },
+    "2": {
+      "comment": "Conteúdo excelente e bem estruturado. Consegui implementar os conhecimentos rapidamente.",
+      "rating": 4,
+      "name": "João Pedro",
+      "role": ""
+    },
+    "3": {
+      "comment": "Aprendi muito mais do que esperava. As técnicas ensinadas são valiosas para qualquer profissional.",
+      "rating": 5,
+      "name": "Mariana Silva",
+      "role": ""
+    },
+    "4": {
+      "comment": "Explicação clara e objetiva. Consegui entender conceitos complexos de forma simples.",
+      "rating": 4,
+      "name": "Carlos Lima",
+      "role": ""
+    },
+    "5": {
+      "comment": "Excelente didática e atenção aos detalhes. Paula tem um dom para ensinar!",
+      "rating": 5,
+      "name": "Ana Paula",
+      "role": ""
+    },
+    "6": {
+      "comment": "Recomendo a todos que querem evoluir na carreira! Curso transformador e prático.",
+      "rating": 5,
+      "name": "Fernanda Souza",
+      "role": ""
+    },
+    "7": {
+      "comment": "Ótimo curso com conteúdo relevante e atual. Aplicação imediata no mercado.",
+      "rating": 4,
+      "name": "João Vitor",
+      "role": ""
+    },
+    "8": {
+      "comment": "O melhor curso que já fiz! A Paula tem uma capacidade incrível de transmitir conhecimento.",
+      "rating": 5,
+      "name": "Clara Mendes",
+      "role": ""
+    }
+  },
+  "folowers_h2": "O que dizem sobre nós",
+  "folowers_p": "Conheça a experiência de nossos clientes com nossos cursos e mentorias",
+  "contact_form_h2": "Entre em Contato",
+  "contact_our_valor1": "Na Paula Serrano, valorizamos cada ligação com os nossos clientes. Seja para esclarecer dúvidas, receber feedback valioso ou simplesmente trocar uma ideia, a nossa equipa está sempre pronta para ouvir e ajudar.",
+  "contact_our_valor2": "Utilize nosso formulário de contato para:",
+  "contact_our_benefits1": "Solicitar orçamentos personalizados",
+  "contact_our_benefits2": "Obter informações técnicas sobre os nossos produtos",
+  "contact_our_benefits3": "Dar sugestões para melhorarmos os nossos serviços",
+  "contact_contact_imediatly": "Para um atendimento imediato durante o horário comercial (Seg-Sex: 9h-18h), também pode contactar-nos diretamente pelo telefone (+351) 965 430 026. Garantimos uma resposta por e-mail em até 24 horas úteis para todas as mensagens recebidas.",
+  "contact_us_form_h2": "Envie-nos uma mensagem",
+  "contact_us_form_name": "Nome",
+  "contact_us_form_name_placeholder": "Digite seu nome completo",
+  "contact_us_form_email": "Email",
+  "contact_us_form_subject": "Assunto",
+  "contact_us_form_subject_1": "Selecione um assunto",
+  "contact_us_form_subject_2": "Dúvida sobre produtos",
+  "contact_us_form_subject_3": "Solicitar orçamento",
+  "contact_us_form_subject_4": "Feedback",
+  "contact_us_form_subject_5": "Outro assunto",
+  "contact_us_form_messag": "Messagem",
+  "contact_us_form_messag_placeholder": "Escreva sua mensagem detalhada aqui...",
+  "contact_us_form_button": "Enviar messagem",
+  "sended": "Enviado...",
+  "schedule": "Horario",
+  "mon-fri": "Segunda - Sexta",
+  "phone": "Telephone",
+  "phone_info": "(Chamada para rede móvel nacional)",
+  "adress": "Morada",
+  "cust_area": "Área do client",
+  "ac_o1": "A minha conta",
+  "ac_o2": "Encomendas",
+  "ac_o3": "Entregas",
+  "ac_o4": "Perguntas Frequentes",
+  "info": "Informações",
+  "info_o1": "Política de Privacidade",
+  "info_o2": "Política de Cookies",
+  "info_o3": "Termos e condições",
+  "info_o4": "Livro de Reclamações",
+  "footer_bottom": " Paula Serrano Educação, Lda. Todos os direitos reservados.",
+  "home_filosofia": "Nossa Filosofia",
+  "home_val": "Nosso Valores",
+  "home_val_p": "Princípios fundamentais que guiam cada decisão e iniciativa",
+  "mission": "Missão",
+  "mission_p1": "Valorizamos a partilha de conhecimento como uma ferramenta poderosa para ampliar horizontes e trazer mais qualidade de vida às famílias. Acreditamos que, ao disseminar saberes, podemos criar um impacto positivo que vai muito além do indivíduo, alcançando comunidades inteiras.",
+  "mission_p2": "Buscamos criar um ambiente onde cada criança possa florescer em seu próprio ritmo, respeitando sua individualidade e apoiando seu desenvolvimento integral. Nossa abordagem reconhece que cada jornada de crescimento é única.",
+  "bases": "Princípios Fundamentais",
+  "basses": {
+    "1": {
+      "title": "Inovação",
+      "text": "Buscamos constantemente novas abordagens e metodologias para aprimorar nossas práticas educativas."
+    },
+    "2": {
+      "title": "Integridade",
+      "text": "Agimos com transparência e honestidade em todas as nossas interações e decisões."
+    },
+    "3": {
+      "title": "Empatia",
+      "text": "Colocamo-nos no lugar do outro para compreender suas necessidades e desafios únicos."
+    },
+    "4": {
+      "title": "Excelência",
+      "text": "Comprometemo-nos com os mais altos padrões de qualidade em tudo o que fazemos."
+    },
+    "5": {
+      "title": "Colaboração",
+      "text": "Valorizamos o trabalho em equipe e a troca de ideias para alcançar resultados significativos."
+    },
+    "6": {
+      "title": "Respeito",
+      "text": "Reconhecemos e valorizamos a diversidade de experiências e perspectivas em nossa comunidade."
+    }
+  },
+  "commitments": "Nosso Compromisso",
+  "commitments_p1": "Por meio de cursos, mentorias e materiais didáticos, o nosso objetivo é capacitar profissionais nas suas práticas diárias. Oferecemos ferramentas para que eles apoiem crianças e famílias na sua jornada de crescimento e desenvolvimento. Assim, buscamos contribuir para que cada ser humano alcance seu máximo potencial, respeitando sua singularidade e promovendo uma sociedade mais inclusiva e fortalecida.",
+  "commitments_p2": "Estamos comprometidos em criar recursos acessíveis e programas que inspirem educadores e famílias a trabalharem juntos pelo bem-estar das crianças. Acreditamos que através desta colaboração podemos construir as bases para um futuro onde todas as crianças tenham a oportunidade de prosperar.",
+  "mentorship_program": "Programa de Mentoria",
+  "mentorship_program_h1": "Mentoria Profissional Personalizada",
+  "mentorship_program_h1_p": "Desenvolva suas habilidades e acelere sua carreira com orientação especializada",
+  "mentorship_h3_1": "O Programa",
+  "mentorship_h3_1_p": "Nossa mentoria profissional foi desenvolvida para profissionais que buscam acelerar o desenvolvimento de suas carreiras através de orientação personalizada. Com encontros semanais e acompanhamento contínuo, você terá acesso a insights valiosos e estratégias práticas para atingir seus objetivos profissionais.",
+  "mentorship_h3_2": "Benefícios",
+  "mentorship_h3_2_p": {
+    "1": {
+      "text": "Visão personalizada sobre seu desenvolvimento profissional"
+    },
+    "2": {
+      "text": "Feedback sincero e construtivo sobre seus pontos fortes e áreas de melhoria"
+    },
+    "3": {
+      "text": "Acesso a redes profissionais e oportunidades exclusivas"
+    },
+    "4": {
+      "text": "Desenvolvimento acelerado de competências técnicas"
+    }
+  },
+  "mentorship_h3_3": "Metodologia",
+  "mentorship_h3_3_p": "Nossa metodologia combina sessões individuais de mentoria, exercícios práticos e projetos aplicados ao seu contexto profissional. Trabalhamos com uma abordagem estruturada em 3 fases:",
+  "mentorship_h3_3_p_fases": {
+    "1": {
+      "text": "Diagnóstico e definição de objetivos claros"
+    },
+    "2": {
+      "text": "Desenvolvimento de estratégias e plano de ação"
+    },
+    "3": {
+      "text": "Implementação e avaliação de resultados"
+    }
+  },
+  "meet_mentorship_programm": "Conheça nossos programas de mentoria",
+  "ind_and_group_mentorchip": "Mentoria Individual e Mentoria em grupo",
+  "mentor_info_list": {
+    "indiv": {
+      "h": "Mentoria Individual",
+      "text": "Atendimento personalizado para suas necessidades específicas de carreira. Sessões exclusivas com seu mentor dedicado, focadas nos seus objetivos e desafios particulares.",
+      "li1": "Plano de desenvolvimento 100% personalizado",
+      "li2": "Feedback contínuo e direcionado",
+      "li3": "Flexibilidade de horários e temas",
+      "li4": "Acompanhamento detalhado do seu progresso"
+    },
+    "group": {
+      "h": "Mentoria em Grupo",
+      "text": "Aprenda em um ambiente colaborativo com outros profissionais, compartilhando experiências e ampliando sua rede de contatos.",
+      "li1": "Troca de experiências entre os participantes",
+      "li2": "Custo mais acessível que a mentoria individual",
+      "li3": "Networking com profissionais de diferentes áreas",
+      "li4": "Dinâmicas e exercícios em grupo"
+    }
+  },
+  "FAQ_title": "Perguntas Frequentes",
+  "FAQ": {
+    "1": {
+      "question": "Como funciona o processo de mentoria?",
+      "answer": "O processo de mentoria inicia com uma avaliação do seu perfil e objetivos profissionais. Em seguida, estabelecemos um plano personalizado com encontros regulares onde você receberá orientação, feedback e desafios para acelerar seu desenvolvimento."
+    },
+    "2": {
+      "question": "Qual é a duração da mentoria?",
+      "answer": "A duração da mentoria sera definida apos a avaliacao das necessidades."
+    },
+    "3": {
+      "question": "Quais são os pré-requisitos para participar?",
+      "answer": "Não existem pré-requisitos formais, apenas o compromisso com seu desenvolvimento e disponibilidade para os encontros que forem agendados."
+    },
+    "4": {
+      "question": "Como são realizados os encontros?",
+      "answer": "Os encontros são realizados remotamente através de plataformas de videoconferência como Zoom ou Google Meet, permitindo flexibilidade e conveniência para todos os participantes"
+    }
+  },
+  "imerssion_program": "Programa de Imersão",
+  "imerssion_h1": "Experiência Clínica Intensiva",
+  "imerssion_p": "Eleve sua prática profissional com o nosso programa de imersão especializado",
+  "imerssion_geral_h1": "Visão Geral",
+  "imerssion_geral_p": "O nosso programa de imersão oferece uma experiência prática intensiva para profissionais e estudantes que desejam melhorar as suas competencias clínicas em um ambiente real e supervisionado. Durante o período de imersão, você terá a oportunidade de aplicar conhecimentos teóricos em situações práticas, recebendo feedback direto de supervisores experientes.",
+  "imerssion_geral_cards": {
+    "1": {
+      "title": "Experiência Prática",
+      "text": "Aprenda na pratica, com casos reais e situações clínicas autênticas"
+    },
+    "2": {
+      "title": "Mentoria Individualizada",
+      "text": "Supervisão direta com profissionais experientes e feedback contínuo"
+    },
+    "3": {
+      "title": "Certificação Diferenciada",
+      "text": "Obtenha um certificado que comprova sua experiência prática intensiva"
+    }
+  },
+  "formats": {
+    "disponibles": {
+      "title": "Formatos Disponíveis",
+      "list": {
+        "1": {
+          "title": "Imersão Individual",
+          "text": "Atendimento personalizado com foco nas suas necessidades específicas",
+          "li": {
+            "1": "Duração: 1 a 5 dias",
+            "2": "Programa personalizado",
+            "3": "Feedback individual detalhado",
+            "4": "Horários flexíveis"
+          }
+        },
+        "2": {
+          "title": "Imersão em Grupo",
+          "text": "Experiência colaborativa com partilha de conhecimentos",
+          "li": {
+            "1": "Duração: 2 a 7 dias",
+            "2": "Grupos de 3 a 8 pessoas",
+            "3": "Dinâmicas e estudos de caso",
+            "4": "Networking profissional"
+          }
+        },
+        "3": {
+          "title": "Imersão Intensiva",
+          "text": "Programa completo de imersão com módulos teóricos e práticos",
+          "li": {
+            "1": "Duração: 1 a 4 semanas",
+            "2": "Acompanhamento integral",
+            "3": "Material didático exclusivo",
+            "4": "Certificação premium"
+          }
+        }
+      }
+    }
+  },
+  "functions": {
+    "title": "Como Funciona",
+    "list": {
+      "1": {
+        "title": "Avaliação Inicial",
+        "text": "Realizamos uma entrevista para entender as suas necessidades e objetivos específicos. Esta etapa permite-nos personalizar a sua experiência de imersão e maximizar a aprendizagem."
+      },
+      "2": {
+        "title": "Planeamento Personalizado",
+        "text": "Desenvolvemos um plano de imersão detalhado, incluindo cronograma, tópicos a serem abordados e metodologias que serão aplicadas durante o programa."
+      },
+      "3": {
+        "title": "Experiência de Imersão",
+        "text": "Você participa das atividades programadas, alternando entre aprendizagem teórica e aplicação prática, sempre com o acompanhamento dos nossos supervisores."
+      },
+      "4": {
+        "title": "Feedback ",
+        "text": "Durante toda a imersão, você recebe feedback contínuo sobre seu desempenho, permitindo o seu crescimento profissional em tempo real."
+      },
+      "5": {
+        "title": "Certificação",
+        "text": "Ao final do programa, você recebe a sua certificação."
+      }
+    }
+  },
+  "space": "Conheçam o nosso espaço",
+  "steps": {
+    "title": "Próximos Passos",
+    "h3": "Pronto para começar sua jornada de transformação profissional?",
+    "p": "O processo para participar de nossas imersões é simples e direto:",
+    "list": {
+      "1": {
+        "strong": "Entre em contato",
+        "text": "Agende uma consulta inicial com a nossa equipa através do formulário de contato ou telefone."
+      },
+      "2": {
+        "strong": "Avaliação de perfil",
+        "text": "Realizamos uma breve entrevista para entender as suas necessidades e objetivos."
+      },
+      "3": {
+        "strong": "Proposta personalizada",
+        "text": "Receba uma proposta detalhada com opções de programas, datas e investimento."
+      },
+      "4": {
+        "strong": "Confirme a sua participação",
+        "text": "Efetue a reserva e prepare-se para uma experiência transformadora."
+      }
+    }
+  },
+  "imerssion_contact_us": {
+    "title": "Pronto para Elevar a Sua Experiência Profissional?",
+    "text": "Entre em contato para mais informações sobre nossos programas de imersão e agende uma consulta com nossos especialistas."
+  },
+  "atrigs_and_theses_h1": "Artigos e Teses Acadêmicas",
+  "atrigs_and_theses_p": "Conhecimento científico em Terapia Ocupacional para profissionais e estudantes",
+  "article": "Artigo",
+  "articles": {
+    "1": {
+      "title": "O brincar e o processamento sensorial em criancas dos 36 aos 72 meses",
+      "description": "Brincar é a principal ocupação nos primeiros anos de vida da criança..."
+    },
+    "2": {
+      "title": "Adaptação cultural e linguística e recolha dos dados normativos das Structured Observations of Sensory Related Motor Performance",
+      "description": "Desde o início do desenvolvimento da teoria de integração sensorial..."
+    },
+    "3": {
+      "title": "Comportamentos do brincar com o corpo, de bebes entre os 10 e os 12 meses",
+      "description": "Introdução: Ao brincar a criança dá significado ao mundo que a rodeia..."
+    }
+  },
+  "search_bar_palceholder": "Pesquisar por título, autor ou conteúdo...",
+  "showing": "Monstrando",
+  "publications": "publicações",
+  "of": "de",
+  "teses": "Theses",
+  "no_publications_find": "Nenhuma publicação encontrada com os critérios selecionados.",
+  "allert_msg": {
+    "add_course": "Adicionado ao carrinho!",
+    "course_already_in_cart": "O item já está no carrinho."
+  },
+  "months": {
+    "january": "Janeiro",
+    "february": "Fevereiro",
+    "march": "Março",
+    "april": "Abril",
+    "may": "Maio",
+    "june": "Junho",
+    "july": "Julho",
+    "august": "Agosto",
+    "september": "Setembro",
+    "october": "Outubro",
+    "november": "Novembro",
+    "december": "Dezembro"
+  },
+  "buy_button": "Comprar agora",
+  "add_to_cart": "Adicionar ao carinho",
+  "has_been_add_to_cart": "O item foi adicionado",
+  "obs": "Obs.: O valor final pode sofrer variações devido à taxa de câmbio e/ou impostos locais, conforme a política do meio de pagamento escolhido.",
+  "contact_by_mail": "Para esclarecimento de qualquer duvida, contate a Paula Serrano por email: ",
+  "learning_on_course": "O que você vai aprender",
+  "privacity": {
+    "title": "Política de Privacidade",
+    "company_name": "Paula Serrano Educação",
+    "updated": "Última atualização: ",
+    "pointes": {
+      "1": {
+        "title": " Introdução",
+        "p": "A Paula Serrano Educação, Lda. compromete-se a proteger a privacidade e os dados pessoais dos seus utilizadores. Esta Política de Privacidade explica como recolhemos, utilizamos e protegemos as informações fornecidas pelos visitantes do nosso website."
+      },
+      "2": {
+        "title": "Dados Recolhidos",
+        "p": "Podemos recolher os seguintes dados pessoais:",
+        "li": {
+          "1": "Nome e endereço de e-mail (quando fornecidos pelo utilizador através de formulários de contacto ou inscrição).",
+          "2": "Informações fornecidas voluntariamente em interações no website.",
+          "3": "Dados de navegação, como endereço IP, tipo de dispositivo e comportamento no site, para fins estatísticos e de melhoria da experiência do utilizador."
+        }
+      },
+      "3": {
+        "title": "Finalidade da Recolha de Dados",
+        "p": "Os dados recolhidos serão utilizados para:",
+        "li": {
+          "1": "Responder a pedidos de informação e contacto.",
+          "2": "Enviar comunicações relacionadas com serviços, cursos e eventos (caso o utilizador tenha dado consentimento).",
+          "3": "Melhorar a navegação e o funcionamento do website.",
+          "4": "Cumprimento de obrigações legais"
+        }
+      },
+      "4": {
+        "title": "Contacto",
+        "p": "Para mais informações sobre a nossa Política de Privacidade ou para exercer os seus direitos, entre em contacto connosco através do e-mail:"
+      },
+      "5": {
+        "title": "Segurança dos Dados",
+        "p": "Implementamos medidas de segurança técnicas e organizacionais para proteger os dados pessoais contra acessos não autorizados, perdas ou alterações."
+      },
+      "6": {
+        "title": "Direitos do Utilizador",
+        "p": "Os utilizadores têm o direito de:",
+        "li": {
+          "1": "Aceder, corrigir ou eliminar os seus dados pessoais.",
+          "2": "Retirar o consentimento para o tratamento dos dados, quando aplicável.",
+          "3": "Solicitar a portabilidade dos dados.",
+          "4": "Apresentar reclamação junto da Comissão Nacional de Proteção de Dados (CNPD)."
+        }
+      },
+      "7": {
+        "title": " Cookies e Tecnologias de Rastreamento",
+        "p": "O website pode utilizar cookies para melhorar a experiência do utilizador. O utilizador pode configurar o seu navegador para recusar cookies, embora isso possa afetar a navegação no site."
+      },
+      "8": {
+        "title": "Alterações à Política de Privacidade",
+        "p": "A Paula Serrano Educação, Lda. pode atualizar esta Política de Privacidade a qualquer momento. Quaisquer alterações serão publicadas no website e entrarão em vigor imediatamente."
+      },
+      "9": {
+        "title": "Contacto",
+        "p": "Para mais informações sobre a nossa Política de Privacidade ou para exercer os seus direitos, entre em contacto connosco através dos meios disponibilizados no website."
+      }
+    }
+  },
+  "ckookes": {
+    "title": "Política de Cookies",
+    "company_name": "Paula Serrano Educação",
+    "updated": "Última atualização: ",
+    "pointes": {
+      "1": {
+        "title": "O que são Cookies?",
+        "p": "Cookies são pequenos ficheiros de texto armazenados no seu dispositivo (computador, tablet ou telemóvel) quando visita um website. Estes ficheiros permitem reconhecer o seu dispositivo e armazenar algumas informações sobre as suas preferências ou ações anteriores."
+      },
+      "2": {
+        "title": "Para que utilizamos Cookies?",
+        "p": "No site da Paula Serrano Educação, os cookies são utilizados para:",
+        "li": {
+          "1": "Melhorar a experiência de navegação do utilizador.",
+          "2": "Garantir o funcionamento eficiente e seguro do website.",
+          "3": "Analisar o tráfego e o comportamento de navegação, de forma a otimizar os conteúdos e funcionalidades.",
+          "4": "Memorizar as preferências do utilizador em visitas futuras."
+        }
+      },
+      "3": {
+        "title": "Tipos de Cookies Utilizados",
+        "p": "O nosso website pode utilizar os seguintes tipos de cookies:",
+        "li_strong": {
+          "1": "Cookies Essenciais",
+          "2": "Cookies de Desempenho",
+          "3": "Cookies Funcionais",
+          "4": "Cookies de Terceiros"
+        },
+        "li": {
+          "1": "Necessários para o funcionamento do site. Sem estes cookies, alguns serviços não podem ser prestados.",
+          "2": "Recolhem informações sobre como os visitantes utilizam o site (por exemplo, páginas mais visitadas). Estes dados são anónimos e usados apenas para melhorar o funcionamento do site.",
+          "3": "Permitem lembrar preferências do utilizador (como idioma ou região) e proporcionar uma experiência mais personalizada.",
+          "4": "Podem ser utilizados serviços externos como o Google Analytics para análise de tráfego. Estes cookies são geridos por terceiros e seguem as suas próprias políticas de privacidade."
+        }
+      },
+      "4": {
+        "title": "Gestão de Cookies",
+        "p": "Ao aceder ao nosso website pela primeira vez, será apresentado um aviso com a opção de aceitar ou configurar os cookies. O utilizador pode, a qualquer momento, alterar as configurações de cookies no seu navegador, ativando ou desativando alguns ou todos os cookies. Tenha em atenção que a desativação de cookies essenciais pode afetar o funcionamento do site."
+      },
+      "5": {
+        "title": "Alterações à Política de Cookies",
+        "p": "A Paula Serrano Educação poderá atualizar esta política periodicamente. Recomendamos que consulte esta página regularmente para se manter informado sobre qualquer alteração."
+      },
+      "6": {
+        "title": "Contacto",
+        "p": "Se tiver dúvidas sobre esta Política de Cookies ou sobre o tratamento dos seus dados, entre em contacto connosco através dos canais disponíveis no website."
+      }
+    }
+  },
+  "terms": {
+    "title": "Política de Privacidade e Condições",
+    "company_name": "Paula Serrano Educação",
+    "updated": "Última atualização: ",
+    "pointes": {
+      "1": {
+        "title": "Introdução",
+        "p": "Bem-vindo ao website da Paula Serrano Educação, Lda. Ao aceder e utilizar este website, o utilizador concorda em cumprir os presentes Termos e Condições de Utilização."
+      },
+      "2": {
+        "title": "Propriedade Intelectual",
+        "p": "Todo o conteúdo presente neste website, incluindo textos, imagens, logótipos e outros materiais, é propriedade da Paula Serrano Educação, Lda., salvo indicação em contrário. A reprodução, distribuição ou qualquer outro uso do conteúdo sem autorização prévia por escrito é proibido."
+      },
+      "3": {
+        "title": "Finalidade da Recolha de Dados",
+        "p": "Todo o conteúdo presente neste website, incluindo textos, imagens, logótipos e outros materiais, é propriedade da Paula Serrano Educação, Lda., salvo indicação em contrário. A reprodução, distribuição ou qualquer outro uso do conteúdo sem autorização prévia por escrito é proibido."
+      },
+      "4": {
+        "title": "Limitação de Responsabilidade",
+        "p": "A Paula Serrano Educação, Lda. envida todos os esforços para manter a informação neste website atualizada e precisa. No entanto, não garante a exatidão, integridade ou atualidade das informações e não se responsabiliza por quaisquer danos resultantes do uso deste website."
+      },
+      "5": {
+        "title": "Links para Terceiros",
+        "p": "Este website pode conter links para websites de terceiros. A Paula Serrano Educação, Lda. não se responsabiliza pelo conteúdo ou práticas de privacidade desses websites."
+      },
+      "6": {
+        "title": "Alterações aos Termos e Condições",
+        "p": "A Paula Serrano Educação, Lda. reserva-se o direito de modificar estes Termos e Condições a qualquer momento. As alterações entrarão em vigor após a sua publicação no website."
+      },
+      "7": {
+        "title": "Lei Aplicável e Jurisdição",
+        "p": "Estes Termos e Condições são regidos pela lei portuguesa. Qualquer litígio relacionado com este website será submetido à jurisdição exclusiva dos tribunais portugueses."
+      },
+      "8": {
+        "title": "Contacto",
+        "p": "Para qualquer questão relacionada com estes Termos e Condições, por favor contacte-nos através dos meios disponibilizados no nosso website."
+      }
+    }
+  },
+  "account": {
+    "login": {
+      "reset_password": "Reset Password",
+      "not_member": "Não possui uma conta?"
+    },
+    "signup": {
+      "full_name": "Nome Completo",
+      "phone": "Telefone",
+      "country": "Selecione o seu pais",
+      "gender": "Genero",
+      "select_gender": "Selecionar gênero",
+      "gm": "Masculino",
+      "gf": "Feminino",
+      "go": "Outro",
+      "g_anonimus": "Prefiro nao dizer",
+      "bd": "Data de Nascimento",
+      "pc": "Confirmar Password*",
+      "accept_terms_cond": "Eu aceito os ",
+      "is_member": "Já possui uma conta?"
+    }
+  },
+  "favorits": {
+    "title": "Minha Lista de Desejos",
+    "empty_list": "Sua lista de desejos está vazia",
+    "p": "Adicione itens à sua lista de desejos para encontrá-los aqui mais tarde.",
+    "button": "Explorar Produtos",
+    "item_plur": "Itens",
+    "item": "Item",
+    "item_plural": "Itens"
+  },
+  "cart": {
+    "title": "O teu Carrinho",
+    "clr_cart": "Limpar Carrinho",
+    "empty_list": "O teu carrinho está vazio",
+    "p": "Adiciona produtos ao teu carrinho para continuar o processo de compra.",
+    "buy": "Comprar",
+    "button": "Explorar",
+    "bottom_button": "Continuar Comprar"
+  },
+  "whatsapp_contact_me": "Precisa de ajuda? Fale conosco!",
+  "back": "Voltar",
+  "zomboni": "Comprar na Zamboni",
+  "book_botton_atention": "⚠\uFE0F Atenção: Este produto tem venda exclusiva para Portugal\uD83C\uDDF5\uD83C\uDDF9. Envios apenas para território português.",
+  "form_placeholder": {
+    "pass_roles": "Sua senha deve ter no mínimo 8 caracteres.",
+    "pass_conf": "Confirme sua senha"
+  },
+}
+
+
+
+

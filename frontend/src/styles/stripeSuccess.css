@@ -1,0 +1,245 @@
+.success-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .success-card {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .success-icon {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px auto;
+    animation: scale-in 0.5s ease-out;
+  }
+  
+  .success-title {
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  
+  .success-message {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 32px;
+    line-height: 1.5;
+  }
+  
+  .order-details {
+    background-color: #f9fafb;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 32px;
+    text-align: left;
+  }
+  
+  .order-details h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 16px;
+  }
+  
+  .detail-row:last-child {
+    margin-bottom: 0;
+  }
+  
+  .detail-row span:first-child {
+    color: #666;
+  }
+  
+  .detail-row span:last-child {
+    color: #333;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+  }
+  
+  .detail-row span svg {
+    margin-left: 6px;
+  }
+  
+  .next-steps {
+    text-align: left;
+    margin-bottom: 32px;
+  }
+  
+  .next-steps h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  
+  .steps-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .steps-list li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  .steps-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+    font-weight: bold;
+  }
+  
+  .success-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 32px;
+  }
+  
+  .home-button, .download-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .home-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+  }
+  
+  .home-button:hover {
+    background-color: #3e8e41;
+  }
+  
+  .download-button {
+    background-color: white;
+    color: #4CAF50;
+    border: 2px solid #4CAF50;
+  }
+  
+  .download-button:hover {
+    background-color: #f1f8f1;
+  }
+  
+  .home-button svg {
+    margin-right: 8px;
+  }
+  
+  .confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .confetti {
+    position: absolute;
+    top: -10px;
+    width: 10px;
+    height: 20px;
+    background-color: #4CAF50;
+    opacity: 0;
+    transform: translateY(0) rotate(0);
+  }
+  
+  .confetti:nth-child(odd) {
+    background-color: #2196F3;
+  }
+  
+  .confetti:nth-child(3n) {
+    background-color: #FFC107;
+  }
+  
+  .confetti:nth-child(3n+1) {
+    background-color: #E91E63;
+  }
+  
+  .confetti.active {
+    opacity: 0.7;
+    animation: confetti-fall 4s linear forwards;
+  }
+  
+  @keyframes confetti-fall {
+    0% {
+      transform: translateY(-10px) rotate(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateY(100vh) rotate(720deg);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes scale-in {
+    0% {
+      transform: scale(0);
+    }
+    80% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .success-card {
+      padding: 30px 20px;
+    }
+    
+    .success-actions {
+      flex-direction: column;
+    }
+    
+    .home-button, .download-button {
+      width: 100%;
+    }
+  }
