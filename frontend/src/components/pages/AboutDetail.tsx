@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import '../../styles/pages/aboutDetail.css';
+import '../../styles/pages/AboutDetail.css';
 import aboutImage from "../../assets/about/Design sem nome 1.png";
 import { useTranslation } from "react-i18next";
 
